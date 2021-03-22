@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/AnimatedState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/EnemyState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/dszfgwseda.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingBehaviourç.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/IdleState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/AttackingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/DyingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/State.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/FiniteStateMachine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/ChasingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/HurtState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/HurtState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/AttackingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/ParallaxEffectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../1 Cuatrimestre/Comportamiento de personajes/Build\Orb Of Deception.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Uni\4 Año\1 Cuatrimestre\Comportamiento de personajes\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="" />
+      <created>1608407370205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608407370205</updated>
+      <workItem from="1608407394366" duration="687000" />
+      <workItem from="1611520974360" duration="1200000" />
+      <workItem from="1611700591565" duration="10028000" />
+      <workItem from="1611718349706" duration="17609000" />
+      <workItem from="1611808571185" duration="9946000" />
+      <workItem from="1612230042883" duration="4165000" />
+      <workItem from="1612295337272" duration="1257000" />
+      <workItem from="1613327906914" duration="610000" />
+      <workItem from="1616376608752" duration="669000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
