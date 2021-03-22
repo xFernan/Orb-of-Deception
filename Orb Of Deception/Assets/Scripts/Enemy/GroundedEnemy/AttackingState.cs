@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OrbOfDeception.Enemy.GroundedEnemy
+namespace Nanref.Enemy.GroundedEnemy
 {
     public class AttackingState : EnemyState
     {

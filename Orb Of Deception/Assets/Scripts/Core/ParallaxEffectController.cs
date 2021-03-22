@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OrbOfDeception.Core
+namespace Nanref.Core
 {
     public class ParallaxEffectController : MonoBehaviour
     {

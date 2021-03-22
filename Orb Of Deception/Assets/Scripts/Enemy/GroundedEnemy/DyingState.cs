@@ -1,4 +1,4 @@
-﻿namespace OrbOfDeception.Enemy.GroundedEnemy
+﻿namespace Nanref.Enemy.GroundedEnemy
 {
     public class DyingState : EnemyState
     {

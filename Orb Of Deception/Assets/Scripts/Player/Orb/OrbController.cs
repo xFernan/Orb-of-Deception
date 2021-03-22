@@ -1,7 +1,7 @@
-﻿using OrbOfDeception.Enemy;
+﻿using Nanref.Enemy;
 using UnityEngine;
 
-namespace OrbOfDeception.Player.Orb
+namespace Nanref.Player.Orb
 {
     public sealed class OrbController : MonoBehaviour
     {

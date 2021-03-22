@@ -1,7 +1,7 @@
-﻿using OrbOfDeception.Core;
+﻿using Nanref.Core;
 using UnityEngine;
 
-namespace OrbOfDeception.Enemy.GroundedEnemy
+namespace Nanref.Enemy.GroundedEnemy
 {
     public class HurtState : EnemyState
     {

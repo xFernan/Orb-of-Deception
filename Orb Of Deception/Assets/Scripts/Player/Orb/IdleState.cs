@@ -1,7 +1,7 @@
-﻿using OrbOfDeception.Patterns;
+﻿using Nanref.Patterns;
 using UnityEngine;
 
-namespace OrbOfDeception.Player.Orb
+namespace Nanref.Player.Orb
 {
     public class IdleState : State
     {

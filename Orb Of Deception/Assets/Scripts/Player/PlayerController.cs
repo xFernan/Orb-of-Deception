@@ -1,9 +1,10 @@
-﻿using System.Linq;
-using OrbOfDeception.Enemy;
+﻿using System;
+using System.Linq;
+using Nanref.Enemy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace OrbOfDeception.Player
+namespace Nanref.Player
 {
     public class PlayerController : MonoBehaviour
     {
@@ -11,6 +12,7 @@ namespace OrbOfDeception.Player
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private GameObject spriteObject;
+        [SerializeField] private Transform cameraFollower;
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
         
@@ -59,19 +61,18 @@ namespace OrbOfDeception.Player
                     closestEnemy.ReceiveDamage(10);
                 }
             }
-            
-            // Flip del sprite del jugador (temporal).
-            if (_direction > 0)
+
+            if (_direction != 0)
             {
-                spriteObject.transform.localScale = new Vector3(1, 1, 1);
-            }
-            else if (_direction < 0)
-            {
-                spriteObject.transform.localScale = new Vector3(-1, 1, 1);
+                var directionRaw = (_direction > 0) ? 1 : -1;
+                spriteObject.transform.localScale = new Vector3(directionRaw, 1, 1);
+                
+                var newCameraFollowerPos = cameraFollower.localPosition;
+                newCameraFollowerPos.x = Mathf.Abs(newCameraFollowerPos.x) * directionRaw;
+                cameraFollower.localPosition = newCameraFollowerPos;
             }
             
             _animator.SetBool("IsMoving", IsOnTheGround() && _direction != 0);
-            
         }
 
         private bool IsOnTheGround()

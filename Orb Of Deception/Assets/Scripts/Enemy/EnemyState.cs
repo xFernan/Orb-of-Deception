@@ -1,6 +1,6 @@
-﻿using OrbOfDeception.Patterns;
+﻿using Nanref.Patterns;
 
-namespace OrbOfDeception.Enemy
+namespace Nanref.Enemy
 {
     public abstract class EnemyState : State
     {

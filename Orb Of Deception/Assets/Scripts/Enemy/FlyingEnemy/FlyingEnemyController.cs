@@ -1,7 +1,7 @@
 ﻿using Pathfinding;
 using UnityEngine;
 
-namespace OrbOfDeception.Enemy.FlyingEnemy
+namespace Nanref.Enemy.FlyingEnemy
 {
     public class FlyingEnemyController : EnemyController
     {

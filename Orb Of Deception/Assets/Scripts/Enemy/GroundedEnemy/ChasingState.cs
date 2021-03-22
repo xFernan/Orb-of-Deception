@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
-namespace OrbOfDeception.Enemy.GroundedEnemy
+namespace Nanref.Enemy.GroundedEnemy
 {
     public class ChasingState : EnemyState
     {
