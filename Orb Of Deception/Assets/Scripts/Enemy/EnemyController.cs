@@ -13,8 +13,7 @@ namespace Nanref.Enemy
         protected enum MaskColor
         {
             White,
-            Black,
-            NoColor
+            Black
         }
         #endregion
         
@@ -34,6 +33,7 @@ namespace Nanref.Enemy
         // Permite ejecutar métodos al final de la animación mediante eventos (el método en cuestión es añadido por el estado correspondiente).
         public Action GoToNextStateCallback { set; private get; }
         public Animator Anim  { private set; get; }
+        public bool IsWhite => maskColor == MaskColor.White;
         
         #endregion
 
