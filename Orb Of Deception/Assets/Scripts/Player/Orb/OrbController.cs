@@ -1,4 +1,5 @@
-﻿using Nanref.Enemy;
+﻿using System;
+using Nanref.Enemy;
 using UnityEngine;
 
 namespace Nanref.Player.Orb
@@ -20,6 +21,7 @@ namespace Nanref.Player.Orb
         [SerializeField] private float directionalAttackInitialVelocity;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
+        [SerializeField] private float idleYShiftValue = 1;
 
         private bool _isWhite;
         private Rigidbody2D _rigidbody;
@@ -43,37 +45,27 @@ namespace Nanref.Player.Orb
             switch (_state)
             {
                 case OrbState.Idle:
-                    transform.position = orbIdlePositionTransform.position;
+                    //transform.position = orbIdlePositionTransform.position;
                     if (Input.GetMouseButtonDown(0))
                     {
                         _state = OrbState.DirectionalAttack;
-                        directionalAttackDirection = ((Vector2) Input.mousePosition - new Vector2(Screen.width / 2, Screen.height / 2)).normalized;
+                        directionalAttackDirection =
+                            ((Vector2) Input.mousePosition -
+                             new Vector2((float) Screen.width / 2, (float) Screen.height / 2)).normalized;
                         _rigidbody.velocity = directionalAttackDirection * directionalAttackInitialVelocity;
                     }
                     break;
                 case OrbState.DirectionalAttack:
-                    if (_rigidbody.velocity.magnitude <= 0.3f)
+                    if (Vector3.Dot(directionalAttackDirection, _rigidbody.velocity.normalized) < 0.9f)
                     {
                         _state = OrbState.Returning;
                     }
-                    else
-                    {
-                        _rigidbody.AddForce(-directionalAttackDirection * attractionForce);
-                    }
                     break;
                 case OrbState.Returning:
-                    Debug.Log(_rigidbody.velocity.magnitude);
                     if (Vector2.Distance(transform.position, orbIdlePositionTransform.position) <= radiusToGoIdle)
                     {
                         _rigidbody.velocity = Vector2.zero;
                         _state = OrbState.Idle;
-                    }
-                    else
-                    {
-                        var velocityValue = _rigidbody.velocity.magnitude;
-                        var direction = (orbIdlePositionTransform.position - transform.position).normalized;
-                        _rigidbody.velocity = direction * velocityValue;
-                        _rigidbody.AddForce(direction * attractionForce);
                     }
                     break;
             }
@@ -83,18 +75,38 @@ namespace Nanref.Player.Orb
                 ChangeColor();
             }
         }
+        
+        private void FixedUpdate()
+        {
+            switch (_state)
+            {
+                case OrbState.Idle:
+                    var currentPosition = transform.position;
+                    var newPosition = currentPosition;
+                    var orbIdlePosition = orbIdlePositionTransform.position;
+                    
+                    newPosition.x =  Mathf.Lerp(currentPosition.x, orbIdlePosition.x, 0.7f);
+                    newPosition.y = orbIdlePosition.y + Mathf.Sin(Time.time) * idleYShiftValue;
+                    
+                    transform.position = newPosition;
+                    
+                    break;
+                case OrbState.DirectionalAttack:
+                    _rigidbody.AddForce(-directionalAttackDirection * attractionForce);
+                    break;
+                case OrbState.Returning:
+                    var velocityValue = _rigidbody.velocity.magnitude;
+                    var direction = (orbIdlePositionTransform.position - transform.position).normalized;
+                    _rigidbody.velocity = direction * velocityValue;
+                    _rigidbody.AddForce(direction * attractionForce);
+                    break;
+            }
+        }
 
         private void ChangeColor()
         {
             _isWhite = !_isWhite;
-            if (_isWhite)
-            {
-                _spriteRenderer.color = Color.white;
-            }
-            else
-            {
-                _spriteRenderer.color = Color.gray;
-            }
+            _spriteRenderer.color = _isWhite ? Color.white : Color.gray;
         }
 
         private void OnDrawGizmos()
