@@ -21,12 +21,14 @@ namespace Nanref.Player.Orb
         [SerializeField] private float directionalAttackInitialVelocity;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
-        [SerializeField] private float idleYShiftValue = 1;
+        [SerializeField] private float idleFloatingMoveDistance = 1;
+        [SerializeField] private float idleFloatingMoveVelocity = 1;
+        [SerializeField] private float idleLerpPlayerFollowValue = 0.5f;
 
         private bool _isWhite;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
-        private Vector2 directionalAttackDirection;
+        private Vector2 _directionalAttackDirection;
         
         #endregion
 
@@ -49,14 +51,14 @@ namespace Nanref.Player.Orb
                     if (Input.GetMouseButtonDown(0))
                     {
                         _state = OrbState.DirectionalAttack;
-                        directionalAttackDirection =
+                        _directionalAttackDirection =
                             ((Vector2) Input.mousePosition -
                              new Vector2((float) Screen.width / 2, (float) Screen.height / 2)).normalized;
-                        _rigidbody.velocity = directionalAttackDirection * directionalAttackInitialVelocity;
+                        _rigidbody.velocity = _directionalAttackDirection * directionalAttackInitialVelocity;
                     }
                     break;
                 case OrbState.DirectionalAttack:
-                    if (Vector3.Dot(directionalAttackDirection, _rigidbody.velocity.normalized) < 0.9f)
+                    if (Vector3.Dot(_directionalAttackDirection, _rigidbody.velocity.normalized) < 0.9f)
                     {
                         _state = OrbState.Returning;
                     }
@@ -85,14 +87,15 @@ namespace Nanref.Player.Orb
                     var newPosition = currentPosition;
                     var orbIdlePosition = orbIdlePositionTransform.position;
                     
-                    newPosition.x =  Mathf.Lerp(currentPosition.x, orbIdlePosition.x, 0.7f);
-                    newPosition.y = orbIdlePosition.y + Mathf.Sin(Time.time) * idleYShiftValue;
+                    newPosition.x =  Mathf.Lerp(currentPosition.x, orbIdlePosition.x, idleLerpPlayerFollowValue);
+                    newPosition.y = orbIdlePosition.y + Mathf.Sin(Time.time * idleFloatingMoveVelocity) *
+                        idleFloatingMoveDistance;
                     
                     transform.position = newPosition;
                     
                     break;
                 case OrbState.DirectionalAttack:
-                    _rigidbody.AddForce(-directionalAttackDirection * attractionForce);
+                    _rigidbody.AddForce(-_directionalAttackDirection * attractionForce);
                     break;
                 case OrbState.Returning:
                     var velocityValue = _rigidbody.velocity.magnitude;

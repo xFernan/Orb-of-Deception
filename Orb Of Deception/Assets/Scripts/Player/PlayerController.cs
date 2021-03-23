@@ -12,13 +12,14 @@ namespace Nanref.Player
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private GameObject spriteObject;
-        [SerializeField] private Transform cameraFollower;
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _direction;
+
+        public float Direction => _direction;
         #endregion
     
         #region Methods
@@ -66,10 +67,6 @@ namespace Nanref.Player
             {
                 var directionRaw = (_direction > 0) ? 1 : -1;
                 spriteObject.transform.localScale = new Vector3(directionRaw, 1, 1);
-                
-                var newCameraFollowerPos = cameraFollower.localPosition;
-                newCameraFollowerPos.x = Mathf.Abs(newCameraFollowerPos.x) * directionRaw;
-                cameraFollower.localPosition = newCameraFollowerPos;
             }
             
             _animator.SetBool("IsMoving", IsOnTheGround() && _direction != 0);
@@ -87,7 +84,7 @@ namespace Nanref.Player
 
             return isOnTheGround;
         }
-
+        
         private void OnDrawGizmos()
         {
             if (groundDetectors.Length == 0)
