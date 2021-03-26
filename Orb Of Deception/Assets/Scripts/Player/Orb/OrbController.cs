@@ -18,6 +18,7 @@ namespace Nanref.Player.Orb
         private OrbState _state;
         
         [SerializeField] private Transform orbIdlePositionTransform;
+        [SerializeField] private ParticleSystem orbParticles;
         [SerializeField] private float directionalAttackInitialVelocity;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
@@ -110,6 +111,8 @@ namespace Nanref.Player.Orb
         {
             _isWhite = !_isWhite;
             _spriteRenderer.color = _isWhite ? Color.white : Color.gray;
+            var particles = orbParticles.main;
+            particles.startColor = _isWhite ? Color.white : Color.black;
         }
 
         private void OnDrawGizmos()

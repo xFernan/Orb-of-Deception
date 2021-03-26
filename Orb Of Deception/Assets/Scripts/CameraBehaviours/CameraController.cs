@@ -12,6 +12,10 @@ namespace Nanref.CameraBehaviours
         {
             var cameraPlayerReferencePosition = cameraPlayerReferenceTransform.position;
             var cameraTransform = transform;
+
+            /*var camera = Camera.main;
+            var height = camera.orthographicSize * 2.0f;
+            var width = height * camera.aspect;*/
             
             var newCameraPosition = new Vector3
             {
