@@ -110,7 +110,7 @@ namespace Nanref.Player.Orb
         private void ChangeColor()
         {
             _isWhite = !_isWhite;
-            _spriteRenderer.color = _isWhite ? Color.white : Color.gray;
+            _spriteRenderer.color = _isWhite ? Color.white : new Color(0.1f, 0.1f, 0.1f);
             var particles = orbParticles.main;
             particles.startColor = _isWhite ? Color.white : Color.black;
         }

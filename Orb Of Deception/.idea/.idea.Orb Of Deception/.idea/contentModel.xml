@@ -267,7 +267,6 @@
           <e p="Player" t="Include">
             <e p="CameraFollowerBehaviour.cs" t="Include" />
             <e p="Orb" t="Include">
-              <e p="IdleState.cs" t="Include" />
               <e p="OrbController.cs" t="Include" />
             </e>
             <e p="PlayerController.cs" t="Include" />
