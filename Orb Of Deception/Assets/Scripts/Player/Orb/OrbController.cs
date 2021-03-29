@@ -19,12 +19,15 @@ namespace Nanref.Player.Orb
         
         [SerializeField] private Transform orbIdlePositionTransform;
         [SerializeField] private ParticleSystem orbParticles;
-        [SerializeField] private float directionalAttackInitialVelocity;
+        [SerializeField] private Collider2D physicsCollider;
+        [SerializeField] private float directionalAttackInitialForce;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
         [SerializeField] private float idleFloatingMoveDistance = 1;
         [SerializeField] private float idleFloatingMoveVelocity = 1;
         [SerializeField] private float idleLerpPlayerFollowValue = 0.5f;
+        [SerializeField] private float directionalAttackDecelerationFactor = 0.95f;
+        [SerializeField] private float directionalAttackMinVelocityToChangeState = 1;
 
         private bool _isWhite;
         private Rigidbody2D _rigidbody;
@@ -39,6 +42,7 @@ namespace Nanref.Player.Orb
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            physicsCollider.enabled = false;
             _state = OrbState.Idle;
             _isWhite = true;
         }
@@ -51,16 +55,18 @@ namespace Nanref.Player.Orb
                     //transform.position = orbIdlePositionTransform.position;
                     if (Input.GetMouseButtonDown(0))
                     {
+                        physicsCollider.enabled = true;
                         _state = OrbState.DirectionalAttack;
                         _directionalAttackDirection =
                             ((Vector2) Input.mousePosition -
                              new Vector2((float) Screen.width / 2, (float) Screen.height / 2)).normalized;
-                        _rigidbody.velocity = _directionalAttackDirection * directionalAttackInitialVelocity;
+                        _rigidbody.AddForce(_directionalAttackDirection * directionalAttackInitialForce, ForceMode2D.Impulse);
                     }
                     break;
                 case OrbState.DirectionalAttack:
-                    if (Vector3.Dot(_directionalAttackDirection, _rigidbody.velocity.normalized) < 0.9f)
+                    if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
                     {
+                        physicsCollider.enabled = false;
                         _state = OrbState.Returning;
                     }
                     break;
@@ -87,16 +93,18 @@ namespace Nanref.Player.Orb
                     var currentPosition = transform.position;
                     var newPosition = currentPosition;
                     var orbIdlePosition = orbIdlePositionTransform.position;
+
+                    newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, idleLerpPlayerFollowValue);
                     
-                    newPosition.x =  Mathf.Lerp(currentPosition.x, orbIdlePosition.x, idleLerpPlayerFollowValue);
-                    newPosition.y = orbIdlePosition.y + Mathf.Sin(Time.time * idleFloatingMoveVelocity) *
+                    newPosition.y += Mathf.Sin(Time.time * idleFloatingMoveVelocity) *
                         idleFloatingMoveDistance;
                     
                     transform.position = newPosition;
                     
                     break;
                 case OrbState.DirectionalAttack:
-                    _rigidbody.AddForce(-_directionalAttackDirection * attractionForce);
+                    //_rigidbody.AddForce(-_rigidbody.velocity.normalized * attractionForce);
+                    _rigidbody.velocity = _rigidbody.velocity * directionalAttackDecelerationFactor;
                     break;
                 case OrbState.Returning:
                     var velocityValue = _rigidbody.velocity.magnitude;
