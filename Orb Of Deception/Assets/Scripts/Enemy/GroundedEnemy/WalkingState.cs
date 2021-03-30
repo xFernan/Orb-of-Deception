@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Nanref.Core;
+using OrbOfDeception.Core;
 using UnityEngine;
 
-namespace Nanref.Enemy.GroundedEnemy
+namespace OrbOfDeception.Enemy.GroundedEnemy
 {
     public class WalkingState : EnemyState
     {

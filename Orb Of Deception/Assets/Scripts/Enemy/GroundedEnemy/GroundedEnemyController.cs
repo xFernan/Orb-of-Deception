@@ -2,7 +2,7 @@
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-namespace Nanref.Enemy.GroundedEnemy
+namespace OrbOfDeception.Enemy.GroundedEnemy
 {
     public class GroundedEnemyController : EnemyController
     {

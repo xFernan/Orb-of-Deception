@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Nanref.Patterns;
+using OrbOfDeception.Patterns;
 using UnityEngine;
 
-namespace Nanref.Enemy
+namespace OrbOfDeception.Enemy
 {
     public abstract class EnemyController : MonoBehaviour
     {

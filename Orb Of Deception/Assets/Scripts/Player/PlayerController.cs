@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using Nanref.Enemy;
+﻿using System.Linq;
+using OrbOfDeception.Enemy;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Nanref.Player
+namespace OrbOfDeception.Player
 {
     public class PlayerController : MonoBehaviour
     {

@@ -1,8 +1,8 @@
-﻿using Nanref.Core;
+﻿using OrbOfDeception.Core;
 using Pathfinding;
 using UnityEngine;
 
-namespace Nanref.Enemy.FlyingEnemy
+namespace OrbOfDeception.Enemy.FlyingEnemy
 {
     public class ChasingState : EnemyState
     {

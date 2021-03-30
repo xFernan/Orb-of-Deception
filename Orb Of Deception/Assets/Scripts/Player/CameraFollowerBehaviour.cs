@@ -1,9 +1,7 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-namespace Nanref.Player
+namespace OrbOfDeception.Player
 {
     public class CameraFollowerBehaviour : MonoBehaviour
     {

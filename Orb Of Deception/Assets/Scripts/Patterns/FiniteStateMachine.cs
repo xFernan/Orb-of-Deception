@@ -1,4 +1,4 @@
-﻿namespace Nanref.Patterns
+﻿namespace OrbOfDeception.Patterns
 {
     public class FiniteStateMachine
     {

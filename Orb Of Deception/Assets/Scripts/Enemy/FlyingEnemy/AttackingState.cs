@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Nanref.Enemy.FlyingEnemy
+namespace OrbOfDeception.Enemy.FlyingEnemy
 {
     public class AttackingState : EnemyState
     {

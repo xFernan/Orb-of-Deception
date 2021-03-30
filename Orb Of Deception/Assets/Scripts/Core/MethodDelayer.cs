@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nanref.Core
+namespace OrbOfDeception.Core
 {
     public class MethodDelayer
     {

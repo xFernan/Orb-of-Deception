@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace Nanref
+namespace OrbOfDeception.Player
 {
     public class PlayerLightBehaviour : MonoBehaviour
     {

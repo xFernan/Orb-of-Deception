@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nanref.CameraBehaviours
+namespace OrbOfDeception.CameraBehaviours
 {
     public class CameraLimits : MonoBehaviour
     {

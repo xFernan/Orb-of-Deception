@@ -1,4 +1,4 @@
-﻿namespace Nanref.Enemy.FlyingEnemy
+﻿namespace OrbOfDeception.Enemy.FlyingEnemy
 {
     public class DyingState : EnemyState
     {

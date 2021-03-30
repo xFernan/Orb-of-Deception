@@ -1,8 +1,8 @@
 ﻿using System;
-using Nanref.Enemy;
+using OrbOfDeception.Enemy;
 using UnityEngine;
 
-namespace Nanref.Player.Orb
+namespace OrbOfDeception.Player.Orb
 {
     public sealed class OrbController : MonoBehaviour
     {
@@ -28,8 +28,10 @@ namespace Nanref.Player.Orb
         [SerializeField] private float idleLerpPlayerFollowValue = 0.5f;
         [SerializeField] private float directionalAttackDecelerationFactor = 0.95f;
         [SerializeField] private float directionalAttackMinVelocityToChangeState = 1;
+        [SerializeField] private float directionalAttackFirstBounceVelocityBoost = 1.5f;
 
         private bool _isWhite;
+        private bool _hasReceivedAVelocityBoost;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
         private Vector2 _directionalAttackDirection;
@@ -45,6 +47,7 @@ namespace Nanref.Player.Orb
             physicsCollider.enabled = false;
             _state = OrbState.Idle;
             _isWhite = true;
+            _hasReceivedAVelocityBoost = false;
         }
 
         private void Update()
@@ -56,6 +59,7 @@ namespace Nanref.Player.Orb
                     if (Input.GetMouseButtonDown(0))
                     {
                         physicsCollider.enabled = true;
+                        _hasReceivedAVelocityBoost = false;
                         _state = OrbState.DirectionalAttack;
                         _directionalAttackDirection =
                             ((Vector2) Input.mousePosition -
@@ -139,6 +143,19 @@ namespace Nanref.Player.Orb
             {
                 other.GetComponent<EnemyController>().ReceiveDamage(10);
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost ||
+                other.gameObject.layer != LayerMask.NameToLayer("Ground"))
+                return;
+            
+            var newVelocity = _rigidbody.velocity;
+            newVelocity += newVelocity.normalized * directionalAttackFirstBounceVelocityBoost;
+            _rigidbody.velocity = newVelocity;
+                
+            _hasReceivedAVelocityBoost = true;
         }
 
         #endregion

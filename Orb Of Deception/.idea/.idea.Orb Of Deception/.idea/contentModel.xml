@@ -239,6 +239,7 @@
           <e p="Core" t="Include">
             <e p="MethodDelayer.cs" t="Include" />
             <e p="ParallaxEffectController.cs" t="Include" />
+            <e p="SingletonReferences.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="EnemyController.cs" t="Include" />
@@ -262,6 +263,8 @@
           </e>
           <e p="Patterns" t="Include">
             <e p="FiniteStateMachine.cs" t="Include" />
+            <e p="ObjectPool.cs" t="Include" />
+            <e p="PoolObjectReturn.cs" t="Include" />
             <e p="State.cs" t="Include" />
           </e>
           <e p="Player" t="Include">

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
-namespace Nanref.Enemy.FlyingEnemy
+namespace OrbOfDeception.Enemy.FlyingEnemy
 {
     public class IdleState : EnemyState
     {

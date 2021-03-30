@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Nanref.CameraBehaviours
+namespace OrbOfDeception.CameraBehaviours
 {
     public class CameraController : MonoBehaviour
     {

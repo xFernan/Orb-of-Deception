@@ -1,7 +1,7 @@
-﻿using Nanref.Core;
+﻿using OrbOfDeception.Core;
 using UnityEngine;
 
-namespace Nanref.Enemy.FlyingEnemy
+namespace OrbOfDeception.Enemy.FlyingEnemy
 {
     public class HurtState : EnemyState
     {
