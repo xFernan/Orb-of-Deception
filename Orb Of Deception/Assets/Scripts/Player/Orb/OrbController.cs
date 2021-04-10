@@ -1,4 +1,5 @@
 ﻿using System;
+using OrbOfDeception.Core.Input;
 using OrbOfDeception.Enemy;
 using UnityEngine;
 
@@ -17,10 +18,12 @@ namespace OrbOfDeception.Player.Orb
 
         private OrbState _state;
 
+        [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject bounceParticles;
         [SerializeField] private Transform orbIdlePositionTransform;
         [SerializeField] private ParticleSystem directionAttackOrbParticles;
-        [SerializeField] private ParticleSystem idleOrbParticles;
+        [SerializeField] private ParticleSystem orbIdleParticles;
+        [SerializeField] private ParticleSystem orbColorChangeParticles;
         [SerializeField] private Collider2D physicsCollider;
         [SerializeField] private float directionalAttackInitialForce;
         [SerializeField] private float attractionForce;
@@ -36,7 +39,6 @@ namespace OrbOfDeception.Player.Orb
         private bool _hasReceivedAVelocityBoost;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
-        private Vector2 _directionalAttackDirection;
         
         #endregion
 
@@ -51,6 +53,10 @@ namespace OrbOfDeception.Player.Orb
             _isWhite = true;
             _hasReceivedAVelocityBoost = false;
             directionAttackOrbParticles.Stop();
+
+            inputManager.DirectionalAttack = DirectionalAttack;
+            inputManager.Click = OnMouseClick;
+            inputManager.ChangeOrbColor = ChangeColor;
         }
 
         private void Update()
@@ -59,18 +65,18 @@ namespace OrbOfDeception.Player.Orb
             {
                 case OrbState.Idle:
                     //transform.position = orbIdlePositionTransform.position;
-                    if (Input.GetMouseButtonDown(0))
+                    /*if (UnityEngine.Input.GetMouseButtonDown(0))
                     {
                         physicsCollider.enabled = true;
                         _hasReceivedAVelocityBoost = false;
                         _state = OrbState.DirectionalAttack;
-                        idleOrbParticles.Stop();
+                        orbIdleParticles.Stop();
                         directionAttackOrbParticles.Play();
-                        _directionalAttackDirection =
-                            ((Vector2) Input.mousePosition -
-                             new Vector2((float) Screen.width / 2, (float) Screen.height / 2)).normalized;
+                        var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+                        worldPosition2D.z = transform.position.z;
+                        _directionalAttackDirection = (worldPosition2D - transform.position).normalized;
                         _rigidbody.AddForce(_directionalAttackDirection * directionalAttackInitialForce, ForceMode2D.Impulse);
-                    }
+                    }*/
                     break;
                 case OrbState.DirectionalAttack:
                     if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
@@ -83,17 +89,36 @@ namespace OrbOfDeception.Player.Orb
                     if (Vector2.Distance(transform.position, orbIdlePositionTransform.position) <= radiusToGoIdle)
                     {
                         _rigidbody.velocity = Vector2.zero;
-                        idleOrbParticles.Play();
+                        orbIdleParticles.Play();
                         directionAttackOrbParticles.Stop();
                         _state = OrbState.Idle;
                     }
                     break;
             }
+        }
 
-            if (Input.GetMouseButtonDown(1))
+        private void OnMouseClick(Vector2 mousePosition)
+        {
+            var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            worldPosition2D.z = transform.position.z;
+            var direction = (worldPosition2D - transform.position).normalized;
+            
+            DirectionalAttack(direction);
+        }
+
+        private void DirectionalAttack(Vector2 direction)
+        {
+            if (_state != OrbState.Idle)
             {
-                ChangeColor();
+                return;
             }
+            
+            physicsCollider.enabled = true;
+            _hasReceivedAVelocityBoost = false;
+            _state = OrbState.DirectionalAttack;
+            orbIdleParticles.Stop();
+            directionAttackOrbParticles.Play();
+            _rigidbody.AddForce(direction * directionalAttackInitialForce, ForceMode2D.Impulse);
         }
         
         private void FixedUpdate()
@@ -130,20 +155,25 @@ namespace OrbOfDeception.Player.Orb
             _isWhite = !_isWhite;
             
             var directionalAttackParticles = directionAttackOrbParticles.main;
-            var idleParticles = idleOrbParticles.main;
+            var idleParticles = orbIdleParticles.main;
+            var colorChangeParticles = orbColorChangeParticles.main;
             
             if (_isWhite)
             {
                 _spriteRenderer.color = Color.white;
                 directionalAttackParticles.startColor = Color.white;
                 idleParticles.startColor = Color.white;
+                colorChangeParticles.startColor = Color.white;
             }
             else
             {
                 _spriteRenderer.color = new Color(0.1f, 0.1f, 0.1f);
                 directionalAttackParticles.startColor = Color.black;
                 idleParticles.startColor = Color.black;
+                colorChangeParticles.startColor = Color.black;
             }
+            
+            orbColorChangeParticles.Play();
         }
 
         private void OnDrawGizmos()
@@ -168,9 +198,7 @@ namespace OrbOfDeception.Player.Orb
         {
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            var bounceParticlesObject = Instantiate(bounceParticles, other.contacts[0].point, Quaternion.identity);
-            var bounceParticlesMain = bounceParticlesObject.GetComponent<ParticleSystem>().main;
-            bounceParticlesMain.startColor = _isWhite ? Color.white : new Color(0.1f, 0.1f, 0.1f);
+            SpawnBounceParticles(other.contacts[0].point, _isWhite ? Color.white : new Color(0.1f, 0.1f, 0.1f));
             
             if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost)
                 return;
@@ -182,6 +210,18 @@ namespace OrbOfDeception.Player.Orb
             _hasReceivedAVelocityBoost = true;
         }
 
+        private void SpawnBounceParticles(Vector2 particlesPosition, Color particlesColor)
+        {
+            var bounceParticlesObject = Instantiate(bounceParticles, particlesPosition, Quaternion.identity); // Cambiar por Object Pool.
+            var bounceParticlesMain = bounceParticlesObject.GetComponent<ParticleSystem>().main;
+
+            var collisionScreenPosition = Camera.main.WorldToScreenPoint(particlesPosition);
+            
+            var t2d = 
+            
+            bounceParticlesMain.startColor = particlesColor;
+        }
+        
         #endregion
     }
 }

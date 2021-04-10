@@ -1,7 +1,8 @@
 ﻿using System.Linq;
+using OrbOfDeception.Core.Input;
 using OrbOfDeception.Enemy;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.InputSystem;
 
 namespace OrbOfDeception.Player
 {
@@ -13,6 +14,7 @@ namespace OrbOfDeception.Player
         [SerializeField] private GameObject spriteObject;
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
+        [SerializeField] private InputManager inputManager;
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
@@ -26,42 +28,16 @@ namespace OrbOfDeception.Player
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            
+            inputManager.Jump = Jump;
         }
 
         private void Update()
         {
             // Detección del input.
-            _direction = Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1);
+            _direction = inputManager.GetHorizontal();
 
-            // Salto.
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
-            }
-
-            // Para testear, se ha hecho que cada vez que se presiona la tecla Q, se dañará a un enemigo aleatorio.
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                var enemies = GameObject.FindObjectsOfType<EnemyController>();
-                if (enemies.Length != 0)
-                {
-                    var enemyId = Random.Range(0, enemies.Length);
-                    enemies[enemyId].ReceiveDamage(10);
-                }
-            }
-        
-            // Además, cada vez que se presiona la tecla E, se dañará a lenemigo más cercano.
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                var enemies = GameObject.FindObjectsOfType<EnemyController>();
-                if (enemies.Length != 0)
-                {
-                    var closestEnemy = enemies.OrderBy(t => (t.transform.position - transform.position).sqrMagnitude)
-                        .FirstOrDefault();
-                    closestEnemy.ReceiveDamage(10);
-                }
-            }
-
+            // Hacer script aparte.
             if (_direction != 0)
             {
                 var directionRaw = (_direction > 0) ? 1 : -1;
@@ -71,6 +47,12 @@ namespace OrbOfDeception.Player
             _animator.SetBool("IsMoving", IsOnTheGround() && _direction != 0);
         }
 
+        private void Jump()
+        {
+            Debug.Log("Saltando");
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+        }
+        
         private bool IsOnTheGround()
         {
             var isOnTheGround = false;
