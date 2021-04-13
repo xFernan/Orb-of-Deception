@@ -13,6 +13,7 @@ namespace OrbOfDeception.Core.Input
         private float _vertical;
 
         public Action Jump { set; private get; }
+        public Action StopJumping { set; private get; }
         public Action<Vector2> Click { set; private get; }
         public Action<Vector2> DirectionalAttack { set; private get; }
         public Action ChangeOrbColor { set; private get; }
@@ -26,9 +27,10 @@ namespace OrbOfDeception.Core.Input
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if (!context.started)
-                return;
-            Jump?.Invoke();
+            if (context.started)
+                Jump?.Invoke();
+            else if (context.canceled)
+                StopJumping?.Invoke();
         }
 
         public float GetHorizontal()

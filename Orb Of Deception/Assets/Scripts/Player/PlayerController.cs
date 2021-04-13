@@ -11,6 +11,7 @@ namespace OrbOfDeception.Player
         #region Variables
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
+        [SerializeField] private float jumpTime = 1;
         [SerializeField] private GameObject spriteObject;
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
@@ -19,6 +20,8 @@ namespace OrbOfDeception.Player
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _direction;
+        private float jumpTimeCounter;
+        private bool _isJumping;
 
         public float Direction => _direction;
         #endregion
@@ -30,11 +33,13 @@ namespace OrbOfDeception.Player
             _animator = GetComponent<Animator>();
             
             inputManager.Jump = Jump;
+            inputManager.StopJumping = StopJumping;
+            
+            _isJumping = false;
         }
 
         private void Update()
         {
-            // Detección del input.
             _direction = inputManager.GetHorizontal();
 
             // Hacer script aparte.
@@ -49,11 +54,19 @@ namespace OrbOfDeception.Player
 
         private void Jump()
         {
-            Debug.Log("Saltando");
+            if (!_isJumping && !IsOnTheGround())
+                return;
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+            _isJumping = true;
+            jumpTimeCounter = 0;
+        }
+
+        private void StopJumping()
+        {
+            _isJumping = false;
         }
         
-        private bool IsOnTheGround()
+        private bool IsOnTheGround() // Mover en un script aparte.
         {
             var isOnTheGround = false;
             foreach (var groundDetector in groundDetectors)
@@ -80,8 +93,25 @@ namespace OrbOfDeception.Player
 
         private void FixedUpdate()
         {
-            //Movimiento según input.
-            _rigidbody.velocity = new Vector2(velocity * _direction, _rigidbody.velocity.y);
+            var newVelocity = new Vector2
+            {
+                x = velocity * _direction
+            };
+            
+            if (_isJumping)
+            {
+                newVelocity.y = jumpForce;
+                jumpTimeCounter += Time.deltaTime;
+                if (jumpTimeCounter >= jumpTime)
+                {
+                    _isJumping = false;
+                }
+            }
+            else
+            {
+                newVelocity.y = _rigidbody.velocity.y;
+            }
+            _rigidbody.velocity = newVelocity;
         }
 
         #endregion

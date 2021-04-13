@@ -11,9 +11,10 @@ namespace OrbOfDeception.Player.Orb
 
         private enum OrbState
         {
-            Idle,
+            OnPlayer,
             Returning,
-            DirectionalAttack
+            DirectionalAttack,
+            Stopped
         }
 
         private OrbState _state;
@@ -49,7 +50,7 @@ namespace OrbOfDeception.Player.Orb
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             physicsCollider.enabled = false;
-            _state = OrbState.Idle;
+            _state = OrbState.OnPlayer;
             _isWhite = true;
             _hasReceivedAVelocityBoost = false;
             directionAttackOrbParticles.Stop();
@@ -63,35 +64,13 @@ namespace OrbOfDeception.Player.Orb
         {
             switch (_state)
             {
-                case OrbState.Idle:
-                    //transform.position = orbIdlePositionTransform.position;
-                    /*if (UnityEngine.Input.GetMouseButtonDown(0))
-                    {
-                        physicsCollider.enabled = true;
-                        _hasReceivedAVelocityBoost = false;
-                        _state = OrbState.DirectionalAttack;
-                        orbIdleParticles.Stop();
-                        directionAttackOrbParticles.Play();
-                        var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
-                        worldPosition2D.z = transform.position.z;
-                        _directionalAttackDirection = (worldPosition2D - transform.position).normalized;
-                        _rigidbody.AddForce(_directionalAttackDirection * directionalAttackInitialForce, ForceMode2D.Impulse);
-                    }*/
-                    break;
-                case OrbState.DirectionalAttack:
-                    if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
-                    {
-                        physicsCollider.enabled = false;
-                        _state = OrbState.Returning;
-                    }
-                    break;
                 case OrbState.Returning:
                     if (Vector2.Distance(transform.position, orbIdlePositionTransform.position) <= radiusToGoIdle)
                     {
                         _rigidbody.velocity = Vector2.zero;
                         orbIdleParticles.Play();
                         directionAttackOrbParticles.Stop();
-                        _state = OrbState.Idle;
+                        _state = OrbState.OnPlayer;
                     }
                     break;
             }
@@ -108,7 +87,7 @@ namespace OrbOfDeception.Player.Orb
 
         private void DirectionalAttack(Vector2 direction)
         {
-            if (_state != OrbState.Idle)
+            if (_state != OrbState.OnPlayer)
             {
                 return;
             }
@@ -118,14 +97,14 @@ namespace OrbOfDeception.Player.Orb
             _state = OrbState.DirectionalAttack;
             orbIdleParticles.Stop();
             directionAttackOrbParticles.Play();
-            _rigidbody.AddForce(direction * directionalAttackInitialForce, ForceMode2D.Impulse);
+            _rigidbody.velocity = directionalAttackInitialForce * direction;
         }
         
         private void FixedUpdate()
         {
             switch (_state)
             {
-                case OrbState.Idle:
+                case OrbState.OnPlayer:
                     var currentPosition = transform.position;
                     var orbIdlePosition = orbIdlePositionTransform.position;
 
@@ -140,6 +119,11 @@ namespace OrbOfDeception.Player.Orb
                 case OrbState.DirectionalAttack:
                     //_rigidbody.AddForce(-_rigidbody.velocity.normalized * attractionForce);
                     _rigidbody.velocity = _rigidbody.velocity * directionalAttackDecelerationFactor;
+                    if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
+                    {
+                        physicsCollider.enabled = false;
+                        _state = OrbState.Returning;
+                    }
                     break;
                 case OrbState.Returning:
                     var velocityValue = _rigidbody.velocity.magnitude;
@@ -184,7 +168,7 @@ namespace OrbOfDeception.Player.Orb
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Enemy") || _state == OrbState.Idle) return;
+            if (!other.CompareTag("Enemy") || _state == OrbState.OnPlayer) return;
             
             var enemy = other.GetComponent<EnemyController>();
 
@@ -203,10 +187,12 @@ namespace OrbOfDeception.Player.Orb
             if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost)
                 return;
             
-            var newVelocity = _rigidbody.velocity;
-            newVelocity += newVelocity.normalized * directionalAttackFirstBounceVelocityBoost;
-            _rigidbody.velocity = newVelocity;
-                
+            var newVelocity = _rigidbody.velocity.magnitude + directionalAttackFirstBounceVelocityBoost;
+            var oldVelocity = _rigidbody.velocity;
+            _rigidbody.velocity = _rigidbody.velocity.normalized * Mathf.Min(newVelocity, directionalAttackInitialForce);
+            
+            //Debug.Log(oldVelocity.magnitude + " " + newVelocity + " | Final velocity: " + _rigidbody.velocity.magnitude);
+            
             _hasReceivedAVelocityBoost = true;
         }
 
