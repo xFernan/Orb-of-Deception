@@ -22,6 +22,7 @@ namespace OrbOfDeception.Player
         private float _direction;
         private float jumpTimeCounter;
         private bool _isJumping;
+        private bool _isOnTheGround;
 
         public float Direction => _direction;
         #endregion
@@ -42,6 +43,8 @@ namespace OrbOfDeception.Player
         {
             _direction = inputManager.GetHorizontal();
 
+            CheckIfOnTheGround();
+            
             // Hacer script aparte.
             if (_direction != 0)
             {
@@ -49,12 +52,14 @@ namespace OrbOfDeception.Player
                 spriteObject.transform.localScale = new Vector3(directionRaw, 1, 1);
             }
             
-            _animator.SetBool("IsMoving", IsOnTheGround() && _direction != 0);
+            _animator.SetBool("IsMoving", _direction != 0);
+            _animator.SetBool("IsOnTheGround", _isOnTheGround);
+            _animator.SetBool("IsFalling", _rigidbody.velocity.y < 0);
         }
 
         private void Jump()
         {
-            if (!_isJumping && !IsOnTheGround())
+            if (!_isJumping && !_isOnTheGround)
                 return;
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
             _isJumping = true;
@@ -66,7 +71,7 @@ namespace OrbOfDeception.Player
             _isJumping = false;
         }
         
-        private bool IsOnTheGround() // Mover en un script aparte.
+        private void CheckIfOnTheGround() // Mover en un script aparte.
         {
             var isOnTheGround = false;
             foreach (var groundDetector in groundDetectors)
@@ -76,7 +81,7 @@ namespace OrbOfDeception.Player
                     break;
             }
 
-            return isOnTheGround;
+            _isOnTheGround = isOnTheGround;
         }
         
         private void OnDrawGizmos()
