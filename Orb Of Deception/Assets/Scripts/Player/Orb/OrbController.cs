@@ -19,6 +19,7 @@ namespace OrbOfDeception.Player.Orb
 
         private OrbState _state;
 
+        [SerializeField] private bool autoOrbRecover = true; // Provisional
         [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject bounceParticles;
         [SerializeField] private Transform orbIdlePositionTransform;
@@ -78,11 +79,18 @@ namespace OrbOfDeception.Player.Orb
 
         private void OnMouseClick(Vector2 mousePosition)
         {
-            var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
-            worldPosition2D.z = transform.position.z;
-            var direction = (worldPosition2D - transform.position).normalized;
+            if (_state == OrbState.OnPlayer)
+            {
+                var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+                worldPosition2D.z = transform.position.z;
+                var direction = (worldPosition2D - transform.position).normalized;
             
-            DirectionalAttack(direction);
+                DirectionalAttack(direction);
+            }
+            else if (_state == OrbState.Stopped)
+            {
+                _state = OrbState.Returning;
+            }
         }
 
         private void DirectionalAttack(Vector2 direction)
@@ -122,7 +130,13 @@ namespace OrbOfDeception.Player.Orb
                     if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
                     {
                         physicsCollider.enabled = false;
-                        _state = OrbState.Returning;
+                        if (autoOrbRecover)
+                            _state = OrbState.Returning;
+                        else
+                        {
+                            _rigidbody.velocity = Vector2.zero;
+                            _state = OrbState.Stopped;
+                        }
                     }
                     break;
                 case OrbState.Returning:
@@ -168,6 +182,13 @@ namespace OrbOfDeception.Player.Orb
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            // Provisional
+            if (other.CompareTag("Player") && _state == OrbState.Stopped)
+            {
+                _state = OrbState.Returning;
+            }
+            // Fin Provisional
+            
             if (!other.CompareTag("Enemy") || _state == OrbState.OnPlayer) return;
             
             var enemy = other.GetComponent<EnemyController>();
