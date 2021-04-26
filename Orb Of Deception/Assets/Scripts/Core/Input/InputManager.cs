@@ -6,9 +6,6 @@ namespace OrbOfDeception.Core.Input
 {
     public class InputManager : MonoBehaviour
     {
-
-        [SerializeField] private PlayerInput playerInput;
-        
         private float _horizontal;
         private float _vertical;
 
@@ -71,6 +68,5 @@ namespace OrbOfDeception.Core.Input
             var direction = Gamepad.current.leftStick.ReadValue().normalized;
             DirectionalAttack?.Invoke(direction);
         }
-        
     }
 }

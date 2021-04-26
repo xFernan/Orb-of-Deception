@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53eea4ccbe34c61a71c8d13bba2ac91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maskColor: 0
   health: 35
   velocity: 2.5
   chaseVelocity: 5
@@ -424,6 +425,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

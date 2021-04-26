@@ -278,7 +278,13 @@
             <e p="Orb" t="Include">
               <e p="OrbController.cs" t="Include" />
             </e>
-            <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerController" t="Include">
+              <e p="PlayerAnimationController.cs" t="Include" />
+              <e p="PlayerController.cs" t="Include" />
+              <e p="PlayerGroundDetector.cs" t="Include" />
+              <e p="PlayerHorizontalMovementController.cs" t="Include" />
+              <e p="PlayerJumpController.cs" t="Include" />
+            </e>
             <e p="PlayerLightBehaviour.cs" t="Include" />
           </e>
         </e>
