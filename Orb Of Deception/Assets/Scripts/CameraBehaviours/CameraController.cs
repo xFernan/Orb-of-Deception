@@ -5,7 +5,7 @@ namespace OrbOfDeception.CameraBehaviours
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private Transform cameraPlayerReferenceTransform;
-        [SerializeField] private CameraLimits cameraLimits;
+        private CameraLimits cameraLimits;
 
         private void Update()
         {
@@ -29,5 +29,11 @@ namespace OrbOfDeception.CameraBehaviours
 
             cameraTransform.position = newCameraPosition;
         }
+
+        public void UpdateCameraLimits(CameraLimits newCameraLimits)
+        {
+            cameraLimits = newCameraLimits;
+        }
+        
     }
 }

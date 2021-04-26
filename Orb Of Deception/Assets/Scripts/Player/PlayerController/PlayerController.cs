@@ -1,4 +1,5 @@
 ﻿using OrbOfDeception.Core.Input;
+using OrbOfDeception.Core.Scenes;
 using UnityEngine;
 
 namespace OrbOfDeception.Player

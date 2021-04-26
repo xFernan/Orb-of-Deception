@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OrbOfDeception.CameraBehaviours
@@ -6,6 +7,11 @@ namespace OrbOfDeception.CameraBehaviours
     {
         [SerializeField] private Transform limitSouthWest;
         [SerializeField] private Transform limitNorthEast;
+
+        private void Awake()
+        {
+            FindObjectOfType<CameraController>().UpdateCameraLimits(this);
+        }
 
         private void OnDrawGizmos()
         {
