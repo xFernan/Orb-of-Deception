@@ -2,11 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1Walking.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1Walking.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerConcentrating.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerFalling.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerIdle.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerJumping.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerKneeled.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerLanding.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/PlayerRunning.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentacion/GDD.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentacion/~$GDD.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerGroupController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerGroupController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +66,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RoomManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PlayerGroupController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DontDestroyOnLoadObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/AnimatedState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/EnemyState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/dszfgwseda.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingBehaviourç.cs" />
@@ -39,14 +82,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/ChasingState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/HurtState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/HurtState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/AttackingState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/ParallaxEffectController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraLimits.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" />
@@ -73,6 +113,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraLimits.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerGroupController.cs" />
       <option value="$PROJECT_DIR$/Assets/RoomManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Enemy2Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -158,6 +207,7 @@
       <workItem from="1618872139627" duration="708000" />
       <workItem from="1619398371963" duration="5074000" />
       <workItem from="1619472245611" duration="6564000" />
+      <workItem from="1620692589693" duration="4142000" />
     </task>
     <servers />
   </component>

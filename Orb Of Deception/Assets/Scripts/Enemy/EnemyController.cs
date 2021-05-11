@@ -19,6 +19,7 @@ namespace OrbOfDeception.Enemy
         
         #region Variables
 
+        [Header("Shared Enemy variables")]
         [SerializeField] protected MaskColor maskColor;
         [SerializeField] protected float health;
         

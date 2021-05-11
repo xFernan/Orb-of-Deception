@@ -215,7 +215,6 @@
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
-        <e p="PlayerGroupController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -252,6 +251,15 @@
             <e p="SingletonReferences.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
+            <e p="Enemy1" t="Include">
+              <e p="Enemy1Controller.cs" t="Include" />
+              <e p="Enemy1WalkingState.cs" t="Include" />
+            </e>
+            <e p="Enemy2" t="Include">
+              <e p="Enemy2ChasingState.cs" t="Include" />
+              <e p="Enemy2Controller.cs" t="Include" />
+              <e p="Enemy2IdleState.cs" t="Include" />
+            </e>
             <e p="EnemyController.cs" t="Include" />
             <e p="EnemyState.cs" t="Include" />
             <e p="FlyingEnemy" t="Include">
@@ -292,6 +300,7 @@
               <e p="PlayerHorizontalMovementController.cs" t="Include" />
               <e p="PlayerJumpController.cs" t="Include" />
             </e>
+            <e p="PlayerGroupController.cs" t="Include" />
             <e p="PlayerLightBehaviour.cs" t="Include" />
           </e>
         </e>
