@@ -1,11 +1,11 @@
-﻿using System;
+﻿using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
 using OrbOfDeception.Enemy;
 using UnityEngine;
 
 namespace OrbOfDeception.Player.Orb
 {
-    public sealed class OrbController : MonoBehaviour
+    public sealed class OrbController : GameEntity
     {
         #region Variables
 
@@ -37,7 +37,7 @@ namespace OrbOfDeception.Player.Orb
         [SerializeField] private float directionalAttackMinVelocityToChangeState = 1;
         [SerializeField] private float directionalAttackFirstBounceVelocityBoost = 1.5f;
 
-        private bool _isWhite;
+        private EntityColor _orbColor;
         private bool _hasReceivedAVelocityBoost;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
@@ -52,7 +52,7 @@ namespace OrbOfDeception.Player.Orb
             _spriteRenderer = GetComponent<SpriteRenderer>();
             physicsCollider.enabled = false;
             _state = OrbState.OnPlayer;
-            _isWhite = true;
+            _orbColor = EntityColor.White;
             _hasReceivedAVelocityBoost = false;
             directionAttackOrbParticles.Stop();
 
@@ -150,20 +150,23 @@ namespace OrbOfDeception.Player.Orb
 
         private void ChangeColor()
         {
-            _isWhite = !_isWhite;
+            if (_orbColor == EntityColor.Black)
+                _orbColor = EntityColor.White;
+            else if (_orbColor == EntityColor.White)
+                _orbColor = EntityColor.Black;
             
             var directionalAttackParticles = directionAttackOrbParticles.main;
             var idleParticles = orbIdleParticles.main;
             var colorChangeParticles = orbColorChangeParticles.main;
             
-            if (_isWhite)
+            if (_orbColor == EntityColor.White)
             {
                 _spriteRenderer.color = Color.white;
                 directionalAttackParticles.startColor = Color.white;
                 idleParticles.startColor = Color.white;
                 colorChangeParticles.startColor = Color.white;
             }
-            else
+            else if (_orbColor == EntityColor.Black)
             {
                 _spriteRenderer.color = new Color(0.1f, 0.1f, 0.1f);
                 directionalAttackParticles.startColor = Color.black;
@@ -182,28 +185,18 @@ namespace OrbOfDeception.Player.Orb
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Provisional
-            if (other.CompareTag("Player") && _state == OrbState.Stopped)
-            {
-                _state = OrbState.Returning;
-            }
-            // Fin Provisional
+            if (_state == OrbState.OnPlayer) return;
             
-            if (!other.CompareTag("Enemy") || _state == OrbState.OnPlayer) return;
-            
-            var enemy = other.GetComponent<EnemyController>();
+            var orbHittable = other.gameObject.GetComponent<IOrbHittable>();
 
-            if ((!enemy.IsWhite && _isWhite) || (enemy.IsWhite && !_isWhite))
-            {
-                other.GetComponent<EnemyController>().ReceiveDamage(10);
-            }
+            orbHittable?.Hit(_orbColor, 10/*PROVISIONAL*/);
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            SpawnBounceParticles(other.contacts[0].point, _isWhite ? Color.white : new Color(0.1f, 0.1f, 0.1f));
+            SpawnBounceParticles(other.contacts[0].point, _orbColor == EntityColor.White ? Color.white : new Color(0.1f, 0.1f, 0.1f));
             
             if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost)
                 return;
@@ -222,10 +215,7 @@ namespace OrbOfDeception.Player.Orb
             var bounceParticlesObject = Instantiate(bounceParticles, particlesPosition, Quaternion.identity); // Cambiar por Object Pool.
             var bounceParticlesMain = bounceParticlesObject.GetComponent<ParticleSystem>().main;
 
-            var collisionScreenPosition = Camera.main.WorldToScreenPoint(particlesPosition);
-            
-            var t2d = 
-            
+            Camera.main.WorldToScreenPoint(particlesPosition);
             bounceParticlesMain.startColor = particlesColor;
         }
         

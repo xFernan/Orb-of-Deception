@@ -39,13 +39,6 @@ namespace OrbOfDeception.Enemy.Enemy1
         {
             SetInitialState(WalkingState);
         }
-
-        protected override void Die()
-        {
-            base.Die();
-
-            Destroy(gameObject);
-        }
         
         private void OnDrawGizmos()
         {

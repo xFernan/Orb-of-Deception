@@ -38,7 +38,7 @@ namespace OrbOfDeception.Enemy.Enemy2
 
             _updatePathDelayer = new MethodDelayer(UpdatePath);
 
-            animatorBoolParameterName = "IsChasing";
+            //animatorBoolParameterName = "IsChasing";
         }
 
         public override void Enter()

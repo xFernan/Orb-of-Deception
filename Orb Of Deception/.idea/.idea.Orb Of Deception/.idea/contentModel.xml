@@ -239,10 +239,12 @@
             <e p="CameraLimits.cs" t="Include" />
           </e>
           <e p="Core" t="Include">
+            <e p="GameEntity.cs" t="Include" />
             <e p="Input" t="Include">
               <e p="InputManager.cs" t="Include" />
               <e p="player.cs" t="Include" />
             </e>
+            <e p="IOrbHittable.cs" t="Include" />
             <e p="MethodDelayer.cs" t="Include" />
             <e p="ParallaxEffectController.cs" t="Include" />
             <e p="Scenes" t="Include">
@@ -261,6 +263,7 @@
               <e p="Enemy2IdleState.cs" t="Include" />
             </e>
             <e p="EnemyController.cs" t="Include" />
+            <e p="EnemyDamageArea.cs" t="Include" />
             <e p="EnemyState.cs" t="Include" />
             <e p="FlyingEnemy" t="Include">
               <e p="AttackingState.cs" t="Include" />
@@ -293,10 +296,12 @@
             <e p="Orb" t="Include">
               <e p="OrbController.cs" t="Include" />
             </e>
+            <e p="PlayerAreaDamage.cs" t="Include" />
             <e p="PlayerController" t="Include">
               <e p="PlayerAnimationController.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
               <e p="PlayerGroundDetector.cs" t="Include" />
+              <e p="PlayerHealthController.cs" t="Include" />
               <e p="PlayerHorizontalMovementController.cs" t="Include" />
               <e p="PlayerJumpController.cs" t="Include" />
             </e>

@@ -65,16 +65,11 @@ namespace OrbOfDeception.Enemy.GroundedEnemy
 
         public override void ReceiveDamage(float damage)
         {
+            if (health <= 0) return;
+            
             base.ReceiveDamage(damage);
 
             SetState(health > 0 ? HurtState : DyingState);
-        }
-
-        protected override void Die()
-        {
-            base.Die();
-
-            Destroy(gameObject);
         }
         
         private void OnDrawGizmos()

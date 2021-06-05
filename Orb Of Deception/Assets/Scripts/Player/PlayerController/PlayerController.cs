@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Core.Input;
+﻿using System;
+using OrbOfDeception.Core.Input;
 using OrbOfDeception.Core.Scenes;
 using UnityEngine;
 
@@ -17,13 +18,16 @@ namespace OrbOfDeception.Player
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
+        private Animator _spriteAnimator;
         private float _direction;
         
         private PlayerJumpController _playerJumpController;
         private PlayerGroundDetector _playerGroundDetector;
         private PlayerHorizontalMovementController _playerHorizontalMovementController;
-        
         private PlayerAnimationController _playerAnimationController;
+        private PlayerHealthController _playerHealthController;
+        
+        private static readonly int Invulnerable = Animator.StringToHash("Invulnerable");
 
         public float Direction => _direction; // Cambiar.
         #endregion
@@ -33,6 +37,7 @@ namespace OrbOfDeception.Player
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _spriteAnimator = spriteObject.GetComponent<Animator>();
             
             _playerGroundDetector = new PlayerGroundDetector(groundDetectors, groundDetectionRayDistance);
             _playerJumpController = new PlayerJumpController(_rigidbody, jumpForce, jumpTime, _playerGroundDetector);
@@ -60,6 +65,12 @@ namespace OrbOfDeception.Player
             _playerAnimationController.Update();
         }
 
+        public void GetDamaged(int damage)
+        {
+            _playerHealthController.ReceiveDamage(damage);
+            //_playerAnimationController.PlayHurtAnimation();
+        }
+        
         private void OnDrawGizmos()
         {
             _playerGroundDetector?.OnDrawGizmos();
@@ -70,6 +81,16 @@ namespace OrbOfDeception.Player
             _playerHorizontalMovementController?.FixedUpdate();
             _playerJumpController?.FixedUpdate();
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Debug.Log("Enemigo colisionado");
+                _spriteAnimator.SetTrigger(Invulnerable);
+            }
+        }
+
         #endregion
     }
 }
