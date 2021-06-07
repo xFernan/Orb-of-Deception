@@ -13,14 +13,11 @@ namespace OrbOfDeception.Player.Orb
         {
             OnPlayer,
             Returning,
-            DirectionalAttack,
-            Stopped
+            DirectionalAttack
         }
 
         private OrbState _state;
 
-        [SerializeField] private bool autoOrbRecover = true; // Provisional
-        [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject bounceParticles;
         [SerializeField] private Transform orbIdlePositionTransform;
         [SerializeField] private ParticleSystem directionAttackOrbParticles;
@@ -37,6 +34,7 @@ namespace OrbOfDeception.Player.Orb
         [SerializeField] private float directionalAttackMinVelocityToChangeState = 1;
         [SerializeField] private float directionalAttackFirstBounceVelocityBoost = 1.5f;
 
+        private InputManager _inputManager;
         private EntityColor _orbColor;
         private bool _hasReceivedAVelocityBoost;
         private Rigidbody2D _rigidbody;
@@ -50,15 +48,17 @@ namespace OrbOfDeception.Player.Orb
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _inputManager = FindObjectOfType<InputManager>();
+            
             physicsCollider.enabled = false;
             _state = OrbState.OnPlayer;
             _orbColor = EntityColor.White;
             _hasReceivedAVelocityBoost = false;
             directionAttackOrbParticles.Stop();
 
-            inputManager.DirectionalAttack = DirectionalAttack;
-            inputManager.Click = OnMouseClick;
-            inputManager.ChangeOrbColor = ChangeColor;
+            _inputManager.DirectionalAttack = DirectionalAttack;
+            _inputManager.Click = OnMouseClick;
+            _inputManager.ChangeOrbColor = ChangeColor;
         }
 
         private void Update()
@@ -81,24 +81,22 @@ namespace OrbOfDeception.Player.Orb
         {
             if (_state == OrbState.OnPlayer)
             {
-                var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
-                worldPosition2D.z = transform.position.z;
-                var direction = (worldPosition2D - transform.position).normalized;
-            
-                DirectionalAttack(direction);
-            }
-            else if (_state == OrbState.Stopped)
-            {
-                _state = OrbState.Returning;
+                DirectionalAttack(GetDirectionFromOrbToMouse());
             }
         }
 
+        private Vector3 GetDirectionFromOrbToMouse()
+        {
+            var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            worldPosition2D.z = transform.position.z;
+            var direction = (worldPosition2D - transform.position).normalized;
+            
+            return direction;
+        }
+        
         private void DirectionalAttack(Vector2 direction)
         {
-            if (_state != OrbState.OnPlayer)
-            {
-                return;
-            }
+            if (_state != OrbState.OnPlayer) return;
             
             physicsCollider.enabled = true;
             _hasReceivedAVelocityBoost = false;
@@ -130,13 +128,7 @@ namespace OrbOfDeception.Player.Orb
                     if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
                     {
                         physicsCollider.enabled = false;
-                        if (autoOrbRecover)
-                            _state = OrbState.Returning;
-                        else
-                        {
-                            _rigidbody.velocity = Vector2.zero;
-                            _state = OrbState.Stopped;
-                        }
+                        _state = OrbState.Returning;
                     }
                     break;
                 case OrbState.Returning:
@@ -204,8 +196,6 @@ namespace OrbOfDeception.Player.Orb
             var newVelocity = _rigidbody.velocity.magnitude + directionalAttackFirstBounceVelocityBoost;
             var oldVelocity = _rigidbody.velocity;
             _rigidbody.velocity = _rigidbody.velocity.normalized * Mathf.Min(newVelocity, directionalAttackInitialForce);
-            
-            //Debug.Log(oldVelocity.magnitude + " " + newVelocity + " | Final velocity: " + _rigidbody.velocity.magnitude);
             
             _hasReceivedAVelocityBoost = true;
         }

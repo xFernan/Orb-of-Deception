@@ -25,11 +25,13 @@ namespace OrbOfDeception.Enemy.Enemy2
         #region Methods
 
         public ChasingState(EnemyController enemyController, float distanceToChase,
-            Rigidbody2D rigidbody, Seeker seeker, float velocity, Transform spriteObject, Transform player, float nextWaypointDistance) : base(
+            Seeker seeker, float velocity, Transform spriteObject, Transform player, float nextWaypointDistance) : base(
             enemyController)
         {
+            var enemy = enemyController as Enemy2Controller;
+            
             _distanceToChase = distanceToChase;
-            _rigidbody = rigidbody;
+            _rigidbody = enemy.Rigidbody;
             _seeker = seeker;
             _velocity = velocity;
             _spriteObject = spriteObject;

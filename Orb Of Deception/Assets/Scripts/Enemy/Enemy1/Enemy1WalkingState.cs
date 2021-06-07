@@ -26,11 +26,13 @@ namespace OrbOfDeception.Enemy.Enemy1
         
         #region Methods
 
-        public WalkingState(EnemyController enemyController, float velocity, int initialDirection, Rigidbody2D rigidbody, float detectionDistance, float timeToChangeDirectionAgain, Transform leftGroundDetector, Transform rightGroundDetector, Transform[] leftWallDetectors, Transform[] rightWallDetectors) : base(enemyController)
+        public WalkingState(EnemyController enemyController, float velocity, int initialDirection, float detectionDistance, float timeToChangeDirectionAgain, Transform leftGroundDetector, Transform rightGroundDetector, Transform[] leftWallDetectors, Transform[] rightWallDetectors) : base(enemyController)
         {
+            var enemy = enemyController as Enemy1Controller;
+            
             _velocity = velocity;
             _direction = initialDirection;
-            _rigidbody = rigidbody;
+            _rigidbody = enemy.Rigidbody;
             _detectionDistance = detectionDistance;
             _timeToChangeDirectionAgain = timeToChangeDirectionAgain;
             _leftGroundDetector = leftGroundDetector;

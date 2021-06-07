@@ -23,14 +23,20 @@
             _currentState.Enter();
         }
 
+        public void ExitState()
+        {
+            _currentState.Exit();
+            _currentState = null;
+        }
+        
         public void Update(float deltaTime)
         {
-            _currentState.Update(deltaTime);
+            _currentState?.Update(deltaTime);
         }
 
         public void FixedUpdate(float deltaTime)
         {
-            _currentState.FixedUpdate(deltaTime);
+            _currentState?.FixedUpdate(deltaTime);
         }
         
         #endregion

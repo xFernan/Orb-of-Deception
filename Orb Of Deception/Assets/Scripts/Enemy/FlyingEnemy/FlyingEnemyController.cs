@@ -47,7 +47,7 @@ namespace OrbOfDeception.Enemy.FlyingEnemy
             SetInitialState(IdleState);
         }
 
-        public override void ReceiveDamage(float damage)
+        protected override void ReceiveDamage(float damage)
         {
             if (health <= 0) return;
             

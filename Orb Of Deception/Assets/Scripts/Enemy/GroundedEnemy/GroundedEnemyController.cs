@@ -63,7 +63,7 @@ namespace OrbOfDeception.Enemy.GroundedEnemy
             SetInitialState(WalkingState);
         }
 
-        public override void ReceiveDamage(float damage)
+        protected override void ReceiveDamage(float damage)
         {
             if (health <= 0) return;
             

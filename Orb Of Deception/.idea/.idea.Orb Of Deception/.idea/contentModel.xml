@@ -264,6 +264,7 @@
             </e>
             <e p="EnemyController.cs" t="Include" />
             <e p="EnemyDamageArea.cs" t="Include" />
+            <e p="EnemyMaterialController.cs" t="Include" />
             <e p="EnemyState.cs" t="Include" />
             <e p="FlyingEnemy" t="Include">
               <e p="AttackingState.cs" t="Include" />

@@ -19,6 +19,7 @@ namespace OrbOfDeception.Enemy
         private Dictionary<int, EnemyState> _states;
         
         private static readonly int Hurt = Animator.StringToHash("Hurt");
+        private static readonly int Dying = Animator.StringToHash("Die");
 
         #endregion
         
@@ -84,8 +85,9 @@ namespace OrbOfDeception.Enemy
         #region Shared Enemy Methods
         protected virtual void Die()
         {
-            //Anim.Play("Die");
-            Destroy(gameObject); // Provisional
+            _stateMachine.ExitState();
+            Anim.enabled = false;
+            spriteAnim!.SetTrigger(Dying);
         }
 
         public void GetDamaged(EntityColor damageColor, int damage)
@@ -95,8 +97,8 @@ namespace OrbOfDeception.Enemy
                 ReceiveDamage(damage);
             }
         }
-        
-        public virtual void ReceiveDamage(float damage)
+
+        protected virtual void ReceiveDamage(float damage)
         {
             if (health <= 0)
                 return;
@@ -107,6 +109,11 @@ namespace OrbOfDeception.Enemy
                 Die();
             else
                 spriteAnim!.SetTrigger(Hurt);
+        }
+
+        public EntityColor GetMaskColor()
+        {
+            return maskColor;
         }
         
         #endregion

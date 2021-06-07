@@ -12,10 +12,11 @@ namespace OrbOfDeception.Enemy.Enemy2
         [SerializeField] private float distanceToChase;
         [SerializeField] private float nextWaypointDistance;
 
-        private Rigidbody2D _rigidbody;
         private Transform _spriteObject;
         private Transform _player;
         private Seeker _seeker;
+        
+        public Rigidbody2D Rigidbody { get; private set; }
         
         public const int IdleState = 0;
         public const int ChasingState = 1;
@@ -28,25 +29,18 @@ namespace OrbOfDeception.Enemy.Enemy2
         {
             base.Awake();
 
-            _rigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody = GetComponent<Rigidbody2D>();
             _seeker = GetComponent<Seeker>();
             _spriteObject = GetComponentInChildren<SpriteRenderer>().transform;
             _player = GameObject.FindWithTag("Player").transform; // Provisional
             
             AddState(IdleState, new IdleState(this, _player, distanceToChase));
-            AddState(ChasingState, new ChasingState(this, distanceToChase, _rigidbody, _seeker, velocity, _spriteObject, _player, nextWaypointDistance));
+            AddState(ChasingState, new ChasingState(this, distanceToChase, _seeker, velocity, _spriteObject, _player, nextWaypointDistance));
         }
 
         private void Start()
         {
             SetInitialState(IdleState);
-        }
-
-        protected override void Die()
-        {
-            base.Die();
-
-            Destroy(gameObject);
         }
 
         private void OnDrawGizmos()

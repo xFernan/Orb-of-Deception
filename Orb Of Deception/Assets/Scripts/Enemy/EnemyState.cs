@@ -11,7 +11,7 @@ namespace OrbOfDeception.Enemy
         
         #region Methods
 
-        public EnemyState(EnemyController enemyController)
+        protected EnemyState(EnemyController enemyController)
         {
             this.enemyController = enemyController;
         }

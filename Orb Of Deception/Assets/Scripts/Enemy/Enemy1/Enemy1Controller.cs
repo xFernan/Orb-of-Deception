@@ -16,7 +16,7 @@ namespace OrbOfDeception.Enemy.Enemy1
         [SerializeField] private Transform[] leftWallDetectors;
         [SerializeField] private Transform[] rightWallDetectors;
 
-        private Rigidbody2D _rigidbody;
+        public Rigidbody2D Rigidbody { get; private set; }
         
         public const int WalkingState = 0;
 
@@ -28,10 +28,10 @@ namespace OrbOfDeception.Enemy.Enemy1
         {
             base.Awake();
 
-            _rigidbody = GetComponent<Rigidbody2D>();
+            Rigidbody = GetComponent<Rigidbody2D>();
             
             AddState(WalkingState,
-                new WalkingState(this, velocity, initialDirection, _rigidbody, rayDetectorDistance, timeToChangeDirectionAgain,
+                new WalkingState(this, velocity, initialDirection, rayDetectorDistance, timeToChangeDirectionAgain,
                     leftGroundDetector, rightGroundDetector, leftWallDetectors, rightWallDetectors));
         }
 
