@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using OrbOfDeception.Patterns;
+using OrbOfDeception.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy
@@ -28,6 +29,7 @@ namespace OrbOfDeception.Enemy
         public Action GoToNextStateCallback { set; private get; }
         public Animator Anim  { private set; get; }
         public bool IsWhite => maskColor == EntityColor.White;
+        private bool _isDying = false;
         
         #endregion
 
@@ -51,6 +53,18 @@ namespace OrbOfDeception.Enemy
             _stateMachine?.FixedUpdate(Time.deltaTime);
         }
         
+        // Provisional
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (_isDying) return;
+            
+            var playerAreaDamage = other.GetComponent<PlayerAreaDamage>();
+            if (playerAreaDamage != null)
+            {
+                playerAreaDamage.ReceiveDamage(10);
+            }
+        }
+
         #endregion
         
         #region State Machine Methods
@@ -85,6 +99,7 @@ namespace OrbOfDeception.Enemy
         #region Shared Enemy Methods
         protected virtual void Die()
         {
+            _isDying = true;
             _stateMachine.ExitState();
             Anim.enabled = false;
             spriteAnim!.SetTrigger(Dying);

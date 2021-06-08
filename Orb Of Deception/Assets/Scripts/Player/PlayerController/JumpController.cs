@@ -2,27 +2,27 @@
 
 namespace OrbOfDeception.Player
 {
-    public class PlayerJumpController
+    public class JumpController
     {
         private readonly Rigidbody2D _rigidbody;
-        private readonly PlayerGroundDetector _playerGroundDetector;
+        private readonly GroundDetector _groundDetector;
         private readonly float _jumpForce;
         private readonly float _jumpTime;
         
         private float _jumpTimeCounter;
         private bool _isJumping;
 
-        public PlayerJumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, PlayerGroundDetector playerGroundDetector)
+        public JumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, GroundDetector groundDetector)
         {
             _rigidbody = rigidbody;
-            _playerGroundDetector = playerGroundDetector;
+            _groundDetector = groundDetector;
             _jumpForce = jumpForce;
             _jumpTime = jumpTime;
         }
 
         public void Jump()
         {
-            if (!_isJumping && !_playerGroundDetector.IsOnTheGround())
+            if (!_isJumping && !_groundDetector.IsOnTheGround())
                 return;
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
             _isJumping = true;

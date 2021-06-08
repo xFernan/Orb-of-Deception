@@ -299,12 +299,14 @@
             </e>
             <e p="PlayerAreaDamage.cs" t="Include" />
             <e p="PlayerController" t="Include">
-              <e p="PlayerAnimationController.cs" t="Include" />
+              <e p="AnimationController.cs" t="Include" />
+              <e p="GroundDetector.cs" t="Include" />
+              <e p="HealthController.cs" t="Include" />
+              <e p="HorizontalMovementController.cs" t="Include" />
+              <e p="HurtController.cs" t="Include" />
+              <e p="JumpController.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
-              <e p="PlayerGroundDetector.cs" t="Include" />
-              <e p="PlayerHealthController.cs" t="Include" />
-              <e p="PlayerHorizontalMovementController.cs" t="Include" />
-              <e p="PlayerJumpController.cs" t="Include" />
+              <e p="PlayerMaterialController.cs" t="Include" />
             </e>
             <e p="PlayerGroupController.cs" t="Include" />
             <e p="PlayerLightBehaviour.cs" t="Include" />

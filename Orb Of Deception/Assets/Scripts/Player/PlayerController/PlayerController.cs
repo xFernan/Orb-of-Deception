@@ -1,6 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
 using OrbOfDeception.Core.Input;
-using OrbOfDeception.Core.Scenes;
 using UnityEngine;
 
 namespace OrbOfDeception.Player
@@ -11,23 +10,24 @@ namespace OrbOfDeception.Player
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private float jumpTime = 1;
+        [SerializeField] private float timeInvulnerable = 2;
         [SerializeField] private GameObject spriteObject;
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
         [SerializeField] private InputManager inputManager;
+        private int initialHealth = 100; // Provisional.
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private Animator _spriteAnimator;
         private float _direction;
         
-        private PlayerJumpController _playerJumpController;
-        private PlayerGroundDetector _playerGroundDetector;
-        private PlayerHorizontalMovementController _playerHorizontalMovementController;
-        private PlayerAnimationController _playerAnimationController;
-        private PlayerHealthController _playerHealthController;
-        
-        private static readonly int Invulnerable = Animator.StringToHash("Invulnerable");
+        public JumpController JumpController { get; private set; }
+        public GroundDetector GroundDetector { get; private set; }
+        public HorizontalMovementController HorizontalMovementController { get; private set; }
+        public AnimationController AnimationController { get; private set; }
+        public HealthController HealthController { get; private set; }
+        public HurtController HurtController { get; private set; }
 
         public float Direction => _direction; // Cambiar.
         #endregion
@@ -39,20 +39,29 @@ namespace OrbOfDeception.Player
             _animator = GetComponent<Animator>();
             _spriteAnimator = spriteObject.GetComponent<Animator>();
             
-            _playerGroundDetector = new PlayerGroundDetector(groundDetectors, groundDetectionRayDistance);
-            _playerJumpController = new PlayerJumpController(_rigidbody, jumpForce, jumpTime, _playerGroundDetector);
-            _playerHorizontalMovementController = new PlayerHorizontalMovementController(_rigidbody, velocity, inputManager);
-            _playerAnimationController = new PlayerAnimationController(_animator, _rigidbody, inputManager, _playerGroundDetector);
+            GroundDetector = new GroundDetector(groundDetectors, groundDetectionRayDistance);
+            JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, GroundDetector);
+            HorizontalMovementController = new HorizontalMovementController(_rigidbody, velocity, inputManager);
+            AnimationController = new AnimationController(_animator, _rigidbody, inputManager, GroundDetector);
+            HealthController = new HealthController(this, initialHealth);
+            HurtController = new HurtController(timeInvulnerable, _spriteAnimator);
             
-            inputManager.Jump = _playerJumpController.Jump;
-            inputManager.StopJumping = _playerJumpController.StopJumping;
+            inputManager.Jump = JumpController.Jump;
+            inputManager.StopJumping = JumpController.StopJumping;
         }
 
         private void Update()
         {
             _direction = inputManager.GetHorizontal();
 
-            _playerGroundDetector.Update();
+            GroundDetector.Update();
+            
+            HurtController.Update(Time.deltaTime);
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Q))
+            {
+                GetDamaged(10);
+            }
             
             // Provisional.
             if (_direction != 0)
@@ -62,35 +71,33 @@ namespace OrbOfDeception.Player
             }
             // Fin provisional.
             
-            _playerAnimationController.Update();
+            AnimationController.Update();
         }
 
+        public void Die() // Provisional.
+        {
+            Debug.Log("Player died.");
+        }
+        
         public void GetDamaged(int damage)
         {
-            _playerHealthController.ReceiveDamage(damage);
-            //_playerAnimationController.PlayHurtAnimation();
+            if (HurtController.IsInvulnerable()) return;
+
+            Camera.main.DOShakePosition(0.7f, 0.4f);
+            HealthController.ReceiveDamage(damage);
+            HurtController.StartHurt();
         }
         
         private void OnDrawGizmos()
         {
-            _playerGroundDetector?.OnDrawGizmos();
+            GroundDetector?.OnDrawGizmos();
         }
 
         private void FixedUpdate()
         {
-            _playerHorizontalMovementController?.FixedUpdate();
-            _playerJumpController?.FixedUpdate();
+            HorizontalMovementController?.FixedUpdate();
+            JumpController?.FixedUpdate();
         }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                Debug.Log("Enemigo colisionado");
-                _spriteAnimator.SetTrigger(Invulnerable);
-            }
-        }
-
         #endregion
     }
 }

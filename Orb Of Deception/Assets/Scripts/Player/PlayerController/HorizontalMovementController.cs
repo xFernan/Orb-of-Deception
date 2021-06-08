@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace OrbOfDeception.Player
 {
-    public class PlayerHorizontalMovementController
+    public class HorizontalMovementController
     {
         private readonly Rigidbody2D _rigidbody;
         private readonly float _velocity;
         private readonly InputManager _inputManager;
 
-        public PlayerHorizontalMovementController(Rigidbody2D rigidbody, float velocity, InputManager inputManager)
+        public HorizontalMovementController(Rigidbody2D rigidbody, float velocity, InputManager inputManager)
         {
             _rigidbody = rigidbody;
             _velocity = velocity;

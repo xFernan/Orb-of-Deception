@@ -2,14 +2,14 @@
 
 namespace OrbOfDeception.Player
 {
-    public class PlayerGroundDetector
+    public class GroundDetector
     {
         private readonly Transform[] _groundDetectors;
         private readonly float _groundDetectionRayDistance;
         
         private bool _isOnTheGround;
 
-        public PlayerGroundDetector(Transform[] groundDetectors, float groundDetectionRayDistance)
+        public GroundDetector(Transform[] groundDetectors, float groundDetectionRayDistance)
         {
             _groundDetectors = groundDetectors;
             _groundDetectionRayDistance = groundDetectionRayDistance;
