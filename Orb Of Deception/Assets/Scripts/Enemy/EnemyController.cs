@@ -107,6 +107,7 @@ namespace OrbOfDeception.Enemy
 
         public void GetDamaged(EntityColor damageColor, int damage)
         {
+            Debug.Log("Get damaged");
             if (maskColor != damageColor)
             {
                 ReceiveDamage(damage);

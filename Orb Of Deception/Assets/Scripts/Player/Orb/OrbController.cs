@@ -23,7 +23,6 @@ namespace OrbOfDeception.Player.Orb
         [SerializeField] private ParticleSystem directionAttackOrbParticles;
         [SerializeField] private ParticleSystem orbIdleParticles;
         [SerializeField] private ParticleSystem orbColorChangeParticles;
-        [SerializeField] private Collider2D physicsCollider;
         [SerializeField] private float directionalAttackInitialForce;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
@@ -39,6 +38,7 @@ namespace OrbOfDeception.Player.Orb
         private bool _hasReceivedAVelocityBoost;
         private Rigidbody2D _rigidbody;
         private SpriteRenderer _spriteRenderer;
+        private Collider2D _physicsCollider;
         
         #endregion
 
@@ -49,8 +49,9 @@ namespace OrbOfDeception.Player.Orb
             _rigidbody = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _inputManager = FindObjectOfType<InputManager>();
+            _physicsCollider = GetComponent<Collider2D>();
             
-            physicsCollider.enabled = false;
+            _physicsCollider.enabled = false;
             _state = OrbState.OnPlayer;
             _orbColor = EntityColor.White;
             _hasReceivedAVelocityBoost = false;
@@ -98,7 +99,7 @@ namespace OrbOfDeception.Player.Orb
         {
             if (_state != OrbState.OnPlayer) return;
             
-            physicsCollider.enabled = true;
+            _physicsCollider.enabled = true;
             _hasReceivedAVelocityBoost = false;
             _state = OrbState.DirectionalAttack;
             orbIdleParticles.Stop();
@@ -127,7 +128,7 @@ namespace OrbOfDeception.Player.Orb
                     _rigidbody.velocity = _rigidbody.velocity * directionalAttackDecelerationFactor;
                     if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
                     {
-                        physicsCollider.enabled = false;
+                        _physicsCollider.enabled = false;
                         _state = OrbState.Returning;
                     }
                     break;
@@ -175,11 +176,11 @@ namespace OrbOfDeception.Player.Orb
             Gizmos.DrawWireSphere(transform.position, radiusToGoIdle);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerObjectInit(GameObject hittableObject)
         {
             if (_state == OrbState.OnPlayer) return;
             
-            var orbHittable = other.gameObject.GetComponent<IOrbHittable>();
+            var orbHittable = hittableObject.GetComponent<IOrbHittable>();
 
             orbHittable?.Hit(_orbColor, 10/*PROVISIONAL*/);
         }
