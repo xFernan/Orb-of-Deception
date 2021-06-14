@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using OrbOfDeception.Core.Input;
 using UnityEngine;
 
@@ -29,7 +30,9 @@ namespace OrbOfDeception.Player
         public HealthController HealthController { get; private set; }
         public HurtController HurtController { get; private set; }
 
-        public float Direction => _direction; // Cambiar.
+        public static Action<int> onDirectionChanged;
+        public float Direction { get; private set; }
+        public bool IsMoving { get; private set; }
         #endregion
     
         #region Methods
@@ -52,7 +55,7 @@ namespace OrbOfDeception.Player
 
         private void Update()
         {
-            _direction = inputManager.GetHorizontal();
+            var moveDirection = inputManager.GetHorizontal();
 
             GroundDetector.Update();
             
@@ -62,14 +65,18 @@ namespace OrbOfDeception.Player
             {
                 GetDamaged(10);
             }
+
+            IsMoving = moveDirection != 0;
             
-            // Provisional.
-            if (_direction != 0)
+            if (IsMoving)
             {
-                var directionRaw = (_direction > 0) ? 1 : -1;
-                spriteObject.transform.localScale = new Vector3(directionRaw, 1, 1);
+                var haveDirectionChanged = Direction != moveDirection;
+
+                Direction = moveDirection;
+                
+                if (haveDirectionChanged)
+                    onDirectionChanged((int) moveDirection);
             }
-            // Fin provisional.
             
             AnimationController.Update();
         }

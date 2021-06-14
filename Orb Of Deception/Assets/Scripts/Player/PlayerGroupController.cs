@@ -1,15 +1,13 @@
-using System;
 using OrbOfDeception.CameraBehaviours;
-using OrbOfDeception.Player;
 using OrbOfDeception.Player.Orb;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Player
 {
     public class PlayerGroupController : MonoBehaviour
     {
 
-        public static PlayerGroupController instance;
+        public static PlayerGroupController Instance { get; private set; }
         
         [SerializeField] private PlayerController playerController;
         [SerializeField] private OrbController orbController;
@@ -18,19 +16,21 @@ namespace OrbOfDeception
         private void Awake()
         {
             DontDestroyOnLoad(this);
-            instance = this;
+            Instance = this;
         }
 
         private void OnDestroy()
         {
-            instance = null;
+            Instance = null;
         }
 
         public void SetPositionInNewRoom(Vector3 newPlayerPosition)
         {
-            var movement = newPlayerPosition - playerController.transform.position;
+            var playerTransform = playerController.transform;
+            
+            var movement = newPlayerPosition - playerTransform.position;
 
-            playerController.transform.position = newPlayerPosition;
+            playerTransform.position = newPlayerPosition;
             orbController.transform.position += movement;
             cameraController.transform.position += movement;
         }

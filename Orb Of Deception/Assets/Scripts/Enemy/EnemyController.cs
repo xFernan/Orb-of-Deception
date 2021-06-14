@@ -19,7 +19,7 @@ namespace OrbOfDeception.Enemy
         private FiniteStateMachine _stateMachine;
         private Dictionary<int, EnemyState> _states;
         
-        private static readonly int Hurt = Animator.StringToHash("Hurt");
+        private static readonly int BeingHurt = Animator.StringToHash("Hurt");
         private static readonly int Dying = Animator.StringToHash("Die");
 
         #endregion
@@ -107,7 +107,6 @@ namespace OrbOfDeception.Enemy
 
         public void GetDamaged(EntityColor damageColor, int damage)
         {
-            Debug.Log("Get damaged");
             if (maskColor != damageColor)
             {
                 ReceiveDamage(damage);
@@ -120,13 +119,18 @@ namespace OrbOfDeception.Enemy
                 return;
             
             health = Mathf.Max(0, health - damage);
-            
+
             if (health <= 0)
                 Die();
             else
-                spriteAnim!.SetTrigger(Hurt);
+                Hurt();
         }
 
+        protected virtual void Hurt()
+        {
+            spriteAnim!.SetTrigger(BeingHurt);
+        }
+        
         public EntityColor GetMaskColor()
         {
             return maskColor;

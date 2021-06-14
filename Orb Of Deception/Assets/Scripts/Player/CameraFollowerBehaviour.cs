@@ -6,29 +6,29 @@ namespace OrbOfDeception.Player
     public class CameraFollowerBehaviour : MonoBehaviour
     {
         private float _offsetX;
-        private int currentDirection;
-        [SerializeField] private PlayerController playerController;
         [SerializeField] private float cameraMoveTimeWhenChangingDirection = 1;
+        private Tween _currentTween;
+
+        private void Awake()
+        {
+            PlayerController.onDirectionChanged += ChangeDirection;
+        }
+
+        private void OnDestroy()
+        {
+            PlayerController.onDirectionChanged -= ChangeDirection;
+        }
 
         private void Start()
         {
             _offsetX = transform.localPosition.x;
-            currentDirection = (_offsetX >= 0) ? 1 : -1;
         }
 
-        private void Update()
+        private void ChangeDirection(int newDirection)
         {
-            var playerDirection = (int) playerController.Direction;
-            if (playerDirection != 0 && playerDirection != currentDirection)
-            {
-                ChangeDirection();
-            }
+            _currentTween.Kill();
+            _currentTween = transform.DOLocalMoveX(newDirection * _offsetX, cameraMoveTimeWhenChangingDirection);
         }
-
-        private void ChangeDirection()
-        {
-            currentDirection = -currentDirection;
-            transform.DOLocalMoveX(currentDirection * _offsetX, cameraMoveTimeWhenChangingDirection);
-        }
+        
     }
 }

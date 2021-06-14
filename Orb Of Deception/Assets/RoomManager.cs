@@ -1,3 +1,4 @@
+using OrbOfDeception.Player;
 using UnityEngine;
 
 namespace OrbOfDeception
@@ -14,7 +15,7 @@ namespace OrbOfDeception
                 return;
             }
 
-            var playerGroup = PlayerGroupController.instance;
+            var playerGroup = PlayerGroupController.Instance;
             playerGroup.SetPositionInNewRoom(roomChangers[targetRoomPlayerPositionID - 1].GetIncomingPlayerPosition());
         }
     }
