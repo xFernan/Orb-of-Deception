@@ -12,18 +12,18 @@ namespace OrbOfDeception
         private void Awake()
         {
             _playerController = GetComponentInParent<PlayerController>();
-            PlayerController.onDirectionChanged += ChangeSpriteDirection;
         }
 
-        private void OnDestroy()
+        private void Update()
         {
-            PlayerController.onDirectionChanged -= ChangeSpriteDirection;
+            var flip = _playerController.Direction;
+            
+            if (flip == 0)
+                return;
+            
+            flip = Mathf.Sign(flip);
+            
+            transform.localScale = new Vector3(flip, 1, 1);
         }
-
-        private void ChangeSpriteDirection(int newDirection)
-        {
-            transform.localScale = new Vector3(newDirection, 1, 1);
-        }
-        
     }
 }

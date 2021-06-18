@@ -11,6 +11,7 @@ namespace OrbOfDeception.Player
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private float jumpTime = 1;
+        [SerializeField] private float coyoteTime = 0.1f;
         [SerializeField] private float timeInvulnerable = 2;
         [SerializeField] private GameObject spriteObject;
         [SerializeField] private Transform[] groundDetectors;
@@ -42,7 +43,7 @@ namespace OrbOfDeception.Player
             _animator = GetComponent<Animator>();
             _spriteAnimator = spriteObject.GetComponent<Animator>();
             
-            GroundDetector = new GroundDetector(groundDetectors, groundDetectionRayDistance);
+            GroundDetector = new GroundDetector(groundDetectors, groundDetectionRayDistance, coyoteTime);
             JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, GroundDetector);
             HorizontalMovementController = new HorizontalMovementController(_rigidbody, velocity, inputManager);
             AnimationController = new AnimationController(_animator, _rigidbody, inputManager, GroundDetector);
@@ -57,7 +58,7 @@ namespace OrbOfDeception.Player
         {
             var moveDirection = inputManager.GetHorizontal();
 
-            GroundDetector.Update();
+            GroundDetector.Update(Time.deltaTime);
             
             HurtController.Update(Time.deltaTime);
 

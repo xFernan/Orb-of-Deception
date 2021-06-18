@@ -4,7 +4,8 @@ namespace OrbOfDeception.Core
 {
     public class ParallaxEffectController : MonoBehaviour
     {
-        [SerializeField] private float factor;
+        [SerializeField] private float factorX;
+        [SerializeField] private float factorY;
         private Transform _camera;
         private Vector3 _playerStartingPosition;
         private Vector3 _startingPosition;
@@ -24,8 +25,10 @@ namespace OrbOfDeception.Core
 
         private void Update()
         {
-            var newPosition = _startingPosition + (_playerStartingPosition - _camera.position) * factor;
-            newPosition.y = _playerStartingPosition.y;
+            var parallaxVariation = _playerStartingPosition - _camera.position;
+            parallaxVariation.x *= factorX;
+            parallaxVariation.y *= factorY;
+            var newPosition = _startingPosition + parallaxVariation;
             transform.position = newPosition;
         }
     }

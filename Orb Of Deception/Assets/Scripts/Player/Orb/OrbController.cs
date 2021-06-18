@@ -1,6 +1,5 @@
 ﻿using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
-using OrbOfDeception.Enemy;
 using UnityEngine;
 
 namespace OrbOfDeception.Player.Orb
@@ -23,6 +22,7 @@ namespace OrbOfDeception.Player.Orb
         [SerializeField] private ParticleSystem directionAttackOrbParticles;
         [SerializeField] private ParticleSystem orbIdleParticles;
         [SerializeField] private ParticleSystem orbColorChangeParticles;
+        [SerializeField] private TrailRenderer orbTrail;
         [SerializeField] private float directionalAttackInitialForce;
         [SerializeField] private float attractionForce;
         [SerializeField] private float radiusToGoIdle;
@@ -32,6 +32,8 @@ namespace OrbOfDeception.Player.Orb
         [SerializeField] private float directionalAttackDecelerationFactor = 0.95f;
         [SerializeField] private float directionalAttackMinVelocityToChangeState = 1;
         [SerializeField] private float directionalAttackFirstBounceVelocityBoost = 1.5f;
+        [SerializeField] private Color blackStateParticlesColor;
+        [SerializeField] private Color whiteStateParticlesColor;
 
         private InputManager _inputManager;
         private EntityColor _orbColor;
@@ -56,6 +58,7 @@ namespace OrbOfDeception.Player.Orb
             _orbColor = EntityColor.White;
             _hasReceivedAVelocityBoost = false;
             directionAttackOrbParticles.Stop();
+            orbTrail.emitting = false;
 
             _inputManager.DirectionalAttack = DirectionalAttack;
             _inputManager.Click = OnMouseClick;
@@ -73,7 +76,12 @@ namespace OrbOfDeception.Player.Orb
                         orbIdleParticles.Play();
                         directionAttackOrbParticles.Stop();
                         _state = OrbState.OnPlayer;
+                        orbTrail.emitting = false;
                     }
+                    break;
+                case OrbState.OnPlayer:
+                    if (Vector2.Distance(transform.position, orbIdlePositionTransform.position) <= 0.02f)
+                        orbTrail.emitting = false;
                     break;
             }
         }
@@ -104,6 +112,7 @@ namespace OrbOfDeception.Player.Orb
             _state = OrbState.DirectionalAttack;
             orbIdleParticles.Stop();
             directionAttackOrbParticles.Play();
+            orbTrail.emitting = true;
             _rigidbody.velocity = directionalAttackInitialForce * direction;
         }
         
@@ -151,25 +160,46 @@ namespace OrbOfDeception.Player.Orb
             var directionalAttackParticles = directionAttackOrbParticles.main;
             var idleParticles = orbIdleParticles.main;
             var colorChangeParticles = orbColorChangeParticles.main;
+
+            var particlesColor = _orbColor == EntityColor.White ? whiteStateParticlesColor : blackStateParticlesColor;
             
             if (_orbColor == EntityColor.White)
             {
                 _spriteRenderer.color = Color.white;
-                directionalAttackParticles.startColor = Color.white;
-                idleParticles.startColor = Color.white;
-                colorChangeParticles.startColor = Color.white;
+                
             }
-            else if (_orbColor == EntityColor.Black)
+            else
             {
-                _spriteRenderer.color = new Color(0.1f, 0.1f, 0.1f);
-                directionalAttackParticles.startColor = Color.black;
-                idleParticles.startColor = Color.black;
-                colorChangeParticles.startColor = Color.black;
+                _spriteRenderer.color = new Color(0.05f, 0.05f, 0.05f);
             }
+            
+            directionalAttackParticles.startColor = particlesColor;
+            idleParticles.startColor = particlesColor;
+            colorChangeParticles.startColor = particlesColor;
+            SetTrailColor(particlesColor);
             
             orbColorChangeParticles.Play();
         }
 
+        private void SetTrailColor(Color trailColor)
+        {
+            var gradient = new Gradient();
+
+            var colorKey = new GradientColorKey[2];
+            colorKey[0].color = trailColor;
+            colorKey[0].time = 0.0f;
+
+            var alphaKey = new GradientAlphaKey[2];
+            alphaKey[0].alpha = 1.0f;
+            alphaKey[0].time = 0.0f;
+            alphaKey[1].alpha = 0.0f;
+            alphaKey[1].time = 1.0f;
+
+            gradient.SetKeys(colorKey, alphaKey);
+            
+            orbTrail.colorGradient = gradient;
+        }
+        
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
@@ -189,7 +219,7 @@ namespace OrbOfDeception.Player.Orb
         {
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
-            SpawnBounceParticles(other.contacts[0].point, _orbColor == EntityColor.White ? Color.white : new Color(0.1f, 0.1f, 0.1f));
+            SpawnBounceParticles(other.contacts[0].point, _orbColor == EntityColor.White ? whiteStateParticlesColor : blackStateParticlesColor);
             
             if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost)
                 return;

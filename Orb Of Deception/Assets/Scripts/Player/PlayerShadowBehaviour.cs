@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace OrbOfDeception.Player
 {
-    public class PlayerShadowController : MonoBehaviour
+    public class PlayerShadowBehaviour : MonoBehaviour
     {
         [Serializable]
         private class ShadowLevel
@@ -30,7 +30,7 @@ namespace OrbOfDeception.Player
         {
             ApplyOffset();
             
-            var playerPosition = _playerController.transform.position;
+            var playerPosition = transform.parent.position;
             
             var hit = Physics2D.Raycast(
                 playerPosition,
@@ -71,6 +71,8 @@ namespace OrbOfDeception.Player
 
         private void ApplyOffset()
         {
+            if (shadowOffsetIdle == 0 && shadowOffsetMoving == 0)
+                return; // Provisional.
             _spriteRenderer.transform.localPosition =
                 transform.right * ((_playerController.IsMoving ? shadowOffsetMoving : shadowOffsetIdle) *
                                    (_playerController.Direction < 0 ? 1 : -1));

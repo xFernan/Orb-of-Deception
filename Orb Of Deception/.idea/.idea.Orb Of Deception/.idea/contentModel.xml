@@ -314,7 +314,12 @@
             </e>
             <e p="PlayerGroupController.cs" t="Include" />
             <e p="PlayerLightBehaviour.cs" t="Include" />
-            <e p="PlayerShadowController.cs" t="Include" />
+            <e p="PlayerShadowBehaviour.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="Core" t="Include">
+            <e p="ShadowShader.shader" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

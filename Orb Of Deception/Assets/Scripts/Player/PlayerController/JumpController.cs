@@ -22,8 +22,9 @@ namespace OrbOfDeception.Player
 
         public void Jump()
         {
-            if (!_isJumping && !_groundDetector.IsOnTheGround())
+            if (!_isJumping && (!_groundDetector.IsOnTheGround() && !_groundDetector.IsOnCoyoteTime()))
                 return;
+            
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
             _isJumping = true;
             _jumpTimeCounter = 0;

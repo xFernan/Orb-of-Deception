@@ -18,10 +18,20 @@ namespace OrbOfDeception.Core.Input
         public void OnMovement(InputAction.CallbackContext context)
         {
             var vectorInput = context.ReadValue<Vector2>();
-            _horizontal = vectorInput.x;
-            _vertical = vectorInput.y;
+            _horizontal = GetNormalizedValue(vectorInput.x);
+            _vertical = GetNormalizedValue(vectorInput.y);
         }
 
+        private int GetNormalizedValue(float decimalValue)
+        {
+            if (decimalValue == 0)
+                return 0;
+            if (decimalValue > 0)
+                return 1;
+            
+            return -1;
+        }
+        
         public void OnJump(InputAction.CallbackContext context)
         {
             if (context.started)
