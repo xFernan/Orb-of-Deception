@@ -2,352 +2,122 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Core/ShadowShader.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Core/ShadowShader.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TeatroArgenteo_Background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TeatroArgenteo_Background.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/Orb.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/Orb/OrbShadow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/Orb/OrbShadow.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/Materials/Backstage_RedCurtain.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/Materials/Backstage_RedCurtain.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_10.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_10.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_11.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_11.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_12.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_12.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_13.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_13.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_14.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_14.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_15.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_15.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_16.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_16.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_17.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_17.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_18.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_18.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_19.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_19.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_20.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_20.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_21.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_21.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_22.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_22.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_23.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_23.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_24.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_24.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_25.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_25.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_26.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_26.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_27.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_27.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_28.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_28.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_29.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_29.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_30.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_30.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_31.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_31.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_6.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_6.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_7.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_7.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_9.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfTheOrigins_Background_9.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Test.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Test.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_10.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_10.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_11.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_11.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_12.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_12.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_13.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_13.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_14.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_14.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_15.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_15.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_16.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_16.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_17.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_17.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_18.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_18.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_19.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_19.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_20.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_20.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_21.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_21.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_22.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_22.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_23.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_23.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_24.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_24.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_25.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_25.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_26.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_26.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_27.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_27.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_28.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_28.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_29.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_29.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_30.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_30.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_31.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_31.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_32.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_32.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_33.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_33.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_34.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_34.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_35.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_35.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_36.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_36.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_37.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_37.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_38.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_38.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_39.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_39.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_40.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_40.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_41.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_41.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_42.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_42.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_43.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_43.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_44.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_44.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_45.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_45.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_46.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_46.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_47.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_47.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_48.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_48.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_49.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_49.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_50.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_50.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_51.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_51.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_52.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_52.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_53.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_53.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_54.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_54.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_55.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_55.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_6.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_6.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_7.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_7.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_9.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/Tilemaps/Tileset_9.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerShadow.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerShadow.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerLandingMoving.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerLandingMoving.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/RunningNew.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/RunningNew.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MultipleParticlesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ObjectFollower.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Bounce Particles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Bounce Particles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Directional Attack Ring Particles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Directional Attack Ring Particles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Enemy Particles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Enemy Particles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbLightColorChanger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbSpriteController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTrailController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTrailController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/Orb/Orb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/Orb/Orb.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLandingMoving.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLandingMoving.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/PlayerRunningNew.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/PlayerRunningNew.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 1/Enemy1Walking.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 1/Enemy1Walking.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 2/Enemy2Flying.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 2/Enemy2Flying.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerChangingDirection.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerFalling.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerIdle.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerIdle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerJumping.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerKneeled.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerLanding.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerRunning.aseprite" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Diseño/GDD.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Diseño/GDD.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Hurt.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Landing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Landing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DontDestroyOnLoadObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DontDestroyOnLoadObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Orb Bounce Particles.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Orb Bounce Particles.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RoomManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraLimits.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraLimits.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input/Player.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input/Player.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerShadow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerShadow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/Backstage_Floor3x3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/Backstage_Floor3x3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/Backstage_RedCurtain.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/Backstage_RedCurtain.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/TeatroArgenteo_Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/TeatroArgenteo_Background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/TeatroArgenteo_Background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/TeatroArgenteo_Background.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Test.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Test.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_10.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_10.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_11.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_11.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_12.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_12.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_13.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_13.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_14.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_14.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_15.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_15.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_16.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_16.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_17.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_17.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_18.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_18.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_19.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_19.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_20.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_20.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_21.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_21.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_22.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_22.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_23.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_23.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_24.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_24.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_25.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_25.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_26.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_26.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_27.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_27.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_28.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_28.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_29.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_29.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_30.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_30.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_31.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_31.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_32.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_32.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_33.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_33.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_34.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_34.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_35.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_35.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_36.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_36.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_37.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_37.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_38.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_38.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_39.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_39.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_40.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_40.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_41.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_41.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_42.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_42.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_43.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_43.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_44.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_44.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_45.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_45.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_46.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_46.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_47.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_47.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_48.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_48.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_49.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_49.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_50.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_50.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_51.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_51.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_52.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_52.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_53.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_53.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_54.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_54.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_55.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_55.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Tilemaps/Tileset_9.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Scenes/LevelChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Scenes/LevelChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ScreenFreezer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ScreenFreezer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMaterialController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Patterns/PoolObjectReturn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Patterns/PoolObjectReturn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraFollowerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CameraFollowerBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Input.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Input.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Input/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Input/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Input/Input.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Input/Input.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbTriggerColliderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbTriggerColliderController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAreaDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerAreaDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAreaDamage.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerAreaDamage.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/AnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/AnimationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/AnimationController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundDetector.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HealthController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HorizontalMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HorizontalMovementController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HurtController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HurtController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HurtController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HurtController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/JumpController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/JumpController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerMaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerMaterialController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLightBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerLightBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLightBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerLightBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TeatroArgenteo_Background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TeatroArgenteo_Background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Body.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Body.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Mask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Body.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Body.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Mask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLanding.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLanding.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/orb.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/orb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -367,33 +137,25 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/RoomChanger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RoomManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbTriggerColliderController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbLightColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DontDestroyOnLoadObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbSpriteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2348FB5E-CC9E-4E68-9F37-F7D7FADAEA9A/e5/ae53bdc9/Tween.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RoomManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ObjectFollower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MultipleParticlesController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Input/Input.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Input/PlayerInputEvents.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Scenes/LevelChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/RoomChangerBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/RoomChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/DontDestroyOnLoadObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraLimits.cs" />
-      <option value="$PROJECT_DIR$/Assets/PlayerGroupController.cs" />
-      <option value="$PROJECT_DIR$/Assets/RoomManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Enemy2Controller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" />
@@ -406,10 +168,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/FiniteStateMachine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerHealthController.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerMaterialController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/HealthController.cs" />
@@ -418,20 +178,34 @@
       <option value="$PROJECT_DIR$/Assets/OrbPhysicsController.cs" />
       <option value="$PROJECT_DIR$/Assets/OrbTriggerColliderController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/ScreenFreezer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerShadowController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs" />
-      <option value="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraFollowerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowController.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerMaterialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/LightColorChanger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs" />
+      <option value="$PROJECT_DIR$/Assets/OrbSpriteController.cs" />
+      <option value="$PROJECT_DIR$/Assets/OrbLightColorChanger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraFollowerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbTrailController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/CameraPlayerFollowerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/OrbColorChangeParticlesController.cs" />
+      <option value="$PROJECT_DIR$/Assets/MultipleParticlesController.cs" />
+      <option value="$PROJECT_DIR$/Assets/ObjectFollower.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -536,6 +310,10 @@
       <workItem from="1623871024357" duration="3481000" />
       <workItem from="1623883761575" duration="938000" />
       <workItem from="1623944876066" duration="5274000" />
+      <workItem from="1624037066971" duration="7845000" />
+      <workItem from="1624115461019" duration="9103000" />
+      <workItem from="1624203823388" duration="7005000" />
+      <workItem from="1624304373153" duration="5608000" />
     </task>
     <servers />
   </component>

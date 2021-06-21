@@ -11,8 +11,8 @@ namespace OrbOfDeception.Enemy.Enemy2
         [SerializeField] private float velocity = 5;
         [SerializeField] private float distanceToChase;
         [SerializeField] private float nextWaypointDistance;
-
-        private Transform _spriteObject;
+        [SerializeField] private Transform spriteObject; // Provisional, se hará con animaciones,
+                                                         // teniendo cada dirección su propio sombreado.
         private Transform _player;
         private Seeker _seeker;
         
@@ -31,11 +31,10 @@ namespace OrbOfDeception.Enemy.Enemy2
 
             Rigidbody = GetComponent<Rigidbody2D>();
             _seeker = GetComponent<Seeker>();
-            _spriteObject = GetComponentInChildren<SpriteRenderer>().transform;
             _player = GameObject.FindWithTag("Player").transform; // Provisional
             
             AddState(IdleState, new IdleState(this, _player, distanceToChase));
-            AddState(ChasingState, new ChasingState(this, distanceToChase, _seeker, velocity, _spriteObject, _player, nextWaypointDistance));
+            AddState(ChasingState, new ChasingState(this, distanceToChase, _seeker, velocity, spriteObject, _player, nextWaypointDistance));
         }
 
         private void Start()

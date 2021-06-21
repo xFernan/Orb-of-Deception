@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using OrbOfDeception.Core;
+using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;
-using OrbOfDeception.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy
@@ -15,6 +16,8 @@ namespace OrbOfDeception.Enemy
         [SerializeField] protected Animator spriteAnim;
         [SerializeField] protected EntityColor maskColor;
         [SerializeField] protected float health;
+
+        private EnemyDamageArea[] _damageAreas;
         
         private FiniteStateMachine _stateMachine;
         private Dictionary<int, EnemyState> _states;
@@ -41,6 +44,7 @@ namespace OrbOfDeception.Enemy
             _stateMachine = new FiniteStateMachine();
             Anim = GetComponent<Animator>();
             _states = new Dictionary<int, EnemyState>();
+            _damageAreas = GetComponentsInChildren<EnemyDamageArea>();
         }
 
         protected virtual void Update()
@@ -103,6 +107,11 @@ namespace OrbOfDeception.Enemy
             _stateMachine.ExitState();
             Anim.enabled = false;
             spriteAnim!.SetTrigger(Dying);
+            
+            foreach (var damageArea in _damageAreas)
+            {
+                damageArea.DisableCollider();
+            }
         }
 
         public void GetDamaged(EntityColor damageColor, int damage)

@@ -5,6 +5,7 @@ namespace OrbOfDeception.CameraBehaviours
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private Transform cameraPlayerReferenceTransform;
+        
         private Camera _camera;
         private CameraLimits _cameraLimits;
 

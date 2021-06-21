@@ -1,5 +1,5 @@
 using System;
-using OrbOfDeception.Player;
+using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
 namespace OrbOfDeception

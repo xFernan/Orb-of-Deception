@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Core
 {
     public class ScreenFreezer : MonoBehaviour
     {

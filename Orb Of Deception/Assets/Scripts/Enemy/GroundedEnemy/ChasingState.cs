@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 namespace OrbOfDeception.Enemy.GroundedEnemy
 {

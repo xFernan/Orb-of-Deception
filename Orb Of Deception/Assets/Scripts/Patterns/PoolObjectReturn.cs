@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace GoldPillowGames.Patterns
+namespace OrbOfDeception.Patterns
 {
     public class PoolObjectReturn : MonoBehaviour
     {
