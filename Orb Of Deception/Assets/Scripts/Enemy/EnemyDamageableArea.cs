@@ -5,7 +5,7 @@ using UnityEngine;
 namespace OrbOfDeception.Enemy
 {
     [RequireComponent(typeof(Collider2D))]
-    public class EnemyDamageArea : MonoBehaviour, IOrbHittable
+    public class EnemyDamageableArea : MonoBehaviour, IOrbHittable
     {
         private EnemyController _enemyController;
         private Collider2D[] _colliders;

@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core.Input;
 using UnityEngine;
 
@@ -91,7 +92,7 @@ namespace OrbOfDeception.Gameplay.Player
         {
             if (HurtController.IsInvulnerable()) return;
 
-            Camera.main.DOShakePosition(0.7f, 0.4f);
+            Camera.main.GetComponentInParent<CameraController>().Shake(0.7f); // Provisional.
             HealthController.ReceiveDamage(damage);
             HurtController.StartHurt();
         }

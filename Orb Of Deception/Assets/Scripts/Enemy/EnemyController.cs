@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
 using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;
@@ -17,7 +18,7 @@ namespace OrbOfDeception.Enemy
         [SerializeField] protected EntityColor maskColor;
         [SerializeField] protected float health;
 
-        private EnemyDamageArea[] _damageAreas;
+        private EnemyDamageableArea[] _damageAreas;
         
         private FiniteStateMachine _stateMachine;
         private Dictionary<int, EnemyState> _states;
@@ -44,7 +45,7 @@ namespace OrbOfDeception.Enemy
             _stateMachine = new FiniteStateMachine();
             Anim = GetComponent<Animator>();
             _states = new Dictionary<int, EnemyState>();
-            _damageAreas = GetComponentsInChildren<EnemyDamageArea>();
+            _damageAreas = GetComponentsInChildren<EnemyDamageableArea>();
         }
 
         protected virtual void Update()
@@ -63,10 +64,10 @@ namespace OrbOfDeception.Enemy
             if (_isDying) return;
             
             var playerAreaDamage = other.GetComponent<PlayerAreaDamage>();
-            if (playerAreaDamage != null)
-            {
-                playerAreaDamage.ReceiveDamage(10);
-            }
+            
+            if (playerAreaDamage == null) return;
+            
+            playerAreaDamage.ReceiveDamage(10);
         }
 
         #endregion
@@ -127,6 +128,7 @@ namespace OrbOfDeception.Enemy
             if (health <= 0)
                 return;
             
+            Camera.main.GetComponentInParent<CameraController>().Shake(0.2f, 0.1f); // Provisional.
             health = Mathf.Max(0, health - damage);
 
             if (health <= 0)

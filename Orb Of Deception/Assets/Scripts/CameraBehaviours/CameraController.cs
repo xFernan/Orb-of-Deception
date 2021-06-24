@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace OrbOfDeception.CameraBehaviours
@@ -37,6 +38,11 @@ namespace OrbOfDeception.CameraBehaviours
         public void UpdateCameraLimits(CameraLimits newCameraLimits)
         {
             _cameraLimits = newCameraLimits;
+        }
+
+        public void Shake(float duration, float strength = 0.4f)
+        {
+            _camera.DOShakePosition(duration, strength);
         }
         
     }

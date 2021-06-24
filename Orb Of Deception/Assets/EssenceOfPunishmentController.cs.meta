@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 008dd0486e9b25b4c828cc8a905a5cb3
+guid: 6dd172be8b2be934595e831e7ca5bccf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - spriteAnim: {instanceID: 0}
-  - leftGroundDetector: {instanceID: 0}
-  - rightGroundDetector: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

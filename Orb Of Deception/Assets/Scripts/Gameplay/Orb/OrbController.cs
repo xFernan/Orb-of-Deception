@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
 using UnityEngine;
@@ -169,8 +170,8 @@ namespace OrbOfDeception.Gameplay.Orb
 
             if (_ringParticlesCount == 3)
             {
-                StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 3));
-                StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 6));
+                StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
+                StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 9));
             }
             
             _hasReceivedAVelocityBoost = true;
@@ -186,8 +187,10 @@ namespace OrbOfDeception.Gameplay.Orb
             
             orbHittable.Hit(_orbColor, 10/*PROVISIONAL*/);
 
-            if (objectHit.layer == LayerMask.NameToLayer("Player")) return;
+            if (objectHit.layer != LayerMask.NameToLayer("Enemy")) return;
             
+            // Provisional. Crear un objeto singleton DontDestroyOnLoad que cargue con Resources.Load los assets que más se instancien,
+            // como las partículas al dañar a un enemigo, por ejemplo. También podrían entrar aquí los bounce particles.
             SpawnHitParticles(objectHit);
         }
 
@@ -233,9 +236,9 @@ namespace OrbOfDeception.Gameplay.Orb
 
         private void SpawnRingParticles()
         {
-            StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 3));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.07f, 6));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.15f, 9));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.07f, 9));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.15f, 12));
         }
 
         private void ChangeColor()

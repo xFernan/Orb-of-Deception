@@ -128,6 +128,7 @@ namespace OrbOfDeception.Enemy.Enemy2
             {
                 _spriteObject.localScale = new Vector3(1, 1, 1);
             }
+            
         }
 
         #endregion
