@@ -57,7 +57,7 @@ namespace OrbOfDeception.Enemy
         {
             _stateMachine?.FixedUpdate(Time.deltaTime);
         }
-        
+
         // Provisional
         private void OnTriggerStay2D(Collider2D other)
         {
@@ -113,8 +113,19 @@ namespace OrbOfDeception.Enemy
             {
                 damageArea.DisableCollider();
             }
+
+            HideShadows();
         }
 
+        private void HideShadows()
+        {
+            var shadows = GetComponentsInChildren<GroundShadowController>();
+            foreach (var shadow in shadows)
+            {
+                shadow.Hide();
+            }
+        }
+        
         public void GetDamaged(EntityColor damageColor, int damage)
         {
             if (maskColor != damageColor)

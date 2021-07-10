@@ -45,7 +45,10 @@ TagManager:
   - name: Decoration
     uniqueID: 587635121
     locked: 0
-  - name: Platforms
+  - name: Platforms Front
+    uniqueID: 565784263
+    locked: 0
+  - name: Platforms Depth
     uniqueID: 4179352917
     locked: 0
   - name: Shadows

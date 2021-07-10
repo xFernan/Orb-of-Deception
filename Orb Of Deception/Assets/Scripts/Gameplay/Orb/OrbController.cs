@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
 using UnityEngine;
@@ -136,7 +135,7 @@ namespace OrbOfDeception.Gameplay.Orb
                     
                     break;
                 case OrbState.DirectionalAttack:
-                    _rigidbody.velocity = _rigidbody.velocity * directionalAttackDecelerationFactor;
+                    _rigidbody.velocity *= directionalAttackDecelerationFactor;
                     if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
                     {
                         _physicsCollider.enabled = false;
@@ -145,6 +144,7 @@ namespace OrbOfDeception.Gameplay.Orb
                     }
                     break;
                 case OrbState.Returning:
+                    // CONVERTIR EN UN SCRIPT QUE SEA FollowTarget.
                     var velocityValue = _rigidbody.velocity.magnitude;
                     var direction = (orbIdlePositionTransform.position - transform.position).normalized;
                     _rigidbody.velocity = direction * velocityValue;
@@ -236,9 +236,9 @@ namespace OrbOfDeception.Gameplay.Orb
 
         private void SpawnRingParticles()
         {
-            StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.07f, 9));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.15f, 12));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 3));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.07f, 6));
+            StartCoroutine(SpawnRingParticlesCoroutine(0.15f, 9));
         }
 
         private void ChangeColor()
@@ -281,6 +281,11 @@ namespace OrbOfDeception.Gameplay.Orb
             yield return new WaitForSeconds(timeBetweenColorChange);
 
             _canChangeColor = true;
+        }
+
+        public EntityColor GetColor()
+        {
+            return _orbColor;
         }
         
         #region Particles Methods
