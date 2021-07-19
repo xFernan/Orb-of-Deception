@@ -16,18 +16,13 @@ namespace OrbOfDeception.Gameplay.Player
         private static readonly int Hurt = Animator.StringToHash("Hurt");
         private static readonly int Normal = Animator.StringToHash("Normal");
 
-        public HurtController(float timeInvulnerable, Animator spriteAnimator)
+        public HurtController(MonoBehaviour monoBehaviour, float timeInvulnerable, Animator spriteAnimator)
         {
             _timeInvulnerable = timeInvulnerable;
             _spriteAnimator = spriteAnimator;
             
             _isInvulnerable = false;
-            _invulnerableEndDelay = new MethodDelayer(EndHurt);
-        }
-
-        public void Update(float deltaTime)
-        {
-            _invulnerableEndDelay.Update(deltaTime);
+            _invulnerableEndDelay = new MethodDelayer(monoBehaviour, EndHurt);
         }
         
         public void StartHurt()

@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -12,17 +13,17 @@ namespace OrbOfDeception.Gameplay.Player
 
         private void Awake()
         {
-            PlayerController.onDirectionChanged += ChangeDirection;
-        }
-
-        private void OnDestroy()
-        {
-            PlayerController.onDirectionChanged -= ChangeDirection;
+            HorizontalMovementController.onDirectionChanged += ChangeDirection;
         }
 
         private void Start()
         {
             _offsetX = transform.localPosition.x;
+        }
+
+        private void OnDestroy()
+        {
+            HorizontalMovementController.onDirectionChanged -= ChangeDirection;
         }
 
         private void ChangeDirection(int newDirection)

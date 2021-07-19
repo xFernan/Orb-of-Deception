@@ -47,7 +47,7 @@ AnimationClip:
       value: {fileID: 4296861743446670153, guid: 36e4cd9cca8788749a9002093d4957ee,
         type: 3}
     attribute: m_Sprite
-    path: Sprite/Body/Body
+    path: Sprite/Body
     classID: 212
     script: {fileID: 0}
   - curve:
@@ -55,7 +55,7 @@ AnimationClip:
       value: {fileID: 6701331590377426322, guid: 8c61501ec61198d41adcb04fc3c473d2,
         type: 3}
     attribute: m_Sprite
-    path: Sprite/Masks/Mask
+    path: Sprite/Mask
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60

@@ -5,9 +5,8 @@ namespace OrbOfDeception.Enemy.Enemy1
     public class Enemy1Controller : EnemyController
     {
         #region Variables
-        
+
         [Header("Enemy 1 variables")]
-        [SerializeField] private float velocity = 5;
         [SerializeField] private int initialDirection = 1;
         [SerializeField] private float timeToChangeDirectionAgain = 0.5f;
         [SerializeField] private float rayDetectorDistance;
@@ -15,8 +14,9 @@ namespace OrbOfDeception.Enemy.Enemy1
         [SerializeField] private Transform rightGroundDetector;
         [SerializeField] private Transform[] leftWallDetectors;
         [SerializeField] private Transform[] rightWallDetectors;
-
+        
         public Rigidbody2D Rigidbody { get; private set; }
+        public Enemy1Parameters Parameters => parameters as Enemy1Parameters;
         
         public const int WalkingState = 0;
 
@@ -24,19 +24,21 @@ namespace OrbOfDeception.Enemy.Enemy1
         
         #region Methods
         
-        protected override void Awake()
+        protected override void OnAwake()
         {
-            base.Awake();
+            base.OnAwake();
 
             Rigidbody = GetComponent<Rigidbody2D>();
             
             AddState(WalkingState,
-                new WalkingState(this, velocity, initialDirection, rayDetectorDistance, timeToChangeDirectionAgain,
+                new WalkingState(this, initialDirection, rayDetectorDistance, timeToChangeDirectionAgain,
                     leftGroundDetector, rightGroundDetector, leftWallDetectors, rightWallDetectors));
         }
 
-        private void Start()
+        protected override void OnStart()
         {
+            base.OnStart();
+            
             SetInitialState(WalkingState);
         }
         

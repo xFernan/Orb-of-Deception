@@ -30,42 +30,12 @@ MonoBehaviour:
     max: 1
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.5
     min: 0.01
     max: 1
   rounded:
     m_OverrideState: 1
     m_Value: 0
---- !u!114 &-3003746434058716084
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
-  m_Name: FilmGrain
-  m_EditorClassIdentifier: 
-  active: 0
-  m_AdvancedMode: 0
-  type:
-    m_OverrideState: 0
-    m_Value: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.6
-    min: 0
-    max: 1
-  response:
-    m_OverrideState: 0
-    m_Value: 0.8
-    min: 0
-    max: 1
-  texture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +52,6 @@ MonoBehaviour:
   - {fileID: 3694389488747414682}
   - {fileID: -7445503931237601313}
   - {fileID: 2088554392955425183}
-  - {fileID: -3003746434058716084}
   - {fileID: 6367339620537633614}
   - {fileID: 2938909981563735005}
 --- !u!114 &2088554392955425183
@@ -100,12 +69,12 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   threshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.9
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 0
@@ -153,12 +122,12 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: -30
+    m_Value: -35
     min: -100
     max: 100
   tint:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 20
     min: -100
     max: 100
 --- !u!114 &3694389488747414682
@@ -180,7 +149,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 10
     min: -100
     max: 100
   colorFilter:
@@ -196,7 +165,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -8
+    m_Value: -10
     min: -100
     max: 100
 --- !u!114 &6367339620537633614

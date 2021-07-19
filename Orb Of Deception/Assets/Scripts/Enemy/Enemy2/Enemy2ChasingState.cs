@@ -1,4 +1,6 @@
 ﻿using OrbOfDeception.Core;
+using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Patterns;
 using Pathfinding;
 using UnityEngine;
 
@@ -7,14 +9,13 @@ namespace OrbOfDeception.Enemy.Enemy2
     public class ChasingState : EnemyState
     {
         #region Variables
-        
-        private readonly float _distanceToChase;
+
+        private readonly Enemy2Parameters _parameters;
         private readonly Rigidbody2D _rigidbody;
         private readonly Seeker _seeker;
         private readonly Transform _spriteObject;
         
-        private readonly float _velocity;
-        private readonly Transform _player;
+        private readonly Transform _transform;
         private readonly float _nextWaypointDistance;
         private Path _path;
         private int _currentWaypoint;
@@ -24,23 +25,17 @@ namespace OrbOfDeception.Enemy.Enemy2
         
         #region Methods
 
-        public ChasingState(EnemyController enemyController, float distanceToChase,
-            Seeker seeker, float velocity, Transform spriteObject, Transform player, float nextWaypointDistance) : base(
-            enemyController)
+        public ChasingState(Enemy2Controller enemy,
+            Seeker seeker, Transform spriteObject, float nextWaypointDistance) : base(enemy)
         {
-            var enemy = enemyController as Enemy2Controller;
-            
-            _distanceToChase = distanceToChase;
+            _parameters = enemy.Parameters;
             _rigidbody = enemy.Rigidbody;
+            _transform = enemy.transform;
             _seeker = seeker;
-            _velocity = velocity;
             _spriteObject = spriteObject;
-            _player = player;
             _nextWaypointDistance = nextWaypointDistance;
 
-            _updatePathDelayer = new MethodDelayer(UpdatePath);
-
-            //animatorBoolParameterName = "IsChasing";
+            _updatePathDelayer = new MethodDelayer(enemy, UpdatePath);
         }
 
         public override void Enter()
@@ -52,10 +47,10 @@ namespace OrbOfDeception.Enemy.Enemy2
 
         private void UpdatePath()
         {
-            _seeker.StartPath(_rigidbody.position, _player.position, OnPathComplete);
+            _seeker.StartPath(_rigidbody.position, PlayerGroup.Player.transform.position, OnPathComplete);
             
             // Se vuelve a llamar al método cada medio segundo para actualizar el camino en caso de haber cambiado.
-            _updatePathDelayer.SetNewDelay(0.5f);
+            _updatePathDelayer.SetNewDelay(0.2f);
         }
         
         private void OnPathComplete(Path p)
@@ -72,17 +67,18 @@ namespace OrbOfDeception.Enemy.Enemy2
             base.Exit();
 
             _rigidbody.velocity = Vector2.zero;
+            _updatePathDelayer.StopDelay();
         }
         
         /*public override void Update(float deltaTime)
         {
             base.Update(deltaTime);
             
-            var distanceFromPlayer = Vector2.Distance(_player.position, enemyController.transform.position);
+            var distanceFromPlayer = Vector2.Distance(PlayerGroupController.Instance.playerController.transform.position, enemyController.transform.position);
 
-            if (distanceFromPlayer > _distanceToChase)
+            if (distanceFromPlayer > _stats.distanceToChase)
             {
-                enemyController.SetState(FlyingEnemyController.IdleState);
+                enemyController.SetState(Enemy2Controller.IdleState);
             }
         }*/
 
@@ -91,8 +87,6 @@ namespace OrbOfDeception.Enemy.Enemy2
             base.FixedUpdate(deltaTime);
             
             Move();
-            
-            _updatePathDelayer.Update(deltaTime);
         }
 
         private void Move()
@@ -105,7 +99,7 @@ namespace OrbOfDeception.Enemy.Enemy2
 
             // SEEK: Se calculan la dirección y la fuerza a añadir a la velocidad actual.
             var direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
-            var force = direction * (_velocity * Time.deltaTime);
+            var force = direction * (_parameters.Stats.velocity * Time.deltaTime);
 
             _rigidbody.AddForce(force);
             
@@ -118,7 +112,7 @@ namespace OrbOfDeception.Enemy.Enemy2
             }
 
             // Flip del sprite (provisional).
-            var directionFromPlayer = Mathf.Sign(_player.transform.position.x - enemyController.transform.position.x);
+            var directionFromPlayer = Mathf.Sign(PlayerGroup.Player.transform.position.x - _transform.position.x);
             
             if (directionFromPlayer > 0)
             {

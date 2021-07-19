@@ -1,22 +1,14 @@
-using System;
 using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
 namespace OrbOfDeception
 {
+    // PROVISIONAL
     public class PlayerSpriteDirectionController : MonoBehaviour
     {
-
-        private PlayerController _playerController;
-        
-        private void Awake()
-        {
-            _playerController = GetComponentInParent<PlayerController>();
-        }
-
         private void Update()
         {
-            var flip = _playerController.Direction;
+            var flip = PlayerGroup.Instance.playerController.HorizontalMovementController.Direction;
             
             if (flip == 0)
                 return;

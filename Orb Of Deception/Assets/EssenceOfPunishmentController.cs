@@ -19,6 +19,7 @@ namespace OrbOfDeception
         private EoP_State _state;
 
         [Header("Essence of Punishment Variables")]
+        [SerializeField] private int value;
         [SerializeField] [MinMaxSlider(0, 25)] private Vector2 initialVelocity;
         [SerializeField] private float decelerationFactor;
         [SerializeField] private float attractionForce;
@@ -28,9 +29,13 @@ namespace OrbOfDeception
         [SerializeField] private GameObject onAcquireParticles;
         [SerializeField] private ParticleSystem particlesTrail;
         [SerializeField] private ParticleSystem particlesIdle;
+        [SerializeField] private TrailRenderer trail;
 
         private Animator _animator;
         private Rigidbody2D _rigidbody;
+        private Collider2D _collider;
+
+        public int Value => value;
         
         private static readonly int Acquire = Animator.StringToHash("Acquire");
         #endregion
@@ -41,6 +46,7 @@ namespace OrbOfDeception
         {
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();
         }
 
         private void Start()
@@ -61,7 +67,7 @@ namespace OrbOfDeception
                     }
                     break;
                 case EoP_State.FollowPlayer:
-                    var playerPosition = PlayerGroupController.Instance.playerController.transform.position;
+                    var playerPosition = PlayerGroup.Player.transform.position;
                     var velocityValue = _rigidbody.velocity.magnitude;
                     var direction = (playerPosition - transform.position).normalized;
                     _rigidbody.velocity = direction * velocityValue;
@@ -83,7 +89,7 @@ namespace OrbOfDeception
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_state != EoP_State.FollowPlayer || !other.CompareTag("Player" /*Provisional*/)) return;
+            if (_state != EoP_State.FollowPlayer || other.GetComponent<PlayerAreaDamage>() == null) return;
             
             _state = EoP_State.Acquire;
             OnEnterAcquireState();
@@ -103,11 +109,20 @@ namespace OrbOfDeception
         private void OnEnterAcquireState()
         {
             _animator.SetTrigger(Acquire);
-            _rigidbody.velocity = Vector2.zero; // ¿Hacer que desacelere?
+            _rigidbody.velocity = Vector2.zero;
             // Provisional (hacer con PoolObject):
             Instantiate(onAcquireParticles, transform.position, Quaternion.identity);
             particlesIdle.Stop();
             particlesTrail.Stop();
+            trail.widthCurve = AnimationCurve.Constant(0, 1, 0);
+            _collider.enabled = false;
+            //PlayerGroupController.Instance.playerController.SpriteAnimator.PlayOnAcquireEssenceOfPunishmentAnimation();
+            // PROVISIONAL (convertir en lo anterior):
+            var playerSpriteAnimator = PlayerGroup.Player.transform.
+                GetComponentInChildren<PlayerMaterialController>().transform.GetComponent<Animator>();
+            playerSpriteAnimator.SetTrigger("AcquireEoP");
+            
+            //Player.AcquireEssenceOfPunishment(
         }
         #endregion
         #endregion

@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Core.Input;
+﻿using System;
+using OrbOfDeception.Core.Input;
 using UnityEngine;
 
 namespace OrbOfDeception.Gameplay.Player
@@ -8,6 +9,11 @@ namespace OrbOfDeception.Gameplay.Player
         private readonly Rigidbody2D _rigidbody;
         private readonly float _velocity;
         private readonly InputManager _inputManager;
+        
+        public static Action<int> onDirectionChanged;
+        
+        public float Direction { get; private set; }
+        public bool IsMoving { get; private set; }
 
         public HorizontalMovementController(Rigidbody2D rigidbody, float velocity, InputManager inputManager)
         {
@@ -15,7 +21,23 @@ namespace OrbOfDeception.Gameplay.Player
             _velocity = velocity;
             _inputManager = inputManager;
         }
+        
+        public void Update()
+        {
+            var moveDirection = _inputManager.GetHorizontal();
 
+            IsMoving = moveDirection != 0;
+            
+            if (IsMoving)
+            {
+                var haveDirectionChanged = Direction != moveDirection;
+
+                Direction = moveDirection;
+                if (haveDirectionChanged)
+                    onDirectionChanged((int) moveDirection);
+            }
+        }
+        
         public void FixedUpdate()
         {
             var newVelocity = _rigidbody.velocity;

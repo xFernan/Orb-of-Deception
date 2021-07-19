@@ -214,12 +214,10 @@
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
-        <e p="EnemySpritePartController.cs" t="Include" />
-        <e p="EnemySpriteTintController.cs" t="Include" />
+        <e p="EnemyDamagingArea.cs" t="Include" />
         <e p="EssenceOfPunishmentController.cs" t="Include" />
-        <e p="EssenceOfPunishmentLoader.cs" t="Include" />
-        <e p="LightTwinkleBehaviour.cs" t="Include" />
-        <e p="MultipleParticlesController.cs" t="Include" />
+        <e p="EssenceOfPunishmentSpawner.cs" t="Include" />
+        <e p="MedallionOrbController.cs" t="Include" />
         <e p="NaughtyAttributes" t="Include">
           <e p="Scripts" t="Include">
             <e p="Core" t="Include">
@@ -360,7 +358,7 @@
             </e>
           </e>
         </e>
-        <e p="ObjectFollower.cs" t="Include" />
+        <e p="PlayerHealthBarController.cs" t="Include" />
         <e p="PlayerSpriteDirectionController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
@@ -392,7 +390,10 @@
               <e p="player.cs" t="Include" />
             </e>
             <e p="IOrbHittable.cs" t="Include" />
+            <e p="LightTwinkleBehaviour.cs" t="Include" />
             <e p="MethodDelayer.cs" t="Include" />
+            <e p="MultipleParticlesController.cs" t="Include" />
+            <e p="ObjectFollower.cs" t="Include" />
             <e p="ParallaxEffectController.cs" t="Include" />
             <e p="Scenes" t="Include">
               <e p="LevelChanger.cs" t="Include" />
@@ -403,32 +404,26 @@
           <e p="Enemy" t="Include">
             <e p="Enemy1" t="Include">
               <e p="Enemy1Controller.cs" t="Include" />
+              <e p="Enemy1Parameters.cs" t="Include" />
+              <e p="Enemy1Stats.cs" t="Include" />
               <e p="Enemy1WalkingState.cs" t="Include" />
             </e>
             <e p="Enemy2" t="Include">
               <e p="Enemy2ChasingState.cs" t="Include" />
               <e p="Enemy2Controller.cs" t="Include" />
               <e p="Enemy2IdleState.cs" t="Include" />
+              <e p="Enemy2Parameters.cs" t="Include" />
+              <e p="Enemy2Stats.cs" t="Include" />
             </e>
-            <e p="EnemyController.cs" t="Include" />
-            <e p="EnemyDamageableArea.cs" t="Include" />
-            <e p="EnemySpritePartsGroupController.cs" t="Include" />
-            <e p="EnemyState.cs" t="Include" />
-            <e p="FlyingEnemy" t="Include">
-              <e p="AttackingState.cs" t="Include" />
-              <e p="ChasingState.cs" t="Include" />
-              <e p="DyingState.cs" t="Include" />
-              <e p="FlyingEnemyController.cs" t="Include" />
-              <e p="HurtState.cs" t="Include" />
-              <e p="IdleState.cs" t="Include" />
-            </e>
-            <e p="GroundedEnemy" t="Include">
-              <e p="AttackingState.cs" t="Include" />
-              <e p="ChasingState.cs" t="Include" />
-              <e p="DyingState.cs" t="Include" />
-              <e p="GroundedEnemyController.cs" t="Include" />
-              <e p="HurtState.cs" t="Include" />
-              <e p="WalkingState.cs" t="Include" />
+            <e p="Shared Enemy Scripts" t="Include">
+              <e p="EnemyController.cs" t="Include" />
+              <e p="EnemyDamageableArea.cs" t="Include" />
+              <e p="EnemyParameters.cs" t="Include" />
+              <e p="EnemySpriteController.cs" t="Include" />
+              <e p="EnemySpritePartController.cs" t="Include" />
+              <e p="EnemySpritePartsGroupController.cs" t="Include" />
+              <e p="EnemyState.cs" t="Include" />
+              <e p="EnemyStats.cs" t="Include" />
             </e>
           </e>
           <e p="Gameplay" t="Include">
@@ -447,13 +442,13 @@
               <e p="CameraPlayerFollowerBehaviour.cs" t="Include" />
               <e p="GroundDetector.cs" t="Include" />
               <e p="GroundShadowController.cs" t="Include" />
-              <e p="HealthController.cs" t="Include" />
               <e p="HorizontalMovementController.cs" t="Include" />
               <e p="HurtController.cs" t="Include" />
               <e p="JumpController.cs" t="Include" />
               <e p="PlayerAreaDamage.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
-              <e p="PlayerGroupController.cs" t="Include" />
+              <e p="PlayerGroup.cs" t="Include" />
+              <e p="PlayerHealthController.cs" t="Include" />
               <e p="PlayerLightBehaviour.cs" t="Include" />
               <e p="PlayerMaterialController.cs" t="Include" />
             </e>

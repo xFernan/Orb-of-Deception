@@ -1,34 +1,38 @@
 ﻿using System;
+using System.Collections;
+using UnityEngine;
 
 namespace OrbOfDeception.Core
 {
     public class MethodDelayer
     {
         private readonly Action _methodCallback;
-        private float _methodDelay;
+        private readonly MonoBehaviour _monoBehaviour;
 
-        public MethodDelayer(Action methodCallback)
+        private Coroutine _delayCoroutine;
+
+        public MethodDelayer(MonoBehaviour monoBehaviour, Action methodCallback)
         {
+            _monoBehaviour = monoBehaviour;
             _methodCallback = methodCallback;
-            _methodDelay = -1;
         }
 
-        public void Update(float deltaTime)
+        private IEnumerator MethodCoroutine(float waitTime)
         {
-            if (_methodDelay <= 0)
-                return;
-            
-            _methodDelay -= deltaTime;
-            
-            if (_methodDelay <= 0)
-            {
-                _methodCallback?.Invoke();
-            }
+            yield return new WaitForSeconds(waitTime);
+            _methodCallback?.Invoke();
+        }
+        
+        public void SetNewDelay(float methodDelay)
+        {
+            _delayCoroutine = _monoBehaviour.StartCoroutine(MethodCoroutine(methodDelay));
         }
 
-        public void SetNewDelay(float newMethodDelay)
+        public void StopDelay()
         {
-            _methodDelay = newMethodDelay;
+            if (_delayCoroutine == null) return;
+            
+            _monoBehaviour.StopCoroutine(_delayCoroutine);
         }
     }
 }

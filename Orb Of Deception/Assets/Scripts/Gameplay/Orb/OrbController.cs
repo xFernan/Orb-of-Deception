@@ -71,6 +71,8 @@ namespace OrbOfDeception.Gameplay.Orb
         private InputManager _inputManager;
         private OrbTrailController _orbTrailController;
 
+        public static Action<EntityColor> onChangeOrbColor;
+        
         private Color CurrentParticlesColor =>
             _orbColor == EntityColor.White ? whiteStateParticlesColor : blackStateParticlesColor;
         #endregion
@@ -179,7 +181,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         public void OnTriggerObjectInit(GameObject objectHit)
         {
-            if (_state == OrbState.OnPlayer) return;
+            if (_state != OrbState.DirectionalAttack && _state != OrbState.Returning) return;
             
             var orbHittable = objectHit.GetComponent<IOrbHittable>();
 
@@ -253,6 +255,8 @@ namespace OrbOfDeception.Gameplay.Orb
                 EntityColor.White => EntityColor.Black,
                 _ => _orbColor
             };
+            
+            onChangeOrbColor(_orbColor);
 
             var directionalAttackParticles = directionAttackOrbParticles.main;
             var idleParticles = orbIdleParticles.main;

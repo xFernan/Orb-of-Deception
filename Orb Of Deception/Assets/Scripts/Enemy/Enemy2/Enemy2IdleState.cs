@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using OrbOfDeception.Gameplay.Player;
+using UnityEngine;
 
 namespace OrbOfDeception.Enemy.Enemy2
 {
@@ -6,28 +7,26 @@ namespace OrbOfDeception.Enemy.Enemy2
     {
         #region Variables
     
-        private readonly Transform _player;
-        private readonly float _distanceToChase;
+        private readonly Transform _transform;
+        private readonly Enemy2Parameters _parameters;
 
         #endregion
     
         #region Methods
 
-        public IdleState(EnemyController enemyController, Transform player, float distanceToChase) : base(enemyController)
+        public IdleState(Enemy2Controller enemy) : base(enemy)
         {
-            _player = player;
-            _distanceToChase = distanceToChase;
-        
-            //animatorBoolParameterName = "IsIdle";
+            _transform = enemy.transform;
+            _parameters = enemy.Parameters;
         }
 
         public override void Update(float deltaTime)
         {
             base.Update(deltaTime);
 
-            var distanceFromPlayer = Vector2.Distance(_player.position, enemyController.transform.position);
+            var distanceFromPlayer = Vector2.Distance(PlayerGroup.Player.transform.position, _transform.position);
 
-            if (distanceFromPlayer <= _distanceToChase)
+            if (distanceFromPlayer <= _parameters.distanceToChase)
             {
                 enemyController.SetState(Enemy2Controller.ChasingState);
             }

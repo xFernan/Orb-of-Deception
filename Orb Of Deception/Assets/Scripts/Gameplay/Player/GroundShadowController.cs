@@ -22,7 +22,10 @@ namespace OrbOfDeception.Gameplay.Player
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
+            
+            var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.enabled = true;
+            _spriteTransform = spriteRenderer.transform;
             
             _originalScale = _spriteTransform.localScale;
         }

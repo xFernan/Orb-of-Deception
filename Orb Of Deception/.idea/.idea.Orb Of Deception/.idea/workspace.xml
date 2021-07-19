@@ -2,347 +2,159 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core/GroundShadow.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core/GroundShadow/Ground Shadow.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core/GroundShadow/Ground Shadow.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core/GroundShadow/Hiding.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Core/GroundShadow/Hiding.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Empty.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Empty.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/EnemySpritePartController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/EnemySpriteTintController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/README.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/README.html.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/DemoScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/DemoScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/DemoSceneSettings.lighting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/DemoSceneSettings.lighting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/Cube.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/Cube.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/DummyAnimation.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/DummyAnimation.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/DummyAnimatorController.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/DummyAnimatorController.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/NaughtyScriptableObject.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/NaughtyScriptableObject.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/TestScriptableObject 0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/TestScriptableObject 0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/TestScriptableObject 1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/TestScriptableObject 1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/icon-github.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Samples/DemoScene/TestAssets/icon-github.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/AllowNestingAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/AllowNestingAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/AnimatorParamAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/AnimatorParamAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/CurveRangeAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/CurveRangeAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/DrawerAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/DrawerAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/DropdownAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/DropdownAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/EnumFlagsAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/EnumFlagsAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/Expandable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/Expandable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/HorizontalLineAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/HorizontalLineAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InfoBoxAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InfoBoxAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InputAxisAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InputAxisAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/LayerAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/LayerAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/MinMaxSliderAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/MinMaxSliderAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ProgressBarAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ProgressBarAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ResizableTextAreaAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ResizableTextAreaAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/SceneAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/SceneAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ShowAssetPreviewAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ShowAssetPreviewAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/TagAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/TagAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ButtonAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ButtonAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ReorderableListAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ReorderableListAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ShowNativePropertyAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ShowNativePropertyAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ShowNonSerializedFieldAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ShowNonSerializedFieldAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/SpecialCaseDrawerAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/SpecialCaseDrawerAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/INaughtyAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/INaughtyAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/BoxGroupAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/BoxGroupAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/DisableIfAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/DisableIfAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/EnableIfAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/EnableIfAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/EnableIfAttributeBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/EnableIfAttributeBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/FoldoutAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/FoldoutAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/HideIfAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/HideIfAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/IGroupAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/IGroupAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/LabelAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/LabelAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/MetaAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/MetaAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/OnValueChangedAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/OnValueChangedAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ReadOnlyAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ReadOnlyAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ShowIfAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ShowIfAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ShowIfAttributeBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ShowIfAttributeBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/NaughtyAttributes.Core.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/NaughtyAttributes.Core.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/Utility.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/Utility/EColor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/Utility/EColor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/Utility/EConditionOperator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/Utility/EConditionOperator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MaxValueAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MaxValueAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MinValueAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MinValueAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/RequiredAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/RequiredAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidateInputAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidateInputAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidatorAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidatorAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/DecoratorDrawers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/DecoratorDrawers/HorizontalLineDecoratorDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/DecoratorDrawers/HorizontalLineDecoratorDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/DecoratorDrawers/InfoBoxDecoratorDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/DecoratorDrawers/InfoBoxDecoratorDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyAttributes.Editor.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyAttributes.Editor.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/AllowNestingPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/AllowNestingPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/AnimatorParamPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/AnimatorParamPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/CurveRangePropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/CurveRangePropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/DropdownPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/DropdownPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/EnumFlagsPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/EnumFlagsPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ExpandablePropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ExpandablePropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/InputAxisPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/InputAxisPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/LayerPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/LayerPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/MinMaxSliderPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/MinMaxSliderPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ProgressBarPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ProgressBarPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/PropertyDrawerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/PropertyDrawerBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ResizableTextAreaPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ResizableTextAreaPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ScenePropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ScenePropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ShowAssetPreviewPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/ShowAssetPreviewPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/TagPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers/TagPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers_SpecialCase.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers_SpecialCase/ReorderableListPropertyDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers_SpecialCase/ReorderableListPropertyDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers_SpecialCase/SpecialCasePropertyDrawerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyDrawers_SpecialCase/SpecialCasePropertyDrawerBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/MaxValuePropertyValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/MaxValuePropertyValidator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/MinValuePropertyValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/MinValuePropertyValidator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/PropertyValidatorBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/PropertyValidatorBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/RequiredPropertyValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/RequiredPropertyValidator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/ValidateInputPropertyValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/PropertyValidators/ValidateInputPropertyValidator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ButtonUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ButtonUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/NaughtyEditorGUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/NaughtyEditorGUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/PropertyUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/PropertyUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ReflectionUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ReflectionUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/SavedBool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/SavedBool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/AnimatorParamTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/AnimatorParamTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/BoxGroupTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/BoxGroupTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ButtonTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ButtonTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/CurveRangeTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/CurveRangeTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/DisableIfTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/DisableIfTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/DropdownTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/DropdownTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/EnableIfTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/EnableIfTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/EnumFlagsTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/EnumFlagsTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ExpandableTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ExpandableTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/FoldoutTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/FoldoutTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/HideIfTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/HideIfTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/HorizontalLineTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/HorizontalLineTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/InfoBoxTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/InfoBoxTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/InputAxisTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/InputAxisTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/LabelTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/LabelTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/LayerTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/LayerTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/MinMaxSliderTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/MinMaxSliderTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/MinMaxValueTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/MinMaxValueTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/NaughtyAttributes.Test.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/NaughtyAttributes.Test.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/OnValueChangedTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/OnValueChangedTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ProgressBarTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ProgressBarTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ReadOnlyTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ReadOnlyTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ReorderableListTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ReorderableListTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/RequiredTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/RequiredTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ResizableTextAreaTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ResizableTextAreaTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/SceneTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/SceneTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowAssetPreviewTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowAssetPreviewTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowIfTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowIfTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowNativePropertyTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowNativePropertyTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowNonSerializedFieldTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ShowNonSerializedFieldTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/TagTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/TagTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ValidateInputTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/ValidateInputTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_NaughtyComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_NaughtyComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_NaughtyScriptableObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_NaughtyScriptableObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_TestScriptableObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Test/_TestScriptableObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/NaughtyAttributes/package.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/Shadow.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/Shadow.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpritePartsGroupController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Core/Ground Material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Core/Ground Material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Core.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Core/Circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Core/Circle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_0.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_0.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_10.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_10.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_11.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_11.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_12.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_12.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_13.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_13.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_5.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_5.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_6.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_6.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_7.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_7.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_8.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_8.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_9.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_9.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/AcquireEoP.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/AcquireEoP.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Fading.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Fading.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Fill.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Fill.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Health Bar Fill Leftover.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Health Bar Fill Leftover.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/MedallionOrbController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/Essence of Punishment Spawner.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/Essence of Punishment Spawner.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/PostProcessing UI Profile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/PostProcessing UI Profile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Parameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Stats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyDamageableArea.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyDamageableArea.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyParameters.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpritePartsGroupController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpritePartsGroupController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Other.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Other/EssenceOfPunishment.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Other/EssenceOfPunishment.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/InGameUI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/InGameUI.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Texture.renderTexture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Texture.renderTexture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_14.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_14.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_15.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_15.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_16.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_16.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Otros/EssenceOfPunishment.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Otros/EssenceOfPunishment.aseprite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Diseño/GDD.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Diseño/GDD.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1Walking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Enemy1/Enemy1Walking.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Enemy Sprite.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Enemy Sprite.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Die2.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Shared Animations/Hurt.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Disappearing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Disappearing.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/EssenceOfPunishment.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/EssenceOfPunishment.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 1/Rotating.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 1/Rotating.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 2/Rotating.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 2/Rotating.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 3/Rotating.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Essences of Punishment/Level 3/Rotating.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/Hurt.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/PlayerSprite.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player Sprite/PlayerSprite.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySpritePartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpritePartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySpritePartController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpritePartController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySpriteTintController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySpriteTintController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/On Get Particles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/On Get Particles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EssenceOfPunishmentLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EssenceOfPunishmentLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/LightTwinkleBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/LightTwinkleBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MultipleParticlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/MultipleParticlesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MultipleParticlesController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/MultipleParticlesController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ObjectFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ObjectFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ObjectFollower.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ObjectFollower.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/Shadow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/Shadow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RoomManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMaterialController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMaterialController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpritePartsGroupController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/MethodDelayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/MethodDelayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageableArea.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageableArea.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpritePartsGroupController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpritePartsGroupController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/AttackingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/AttackingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/ChasingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/ChasingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/DyingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/DyingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/HurtState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/HurtState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/IdleState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/IdleState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/AttackingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/AttackingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/ChasingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/DyingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/DyingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/HurtState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/HurtState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/WalkingState.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Patterns/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Patterns/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HurtController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HurtController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Essences of Punishment/EssenceOfPunishment.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Essences of Punishment/EssenceOfPunishment.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
@@ -363,79 +175,87 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/RoomChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbLightColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageableArea.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbSpriteController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/LightTwinkleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MedallionOrbController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2348FB5E-CC9E-4E68-9F37-F7D7FADAEA9A/e5/ae53bdc9/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RoomManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/ObjectFollower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Parameters.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RoomChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8462C93B-00B5-4616-9C50-6EB8281FD255/f0/14f4517b/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Stats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyParameters.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ObjectFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MultipleParticlesController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemySpritePartController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemySpriteTintController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/MultipleParticlesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpritePartController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/OrbPhysicsController.cs" />
-      <option value="$PROJECT_DIR$/Assets/OrbTriggerColliderController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ScreenFreezer.cs" />
-      <option value="$PROJECT_DIR$/Assets/PlayerShadowController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGroupController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowController.cs" />
-      <option value="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/JumpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/GroundDetector.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShadowBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerMaterialController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/LightTwinkleBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/LightColorChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbController.cs" />
-      <option value="$PROJECT_DIR$/Assets/OrbSpriteController.cs" />
-      <option value="$PROJECT_DIR$/Assets/OrbLightColorChanger.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/CameraFollowerBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/Orb/OrbTrailController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/CameraPlayerFollowerBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/OrbColorChangeParticlesController.cs" />
-      <option value="$PROJECT_DIR$/Assets/MultipleParticlesController.cs" />
-      <option value="$PROJECT_DIR$/Assets/ObjectFollower.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageArea.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentLoader.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamageableArea.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerShadowBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/FiniteStateMachine.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/State.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/ShadowBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroupController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" />
       <option value="C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Resources/ScriptTemplates/81-C# Script-NewBehaviourScript.cs.txt" />
-      <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMaterialController.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemyMaterialController2.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemyMaterialController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpriteController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemySpriteController.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemySpriteTintController.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemySpritePartController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpritePartsGroupController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" />
+      <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentInstancier.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/GroundedEnemy/GroundedEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/FlyingEnemy/FlyingEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerMaterialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/AnimationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy1Stats1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HurtController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/MethodDelayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteTintController.cs" />
+      <option value="$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1WalkingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Stats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Parameters.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyParameters.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyDamageableArea.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/IOrbHittable.cs" />
+      <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2IdleState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Core/ParallaxEffectController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroup.cs" />
+      <option value="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
+      <option value="$PROJECT_DIR$/Assets/MedallionOrbController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -560,6 +380,13 @@
       <workItem from="1625516183136" duration="4063000" />
       <workItem from="1625597819682" duration="9392000" />
       <workItem from="1625774170997" duration="1105000" />
+      <workItem from="1625942330721" duration="652000" />
+      <workItem from="1626277134764" duration="12554000" />
+      <workItem from="1626349056367" duration="715000" />
+      <workItem from="1626461699397" duration="11758000" />
+      <workItem from="1626534135931" duration="9219000" />
+      <workItem from="1626629616691" duration="11841000" />
+      <workItem from="1626699375190" duration="681000" />
     </task>
     <servers />
   </component>

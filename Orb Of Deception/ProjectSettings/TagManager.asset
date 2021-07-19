@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - UI Texture
   - 
   - Ground
   - Player
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2198329379
+    locked: 0
+  - name: Background Near
+    uniqueID: 1270818011
     locked: 0
   - name: Decoration
     uniqueID: 587635121

@@ -44,6 +44,18 @@ TextureImporter:
   - first:
       213: -7725252426689968553
     second: TheaterOfOrigins_Floor_13
+  - first:
+      213: -9060792341296401703
+    second: TheaterOfOrigins_Floor_14
+  - first:
+      213: 7912771999846390456
+    second: TheaterOfOrigins_Floor_15
+  - first:
+      213: 3594072278171731290
+    second: TheaterOfOrigins_Floor_16
+  - first:
+      213: -3905556886730125004
+    second: TheaterOfOrigins_Floor_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,10 +169,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 1}
+      - - {x: -8, y: 3}
         - {x: -8, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: 1}
+        - {x: 8, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: ae1740b81f2d005c0800000000000000
@@ -182,10 +194,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 1}
+      - - {x: -8, y: 3}
         - {x: -8, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: 1}
+        - {x: 8, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: 7d6086c5d5b991b00800000000000000
@@ -207,10 +219,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 1}
+      - - {x: -8, y: 3}
         - {x: -8, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: 1}
+        - {x: 8, y: 3}
       tessellationDetail: 0
       bones: []
       spriteID: 68ab5ab217eb1d100800000000000000
@@ -446,6 +458,102 @@ TextureImporter:
       bones: []
       spriteID: 7568bea19d36ac490800000000000000
       internalID: -7725252426689968553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -5}
+        - {x: 8, y: -5}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d2b2792f59914280800000000000000
+      internalID: -9060792341296401703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -5}
+        - {x: 8, y: -5}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba508fc530dfcd60800000000000000
+      internalID: 7912771999846390456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: 3}
+        - {x: -8, y: -5}
+        - {x: 8, y: -5}
+        - {x: 8, y: 3}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55418dd1b5b0e130800000000000000
+      internalID: 3594072278171731290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431de5c34bcacc9c0800000000000000
+      internalID: -3905556886730125004
       vertices: []
       indices: 
       edges: []

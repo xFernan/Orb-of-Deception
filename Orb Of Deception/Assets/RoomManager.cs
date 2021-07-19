@@ -15,7 +15,7 @@ namespace OrbOfDeception
                 return;
             }
 
-            var playerGroup = PlayerGroupController.Instance;
+            var playerGroup = PlayerGroup.Instance;
             playerGroup.SetPositionInNewRoom(roomChangers[targetRoomPlayerPositionID - 1].GetIncomingPlayerPosition());
         }
     }
