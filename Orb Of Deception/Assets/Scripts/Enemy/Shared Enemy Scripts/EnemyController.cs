@@ -16,7 +16,6 @@ namespace OrbOfDeception.Enemy
         [SerializeField] private EnemyDamagingArea damagingArea;
         
         private float _health;
-        private bool _isDying;
         
         protected EnemyParameters parameters;
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
@@ -112,7 +111,6 @@ namespace OrbOfDeception.Enemy
         #region Shared Enemy Methods
         protected virtual void Die()
         {
-            _isDying = true;
             _stateMachine.ExitState();
             Anim.enabled = false;
             spriteAnim!.SetTrigger(Dying);

@@ -25,7 +25,9 @@ namespace OrbOfDeception
             _orbImage.sprite = newOrbColor switch
             {
                 GameEntity.EntityColor.White => whiteOrb,
-                GameEntity.EntityColor.Black => blackOrb
+                GameEntity.EntityColor.Black => blackOrb,
+                GameEntity.EntityColor.Other => whiteOrb,
+                _ => throw new ArgumentOutOfRangeException(nameof(newOrbColor), newOrbColor, null)
             };
         }
         
