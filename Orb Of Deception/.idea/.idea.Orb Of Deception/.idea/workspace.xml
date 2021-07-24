@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/MaskSpritesheetChanger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/MaskSpritesheetChanger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_BlackMask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_BlackMask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_WhiteMask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_WhiteMask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_18.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_18.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 1/Enemy1Walking.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Enemigos/Enemy 1/Enemy1Walking.aseprite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/UI/InGameUI.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/UI/InGameUI.aseprite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedallionOrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedallionOrbController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy1/Enemy1Walking_Mask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/InGameUI.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/InGameUI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +242,9 @@
       <workItem from="1626461699397" duration="11758000" />
       <workItem from="1626534135931" duration="9219000" />
       <workItem from="1626629616691" duration="11841000" />
-      <workItem from="1626699375190" duration="3762000" />
+      <workItem from="1626699375190" duration="4150000" />
+      <workItem from="1626770211393" duration="596000" />
+      <workItem from="1626789798918" duration="597000" />
     </task>
     <servers />
   </component>
