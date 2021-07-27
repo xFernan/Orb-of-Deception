@@ -54,6 +54,9 @@ TagManager:
   - name: Platforms Depth
     uniqueID: 4179352917
     locked: 0
+  - name: Secret Wall
+    uniqueID: 1131699039
+    locked: 0
   - name: Shadows
     uniqueID: 2844865893
     locked: 0

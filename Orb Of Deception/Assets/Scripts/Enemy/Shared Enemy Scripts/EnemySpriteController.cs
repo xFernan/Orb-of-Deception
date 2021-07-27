@@ -9,7 +9,7 @@ namespace OrbOfDeception.Enemy
 {
     public class EnemySpriteController : MonoBehaviour
     {
-        private List<EnemySpritePartController> _parts;
+        private List<SpriteMaterialController> _parts;
 
         [HideInInspector] public Color tintColor;
         [HideInInspector] public float tintOpacity;
@@ -27,7 +27,7 @@ namespace OrbOfDeception.Enemy
         
         private void Awake()
         {
-            _parts = GetComponentsInChildren<EnemySpritePartController>().ToList();
+            _parts = GetComponentsInChildren<SpriteMaterialController>().ToList();
         }
 
         private void Update()

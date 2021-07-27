@@ -8,7 +8,7 @@ namespace OrbOfDeception.Enemy
     {
         #region Variables
         
-        private List<EnemySpritePartController> _parts;
+        private List<SpriteMaterialController> _parts;
 
         [HideInInspector] public Color tintColor;
         [HideInInspector] public float tintOpacity;
@@ -24,7 +24,7 @@ namespace OrbOfDeception.Enemy
         
         private void Awake()
         {
-            _parts = GetComponentsInChildren<EnemySpritePartController>().ToList();
+            _parts = GetComponentsInChildren<SpriteMaterialController>().ToList();
         }
 
         private void Update()

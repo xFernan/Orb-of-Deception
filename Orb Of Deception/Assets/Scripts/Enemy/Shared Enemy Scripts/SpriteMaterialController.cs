@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace OrbOfDeception
 {
-    public class EnemySpritePartController : MonoBehaviour
+    public class SpriteMaterialController : MonoBehaviour
     {
         private Material _material;
         
@@ -14,7 +14,7 @@ namespace OrbOfDeception
 
         private void Awake()
         {
-            _material = GetComponent<SpriteRenderer>().material;
+            _material = GetComponent<Renderer>().material;
         }
 
         public void SetTintColor(Color tintColor)
