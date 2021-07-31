@@ -8,16 +8,18 @@ namespace OrbOfDeception.Gameplay.Player
         private readonly GroundDetector _groundDetector;
         private readonly float _jumpForce;
         private readonly float _jumpTime;
+        private readonly float _maxFallVelocity;
         
         private float _jumpTimeCounter;
         private bool _isJumping;
 
-        public JumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, GroundDetector groundDetector)
+        public JumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, float maxFallVelocity, GroundDetector groundDetector)
         {
             _rigidbody = rigidbody;
             _groundDetector = groundDetector;
             _jumpForce = jumpForce;
             _jumpTime = jumpTime;
+            _maxFallVelocity = maxFallVelocity;
         }
 
         public void Jump()
@@ -37,20 +39,23 @@ namespace OrbOfDeception.Gameplay.Player
         
         public void FixedUpdate()
         {
-            if (!_isJumping)
-            {
-                return;
-            }
-            
             var newVelocity = _rigidbody.velocity;
-            newVelocity.y = _jumpForce;
-            _rigidbody.velocity = newVelocity;
             
-            _jumpTimeCounter += Time.deltaTime;
-            if (_jumpTimeCounter >= _jumpTime)
-            {
-                _isJumping = false;
+            if (_isJumping) {
+                newVelocity.y = _jumpForce;
+            
+                _jumpTimeCounter += Time.deltaTime;
+                if (_jumpTimeCounter >= _jumpTime)
+                {
+                    _isJumping = false;
+                }
             }
+            else
+            {
+                newVelocity.y = Mathf.Max(_maxFallVelocity, newVelocity.y);
+            }
+            
+            _rigidbody.velocity = newVelocity;
         }
     }
 }

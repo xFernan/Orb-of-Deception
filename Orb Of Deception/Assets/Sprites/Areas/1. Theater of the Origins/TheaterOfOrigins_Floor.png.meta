@@ -239,6 +239,9 @@ TextureImporter:
   - first:
       213: 5052985953234564607
     second: TheaterOfOrigins_Floor_78
+  - first:
+      213: -3443925533340272582
+    second: TheaterOfOrigins_Floor_79
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2140,6 +2143,27 @@ TextureImporter:
       bones: []
       spriteID: ff5b59dd3ffcf1640800000000000000
       internalID: 5052985953234564607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38fa5069f7b430d0800000000000000
+      internalID: -3443925533340272582
       vertices: []
       indices: 
       edges: []

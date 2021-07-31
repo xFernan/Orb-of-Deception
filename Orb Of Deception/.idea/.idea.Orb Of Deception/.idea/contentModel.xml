@@ -469,6 +469,9 @@
           <e p="Core" t="Include">
             <e p="ShadowShader.shader" t="Include" />
           </e>
+          <e p="Enemies" t="Include">
+            <e p="NewSurfaceShader.shader" t="Include" />
+          </e>
         </e>
         <e p="Shapes2D" t="Include">
           <e p="changelog.txt" t="Include" />

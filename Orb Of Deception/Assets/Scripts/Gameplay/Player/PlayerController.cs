@@ -1,7 +1,4 @@
-﻿using System;
-using DG.Tweening;
-using OrbOfDeception.CameraBehaviours;
-using OrbOfDeception.Core.Input;
+﻿using OrbOfDeception.Core.Input;
 using UnityEngine;
 
 namespace OrbOfDeception.Gameplay.Player
@@ -12,6 +9,7 @@ namespace OrbOfDeception.Gameplay.Player
         [SerializeField] private float velocity = 5;
         [SerializeField] private float jumpForce = 5;
         [SerializeField] private float jumpTime = 1;
+        [SerializeField] private float maxFallVelocity = -5;
         [SerializeField] private float coyoteTime = 0.1f;
         [SerializeField] private float timeInvulnerable = 2;
         [SerializeField] private GameObject spriteObject;
@@ -40,7 +38,7 @@ namespace OrbOfDeception.Gameplay.Player
             _spriteAnimator = spriteObject.GetComponent<Animator>();
             
             GroundDetector = new GroundDetector(groundDetectors, groundDetectionRayDistance, coyoteTime);
-            JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, GroundDetector);
+            JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, maxFallVelocity, GroundDetector);
             HorizontalMovementController = new HorizontalMovementController(_rigidbody, velocity, inputManager);
             AnimationController = new AnimationController(_animator, _rigidbody, inputManager, GroundDetector);
             PlayerHealthController = new PlayerHealthController(this, initialHealth);
