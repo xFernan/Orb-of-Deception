@@ -12,7 +12,7 @@ namespace OrbOfDeception.Enemy.Enemy2
         private readonly Enemy2Parameters _parameters;
         private readonly Rigidbody2D _rigidbody;
         private readonly Seeker _seeker;
-        private readonly Transform _spriteObject;
+        private readonly SpriteRenderer _spriteRenderer;
         
         private readonly Transform _transform;
         private readonly float _nextWaypointDistance;
@@ -25,13 +25,13 @@ namespace OrbOfDeception.Enemy.Enemy2
         #region Methods
 
         public ChasingState(Enemy2Controller enemy,
-            Seeker seeker, Transform spriteObject, float nextWaypointDistance) : base(enemy)
+            Seeker seeker, SpriteRenderer spriteRenderer, float nextWaypointDistance) : base(enemy)
         {
             _parameters = enemy.Parameters;
             _rigidbody = enemy.Rigidbody;
             _transform = enemy.transform;
             _seeker = seeker;
-            _spriteObject = spriteObject;
+            _spriteRenderer = spriteRenderer;
             _nextWaypointDistance = nextWaypointDistance;
 
             _updatePathDelayer = new MethodDelayer(enemy, UpdatePath);
@@ -112,15 +112,8 @@ namespace OrbOfDeception.Enemy.Enemy2
 
             // Flip del sprite (provisional).
             var directionFromPlayer = Mathf.Sign(PlayerGroup.Player.transform.position.x - _transform.position.x);
-            
-            if (directionFromPlayer > 0)
-            {
-                _spriteObject.localScale = new Vector3(-1, 1, 1);
-            }
-            else if (directionFromPlayer < 0)
-            {
-                _spriteObject.localScale = new Vector3(1, 1, 1);
-            }
+
+            _spriteRenderer.flipX = directionFromPlayer > 0; // Provisional, hacer con animaciones para cambiar sombras.
             
         }
 

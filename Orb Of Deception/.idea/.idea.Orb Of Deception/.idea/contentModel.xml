@@ -455,7 +455,7 @@
             </e>
           </e>
           <e p="Other" t="Include">
-            <e p="MaskSpritesheetChanger.cs" t="Include" />
+            <e p="EnemySpritesheetChanger.cs" t="Include" />
           </e>
           <e p="Patterns" t="Include">
             <e p="FiniteStateMachine.cs" t="Include" />

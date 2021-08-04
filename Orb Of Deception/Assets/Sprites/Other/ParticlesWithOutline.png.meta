@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: f0e4a86169abdcb42a72d3f0370fb000
+guid: 62d821818fbae794b972141f195cda48
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2385371319667891586
-    second: Enemy2Flying_Mask_0
+      213: 4023853347148728534
+    second: ParticlesWithOutline_0
   - first:
-      213: -514554938548020741
-    second: Enemy2Flying_Mask_1
-  - first:
-      213: -3311086838409069088
-    second: Enemy2Flying_Mask_2
-  - first:
-      213: -5003955745409202059
-    second: Enemy2Flying_Mask_3
-  - first:
-      213: -5950293143236981235
-    second: Enemy2Flying_Mask_4
+      213: -1813604749667776934
+    second: ParticlesWithOutline_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy2Flying_Mask_0
+      name: ParticlesWithOutline_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e726ac94c6575eed0800000000000000
-      internalID: -2385371319667891586
+      spriteID: 6d80119cc4997d730800000000000000
+      internalID: 4023853347148728534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy2Flying_Mask_1
+      name: ParticlesWithOutline_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 3
         y: 0
-        width: 32
-        height: 32
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,71 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf91c66720febd8f0800000000000000
-      internalID: -514554938548020741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy2Flying_Mask_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0edf7283018ac02d0800000000000000
-      internalID: -3311086838409069088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy2Flying_Mask_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5780c1bf2c06e8ab0800000000000000
-      internalID: -5003955745409202059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy2Flying_Mask_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0ecae789ef4c6da0800000000000000
-      internalID: -5950293143236981235
+      spriteID: a56471dc618c4d6e0800000000000000
+      internalID: -1813604749667776934
       vertices: []
       indices: 
       edges: []

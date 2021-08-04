@@ -9,11 +9,11 @@ namespace OrbOfDeception.Enemy.Enemy2
 
         [Header("Enemy 2 variables")]
         [SerializeField] private float nextWaypointDistance;
-        [SerializeField] private Transform spriteObject; // Provisional, se hará con animaciones,
-                                                         // teniendo cada dirección su propio sombreado.
+        
         private Seeker _seeker;
         
         public Rigidbody2D Rigidbody { get; private set; }
+        public SpriteRenderer SpriteRenderer { get; private set; }
         
         public Enemy2Parameters Parameters => parameters as Enemy2Parameters;
         
@@ -29,10 +29,11 @@ namespace OrbOfDeception.Enemy.Enemy2
             base.OnAwake();
 
             Rigidbody = GetComponent<Rigidbody2D>();
+            SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
             _seeker = GetComponent<Seeker>();
             
             AddState(IdleState, new IdleState(this));
-            AddState(ChasingState, new ChasingState(this, _seeker, spriteObject, nextWaypointDistance));
+            AddState(ChasingState, new ChasingState(this, _seeker, SpriteRenderer, nextWaypointDistance));
         }
 
         private void Start()

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace OrbOfDeception.Other
 {
-    public class MaskSpritesheetChanger : MonoBehaviour
+    public class EnemySpritesheetChanger : MonoBehaviour
     {
         [SerializeField] private Sprite[] whiteMaskSpritesheet;
         [SerializeField] private Sprite[] blackMaskSpritesheet;

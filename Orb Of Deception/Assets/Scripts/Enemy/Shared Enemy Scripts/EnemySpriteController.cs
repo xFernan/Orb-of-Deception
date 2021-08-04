@@ -9,8 +9,6 @@ namespace OrbOfDeception.Enemy
 {
     public class EnemySpriteController : MonoBehaviour
     {
-        private List<SpriteMaterialController> _parts;
-
         [HideInInspector] public Color tintColor;
         [HideInInspector] public float tintOpacity;
         [HideInInspector] public float dissolve;
@@ -21,25 +19,24 @@ namespace OrbOfDeception.Enemy
         private readonly Color _whiteColor = Color.white;
         private readonly Color _purpleColor = new Color(0.3f, 0, 0.7f);
 
+        private SpriteMaterialController _materialController;
+        
         #region Methods
         
         #region MonoBehaviour Methods
         
         private void Awake()
         {
-            _parts = GetComponentsInChildren<SpriteMaterialController>().ToList();
+            _materialController = GetComponent<SpriteMaterialController>();
         }
 
         private void Update()
         {
-            foreach (var part in _parts)
-            {
-                part.SetTintOpacity(tintOpacity);
-                part.SetDissolve(dissolve);
-                part.SetOpacity(opacity);
-                part.SetTintColor(tintColor);
-                part.SetPunishEffect(punishEffect);
-            }
+            _materialController.SetTintOpacity(tintOpacity);
+            _materialController.SetDissolve(dissolve);
+            _materialController.SetOpacity(opacity);
+            _materialController.SetTintColor(tintColor);
+            _materialController.SetPunishEffect(punishEffect);
         }
         
         #endregion

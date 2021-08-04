@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: e142cc7ec1890ae4284db9390eba261d
+guid: 846356ac95459f241b5c4575818a506a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7735924750818514545
-    second: Enemy1Walking_Mask_0
+      213: 4040651500371125629
+    second: Enemy2Flying_0
   - first:
-      213: -2959638687577269209
-    second: Enemy1Walking_Mask_1
+      213: 7672841008158954070
+    second: Enemy2Flying_1
   - first:
-      213: 5109946924064953100
-    second: Enemy1Walking_Mask_2
+      213: -3997697019926066487
+    second: Enemy2Flying_2
   - first:
-      213: 6067193273597362155
-    second: Enemy1Walking_Mask_3
+      213: 6164164501292427702
+    second: Enemy2Flying_3
   - first:
-      213: 5062220556643413431
-    second: Enemy1Walking_Mask_4
-  - first:
-      213: 7541727287310606555
-    second: Enemy1Walking_Mask_5
-  - first:
-      213: 7895782192491823184
-    second: Enemy1Walking_Mask_6
-  - first:
-      213: 3799860293618366629
-    second: Enemy1Walking_Mask_7
+      213: 3554189314118468061
+    second: Enemy2Flying_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,169 +118,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy1Walking_Mask_0
+      name: Enemy2Flying_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f896f420d6974a490800000000000000
-      internalID: -7735924750818514545
+      spriteID: d7525cc9127431830800000000000000
+      internalID: 4040651500371125629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy1Walking_Mask_1
+      name: Enemy2Flying_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72c14736b404de6d0800000000000000
-      internalID: -2959638687577269209
+      spriteID: 6525d559e386b7a60800000000000000
+      internalID: 7672841008158954070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy1Walking_Mask_2
+      name: Enemy2Flying_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c03ddfd57ad2ae640800000000000000
-      internalID: 5109946924064953100
+      spriteID: 9ca4ba7bdb35588c0800000000000000
+      internalID: -3997697019926066487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy1Walking_Mask_3
+      name: Enemy2Flying_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beff8601320033450800000000000000
-      internalID: 6067193273597362155
+      spriteID: 6b9ab9c64f28b8550800000000000000
+      internalID: 6164164501292427702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy1Walking_Mask_4
+      name: Enemy2Flying_4
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bd296586ce904640800000000000000
-      internalID: 5062220556643413431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy1Walking_Mask_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd0e401920999a860800000000000000
-      internalID: 7541727287310606555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy1Walking_Mask_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05084570214739d60800000000000000
-      internalID: 7895782192491823184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy1Walking_Mask_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a8fb35fdc0dbb430800000000000000
-      internalID: 3799860293618366629
+      spriteID: dd1458ca954035130800000000000000
+      internalID: 3554189314118468061
       vertices: []
       indices: 
       edges: []
