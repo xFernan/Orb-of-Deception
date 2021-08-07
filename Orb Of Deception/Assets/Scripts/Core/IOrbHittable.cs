@@ -2,6 +2,6 @@
 {
     public interface IOrbHittable
     {
-        public void Hit(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0);
+        public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0);
     }
 }

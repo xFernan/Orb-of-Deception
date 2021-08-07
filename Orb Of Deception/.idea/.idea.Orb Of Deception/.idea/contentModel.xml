@@ -212,6 +212,7 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="BreakableDecorationBehaviour.cs" t="Include" />
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
@@ -390,6 +391,7 @@
               <e p="InputManager.cs" t="Include" />
               <e p="player.cs" t="Include" />
             </e>
+            <e p="IOrbCollisionable.cs" t="Include" />
             <e p="IOrbHittable.cs" t="Include" />
             <e p="LightTwinkleBehaviour.cs" t="Include" />
             <e p="MethodDelayer.cs" t="Include" />
@@ -514,6 +516,7 @@
             <e p="Triangle.cginc" t="Include" />
           </e>
         </e>
+        <e p="SurroundingsDetector.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
             <e p="LineBreaking Following Characters.txt" t="Include" />

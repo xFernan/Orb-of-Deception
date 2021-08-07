@@ -9,13 +9,9 @@ namespace OrbOfDeception.Enemy.Enemy1
         [Header("Enemy 1 variables")]
         [SerializeField] private int initialDirection = 1;
         [SerializeField] private float timeToChangeDirectionAgain = 0.5f;
-        [SerializeField] private float rayDetectorDistance;
-        [SerializeField] private Transform leftGroundDetector;
-        [SerializeField] private Transform rightGroundDetector;
-        [SerializeField] private Transform[] leftWallDetectors;
-        [SerializeField] private Transform[] rightWallDetectors;
         
         public Rigidbody2D Rigidbody { get; private set; }
+        public SurroundingsDetector SurroundingsDetector { get; private set; }
         public Enemy1Parameters Parameters => parameters as Enemy1Parameters;
         
         public const int WalkingState = 0;
@@ -29,10 +25,10 @@ namespace OrbOfDeception.Enemy.Enemy1
             base.OnAwake();
 
             Rigidbody = GetComponent<Rigidbody2D>();
+            SurroundingsDetector = GetComponentInChildren<SurroundingsDetector>();
             
             AddState(WalkingState,
-                new WalkingState(this, initialDirection, rayDetectorDistance, timeToChangeDirectionAgain,
-                    leftGroundDetector, rightGroundDetector, leftWallDetectors, rightWallDetectors));
+                new WalkingState(this, initialDirection, timeToChangeDirectionAgain));
         }
 
         protected override void OnStart()
@@ -40,23 +36,6 @@ namespace OrbOfDeception.Enemy.Enemy1
             base.OnStart();
             
             SetInitialState(WalkingState);
-        }
-        
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(leftGroundDetector.position, leftGroundDetector.position + Vector3.down * rayDetectorDistance);
-            Gizmos.DrawLine(rightGroundDetector.position, rightGroundDetector.position + Vector3.down * rayDetectorDistance);
-            
-            Gizmos.color = Color.green;
-            foreach (var rightWallDetector in rightWallDetectors)
-            {
-                Gizmos.DrawLine(rightWallDetector.position, rightWallDetector.position + Vector3.right * rayDetectorDistance);
-            }
-            foreach (var leftWallDetector in leftWallDetectors)
-            {
-                Gizmos.DrawLine(leftWallDetector.position, leftWallDetector.position + Vector3.left * rayDetectorDistance);
-            }
         }
         
         #endregion

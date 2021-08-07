@@ -5,17 +5,16 @@ using UnityEngine.Tilemaps;
 
 namespace OrbOfDeception
 {
-    public class SecretBreakableWallBehaviour : MonoBehaviour, IOrbHittable
+    public class SecretBreakableWallBehaviour : MonoBehaviour, IOrbCollisionable
     {
         private SpriteMaterialController _wallMaterial;
         private SpriteMaterialController _secretFrontMaterial;
         private TilemapCollider2D _wallCollider;
 
-        private float _opacityValue = 1;
+        private float _dissolveValue;
         private bool _isOpen;
 
-        private const float FadeDuration = 1f;
-        private static readonly int Opacity = Shader.PropertyToID("_Opacity");
+        private const float FadeDuration = 0.75f;
         
         private void Start()
         {
@@ -26,11 +25,11 @@ namespace OrbOfDeception
 
         private void Update()
         {
-            _wallMaterial.SetOpacity(_opacityValue);
-            _secretFrontMaterial.SetOpacity(_opacityValue);
+            _wallMaterial.SetDissolve(_dissolveValue);
+            _secretFrontMaterial.SetDissolve(_dissolveValue);
         }
 
-        public void Hit(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
+        public void OnOrbCollisionEnter()
         {
             if (_isOpen) return;
             Open();
@@ -38,7 +37,7 @@ namespace OrbOfDeception
 
         private void Open()
         {
-            DOTween.To(()=> _opacityValue, x=> _opacityValue = x, 0, FadeDuration);
+            DOTween.To(()=> _dissolveValue, x=> _dissolveValue = x, 1, FadeDuration);
             _wallCollider.enabled = false;
 
             _isOpen = true;

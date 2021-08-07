@@ -42,11 +42,13 @@ Material:
     - Vector1_a56516862b7346d3869e4a70d9b67f94: 1
     - Vector1_e1dd4bb73d9f422585c4689c49e21e0e: 50
     - _Dissolve: 0
+    - _DissolveBorderFactor: 0.15
     - _DissolveScale: 10
     - _Opacity: 1
     - _PunishEffect: 0
     - _TintIsWhite: 0
     - _TintOpacity: 0
+    - _UseBorderDuringDissolve: 0
     - _Voronoi: 1
     m_Colors:
     - Color_e4bc39271d604c90ad4e08b7b083b917: {r: 0.2167714, g: 0, b: 0.41509432,

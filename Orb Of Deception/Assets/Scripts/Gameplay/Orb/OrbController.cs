@@ -159,6 +159,9 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void OnCollisionEnter2D(Collision2D other)
         {
+            var orbCollisionable = other.gameObject.GetComponent<IOrbCollisionable>();
+            orbCollisionable?.OnOrbCollisionEnter();
+            
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
             SpawnBounceParticles(other.contacts[0].point, CurrentParticlesColor);
@@ -187,7 +190,7 @@ namespace OrbOfDeception.Gameplay.Orb
 
             if (orbHittable == null) return;
             
-            orbHittable.Hit(_orbColor, 10/*PROVISIONAL*/);
+            orbHittable.OnOrbHitEnter(_orbColor, 10/*PROVISIONAL*/);
 
             if (objectHit.layer != LayerMask.NameToLayer("Enemy")) return;
             

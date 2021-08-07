@@ -16,7 +16,7 @@ namespace OrbOfDeception.Enemy
             _colliders = GetComponents<Collider2D>();
         }
 
-        public void Hit(GameEntity.EntityColor damageColor, int damage = 0)
+        public void OnOrbHitEnter(GameEntity.EntityColor damageColor, int damage = 0)
         {
             _enemyController.GetDamaged(damageColor, damage);
         }

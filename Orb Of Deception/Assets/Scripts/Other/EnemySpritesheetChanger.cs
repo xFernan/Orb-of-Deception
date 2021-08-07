@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
 using UnityEngine;
@@ -47,6 +48,20 @@ namespace OrbOfDeception.Other
                 GameEntity.EntityColor.Black => blackMaskSpritesheet,
                 GameEntity.EntityColor.Other => whiteMaskSpritesheet,
                 _ => throw new ArgumentOutOfRangeException()
+            };
+        }
+        
+        [Button]
+        private void UpdateMask()
+        {
+            var maskColor = GetComponentInParent<EnemyParameters>().maskColor;
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+
+            spriteRenderer.sprite = maskColor switch
+            {
+                GameEntity.EntityColor.Black => blackMaskSpritesheet[0],
+                GameEntity.EntityColor.White => whiteMaskSpritesheet[0],
+                _ => spriteRenderer.sprite
             };
         }
     }

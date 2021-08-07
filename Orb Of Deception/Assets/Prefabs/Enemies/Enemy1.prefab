@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: dfcbfd62c621d4149a4ea7d85fc4c4a8, type: 2}
-  maskColor: 1
+  maskColor: 0
 --- !u!114 &5434479608427540339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,15 +337,6 @@ MonoBehaviour:
   damagingArea: {fileID: 5434479608029333714}
   initialDirection: 1
   timeToChangeDirectionAgain: 0.5
-  rayDetectorDistance: 0.1
-  leftGroundDetector: {fileID: 5434479608220745645}
-  rightGroundDetector: {fileID: 5434479609504947847}
-  leftWallDetectors:
-  - {fileID: 5434479608985086388}
-  - {fileID: 5434479608499997788}
-  rightWallDetectors:
-  - {fileID: 5434479609366806288}
-  - {fileID: 5434479608710936051}
 --- !u!61 &5434479608427540337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -562,6 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434479609055566889}
+  - component: {fileID: 1597369943}
   m_Layer: 10
   m_Name: Detectors
   m_TagString: Untagged
@@ -587,6 +579,28 @@ Transform:
   m_Father: {fileID: 5434479608427540332}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597369943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5434479609055566890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8193035366833a04dacb5fdc1a5d1054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundDetectorRange: 0.1
+  leftGroundDetector: {fileID: 5434479608220745645}
+  rightGroundDetector: {fileID: 5434479609504947847}
+  wallDetectorRange: 0.1
+  leftWallDetectors:
+  - {fileID: 5434479608985086388}
+  - {fileID: 5434479608499997788}
+  rightWallDetectors:
+  - {fileID: 5434479609366806288}
+  - {fileID: 5434479608710936051}
 --- !u!1 &5434479609366806289
 GameObject:
   m_ObjectHideFlags: 0
