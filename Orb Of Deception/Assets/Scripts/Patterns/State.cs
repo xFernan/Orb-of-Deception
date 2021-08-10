@@ -1,4 +1,6 @@
-﻿namespace OrbOfDeception.Patterns
+﻿using UnityEngine;
+
+namespace OrbOfDeception.Patterns
 {
     public abstract class State
     {
@@ -23,7 +25,11 @@
         {
 
         }
-        
+
+        public virtual void OnCollisionEnter2D(Collision2D other)
+        {
+            
+        }
         #endregion
     }
 }

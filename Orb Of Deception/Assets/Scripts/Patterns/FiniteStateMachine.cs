@@ -1,4 +1,6 @@
-﻿namespace OrbOfDeception.Patterns
+﻿using UnityEngine;
+
+namespace OrbOfDeception.Patterns
 {
     public class FiniteStateMachine
     {
@@ -22,7 +24,7 @@
             _currentState = incomingState;
             _currentState.Enter();
         }
-
+        
         public void ExitState()
         {
             _currentState.Exit();
@@ -38,7 +40,11 @@
         {
             _currentState?.FixedUpdate(deltaTime);
         }
-        
+
+        public void OnCollisionEnter2D(Collision2D other)
+        {
+            _currentState?.OnCollisionEnter2D(other);
+        }
         #endregion
     }
 }

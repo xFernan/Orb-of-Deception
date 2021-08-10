@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using OrbOfDeception.Core;
 using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;

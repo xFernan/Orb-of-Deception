@@ -5988,16 +5988,16 @@
     },
     "m_Name": "DissolveBorderColor",
     "m_DefaultReferenceName": "Color_e4bc39271d604c90ad4e08b7b083b917",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_DissolveBorderColor",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.250980406999588,
+        "r": 0.27843138575553896,
         "g": 0.0,
-        "b": 1.3333333730697632,
+        "b": 0.7058823704719544,
         "a": 0.0
     },
     "m_ColorMode": 0

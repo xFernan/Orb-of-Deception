@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
+using OrbOfDeception.Patterns;
 using UnityEngine;
 
 namespace OrbOfDeception.Gameplay.Orb
@@ -10,25 +12,16 @@ namespace OrbOfDeception.Gameplay.Orb
     {
         #region Variables
 
-        private enum OrbState
-        {
-            OnPlayer,
-            Returning,
-            DirectionalAttack
-        }
-
-        private OrbState _state;
-
         [Header("Particles variables")]
-        [SerializeField] private ParticleSystem directionAttackOrbParticles;
-        [SerializeField] private ParticleSystem orbIdleParticles;
-        [SerializeField] private TrailRenderer orbTrail;
+        public ParticleSystem directionAttackOrbParticles;
+        public ParticleSystem orbIdleParticles;
+        public TrailRenderer orbTrail;
         
         [Space]
         
-        [SerializeField] private GameObject bounceParticles;
-        [SerializeField] private GameObject ringParticles;
-        [SerializeField] private GameObject hitParticles;
+        public GameObject bounceParticles;
+        public GameObject ringParticles;
+        public GameObject hitParticles;
         
         [Space]
         
@@ -36,7 +29,7 @@ namespace OrbOfDeception.Gameplay.Orb
         [SerializeField] private Color whiteStateParticlesColor;
         
         [Header("Orb parameters")]
-        [SerializeField] private Transform orbIdlePositionTransform;
+        public Transform orbIdlePositionTransform;
         [SerializeField] private float idleFloatingMoveDistance = 1;
         [SerializeField] private float idleFloatingMoveVelocity = 1;
         [SerializeField] private float idleLerpPlayerFollowValue = 0.5f;
@@ -65,126 +58,85 @@ namespace OrbOfDeception.Gameplay.Orb
         private int _ringParticlesCount;
         private bool _canChangeColor = true;
         
-        private Rigidbody2D _rigidbody;
-        private Collider2D _physicsCollider;
+        public Rigidbody2D Rigidbody { get; private set; }
+        public Collider2D PhysicsCollider { get; private set; }
 
-        private InputManager _inputManager;
         private OrbTrailController _orbTrailController;
+
+        public bool CanBeThrown { get; set; }
+        public bool CanHit { get; set; }
 
         public static Action<EntityColor> onChangeOrbColor;
         
-        private Color CurrentParticlesColor =>
+        public Color CurrentParticlesColor =>
             _orbColor == EntityColor.White ? whiteStateParticlesColor : blackStateParticlesColor;
+
+        private FiniteStateMachine _stateMachine;
+        private Dictionary<int, State> _states;
+        
+        public const int OnPlayerState = 0;
+        public const int ReturningState = 1;
+        public const int DirectionalAttackState = 2;
         #endregion
 
         #region Methods
-
+        
+        public void SetState(int stateId)
+        {
+            _stateMachine.SetState(_states[stateId]);
+        }
+        
         #region Monobehaviour Methods
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _physicsCollider = GetComponent<Collider2D>();
-            
-            _inputManager = FindObjectOfType<InputManager>(); // Provisional
+            Rigidbody = GetComponent<Rigidbody2D>();
+            PhysicsCollider = GetComponent<Collider2D>();
             
             _orbTrailController = new OrbTrailController(orbTrail);
-            
-            _state = OrbState.OnPlayer;
-            _orbColor = EntityColor.White;
-            _physicsCollider.enabled = false;
 
-            _inputManager.DirectionalAttack = DirectionalAttack;
-            _inputManager.Click = OnMouseClick;
-            _inputManager.ChangeOrbColor = ChangeColor;
+            _stateMachine = new FiniteStateMachine();
+            _states = new Dictionary<int, State>
+            {
+                {
+                    OnPlayerState, new OnPlayerState(this, idleLerpPlayerFollowValue, idleFloatingMoveVelocity,
+                        idleFloatingMoveDistance)
+                },
+                {
+                    DirectionalAttackState, new DirectionalAttackState(this,
+                        directionalAttackDecelerationFactor, directionalAttackMinVelocityToChangeState,
+                        directionalAttackInitialForce, directionalAttackFirstBounceVelocityBoost)
+                },
+                {
+                    ReturningState, new ReturningState(this, radiusToGoIdle, attractionForce)
+                }
+            };
+
+            _stateMachine.SetInitialState(_states[OnPlayerState]);
+            
+            var inputManager = FindObjectOfType<InputManager>(); // Provisional
+            inputManager.DirectionalAttack = DirectionalAttack;
+            inputManager.Click = OnMouseClick;
+            inputManager.ChangeOrbColor = ChangeColor;
         }
 
         private void Update()
         {
-            switch (_state)
-            {
-                case OrbState.Returning:
-                    if (Vector2.Distance(transform.position, orbIdlePositionTransform.position) <= radiusToGoIdle)
-                    {
-                        _rigidbody.velocity = Vector2.zero;
-                        orbIdleParticles.Play();
-                        directionAttackOrbParticles.Stop();
-                        _state = OrbState.OnPlayer;
-                    }
-                    break;
-                case OrbState.OnPlayer:
-                    break;
-                case OrbState.DirectionalAttack:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            _stateMachine?.Update(Time.deltaTime);
         }
         
         private void FixedUpdate()
         {
-            switch (_state)
-            {
-                case OrbState.OnPlayer:
-                    var currentPosition = transform.position;
-                    var orbIdlePosition = orbIdlePositionTransform.position;
-
-                    var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, idleLerpPlayerFollowValue);
-                    
-                    newPosition.y += Mathf.Sin(Time.time * idleFloatingMoveVelocity) *
-                        idleFloatingMoveDistance;
-                    
-                    transform.position = newPosition;
-                    
-                    break;
-                case OrbState.DirectionalAttack:
-                    _rigidbody.velocity *= directionalAttackDecelerationFactor;
-                    if (_rigidbody.velocity.magnitude <= directionalAttackMinVelocityToChangeState)
-                    {
-                        _physicsCollider.enabled = false;
-                        _ringParticlesCount = 0;
-                        _state = OrbState.Returning;
-                    }
-                    break;
-                case OrbState.Returning:
-                    // CONVERTIR EN UN SCRIPT QUE SEA FollowTarget.
-                    var velocityValue = _rigidbody.velocity.magnitude;
-                    var direction = (orbIdlePositionTransform.position - transform.position).normalized;
-                    _rigidbody.velocity = direction * velocityValue;
-                    _rigidbody.AddForce(direction * attractionForce);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            _stateMachine.FixedUpdate(Time.deltaTime);
         }
         
         private void OnCollisionEnter2D(Collision2D other)
         {
-            var orbCollisionable = other.gameObject.GetComponent<IOrbCollisionable>();
-            orbCollisionable?.OnOrbCollisionEnter();
-            
-            if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
-            
-            SpawnBounceParticles(other.contacts[0].point, CurrentParticlesColor);
-
-            if (_state != OrbState.DirectionalAttack || _hasReceivedAVelocityBoost)
-                return;
-            
-            var oldVelocity = _rigidbody.velocity;
-            var newVelocity = oldVelocity.magnitude + directionalAttackFirstBounceVelocityBoost;
-            _rigidbody.velocity = oldVelocity.normalized * Mathf.Min(newVelocity, directionalAttackInitialForce);
-
-            if (_ringParticlesCount == 3)
-            {
-                StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
-                StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 9));
-            }
-            
-            _hasReceivedAVelocityBoost = true;
+            _stateMachine.OnCollisionEnter2D(other);
         }
         
         public void OnTriggerObjectInit(GameObject objectHit)
         {
-            if (_state != OrbState.DirectionalAttack && _state != OrbState.Returning) return;
+            if (!CanHit) return;
             
             var orbHittable = objectHit.GetComponent<IOrbHittable>();
 
@@ -209,7 +161,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void OnMouseClick(Vector2 mousePosition)
         {
-            if (_state == OrbState.OnPlayer)
+            if (CanBeThrown)
             {
                 DirectionalAttack(GetDirectionFromOrbToMouse());
             }
@@ -227,25 +179,10 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void DirectionalAttack(Vector2 direction)
         {
-            if (_state != OrbState.OnPlayer) return;
-            
-            _physicsCollider.enabled = true;
-            _hasReceivedAVelocityBoost = false;
-            _state = OrbState.DirectionalAttack;
-            orbIdleParticles.Stop();
-            directionAttackOrbParticles.Play();
-            _rigidbody.velocity = directionalAttackInitialForce * direction;
-            
-            SpawnRingParticles();
+            SetState(DirectionalAttackState);
+            Rigidbody.velocity = directionalAttackInitialForce * direction;
         }
-
-        private void SpawnRingParticles()
-        {
-            StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 3));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.07f, 6));
-            StartCoroutine(SpawnRingParticlesCoroutine(0.15f, 9));
-        }
-
+        
         private void ChangeColor()
         {
             if (!_canChangeColor) return;
@@ -306,30 +243,6 @@ namespace OrbOfDeception.Gameplay.Orb
 
             var particlesFollower = particlesObject.GetComponent<ObjectFollower>();
             particlesFollower.SetTarget(objectHit.transform);
-        }
-
-        private void SpawnBounceParticles(Vector2 particlesPosition, Color particlesColor)
-        {
-            var bounceParticlesObject = Instantiate(bounceParticles, particlesPosition, Quaternion.identity); // Cambiar por Object Pool.
-            var bounceParticlesMain = bounceParticlesObject.GetComponent<ParticleSystem>().main;
-
-            Camera.main.WorldToScreenPoint(particlesPosition);
-            bounceParticlesMain.startColor = particlesColor;
-        }
-
-        private IEnumerator SpawnRingParticlesCoroutine(float time, float speed)
-        {
-            yield return new WaitForSeconds(time);
-            _ringParticlesCount++;
-            SpawnRingParticles(speed);
-        }
-        
-        private void SpawnRingParticles(float speed)
-        {
-            var ringParticlesObject = (GameObject) Instantiate(ringParticles, transform.position, Quaternion.LookRotation(_rigidbody.velocity.normalized)); // Cambiar por Object Pool.
-            var ringParticlesMain = ringParticlesObject.GetComponent<ParticleSystem>().main;
-            ringParticlesMain.startSpeed = speed;
-            ringParticlesMain.startColor = CurrentParticlesColor;
         }
         
         #endregion

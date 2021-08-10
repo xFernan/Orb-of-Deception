@@ -11,6 +11,7 @@ namespace OrbOfDeception
         private static readonly int Dissolve = Shader.PropertyToID("_Dissolve");
         private static readonly int Opacity = Shader.PropertyToID("_Opacity");
         private static readonly int PunishEffect = Shader.PropertyToID("_PunishEffect");
+        private static readonly int UseBorderDuringDissolve = Shader.PropertyToID("_UseBorderDuringDissolve");
 
         private void Awake()
         {
@@ -40,6 +41,11 @@ namespace OrbOfDeception
         public void SetPunishEffect(float punishEffect)
         {
             _material.SetFloat(PunishEffect, punishEffect);
+        }
+
+        public void SetUseBorderDuringDissolve(bool useBorderDuringDissolve)
+        {
+            _material.SetInt(UseBorderDuringDissolve, useBorderDuringDissolve ? 1 : 0);
         }
     }
 }

@@ -439,6 +439,11 @@
               <e p="OrbSpriteController.cs" t="Include" />
               <e p="OrbTrailController.cs" t="Include" />
               <e p="OrbTriggerColliderController.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="DirectionalAttackState.cs" t="Include" />
+                <e p="OnPlayerState.cs" t="Include" />
+                <e p="ReturningState.cs" t="Include" />
+              </e>
             </e>
             <e p="Player" t="Include">
               <e p="AnimationController.cs" t="Include" />

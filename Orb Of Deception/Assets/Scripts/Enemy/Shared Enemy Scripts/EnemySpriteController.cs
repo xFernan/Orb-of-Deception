@@ -28,6 +28,7 @@ namespace OrbOfDeception.Enemy
         private void Awake()
         {
             _materialController = GetComponent<SpriteMaterialController>();
+            _materialController.SetUseBorderDuringDissolve(true);
         }
 
         private void Update()

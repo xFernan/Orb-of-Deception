@@ -14,7 +14,7 @@ namespace OrbOfDeception
         private float _dissolveValue;
         private bool _isOpen;
 
-        private const float FadeDuration = 0.75f;
+        private const float FadeDuration = 1f;
         
         private void Start()
         {
