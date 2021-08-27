@@ -53,6 +53,6 @@ Material:
     m_Colors:
     - Color_e4bc39271d604c90ad4e08b7b083b917: {r: 0.2167714, g: 0, b: 0.41509432,
         a: 0}
-    - _DissolveBorderColor: {r: 0.2779568, g: 0, b: 0.7058824, a: 0}
+    - _DissolveBorderColor: {r: 0.10980392, g: 0, b: 4, a: 0}
     - _TintColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

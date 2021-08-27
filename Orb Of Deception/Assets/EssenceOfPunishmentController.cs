@@ -26,7 +26,6 @@ namespace OrbOfDeception
         [SerializeField] private float followPlayerDelay = 0.7f;
         
         [Header("Particles")]
-        [SerializeField] private GameObject onAcquireParticles;
         [SerializeField] private ParticleSystem particlesTrail;
         [SerializeField] private ParticleSystem particlesIdle;
         [SerializeField] private TrailRenderer trail;
@@ -110,8 +109,6 @@ namespace OrbOfDeception
         {
             _animator.SetTrigger(Acquire);
             _rigidbody.velocity = Vector2.zero;
-            // Provisional (hacer con PoolObject):
-            Instantiate(onAcquireParticles, transform.position, Quaternion.identity);
             particlesIdle.Stop();
             particlesTrail.Stop();
             trail.widthCurve = AnimationCurve.Constant(0, 1, 0);

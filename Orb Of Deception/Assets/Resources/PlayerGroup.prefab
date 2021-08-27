@@ -4980,8 +4980,7 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras:
-  - {fileID: 0}
+  m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -5147,7 +5146,7 @@ MonoBehaviour:
   directionalAttackInitialForce: 40
   directionalAttackDecelerationFactor: 0.9
   directionalAttackMinVelocityToChangeState: 3.5
-  directionalAttackFirstBounceVelocityBoost: 20
+  directionalAttackFirstBounceVelocityBoost: 15
   timeBetweenColorChange: 0.1
   attractionForce: 50
   orbSpriteController: {fileID: 3567960013380527669}
@@ -10465,7 +10464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3567960012626483437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.38, y: -0.42285687, z: -10}
+  m_LocalPosition: {x: -4.3799953, y: 0.7072501, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3567960011474639573}

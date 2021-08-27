@@ -81,7 +81,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.101210624
+        value: 0.20184234
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -89,14 +89,14 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.79778135
-        value: 0.068883084
-        inSlope: -0.13259651
-        outSlope: -0.13259651
+        time: 0.8061737
+        value: 0.09404483
+        inSlope: -0.33540183
+        outSlope: -0.33540183
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.13458551
-        outWeight: 0.400884
+        outWeight: 0.76941854
       - serializedVersion: 3
         time: 1
         value: 0.0034179688
@@ -111,7 +111,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.0754717, g: 0.07127883, b: 0, a: 1}
+      key0: {r: 0.2264151, g: 0.21449853, b: 0, a: 1}
       key1: {r: 0.27413976, g: 0, b: 0.6132076, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -9954,8 +9954,6 @@ MonoBehaviour:
   decelerationFactor: 0.92
   attractionForce: 15
   followPlayerDelay: 0.4
-  onAcquireParticles: {fileID: 722181782698896868, guid: b0404258df851b04da0d64e1ec2b504e,
-    type: 3}
   particlesTrail: {fileID: 1433664518930930298}
   particlesIdle: {fileID: 4724332083100567397}
   trail: {fileID: 4312383089633392885}

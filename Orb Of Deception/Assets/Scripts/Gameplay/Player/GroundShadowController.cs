@@ -10,22 +10,25 @@ namespace OrbOfDeception.Gameplay.Player
         [SerializeField] private float maxHeight;
 
         private Animator _animator;
+        private SpriteRenderer _spriteRenderer;
         private Transform _spriteTransform;
         private Vector2 _originalScale;
+        
         private static readonly int HideTriggerID = Animator.StringToHash("Hide");
         private const float TimeUntilStartHiding = 0.7f;
-
+        private const float MaxShadowOpacity = 0.25f;
         #endregion
         
         #region Methods
+        
         #region MonoBehaviour Methods
         private void Awake()
         {
             _animator = GetComponent<Animator>();
             
-            var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            spriteRenderer.enabled = true;
-            _spriteTransform = spriteRenderer.transform;
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            _spriteRenderer.enabled = true;
+            _spriteTransform = _spriteRenderer.transform;
             
             _originalScale = _spriteTransform.localScale;
         }
@@ -50,9 +53,13 @@ namespace OrbOfDeception.Gameplay.Player
             
             var distanceBetweenOriginAndFloor = Vector2.Distance(playerFootPosition, hit.point);
             
-            var newScale = Mathf.Max(0, (maxHeight - distanceBetweenOriginAndFloor) / maxHeight);
-            _spriteTransform.localScale = new Vector3(newScale * _originalScale.x, newScale * _originalScale.y, 1);
+            var distanceFactor = Mathf.Max(0, (maxHeight - distanceBetweenOriginAndFloor) / maxHeight);
+            var newScale = new Vector3(_originalScale.x, _originalScale.y, 1) * distanceFactor;
+            _spriteTransform.localScale = newScale;
             
+            var newColor = _spriteRenderer.color;
+            newColor.a = distanceFactor * MaxShadowOpacity;
+            _spriteRenderer.color = newColor;
         }
         
         private void OnDrawGizmos()
@@ -75,6 +82,7 @@ namespace OrbOfDeception.Gameplay.Player
             _animator.SetTrigger(HideTriggerID);
         }
         #endregion
+        
         #endregion
     }
 }

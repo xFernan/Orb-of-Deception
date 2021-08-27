@@ -18,6 +18,7 @@ namespace OrbOfDeception.Enemy
         
         protected EnemyParameters parameters;
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
+        private EnemyDeathParticles _enemyDeathParticles;
         
         private FiniteStateMachine _stateMachine;
         private Dictionary<int, State> _states;
@@ -45,6 +46,7 @@ namespace OrbOfDeception.Enemy
             parameters = GetComponent<EnemyParameters>();
             _health = parameters.Stats.health;
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
+            _enemyDeathParticles = GetComponentInChildren<EnemyDeathParticles>();
             damagingArea.SetCollisionDamage(parameters.Stats.collisionDamage);
             OnAwake();
         }
@@ -124,6 +126,7 @@ namespace OrbOfDeception.Enemy
             
             HideShadows();
             
+            _enemyDeathParticles.PlayParticles();
             _essenceOfPunishmentSpawner.SpawnEssences(parameters.Stats.essenceOfPunishmentAmount);
         }
 
@@ -138,7 +141,7 @@ namespace OrbOfDeception.Enemy
         
         public void GetDamaged(EntityColor damageColor, int damage)
         {
-            if (parameters.maskColor != damageColor)
+            if (parameters.maskColor == damageColor)
             {
                 ReceiveDamage(damage);
             }

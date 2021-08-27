@@ -217,8 +217,10 @@
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
         <e p="EnemyDamagingArea.cs" t="Include" />
+        <e p="EnemyDeathParticles.cs" t="Include" />
         <e p="EssenceOfPunishmentController.cs" t="Include" />
         <e p="EssenceOfPunishmentSpawner.cs" t="Include" />
+        <e p="FloatingEffect.cs" t="Include" />
         <e p="MedallionOrbController.cs" t="Include" />
         <e p="NaughtyAttributes" t="Include">
           <e p="Scripts" t="Include">

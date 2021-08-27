@@ -23,17 +23,11 @@ namespace OrbOfDeception
         [SerializeField] private GameObject[] essenceOfPunishmentPrefabs;
         
         private List<EssenceOfPunishment> _essencesOfPunishment = new List<EssenceOfPunishment>();
-        private ParticleSystem _spawnParticles;
         #endregion
         
         #region Methods
 
         #region MonoBehaviour Methods
-
-        private void Awake()
-        {
-            _spawnParticles = GetComponentInChildren<ParticleSystem>();
-        }
 
         private void Start()
         {
@@ -69,8 +63,6 @@ namespace OrbOfDeception
             {
                 Instantiate(essence, transform.position, Quaternion.identity);
             }
-            
-            _spawnParticles.Play();
         }
         #endregion
     }
