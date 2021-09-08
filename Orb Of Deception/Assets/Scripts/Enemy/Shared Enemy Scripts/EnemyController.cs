@@ -152,7 +152,6 @@ namespace OrbOfDeception.Enemy
             if (_health <= 0)
                 return;
             
-            PlayerGroup.Camera.Shake(0.2f, 0.1f);
             _health = Mathf.Max(0, _health - damage);
 
             if (_health <= 0)

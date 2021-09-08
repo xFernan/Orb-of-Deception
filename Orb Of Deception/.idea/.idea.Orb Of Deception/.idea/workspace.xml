@@ -2,108 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Lamp.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Lamp/Lamp.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Lamp/Lamp.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Lamp/Movement.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Lamp/Movement.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Torch.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Torch/Torch.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Torch/Torch.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Torch/TorchOn.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Decoration/Torch/TorchOn.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/EnemyDeathParticles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FloatingEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/PP Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/PP Settings/PP General.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/PP Settings/PP General.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/PP Settings/PP Theater Profile.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Other/PP Settings/PP Theater Profile.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Decoration.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Decoration/Torch2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Decoration/Torch2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/GlowParticle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/GlowParticle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/WallTile.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/WallTile.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/WallTile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/WallTile.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_79 1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_79 1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_80.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_80.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_81.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tilemap/Tiles/1. Theater of the Origins/TheaterOfOrigins_Floor_81.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerFalling_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerFalling_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerIdle_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerIdle_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerJumping_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerJumping_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerKneeled_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerKneeled_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerLandingMoving_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerLandingMoving_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerLanding_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerLanding_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerRunning_Right.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/Player Right/PlayerRunning_Right.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerRunning_New.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Jugador/PlayerRunning_New.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Otros/EssenceOfPunishment.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Otros/EssenceOfPunishment.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/UI/InGameUI.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/UI/InGameUI.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/Bastidores/Backstage_Floor3x3.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/Teatro Argenteo/TeatroArgenteo_Background.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/TilesetBase.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/Zonas/TilesetBase.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Diseño/GDD.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Diseño/GDD.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Particles.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Particles.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/UI/NewUI.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/UI/NewUI.aseprite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lamp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lamp/Lamp.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lamp/Lamp.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lamp/Movement.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Lamp/Movement.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FloatingEffect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FloatingEffect.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Decoration/BreakableDecoration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Decoration/BreakableDecoration.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/Essence of Punishment Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/Essence of Punishment Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Essence of Punishment/EssenceOfPunishmentL3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LamparaTeatro.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/LamparaTeatro.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Enemy Particles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Enemy Particles.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Global Volume Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/Local PostProcessing Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/PostProcessing UI Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype/PostProcessing UI Profile.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Enemies/Enemy.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shapes2D/Resources/Shapes2D/1x1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shapes2D/Resources/Shapes2D/1x1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/Decoration_Brown.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/Decoration_Brown.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfOrigins_Floor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Areas/1. Theater of the Origins/TheaterOfTheOrigins_Background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Black.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_Black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_White.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enemies/Enemy2/Enemy2Flying_White.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Other/WallCrack.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Other/WallCrack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerFalling.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerFalling.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerIdle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerJumping.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerJumping.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerKneeled.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerKneeled.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLanding.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLanding.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLandingMoving.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerLandingMoving.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerRunning.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerRunning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Provisional/PlayerRunningNew.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Provisional/PlayerRunningNew.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tilemap/Palettes/Theater Of The Origins.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUI.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUI.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,10 +43,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbLightColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbSpriteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/LightTwinkleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patterns/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MedallionOrbController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -137,9 +58,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Input/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/ObjectFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SurroundingsDetector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FloatingEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Parameters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RoomChanger.cs" root0="FORCE_HIGHLIGHTING" />
@@ -158,10 +79,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Stats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1/Enemy1Parameters.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyParameters.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyDamageableArea.cs" />
@@ -172,8 +89,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" />
-      <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" />
       <option value="$PROJECT_DIR$/Assets/MedallionOrbController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Other/SpriteSwaper.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Other/SpriteSwapper.cs" />
@@ -195,20 +110,26 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/State.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Patterns/FiniteStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/States/OnPlayerState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/States/DirectionalAttackState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/States/ReturningState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/SpriteMaterialController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemySpriteController.cs" />
       <option value="$PROJECT_DIR$/Assets/SecretBreakableWallBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Core/MultipleParticlesController.cs" />
       <option value="$PROJECT_DIR$/Assets/FloatingEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentSpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/EnemyDeathParticles.cs" />
-      <option value="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/GroundShadowController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/EssenceOfPunishmentController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" />
+      <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" />
+      <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
+      <option value="$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" />
+      <option value="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/SpriteMaterialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -361,7 +282,12 @@
       <workItem from="1629323898108" duration="197000" />
       <workItem from="1629674939020" duration="4017000" />
       <workItem from="1629825084335" duration="694000" />
-      <workItem from="1630019968190" duration="1344000" />
+      <workItem from="1630019968190" duration="3395000" />
+      <workItem from="1630076069367" duration="626000" />
+      <workItem from="1630289130379" duration="597000" />
+      <workItem from="1630587863744" duration="6844000" />
+      <workItem from="1630724899446" duration="391000" />
+      <workItem from="1631130929327" duration="792000" />
     </task>
     <servers />
   </component>

@@ -10,10 +10,10 @@ namespace OrbOfDeception
         #region Variables
         
         private SpriteMaterialController _materialController;
-        private ParticleSystem _hitParticles;
+        private ParticleSystem _brokenParticles;
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
             
-        private bool _hasAlreadyBeenHit;
+        private bool _isBroken;
         private float _dissolveValue;
         
         private const float DissolveDuration = 0.2f;
@@ -29,18 +29,18 @@ namespace OrbOfDeception
         
         private void Awake()
         {
-            _hitParticles = GetComponentInChildren<ParticleSystem>();
+            _brokenParticles = GetComponentInChildren<ParticleSystem>();
             _materialController = GetComponentInChildren<SpriteMaterialController>();
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
         }
 
         public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
         {
-            if (_hasAlreadyBeenHit) return;
+            if (_isBroken) return;
             
             BreakDecoration();
             
-            _hasAlreadyBeenHit = true;
+            _isBroken = true;
         }
         
         private void Update()
@@ -54,8 +54,7 @@ namespace OrbOfDeception
         
         private void BreakDecoration()
         {
-            _hitParticles.Play();
-            PlayerGroup.Camera.Shake(0.2f, 0.1f);
+            _brokenParticles.Play();
             DOTween.To(()=> _dissolveValue, x=> _dissolveValue = x, 1, DissolveDuration);
 
             if (Random.Range(0.0f, 1.0f) <= EssenceOfPunishmentDropProbability) DropEssenceOfPunishment();

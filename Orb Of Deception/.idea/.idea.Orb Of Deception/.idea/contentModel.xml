@@ -220,7 +220,6 @@
         <e p="EnemyDeathParticles.cs" t="Include" />
         <e p="EssenceOfPunishmentController.cs" t="Include" />
         <e p="EssenceOfPunishmentSpawner.cs" t="Include" />
-        <e p="FloatingEffect.cs" t="Include" />
         <e p="MedallionOrbController.cs" t="Include" />
         <e p="NaughtyAttributes" t="Include">
           <e p="Scripts" t="Include">
@@ -362,7 +361,9 @@
             </e>
           </e>
         </e>
+        <e p="OrbHitParticlesController.cs" t="Include" />
         <e p="PlayerHealthBarController.cs" t="Include" />
+        <e p="PlayerHealthBarController2.cs" t="Include" />
         <e p="PlayerSpriteDirectionController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
@@ -549,6 +550,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UIMaskMaterialController.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />

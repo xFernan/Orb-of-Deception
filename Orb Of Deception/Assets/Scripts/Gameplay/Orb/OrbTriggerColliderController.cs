@@ -15,7 +15,7 @@ namespace OrbOfDeception.Gameplay.Orb
         // Mirar si hay alguna manera de poder dejar esta función en el script principal.
         private void OnTriggerEnter2D(Collider2D other)
         {
-            _orbController.OnTriggerObjectInit(other.gameObject);
+            _orbController.OnTriggerObjectInit(other);
         }
     }
 }

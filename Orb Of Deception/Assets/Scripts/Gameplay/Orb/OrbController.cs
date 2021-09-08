@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
+using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace OrbOfDeception.Gameplay.Orb
         public ParticleSystem directionAttackOrbParticles;
         public ParticleSystem orbIdleParticles;
         public TrailRenderer orbTrail;
+
+        [SerializeField] private GameObject orbHitParticles;
         
         [Space]
         
@@ -134,15 +137,18 @@ namespace OrbOfDeception.Gameplay.Orb
             _stateMachine.OnCollisionEnter2D(other);
         }
         
-        public void OnTriggerObjectInit(GameObject objectHit)
+        public void OnTriggerObjectInit(Collider2D colliderHit)
         {
             if (!CanHit) return;
-            
+
+            var objectHit = colliderHit.gameObject;
             var orbHittable = objectHit.GetComponent<IOrbHittable>();
 
             if (orbHittable == null) return;
             
+            InstantiateOrbHitParticles(objectHit, colliderHit.ClosestPoint(transform.position));
             orbHittable.OnOrbHitEnter(_orbColor, 10/*PROVISIONAL*/);
+            PlayerGroup.Camera.Shake(0.2f, 0.1f);
 
             if (objectHit.layer != LayerMask.NameToLayer("Enemy")) return;
             
@@ -167,6 +173,13 @@ namespace OrbOfDeception.Gameplay.Orb
             }
         }
 
+        private void InstantiateOrbHitParticles(GameObject hitEntity, Vector3 spawnPosition)
+        {
+            // Rehacer con pools.
+            var particles = Instantiate(orbHitParticles, spawnPosition, Quaternion.identity).GetComponent<OrbHitParticlesController>();
+            particles.Play(hitEntity);
+        }
+        
         private Vector3 GetDirectionFromOrbToMouse()
         {
             var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
