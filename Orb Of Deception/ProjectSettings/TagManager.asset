@@ -48,14 +48,8 @@ TagManager:
   - name: Decoration
     uniqueID: 587635121
     locked: 0
-  - name: Platforms Front
-    uniqueID: 565784263
-    locked: 0
   - name: Platforms Depth
     uniqueID: 4179352917
-    locked: 0
-  - name: Secret Wall
-    uniqueID: 1131699039
     locked: 0
   - name: Shadows
     uniqueID: 2844865893
@@ -65,6 +59,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2206788321
+    locked: 0
+  - name: Platforms Front
+    uniqueID: 565784263
+    locked: 0
+  - name: Secret Wall
+    uniqueID: 1131699039
     locked: 0
   - name: Orb
     uniqueID: 1227339109

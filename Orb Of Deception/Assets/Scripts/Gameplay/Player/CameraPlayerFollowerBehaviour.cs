@@ -28,6 +28,7 @@ namespace OrbOfDeception.Gameplay.Player
 
         private void ChangeDirection(int newDirection)
         {
+            //transform.localPosition = new Vector3(newDirection * _offsetX, transform.localPosition.y, 0) ;
             _currentTween.Kill();
             _currentTween = transform.DOLocalMoveX(newDirection * _offsetX, cameraMoveTimeWhenChangingDirection);
         }

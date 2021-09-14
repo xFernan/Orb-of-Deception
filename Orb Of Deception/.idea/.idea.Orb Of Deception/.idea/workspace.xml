@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Particles.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Orb/Orb Hit Particles.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Archivos Aseprite/UI/NewUI.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/../Archivos Aseprite/UI/NewUI.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FloatingEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FloatingEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Decoration/BreakableDecoration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Decoration/BreakableDecoration.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PlayerGroup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUI.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUI.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbLightColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Stats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.3.2/Runtime/UniversalAdditionalCameraData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbSpriteController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,7 +71,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroup.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" />
       <option value="$PROJECT_DIR$/Assets/MedallionOrbController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Other/SpriteSwaper.cs" />
@@ -124,12 +107,13 @@
       <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbTriggerColliderController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" />
       <option value="$PROJECT_DIR$/Assets/OrbHitParticlesController.cs" />
       <option value="$PROJECT_DIR$/Assets/BreakableDecorationBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/SpriteMaterialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/CameraPlayerFollowerBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraBehaviours/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -288,6 +272,8 @@
       <workItem from="1630587863744" duration="6844000" />
       <workItem from="1630724899446" duration="391000" />
       <workItem from="1631130929327" duration="792000" />
+      <workItem from="1631156917649" duration="63000" />
+      <workItem from="1631381570677" duration="698000" />
     </task>
     <servers />
   </component>

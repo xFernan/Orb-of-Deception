@@ -141,7 +141,7 @@ namespace OrbOfDeception.Enemy
         
         public void GetDamaged(EntityColor damageColor, int damage)
         {
-            if (parameters.maskColor == damageColor)
+            if (parameters.maskColor != damageColor)
             {
                 ReceiveDamage(damage);
             }

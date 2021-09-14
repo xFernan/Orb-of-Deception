@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -34,6 +35,19 @@ namespace OrbOfDeception.CameraBehaviours
 
             cameraTransform.position = newCameraPosition;
         }
+
+        /*private void LateUpdate()
+        {
+            var cameraPosition = transform.position;
+            
+            var x = cameraPosition.x;
+            x = Mathf.Round(x * 16) / 16;
+            var y = cameraPosition.y;
+            y = Mathf.Round(y * 16) / 16;
+            var z = cameraPosition.z;
+
+            transform.position = new Vector3(x, y, z);
+        }*/
 
         public void UpdateCameraLimits(CameraLimits newCameraLimits)
         {
