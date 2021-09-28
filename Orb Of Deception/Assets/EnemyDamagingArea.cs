@@ -6,7 +6,6 @@ namespace OrbOfDeception
     public class EnemyDamagingArea : MonoBehaviour
     {
         private Collider2D[] _colliders;
-        private int _collisionDamage;
         
         private void Awake()
         {
@@ -19,12 +18,7 @@ namespace OrbOfDeception
 
             if (playerAreaDamage == null) return;
             
-            playerAreaDamage.ReceiveDamage(_collisionDamage);
-        }
-
-        public void SetCollisionDamage(int collisionDamage)
-        {
-            _collisionDamage = collisionDamage;
+            playerAreaDamage.ReceiveDamage();
         }
 
         public void ActivateCollider()

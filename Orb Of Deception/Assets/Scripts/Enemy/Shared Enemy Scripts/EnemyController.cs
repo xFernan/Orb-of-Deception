@@ -47,7 +47,6 @@ namespace OrbOfDeception.Enemy
             _health = parameters.Stats.health;
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
             _enemyDeathParticles = GetComponentInChildren<EnemyDeathParticles>();
-            damagingArea.SetCollisionDamage(parameters.Stats.collisionDamage);
             OnAwake();
         }
 

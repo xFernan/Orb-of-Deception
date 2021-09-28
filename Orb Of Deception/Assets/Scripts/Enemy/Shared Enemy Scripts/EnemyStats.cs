@@ -6,6 +6,5 @@ namespace OrbOfDeception.Enemy
     {
         public int health;
         public int essenceOfPunishmentAmount;
-        public int collisionDamage;
     }
 }

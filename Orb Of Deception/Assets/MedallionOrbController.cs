@@ -1,6 +1,5 @@
-using System;
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Orb;
+using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,28 +7,40 @@ namespace OrbOfDeception
 {
     public class MedallionOrbController : MonoBehaviour
     {
-        [SerializeField] private Sprite whiteOrb;
-        [SerializeField] private Sprite blackOrb;
+        [SerializeField] private Image blackOrbImage;
+        [SerializeField] private float opacityChangeVelocity;
 
-        private Image _orbImage;
+        private float _currentBlackOrbOpacity;
 
-        private void Awake()
+        private void Start()
         {
-            _orbImage = GetComponent<Image>();
-
-            OrbController.onChangeOrbColor += OnChangeOrbColor;
-        }
-
-        private void OnChangeOrbColor(GameEntity.EntityColor newOrbColor)
-        {
-            _orbImage.sprite = newOrbColor switch
-            {
-                GameEntity.EntityColor.White => whiteOrb,
-                GameEntity.EntityColor.Black => blackOrb,
-                GameEntity.EntityColor.Other => whiteOrb,
-                _ => throw new ArgumentOutOfRangeException(nameof(newOrbColor), newOrbColor, null)
-            };
+            SetInitialColor();
         }
         
+        private void SetInitialColor()
+        {
+            _currentBlackOrbOpacity = PlayerGroup.Orb.GetColor() == GameEntity.EntityColor.Black ? 1 : 0;
+        }
+
+        private void Update()
+        {
+            var orbIsBlack = PlayerGroup.Orb.GetColor() == GameEntity.EntityColor.Black;
+            
+            switch (orbIsBlack)
+            {
+                case true when _currentBlackOrbOpacity < 1:
+                    _currentBlackOrbOpacity += opacityChangeVelocity * Time.deltaTime;
+                    break;
+                case false when _currentBlackOrbOpacity > 0:
+                    _currentBlackOrbOpacity -= opacityChangeVelocity * Time.deltaTime;
+                    break;
+            }
+            
+            _currentBlackOrbOpacity = Mathf.Clamp(_currentBlackOrbOpacity, 0, 1);
+
+            var newColor = blackOrbImage.color;
+            newColor.a = _currentBlackOrbOpacity;
+            blackOrbImage.color = newColor;
+        }
     }
 }

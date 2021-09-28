@@ -16,7 +16,7 @@ namespace OrbOfDeception.Gameplay.Player
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private float groundDetectionRayDistance;
         [SerializeField] private InputManager inputManager;
-        public int initialHealth = 100; // Provisional.
+        public const int InitialHealth = 4; // Provisional.
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
@@ -41,7 +41,7 @@ namespace OrbOfDeception.Gameplay.Player
             JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, maxFallVelocity, GroundDetector);
             HorizontalMovementController = new HorizontalMovementController(_rigidbody, velocity, inputManager);
             AnimationController = new AnimationController(_animator, _rigidbody, inputManager, GroundDetector);
-            PlayerHealthController = new PlayerHealthController(this, initialHealth);
+            PlayerHealthController = new PlayerHealthController(this, InitialHealth);
             HurtController = new HurtController(this, timeInvulnerable, _spriteAnimator);
             
             inputManager.Jump = JumpController.Jump;
@@ -60,12 +60,12 @@ namespace OrbOfDeception.Gameplay.Player
             Debug.Log("Player died.");
         }
         
-        public void GetDamaged(int damage)
+        public void GetDamaged()
         {
             if (HurtController.IsInvulnerable()) return;
 
             PlayerGroup.Camera.Shake(0.7f); // Provisional.
-            PlayerHealthController.ReceiveDamage(damage);
+            PlayerHealthController.ReceiveDamage();
             HurtController.StartHurt();
         }
         

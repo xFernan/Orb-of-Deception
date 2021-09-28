@@ -12,9 +12,9 @@ namespace OrbOfDeception.Gameplay.Player
             _playerController = transform.root.GetComponentInChildren<PlayerController>();
         }
 
-        public void ReceiveDamage(int damage)
+        public void ReceiveDamage()
         {
-            _playerController.GetDamaged(damage);
+            _playerController.GetDamaged();
         }
     }
 }

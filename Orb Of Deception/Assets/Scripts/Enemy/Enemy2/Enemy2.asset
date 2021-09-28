@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 55
   essenceOfPunishmentAmount: 6
-  collisionDamage: 12
-  velocity: 900
+  velocity: 1050

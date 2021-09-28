@@ -7,7 +7,7 @@ namespace OrbOfDeception.Gameplay.Player
         private readonly PlayerController _playerController;
         private int _health;
         
-        public static Action<int> onHealthChange;
+        public static Action onPlayerDamage;
 
         public PlayerHealthController(PlayerController playerController, int health)
         {
@@ -15,11 +15,11 @@ namespace OrbOfDeception.Gameplay.Player
             _health = health;
         }
         
-        public void ReceiveDamage(int damage)
+        public void ReceiveDamage()
         {
-            _health -= damage;
-            onHealthChange(_health);
-            
+            _health--;
+            onPlayerDamage?.Invoke();
+
             if (_health <= 0)
             {
                 _playerController.Die();

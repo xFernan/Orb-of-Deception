@@ -68,8 +68,6 @@ namespace OrbOfDeception.Gameplay.Orb
 
         public bool CanBeThrown { get; set; }
         public bool CanHit { get; set; }
-
-        public static Action<EntityColor> onChangeOrbColor;
         
         public Color CurrentParticlesColor =>
             _orbColor == EntityColor.White ? whiteStateParticlesColor : blackStateParticlesColor;
@@ -208,8 +206,6 @@ namespace OrbOfDeception.Gameplay.Orb
                 EntityColor.White => EntityColor.Black,
                 _ => _orbColor
             };
-            
-            onChangeOrbColor(_orbColor);
 
             var directionalAttackParticles = directionAttackOrbParticles.main;
             var idleParticles = orbIdleParticles.main;

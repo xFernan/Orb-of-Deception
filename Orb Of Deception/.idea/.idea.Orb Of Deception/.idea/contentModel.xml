@@ -550,6 +550,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UIMaskController.cs" t="Include" />
         <e p="UIMaskMaterialController.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />

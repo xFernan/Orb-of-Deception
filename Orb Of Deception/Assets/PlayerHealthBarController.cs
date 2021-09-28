@@ -6,7 +6,7 @@ namespace OrbOfDeception
 {
     public class PlayerHealthBarController : MonoBehaviour
     {
-        [SerializeField] private int healthBarBorderWidthDifferent = 2;
+        /*[SerializeField] private int healthBarBorderWidthDifferent = 2;
         [SerializeField] private RectTransform healthBarBorder;
         [SerializeField] private RectTransform healthBarFill;
         [SerializeField] private RectTransform healthBarFillLeftover;
@@ -25,7 +25,7 @@ namespace OrbOfDeception
         {
             _healthBarFillLeftoverAnimator = healthBarFillLeftover.GetComponent<Animator>();
             
-            PlayerHealthController.onHealthChange += OnHealthChange;
+            PlayerHealthController.onPlayerDamage += OnHealthChange;
         }
         
         private void Start()
@@ -36,14 +36,14 @@ namespace OrbOfDeception
         private void Update()
         {
             ChangeRectTransformWidth(healthBarBorder,
-                PlayerGroup.Player.initialHealth * HealthValueMultiplier + healthBarBorderWidthDifferent);
+                PlayerController.InitialHealth * HealthValueMultiplier + healthBarBorderWidthDifferent);
             ChangeRectTransformWidth(healthBarFill,
                 _healthBarValue * HealthValueMultiplier);
         }
 
         private void OnDestroy()
         {
-            PlayerHealthController.onHealthChange -= OnHealthChange;
+            PlayerHealthController.onPlayerDamage -= OnHealthChange;
         }
         
         private void OnHealthChange(int newHealth)
@@ -66,6 +66,6 @@ namespace OrbOfDeception
         private void ShowHealthBarFillLeftover()
         {
             _healthBarFillLeftoverAnimator.SetTrigger(Fade);
-        }
+        }*/
     }
 }

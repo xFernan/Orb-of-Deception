@@ -574,7 +574,7 @@
     "m_DefaultReferenceName": "Vector1_3bbbca8b3f574d1a87692d5f72dcaace",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_Precision": 0,
+    "m_Precision": 1,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
@@ -728,7 +728,7 @@
     "m_DefaultReferenceName": "Color_57b0794a4aee44dfa8c1069e2eca585c",
     "m_OverrideReferenceName": "_TintColor",
     "m_GeneratePropertyBlock": true,
-    "m_Precision": 0,
+    "m_Precision": 1,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
@@ -807,7 +807,7 @@
         }
     ],
     "synonyms": [],
-    "m_Precision": 0,
+    "m_Precision": 1,
     "m_PreviewExpanded": true,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -1084,7 +1084,7 @@
         }
     ],
     "synonyms": [],
-    "m_Precision": 0,
+    "m_Precision": 1,
     "m_PreviewExpanded": true,
     "m_PreviewMode": 0,
     "m_CustomColors": {
