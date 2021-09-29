@@ -2,44 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f742836-41d6-4dc2-81c5-9d5a7e55b637" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/EndConnector.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/EndConnector.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/EvenConnector.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/EvenConnector.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/OddConnector.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InGame/OddConnector.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI/Mask.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI/Mask/UI Mask.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI/Mask/UI Mask.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI/Mask/UI Mask.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/UI/Mask/UI Mask.shadergraph.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUITrue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/UI/NewInGameUITrue.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerMidWalk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerMidWalk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerMidWalk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Player/PlayerMidWalk.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Orb Of Deception/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Disappearing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Disappearing.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Empty.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Empty.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Filled.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/InGame/Health Bar Fill Leftover/Mask/Filled.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EnemyDamagingArea.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MedallionOrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MedallionOrbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerHealthBarController2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy2.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Shared Enemy Scripts/EnemyStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Orb/OrbController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerAreaDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerAreaDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerHealthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Mask Shader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Mask Shader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +71,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerGroup.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerSpriteDirectionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HorizontalMovementController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/HealthController.cs" />
@@ -108,8 +81,6 @@
       <option value="$PROJECT_DIR$/Temp/Compiled-Shader Graphs-Enemy.shader" />
       <option value="$PROJECT_DIR$/Assets/Shaders/Enemies/NewSurfaceShader.shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/JumpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Other/EnemySpritesheetChanger.cs" />
       <option value="$PROJECT_DIR$/Assets/GroundWallDetector.cs" />
       <option value="$PROJECT_DIR$/Assets/SurroundingsDetector.cs" />
@@ -148,6 +119,9 @@
       <option value="$PROJECT_DIR$/Assets/UIMaskController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/UIMaskMaterialController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2ChasingState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Parameters.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy2/Enemy2Controller.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ltDCm0Hiu5v52AMT3J9I6K4Cf0" />
@@ -308,7 +282,8 @@
       <workItem from="1631130929327" duration="792000" />
       <workItem from="1631156917649" duration="63000" />
       <workItem from="1631381570677" duration="698000" />
-      <workItem from="1632850332692" duration="14143000" />
+      <workItem from="1632850332692" duration="14852000" />
+      <workItem from="1632923561427" duration="1887000" />
     </task>
     <servers />
   </component>

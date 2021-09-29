@@ -39,17 +39,26 @@ namespace OrbOfDeception.Enemy.Enemy2
         private void Start()
         {
             SetInitialState(IdleState);
+            SetOrientation(Parameters.orientationIsRight);
         }
 
         private void OnDrawGizmos()
         {
             if (parameters == null) return;
+            
             var position = transform.position;
             
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(position, Parameters.distanceToChase);
+            
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(position, Parameters.distanceToIgnorePathToFollowPlayer);
         }
-        
+
+        public void SetOrientation(bool isRight)
+        {
+            SpriteRenderer.flipX = isRight; // Provisional, hacer con animaciones para cambiar sombras.
+        }
         #endregion
     }
 }

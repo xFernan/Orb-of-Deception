@@ -162,12 +162,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1537486259
-  m_SortingLayer: -4
+  m_SortingLayer: -6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4040651500371125629, guid: 846356ac95459f241b5c4575818a506a,
+  m_Sprite: {fileID: 1277921019753442547, guid: 4cfbb0f3c7530df4fbd92185b76e08a8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 44d7648b360b0864e859f61720a7a572, type: 2}
-  maskColor: 1
+  maskColor: 0
   distanceToChase: 8
 --- !u!114 &1610665742114036452
 MonoBehaviour:
@@ -504,7 +504,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

@@ -90,31 +90,40 @@ namespace OrbOfDeception.Enemy.Enemy2
 
         private void Move()
         {
-            // Se sale del método si no hay camino calculado o el que hay se ha completado.
-            if (_path == null || _currentWaypoint >= _path.vectorPath.Count)
+            Vector2 forceDirection;
+
+            var distanceFromPlayer = Vector2.Distance(PlayerGroup.Player.transform.position, _transform.position);
+            
+            if (distanceFromPlayer <= _parameters.distanceToIgnorePathToFollowPlayer)
             {
-                return;
+                forceDirection = ((Vector2) PlayerGroup.Player.transform.position - _rigidbody.position).normalized;
             }
+            else
+            {
+                // Se sale del método si no hay camino calculado o el que hay se ha completado.
+                if (_path == null || _currentWaypoint >= _path.vectorPath.Count)
+                {
+                    return;
+                }
+                
+                // Si se está lo suficientemente cerca del waypoint actual, se pasa a tomar como objetivo el siguiente del path.
+                var distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);
 
-            // SEEK: Se calculan la dirección y la fuerza a añadir a la velocidad actual.
-            var direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
-            var force = direction * (_parameters.Stats.velocity * Time.deltaTime);
-
+                if (distance < _nextWaypointDistance)
+                {
+                    _currentWaypoint++;
+                }
+                
+                // SEEK: Se calculan la dirección y la fuerza a añadir a la velocidad actual.
+                forceDirection = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
+            }
+            
+            var force = forceDirection * (_parameters.Stats.velocity * Time.deltaTime);
             _rigidbody.AddForce(force);
-            
-            // Si se está lo suficientemente cerca del waypoint actual, se pasa a tomar como objetivo el siguiente del path.
-            var distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);
 
-            if (distance < _nextWaypointDistance)
-            {
-                _currentWaypoint++;
-            }
-
-            // Flip del sprite (provisional).
+            // Flip del sprite.
             var directionFromPlayer = Mathf.Sign(PlayerGroup.Player.transform.position.x - _transform.position.x);
-
-            _spriteRenderer.flipX = directionFromPlayer > 0; // Provisional, hacer con animaciones para cambiar sombras.
-            
+            _spriteRenderer.flipX = directionFromPlayer > 0;
         }
 
         #endregion
