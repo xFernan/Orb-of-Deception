@@ -12,7 +12,7 @@ namespace OrbOfDeception
         [SerializeField] private string sceneName;
         [SerializeField] private int nextRoomPlayerPositionID;
 
-        public Vector3 GetIncomingPlayerPosition()
+        public Vector3 GetPlayerPlacePosition()
         {
             return playerPositionReference.position;
         }
@@ -22,7 +22,7 @@ namespace OrbOfDeception
             if (other.CompareTag("Player"))
             {
                 LevelChanger.Instance.FadeToScene(sceneName);
-                RoomManager.targetRoomPlayerPositionID = nextRoomPlayerPositionID;
+                RoomManager.targetRoomChangerID = nextRoomPlayerPositionID;
             }
         }
     }

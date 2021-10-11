@@ -23,6 +23,8 @@ namespace OrbOfDeception.Other
             
             _enemyController = GetComponentInParent<EnemyController>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+
+            _enemyController.onMaskColorChange += UpdateMask;
         }
 
         private void Start()
@@ -51,7 +53,6 @@ namespace OrbOfDeception.Other
             };
         }
         
-        [Button]
         private void UpdateMask()
         {
             var maskColor = GetComponentInParent<EnemyParameters>().maskColor;
@@ -63,6 +64,11 @@ namespace OrbOfDeception.Other
                 GameEntity.EntityColor.White => whiteMaskSpritesheet[0],
                 _ => spriteRenderer.sprite
             };
+        }
+
+        private void OnDisable()
+        {
+            _enemyController.onMaskColorChange -= UpdateMask;
         }
     }
 }

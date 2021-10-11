@@ -19,12 +19,12 @@ namespace OrbOfDeception
         
         private void SetInitialColor()
         {
-            _currentBlackOrbOpacity = PlayerGroup.Orb.GetColor() == GameEntity.EntityColor.Black ? 1 : 0;
+            _currentBlackOrbOpacity = GameManager.Orb.GetColor() == GameEntity.EntityColor.Black ? 1 : 0;
         }
 
         private void Update()
         {
-            var orbIsBlack = PlayerGroup.Orb.GetColor() == GameEntity.EntityColor.Black;
+            var orbIsBlack = GameManager.Orb.GetColor() == GameEntity.EntityColor.Black;
             
             switch (orbIsBlack)
             {

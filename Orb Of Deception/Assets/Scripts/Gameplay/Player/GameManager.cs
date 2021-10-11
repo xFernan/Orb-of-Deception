@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace OrbOfDeception.Gameplay.Player
 {
-    public class PlayerGroup : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        private static PlayerGroup _instance;
+        private static GameManager _instance;
 
-        public static PlayerGroup Instance => _instance;
+        public static GameManager Instance => _instance;
         /*{
             get
             {

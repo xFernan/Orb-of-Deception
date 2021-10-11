@@ -24,7 +24,7 @@ namespace OrbOfDeception.Enemy.Enemy2
         {
             base.Update(deltaTime);
 
-            var distanceFromPlayer = Vector2.Distance(PlayerGroup.Player.transform.position, _transform.position);
+            var distanceFromPlayer = Vector2.Distance(GameManager.Player.transform.position, _transform.position);
 
             if (distanceFromPlayer <= _parameters.distanceToChase)
             {

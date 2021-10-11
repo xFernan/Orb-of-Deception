@@ -28,6 +28,10 @@ namespace OrbOfDeception.Enemy
         private void Awake()
         {
             _materialController = GetComponent<SpriteMaterialController>();
+        }
+
+        private void Start()
+        {
             _materialController.SetUseBorderDuringDissolve(true);
         }
 
@@ -51,13 +55,13 @@ namespace OrbOfDeception.Enemy
         
         public void SetTintToOppositeOrbColor()
         {
-            var color = GetColorFromEntityColor(PlayerGroup.Orb.GetColor(), true);
+            var color = GetColorFromEntityColor(GameManager.Orb.GetColor(), true);
             SetTintColor(color);
         }
         
         public void SetTintToOrbColor()
         {
-            var color = GetColorFromEntityColor(PlayerGroup.Orb.GetColor(), false);
+            var color = GetColorFromEntityColor(GameManager.Orb.GetColor(), false);
             SetTintColor(color);
         }
         

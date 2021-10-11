@@ -54,7 +54,7 @@ namespace OrbOfDeception.Gameplay.Player
             AnimationController.Update();
             HorizontalMovementController.Update();
         }
-
+        
         public void Die() // Provisional.
         {
             Debug.Log("Player died.");
@@ -64,7 +64,7 @@ namespace OrbOfDeception.Gameplay.Player
         {
             if (HurtController.IsInvulnerable()) return;
 
-            PlayerGroup.Camera.Shake(0.7f); // Provisional.
+            GameManager.Camera.Shake(0.7f); // Provisional.
             PlayerHealthController.ReceiveDamage();
             HurtController.StartHurt();
         }

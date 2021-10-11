@@ -57,7 +57,7 @@ namespace OrbOfDeception
 
         private void OnPlayerDamage()
         {
-            var maskID = PlayerGroup.Player.PlayerHealthController.GetCurrentHealth();
+            var maskID = GameManager.Player.PlayerHealthController.GetCurrentHealth();
             _masks[maskID].Disappear();
         }
         

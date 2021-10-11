@@ -8,7 +8,7 @@ namespace OrbOfDeception
     {
         private void Update()
         {
-            var flip = PlayerGroup.Instance.playerController.HorizontalMovementController.Direction;
+            var flip = GameManager.Instance.playerController.HorizontalMovementController.Direction;
             
             if (flip == 0)
                 return;

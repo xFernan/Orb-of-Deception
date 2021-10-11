@@ -18,13 +18,13 @@ namespace OrbOfDeception.Core
 
         private void Start()
         {
-            _playerStartingPosition = PlayerGroup.Camera.transform.position;
+            _playerStartingPosition = GameManager.Camera.transform.position;
             _startingPosition = transform.position;
         }
 
         private void Update()
         {
-            var parallaxVariation = _playerStartingPosition - PlayerGroup.Camera.transform.position;
+            var parallaxVariation = _playerStartingPosition - GameManager.Camera.transform.position;
             parallaxVariation.x *= factorX;
             parallaxVariation.y *= factorY;
             var newPosition = _startingPosition + parallaxVariation;

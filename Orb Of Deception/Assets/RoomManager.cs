@@ -1,3 +1,4 @@
+using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
@@ -6,17 +7,42 @@ namespace OrbOfDeception
     public class RoomManager : MonoBehaviour
     {
         [SerializeField] private RoomChanger[] roomChangers;
-        public static int targetRoomPlayerPositionID = -1;
+        [HideInInspector] public CameraLimits cameraLimits;
+        
+        public static int targetRoomChangerID = -1;
+        public static RoomManager Instance { get; private set; }
 
         private void Awake()
         {
-            if (targetRoomPlayerPositionID == -1)
+            Instance = this;
+            cameraLimits = GetComponentInChildren<CameraLimits>();
+            GameManager.Camera.cameraLimits = cameraLimits;
+
+            PlacePlayer();
+        }
+
+        private void PlacePlayer()
+        {
+            Vector3 positionToPlacePlayer;
+            
+            if (targetRoomChangerID != -1)
             {
-                return;
+                positionToPlacePlayer = roomChangers[targetRoomChangerID - 1].GetPlayerPlacePosition();
+            }
+            else
+            {
+                var spawnDebug = GameObject.FindGameObjectWithTag("SpawnDebug");
+                if (spawnDebug != null)
+                {
+                    positionToPlacePlayer = spawnDebug.transform.position;
+                }
+                else
+                {
+                    return;
+                }
             }
 
-            var playerGroup = PlayerGroup.Instance;
-            playerGroup.SetPositionInNewRoom(roomChangers[targetRoomPlayerPositionID - 1].GetIncomingPlayerPosition());
+            GameManager.Instance.SetPositionInNewRoom(positionToPlacePlayer);
         }
     }
 }

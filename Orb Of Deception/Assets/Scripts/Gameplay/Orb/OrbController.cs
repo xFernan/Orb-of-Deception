@@ -146,13 +146,9 @@ namespace OrbOfDeception.Gameplay.Orb
             
             InstantiateOrbHitParticles(objectHit, colliderHit.ClosestPoint(transform.position));
             orbHittable.OnOrbHitEnter(_orbColor, 10/*PROVISIONAL*/);
-            PlayerGroup.Camera.Shake(0.2f, 0.1f);
+            GameManager.Camera.Shake(0.2f, 0.1f);
 
             if (objectHit.layer != LayerMask.NameToLayer("Enemy")) return;
-            
-            // Provisional. Crear un objeto singleton DontDestroyOnLoad que cargue con Resources.Load los assets que más se instancien,
-            // como las partículas al dañar a un enemigo, por ejemplo. También podrían entrar aquí los bounce particles.
-            SpawnHitParticles(objectHit);
         }
 
         private void OnDrawGizmos()
@@ -180,7 +176,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private Vector3 GetDirectionFromOrbToMouse()
         {
-            var worldPosition2D = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            var worldPosition2D = GameManager.Camera.cameraComponent.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
             var position = transform.position;
             worldPosition2D.z = position.z;
             var direction = (worldPosition2D - position).normalized;
@@ -243,7 +239,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         #region Particles Methods
         
-        private void SpawnHitParticles(GameObject objectHit)
+        public void SpawnHitParticles(GameObject objectHit)
         {
             var particlesObject = Instantiate(hitParticles, objectHit.transform.position, Quaternion.identity); // Provisional.
 

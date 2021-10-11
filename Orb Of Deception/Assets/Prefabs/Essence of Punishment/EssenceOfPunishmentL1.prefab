@@ -9808,6 +9808,7 @@ MonoBehaviour:
   decelerationFactor: 0.92
   attractionForce: 25
   followPlayerDelay: 0.4
+  maxVelocity: 60
   particlesTrail: {fileID: 2386091750296329776}
   particlesIdle: {fileID: 2386091751462189375}
   trail: {fileID: 2386091751860416398}
@@ -9923,13 +9924,13 @@ TrailRenderer:
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.01
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.20184234
+        value: 0.15809539
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -9939,11 +9940,11 @@ TrailRenderer:
       - serializedVersion: 3
         time: 0.8061737
         value: 0.09404483
-        inSlope: -0.33540183
-        outSlope: -0.33540183
+        inSlope: -0.24407376
+        outSlope: -0.24407376
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.13458551
+        inWeight: 0.18908346
         outWeight: 0.76941854
       - serializedVersion: 3
         time: 1

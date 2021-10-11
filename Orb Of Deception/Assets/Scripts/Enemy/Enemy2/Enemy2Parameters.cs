@@ -5,7 +5,6 @@ namespace OrbOfDeception.Enemy.Enemy2
     public class Enemy2Parameters : EnemyParameters
     {
         [Header("Enemy 2 Parameters")]
-        public bool orientationIsRight = true;
         public float distanceToChase;
         public float distanceToIgnorePathToFollowPlayer = 3;
         

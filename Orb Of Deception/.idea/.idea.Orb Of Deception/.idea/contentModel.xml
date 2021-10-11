@@ -171,6 +171,7 @@
             <e p="NavmeshUpdates.cs" t="Include" />
             <e p="RelevantGraphSurface.cs" t="Include" />
           </e>
+          <e p="package.json" t="Include" />
           <e p="PackageTools" t="Include">
             <e p="Editor" t="Include">
               <e p="EditorBase.cs" t="Include" />
@@ -213,15 +214,21 @@
           </e>
         </e>
         <e p="BreakableDecorationBehaviour.cs" t="Include" />
+        <e p="ColliderEventTrigger.cs" t="Include" />
+        <e p="Door.cs" t="Include" />
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
         <e p="EnemyDamagingArea.cs" t="Include" />
         <e p="EnemyDeathParticles.cs" t="Include" />
+        <e p="EnemySpawner.cs" t="Include" />
         <e p="EssenceOfPunishmentController.cs" t="Include" />
         <e p="EssenceOfPunishmentSpawner.cs" t="Include" />
+        <e p="IOtherTriggerEnter.cs" t="Include" />
+        <e p="IronDoor.cs" t="Include" />
         <e p="MedallionOrbController.cs" t="Include" />
         <e p="NaughtyAttributes" t="Include">
+          <e p="package.json" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Core" t="Include">
               <e p="DrawerAttributes" t="Include">
@@ -380,6 +387,44 @@
               <e p="Readme.txt" t="Include" />
             </e>
           </e>
+          <e p="Sirenix" t="Include">
+            <e p="Assemblies" t="Include">
+              <e p="link.xml" t="Include" />
+              <e p="Sirenix.OdinInspector.Attributes.xml" t="Include" />
+              <e p="Sirenix.OdinInspector.Editor.xml" t="Include" />
+              <e p="Sirenix.Serialization.Config.xml" t="Include" />
+              <e p="Sirenix.Serialization.xml" t="Include" />
+              <e p="Sirenix.Utilities.Editor.xml" t="Include" />
+              <e p="Sirenix.Utilities.xml" t="Include" />
+            </e>
+            <e p="Odin Inspector" t="Include">
+              <e p="Modules" t="Include">
+                <e p="Unity.Mathematics" t="Include">
+                  <e p="manifest.txt" t="Include" />
+                  <e p="MathematicsDrawers.cs" t="Include" />
+                  <e p="Sirenix.OdinInspector.Modules.UnityMathematics.asmdef" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="AssemblyImportSettingsAutomation.cs" t="Include" />
+                  <e p="BuildAOTAutomation.cs" t="Include" />
+                  <e p="EnsureOdinInspectorDefine.cs" t="Include" />
+                  <e p="FixBrokenUnityObjectWrapperDrawer.cs" t="Include" />
+                  <e p="Sirenix.OdinInspector.CompatibilityLayer.Editor.asmdef" t="Include" />
+                  <e p="SyncListDrawer.cs" t="Include" />
+                  <e p="SyncVarAttributeDrawer.cs" t="Include" />
+                  <e p="Vector2IntMinMaxAttributeDrawer.cs" t="Include" />
+                  <e p="VectorIntDrawers.cs" t="Include" />
+                  <e p="VectorIntPropertyResolvers.cs" t="Include" />
+                </e>
+                <e p="SerializedNetworkBehaviour.cs" t="Include" />
+                <e p="Sirenix.OdinInspector.CompatibilityLayer.asmdef" t="Include" />
+                <e p="VectorIntFormatters.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Readme.txt" t="Include" />
+          </e>
         </e>
         <e p="RoomChanger.cs" t="Include" />
         <e p="RoomManager.cs" t="Include" />
@@ -451,6 +496,7 @@
             <e p="Player" t="Include">
               <e p="AnimationController.cs" t="Include" />
               <e p="CameraPlayerFollowerBehaviour.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
               <e p="GroundDetector.cs" t="Include" />
               <e p="GroundShadowController.cs" t="Include" />
               <e p="HorizontalMovementController.cs" t="Include" />
@@ -458,7 +504,6 @@
               <e p="JumpController.cs" t="Include" />
               <e p="PlayerAreaDamage.cs" t="Include" />
               <e p="PlayerController.cs" t="Include" />
-              <e p="PlayerGroup.cs" t="Include" />
               <e p="PlayerHealthController.cs" t="Include" />
               <e p="PlayerLightBehaviour.cs" t="Include" />
               <e p="PlayerMaterialController.cs" t="Include" />
@@ -548,10 +593,12 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+            <e p="EmojiOne.json" t="Include" />
           </e>
         </e>
         <e p="UIMaskController.cs" t="Include" />
         <e p="UIMaskMaterialController.cs" t="Include" />
+        <e p="WaveRoomController.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
@@ -562,6 +609,9 @@
       <e p="Orb Of Deception.sln" t="IncludeFlat" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="PackageToolsEditor.csproj" t="IncludeRecursive" />
+      <e p="Sirenix.OdinInspector.CompatibilityLayer.csproj" t="IncludeRecursive" />
+      <e p="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj" t="IncludeRecursive" />
+      <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>

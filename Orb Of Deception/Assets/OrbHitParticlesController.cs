@@ -25,7 +25,7 @@ namespace OrbOfDeception
         public void Play(GameObject hitEntity)
         {
             var main = particles.main;
-            main.startColor = PlayerGroup.Orb.CurrentParticlesColor;
+            main.startColor = GameManager.Orb.CurrentParticlesColor;
             particles.Play();
 
             hitEntityTransform = hitEntity.transform;

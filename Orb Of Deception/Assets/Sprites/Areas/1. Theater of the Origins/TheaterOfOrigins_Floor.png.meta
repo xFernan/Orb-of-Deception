@@ -248,6 +248,15 @@ TextureImporter:
   - first:
       213: -4767966480980390401
     second: TheaterOfOrigins_Floor_81
+  - first:
+      213: -4636199559177917218
+    second: TheaterOfOrigins_Floor_82
+  - first:
+      213: 6028530816079661953
+    second: TheaterOfOrigins_Floor_83
+  - first:
+      213: -8844640427068454194
+    second: TheaterOfOrigins_Floor_84
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2162,7 +2171,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2183,7 +2192,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2204,7 +2213,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2212,6 +2221,69 @@ TextureImporter:
       bones: []
       spriteID: ffdc1305fb7c4ddb0800000000000000
       internalID: -4767966480980390401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edca0678019e8afb0800000000000000
+      internalID: -4636199559177917218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_83
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b8ce136d4a9a350800000000000000
+      internalID: 6028530816079661953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfOrigins_Floor_84
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca868a7466814580800000000000000
+      internalID: -8844640427068454194
       vertices: []
       indices: 
       edges: []

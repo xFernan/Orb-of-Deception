@@ -46,7 +46,7 @@ namespace OrbOfDeception.Enemy.Enemy2
 
         private void UpdatePath()
         {
-            _seeker.StartPath(_rigidbody.position, PlayerGroup.Player.transform.position, OnPathComplete);
+            _seeker.StartPath(_rigidbody.position, GameManager.Player.transform.position, OnPathComplete);
             
             // Se vuelve a llamar al método cada medio segundo para actualizar el camino en caso de haber cambiado.
             _updatePathDelayer.SetNewDelay(0.2f);
@@ -92,11 +92,11 @@ namespace OrbOfDeception.Enemy.Enemy2
         {
             Vector2 forceDirection;
 
-            var distanceFromPlayer = Vector2.Distance(PlayerGroup.Player.transform.position, _transform.position);
+            var distanceFromPlayer = Vector2.Distance(GameManager.Player.transform.position, _transform.position);
             
             if (distanceFromPlayer <= _parameters.distanceToIgnorePathToFollowPlayer)
             {
-                forceDirection = ((Vector2) PlayerGroup.Player.transform.position - _rigidbody.position).normalized;
+                forceDirection = ((Vector2) GameManager.Player.transform.position - _rigidbody.position).normalized;
             }
             else
             {
@@ -108,21 +108,21 @@ namespace OrbOfDeception.Enemy.Enemy2
                 
                 // Si se está lo suficientemente cerca del waypoint actual, se pasa a tomar como objetivo el siguiente del path.
                 var distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);
-
+                
+                // SEEK: Se calculan la dirección y la fuerza a añadir a la velocidad actual.
+                forceDirection = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
+                
                 if (distance < _nextWaypointDistance)
                 {
                     _currentWaypoint++;
                 }
-                
-                // SEEK: Se calculan la dirección y la fuerza a añadir a la velocidad actual.
-                forceDirection = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
             }
             
             var force = forceDirection * (_parameters.Stats.velocity * Time.deltaTime);
             _rigidbody.AddForce(force);
 
             // Flip del sprite.
-            var directionFromPlayer = Mathf.Sign(PlayerGroup.Player.transform.position.x - _transform.position.x);
+            var directionFromPlayer = Mathf.Sign(GameManager.Player.transform.position.x - _transform.position.x);
             _spriteRenderer.flipX = directionFromPlayer > 0;
         }
 

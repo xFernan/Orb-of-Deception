@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using OrbOfDeception.Core;
 using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;
@@ -26,6 +27,9 @@ namespace OrbOfDeception.Enemy
         private static readonly int BeingHurt = Animator.StringToHash("Hurt");
         private static readonly int Dying = Animator.StringToHash("Die");
 
+        public Action onDie;
+        public Action onMaskColorChange;
+        
         #endregion
         
         #region Properties
@@ -44,6 +48,7 @@ namespace OrbOfDeception.Enemy
             
             Anim = GetComponent<Animator>();
             parameters = GetComponent<EnemyParameters>();
+            parameters.enemyController = this;
             _health = parameters.Stats.health;
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
             _enemyDeathParticles = GetComponentInChildren<EnemyDeathParticles>();
@@ -127,6 +132,8 @@ namespace OrbOfDeception.Enemy
             
             _enemyDeathParticles.PlayParticles();
             _essenceOfPunishmentSpawner.SpawnEssences(parameters.Stats.essenceOfPunishmentAmount);
+            
+            onDie?.Invoke();
         }
 
         private void HideShadows()
@@ -135,6 +142,15 @@ namespace OrbOfDeception.Enemy
             foreach (var shadow in shadows)
             {
                 shadow.Hide();
+            }
+        }
+        
+        private void AppearShadows()
+        {
+            var shadows = GetComponentsInChildren<GroundShadowController>();
+            foreach (var shadow in shadows)
+            {
+                shadow.Appear();
             }
         }
         
@@ -153,6 +169,8 @@ namespace OrbOfDeception.Enemy
             
             _health = Mathf.Max(0, _health - damage);
 
+            GameManager.Orb.SpawnHitParticles(gameObject);
+            
             if (_health <= 0)
                 Die();
             else
@@ -168,10 +186,22 @@ namespace OrbOfDeception.Enemy
         {
             return parameters.maskColor;
         }
+
+        public void SetSpawnConfig(EntityColor newColor)
+        {
+            parameters.maskColor = newColor;
+            onMaskColorChange?.Invoke();
+        }
         
         #endregion
         
         #endregion
+
+        public void PlayAppearAnimation() // Provisional, encapsular en un script.
+        {
+            AppearShadows();
+            spriteAnim.SetTrigger("Appear");
+        }
     }
 }
 

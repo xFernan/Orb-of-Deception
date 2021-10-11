@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -8,32 +7,32 @@ namespace OrbOfDeception.CameraBehaviours
     {
         [SerializeField] private Transform cameraPlayerReferenceTransform;
         
-        private Camera _camera;
-        private CameraLimits _cameraLimits;
-
+        [HideInInspector] public Camera cameraComponent;
+        [HideInInspector] public CameraLimits cameraLimits;
+        [SerializeField] private float smoothSpeed = 10;
         private void Start()
         {
-            _camera = Camera.main;
+            cameraComponent = Camera.main;
         }
 
         private void Update()
         {
+            if (cameraLimits == null) return;
+            
             var cameraPlayerReferencePosition = cameraPlayerReferenceTransform.position;
             var cameraTransform = transform;
-
-            var height = _camera.orthographicSize * 2.0f;
-            var width = height * _camera.aspect;
             
-            var newCameraPosition = new Vector3
+            var desiredPosition = new Vector3
             {
-                x = Mathf.Clamp(cameraPlayerReferencePosition.x, _cameraLimits.GetMinX() + width / 2,
-                    _cameraLimits.GetMaxX() - width / 2),
-                y = Mathf.Clamp(cameraPlayerReferencePosition.y, _cameraLimits.GetMinY() + height / 2,
-                    _cameraLimits.GetMaxY() - height / 2),
+                x = Mathf.Clamp(cameraPlayerReferencePosition.x, cameraLimits.GetMinX(),
+                    cameraLimits.GetMaxX()),
+                y = Mathf.Clamp(cameraPlayerReferencePosition.y, cameraLimits.GetMinY(),
+                    cameraLimits.GetMaxY()),
                 z = cameraTransform.position.z
             };
 
-            cameraTransform.position = newCameraPosition;
+            cameraTransform.position =
+                Vector3.Lerp(cameraTransform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         }
 
         /*private void LateUpdate()
@@ -49,15 +48,16 @@ namespace OrbOfDeception.CameraBehaviours
             transform.position = new Vector3(x, y, z);
         }*/
 
-        public void UpdateCameraLimits(CameraLimits newCameraLimits)
-        {
-            _cameraLimits = newCameraLimits;
-        }
-
         public void Shake(float duration, float strength = 0.4f)
         {
-            _camera.DOShakePosition(duration, strength);
+            cameraComponent.DOShakePosition(duration, strength);
         }
-        
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            if (cameraLimits != null)
+                cameraLimits.DrawLimits();
+        }
     }
 }

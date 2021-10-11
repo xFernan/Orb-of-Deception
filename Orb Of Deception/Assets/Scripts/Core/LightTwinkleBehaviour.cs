@@ -15,12 +15,12 @@ namespace OrbOfDeception
         private void Awake()
         {
             _light = GetComponent<Light2D>();
-            _baseIntensity = _light.pointLightOuterRadius;
+            _baseIntensity = _light.pointLightInnerRadius;
         }
 
         private void Update()
         {
-            _light.pointLightOuterRadius = Mathf.Sin(Time.time * twinkleVelocity) * twinkleIntensityVariation + _baseIntensity;
+            _light.pointLightInnerRadius = Mathf.Sin(Time.time * twinkleVelocity) * twinkleIntensityVariation + _baseIntensity;
         }
     }
 }

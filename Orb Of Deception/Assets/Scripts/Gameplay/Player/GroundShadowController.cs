@@ -6,6 +6,7 @@ namespace OrbOfDeception.Gameplay.Player
     public class GroundShadowController : MonoBehaviour
     {
         #region Variables
+        
         [SerializeField] private Transform shadowOrigin;
         [SerializeField] private float maxHeight;
 
@@ -14,14 +15,18 @@ namespace OrbOfDeception.Gameplay.Player
         private Transform _spriteTransform;
         private Vector2 _originalScale;
         
-        private static readonly int HideTriggerID = Animator.StringToHash("Hide");
         private const float TimeUntilStartHiding = 0.7f;
         private const float MaxShadowOpacity = 0.25f;
+        
+        private static readonly int HideTrigger = Animator.StringToHash("Hide");
+        private static readonly int AppearTrigger = Animator.StringToHash("Appear");
+        
         #endregion
         
         #region Methods
         
         #region MonoBehaviour Methods
+        
         private void Awake()
         {
             _animator = GetComponent<Animator>();
@@ -68,19 +73,27 @@ namespace OrbOfDeception.Gameplay.Player
             Gizmos.color = Color.black;
             Gizmos.DrawLine(shadowOriginPosition, shadowOriginPosition + Vector3.down * maxHeight);
         }
+        
         #endregion
         
         #region Ground Shadow Controller Methods
+        
         public void Hide()
         {
             StartCoroutine(HideCoroutine());
         }
 
+        public void Appear()
+        {
+            _animator.SetTrigger(AppearTrigger);
+        }
+        
         private IEnumerator HideCoroutine()
         {
             yield return new WaitForSeconds(TimeUntilStartHiding);
-            _animator.SetTrigger(HideTriggerID);
+            _animator.SetTrigger(HideTrigger);
         }
+        
         #endregion
         
         #endregion

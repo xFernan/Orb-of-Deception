@@ -24,6 +24,7 @@ namespace OrbOfDeception
         [SerializeField] private float decelerationFactor;
         [SerializeField] private float attractionForce;
         [SerializeField] private float followPlayerDelay = 0.7f;
+        [SerializeField] private float maxVelocity = 20;
         
         [Header("Particles")]
         [SerializeField] private ParticleSystem particlesTrail;
@@ -35,6 +36,8 @@ namespace OrbOfDeception
         private Collider2D _collider;
 
         public int Value => value;
+
+        private const float BlendDirectionValue = 0.3f;
         
         private static readonly int Acquire = Animator.StringToHash("Acquire");
         #endregion
@@ -66,11 +69,21 @@ namespace OrbOfDeception
                     }
                     break;
                 case EoP_State.FollowPlayer:
-                    var playerPosition = PlayerGroup.Player.transform.position;
+                    var playerPosition = GameManager.Player.transform.position;
                     var velocityValue = _rigidbody.velocity.magnitude;
-                    var direction = (playerPosition - transform.position).normalized;
-                    _rigidbody.velocity = direction * velocityValue;
-                    _rigidbody.AddForce(direction * attractionForce);
+                    
+                    var targetDirection = (playerPosition - transform.position).normalized;
+                    var currentDirection = _rigidbody.velocity.normalized;
+                    var blendedDirection = Vector2.Lerp(currentDirection, targetDirection, BlendDirectionValue);
+                    
+                    _rigidbody.velocity = blendedDirection * velocityValue;
+                    _rigidbody.AddForce(targetDirection * attractionForce);
+                    
+                    var velocityMagnitude = _rigidbody.velocity.magnitude;
+                    if (velocityMagnitude > maxVelocity)
+                    {
+                        _rigidbody.velocity *= (maxVelocity / velocityMagnitude);
+                    }
                     break;
             }
         }
@@ -115,7 +128,7 @@ namespace OrbOfDeception
             _collider.enabled = false;
             //PlayerGroupController.Instance.playerController.SpriteAnimator.PlayOnAcquireEssenceOfPunishmentAnimation();
             // PROVISIONAL (convertir en lo anterior):
-            var playerSpriteAnimator = PlayerGroup.Player.transform.
+            var playerSpriteAnimator = GameManager.Player.transform.
                 GetComponentInChildren<PlayerMaterialController>().transform.GetComponent<Animator>();
             playerSpriteAnimator.SetTrigger("AcquireEoP");
             
