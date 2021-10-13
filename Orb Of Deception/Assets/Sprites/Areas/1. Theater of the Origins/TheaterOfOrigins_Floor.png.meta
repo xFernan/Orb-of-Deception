@@ -257,6 +257,15 @@ TextureImporter:
   - first:
       213: -8844640427068454194
     second: TheaterOfOrigins_Floor_84
+  - first:
+      213: -6553011585083128281
+    second: TheaterOfOrigins_Floor_85
+  - first:
+      213: -4167697788397235024
+    second: TheaterOfOrigins_Floor_86
+  - first:
+      213: -2731108383833583260
+    second: TheaterOfOrigins_Floor_87
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -288,8 +297,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -2234,7 +2243,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2255,7 +2264,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2276,7 +2285,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using NaughtyAttributes;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace OrbOfDeception.Other
@@ -53,6 +53,7 @@ namespace OrbOfDeception.Other
             };
         }
         
+        [Button]
         private void UpdateMask()
         {
             var maskColor = GetComponentInParent<EnemyParameters>().maskColor;

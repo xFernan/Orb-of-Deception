@@ -224,6 +224,7 @@
         <e p="EnemySpawner.cs" t="Include" />
         <e p="EssenceOfPunishmentController.cs" t="Include" />
         <e p="EssenceOfPunishmentSpawner.cs" t="Include" />
+        <e p="FallingPlatform.cs" t="Include" />
         <e p="IOtherTriggerEnter.cs" t="Include" />
         <e p="IronDoor.cs" t="Include" />
         <e p="MedallionOrbController.cs" t="Include" />
