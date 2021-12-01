@@ -36,10 +36,10 @@ namespace OrbOfDeception.Enemy.Enemy2
             AddState(ChasingState, new ChasingState(this, _seeker, SpriteRenderer, nextWaypointDistance));
         }
 
-        private void Start()
+        protected override void OnStart()
         {
+            base.OnStart();
             SetInitialState(IdleState);
-            SetOrientation(Parameters.orientationIsRight);
         }
 
         private void OnDrawGizmos()
@@ -55,9 +55,9 @@ namespace OrbOfDeception.Enemy.Enemy2
             Gizmos.DrawWireSphere(position, Parameters.distanceToIgnorePathToFollowPlayer);
         }
 
-        public void SetOrientation(bool isRight)
+        public override void SetOrientation(bool isOrientationRight)
         {
-            SpriteRenderer.flipX = isRight; // Provisional, hacer con animaciones para cambiar sombras.
+            SpriteRenderer.flipX = isOrientationRight; // Provisional, hacer con animaciones para cambiar sombras.
         }
         #endregion
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
@@ -35,7 +34,7 @@ namespace OrbOfDeception.Gameplay.Orb
         public Transform orbIdlePositionTransform;
         [SerializeField] private float idleFloatingMoveDistance = 1;
         [SerializeField] private float idleFloatingMoveVelocity = 1;
-        [SerializeField] private float idleLerpPlayerFollowValue = 0.5f;
+        [SerializeField] private float idleVelocity = 0.5f;
         [SerializeField] private float radiusToGoIdle;
         
         [Space]
@@ -99,7 +98,7 @@ namespace OrbOfDeception.Gameplay.Orb
             _states = new Dictionary<int, State>
             {
                 {
-                    OnPlayerState, new OnPlayerState(this, idleLerpPlayerFollowValue, idleFloatingMoveVelocity,
+                    OnPlayerState, new OnPlayerState(this, idleVelocity, idleFloatingMoveVelocity,
                         idleFloatingMoveDistance)
                 },
                 {
@@ -161,7 +160,10 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void OnMouseClick(Vector2 mousePosition)
         {
-            if (CanBeThrown)
+            if (!GameManager.Player.isControlled)
+                return;
+            
+            if (CanBeThrown && !PauseController.Instance.IsPaused)
             {
                 DirectionalAttack(GetDirectionFromOrbToMouse());
             }
@@ -176,7 +178,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private Vector3 GetDirectionFromOrbToMouse()
         {
-            var worldPosition2D = GameManager.Camera.cameraComponent.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
+            var worldPosition2D = GameManager.Camera.cameraComponent.ScreenToWorldPoint(Input.mousePosition);
             var position = transform.position;
             worldPosition2D.z = position.z;
             var direction = (worldPosition2D - position).normalized;
@@ -192,6 +194,9 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void ChangeColor()
         {
+            if (!GameManager.Player.isControlled)
+                return;
+            
             if (!_canChangeColor) return;
 
             InitColorChangeDelay();

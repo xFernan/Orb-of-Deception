@@ -34,5 +34,10 @@ namespace OrbOfDeception.Gameplay.Player
         {
             return _health;
         }
+
+        public void FullHealth()
+        {
+            _health = PlayerController.InitialHealth;
+        }
     }
 }

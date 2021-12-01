@@ -9,15 +9,7 @@ namespace OrbOfDeception.Enemy
         [SerializeField] protected EnemyStats stats;
         public GameEntity.EntityColor maskColor;
 
-        public bool orientationIsRight = true;/*
-        {
-            set
-            {
-                orientationIsRight = value;
-                enemyController?.onMaskColorChange?.Invoke();
-            }
-            get => orientationIsRight;
-        }*/
+        public bool orientationIsRight = true;
 
         public EnemyStats Stats => stats;
         public EnemyController enemyController;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Enemy
 {
     public class SpriteMaterialController : MonoBehaviour
     {

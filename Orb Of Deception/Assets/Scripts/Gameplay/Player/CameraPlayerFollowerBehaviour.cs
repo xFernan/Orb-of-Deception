@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,10 +5,7 @@ namespace OrbOfDeception.Gameplay.Player
 {
     public class CameraPlayerFollowerBehaviour : MonoBehaviour
     {
-        [SerializeField] private float cameraMoveTimeWhenChangingDirection = 1;
-        
         private float _offsetX;
-        private Tween _currentTween;
 
         private void Awake()
         {
@@ -28,9 +24,11 @@ namespace OrbOfDeception.Gameplay.Player
 
         private void ChangeDirection(int newDirection)
         {
-            //transform.localPosition = new Vector3(newDirection * _offsetX, transform.localPosition.y, 0) ;
-            _currentTween.Kill();
-            _currentTween = transform.DOLocalMoveX(newDirection * _offsetX, cameraMoveTimeWhenChangingDirection);
+            var cameraTransform = transform;
+            
+            var position = cameraTransform.localPosition;
+            position.x = newDirection * _offsetX;
+            cameraTransform.localPosition = position;
         }
         
     }

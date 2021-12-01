@@ -9,7 +9,8 @@ namespace OrbOfDeception.CameraBehaviours
         
         [HideInInspector] public Camera cameraComponent;
         [HideInInspector] public CameraLimits cameraLimits;
-        [SerializeField] private float smoothSpeed = 10;
+        [SerializeField] private float smoothSpeedX = 10;
+        [SerializeField] private float smoothSpeedY = 30;
         private void Start()
         {
             cameraComponent = Camera.main;
@@ -27,26 +28,24 @@ namespace OrbOfDeception.CameraBehaviours
                 x = Mathf.Clamp(cameraPlayerReferencePosition.x, cameraLimits.GetMinX(),
                     cameraLimits.GetMaxX()),
                 y = Mathf.Clamp(cameraPlayerReferencePosition.y, cameraLimits.GetMinY(),
-                    cameraLimits.GetMaxY()),
-                z = cameraTransform.position.z
+                    cameraLimits.GetMaxY())
             };
 
-            cameraTransform.position =
-                Vector3.Lerp(cameraTransform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-        }
-
-        /*private void LateUpdate()
-        {
-            var cameraPosition = transform.position;
+            var camPosition = cameraTransform.position;
+            cameraTransform.position = new Vector3(Mathf.Lerp(camPosition.x, desiredPosition.x, smoothSpeedX * Time.deltaTime),
+                Mathf.Lerp(camPosition.y, desiredPosition.y, smoothSpeedY * Time.deltaTime), camPosition.z);
+            
+            /*var cameraPosition = cameraTransform.position;
             
             var x = cameraPosition.x;
-            x = Mathf.Round(x * 16) / 16;
+            x = ((float)Mathf.RoundToInt(x * 16)) / 16;
             var y = cameraPosition.y;
-            y = Mathf.Round(y * 16) / 16;
+            y = ((float)Mathf.RoundToInt(y * 16)) / 16;
             var z = cameraPosition.z;
 
-            transform.position = new Vector3(x, y, z);
-        }*/
+            Debug.Log(cameraPosition.x + "--> " + x);
+            cameraTransform.position = new Vector3(x, y, z);*/
+        }
 
         public void Shake(float duration, float strength = 0.4f)
         {

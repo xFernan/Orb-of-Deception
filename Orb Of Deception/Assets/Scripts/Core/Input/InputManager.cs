@@ -14,6 +14,8 @@ namespace OrbOfDeception.Core.Input
         public Action<Vector2> Click { set; private get; }
         public Action<Vector2> DirectionalAttack { set; private get; }
         public Action ChangeOrbColor { set; private get; }
+        public Action Interaction { set; private get; }
+        public Action Escape { set; get; }
 
         public void OnMovement(InputAction.CallbackContext context)
         {
@@ -39,7 +41,23 @@ namespace OrbOfDeception.Core.Input
             else if (context.canceled)
                 StopJumping?.Invoke();
         }
+        
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+                return;
+            
+            Interaction?.Invoke();
+        }
 
+        public void OnEscape(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+                return;
+            
+            Escape?.Invoke();
+        }
+        
         public float GetHorizontal()
         {
             return _horizontal;

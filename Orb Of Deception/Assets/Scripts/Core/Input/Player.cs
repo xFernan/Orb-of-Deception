@@ -5,16 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
-using Object = UnityEngine.Object;
 
-namespace OrbOfDeception.Core.Input
+public class @Player : IInputActionCollection, IDisposable
 {
-    public class @Player : IInputActionCollection, IDisposable
+    public InputActionAsset asset { get; }
+    public @Player()
     {
-        public InputActionAsset asset { get; }
-        public @Player()
-        {
-            asset = InputActionAsset.FromJson(@"{
+        asset = InputActionAsset.FromJson(@"{
     ""name"": ""Player"",
     ""maps"": [
         {
@@ -65,6 +62,22 @@ namespace OrbOfDeception.Core.Input
                     ""name"": ""Directional Attack Button"",
                     ""type"": ""Button"",
                     ""id"": ""571b342e-acff-4a3c-9c0f-cf467aa27bc8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""23780abe-d675-46a0-9319-b0950e79756d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""68349815-dfde-408d-b35f-ebdcebf9565d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -213,6 +226,28 @@ namespace OrbOfDeception.Core.Input
                     ""action"": ""Directional Attack Button"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""180212ff-2883-421c-ae3d-31c306521218"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""518d8388-00ac-494f-8bce-9b821af51e8f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -280,185 +315,204 @@ namespace OrbOfDeception.Core.Input
         }
     ]
 }");
-            // Character
-            m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-            m_Character_Movement = m_Character.FindAction("Movement", throwIfNotFound: true);
-            m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
-            m_Character_Click = m_Character.FindAction("Click", throwIfNotFound: true);
-            m_Character_DirectionalAttack = m_Character.FindAction("Directional Attack", throwIfNotFound: true);
-            m_Character_ChangeOrbColor = m_Character.FindAction("ChangeOrbColor", throwIfNotFound: true);
-            m_Character_DirectionalAttackButton = m_Character.FindAction("Directional Attack Button", throwIfNotFound: true);
-        }
-
-        public void Dispose()
-        {
-            Object.Destroy(asset);
-        }
-
-        public InputBinding? bindingMask
-        {
-            get => asset.bindingMask;
-            set => asset.bindingMask = value;
-        }
-
-        public ReadOnlyArray<InputDevice>? devices
-        {
-            get => asset.devices;
-            set => asset.devices = value;
-        }
-
-        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-        public bool Contains(InputAction action)
-        {
-            return asset.Contains(action);
-        }
-
-        public IEnumerator<InputAction> GetEnumerator()
-        {
-            return asset.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public void Enable()
-        {
-            asset.Enable();
-        }
-
-        public void Disable()
-        {
-            asset.Disable();
-        }
-
         // Character
-        private readonly InputActionMap m_Character;
-        private ICharacterActions m_CharacterActionsCallbackInterface;
-        private readonly InputAction m_Character_Movement;
-        private readonly InputAction m_Character_Jump;
-        private readonly InputAction m_Character_Click;
-        private readonly InputAction m_Character_DirectionalAttack;
-        private readonly InputAction m_Character_ChangeOrbColor;
-        private readonly InputAction m_Character_DirectionalAttackButton;
-        public struct CharacterActions
+        m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
+        m_Character_Movement = m_Character.FindAction("Movement", throwIfNotFound: true);
+        m_Character_Jump = m_Character.FindAction("Jump", throwIfNotFound: true);
+        m_Character_Click = m_Character.FindAction("Click", throwIfNotFound: true);
+        m_Character_DirectionalAttack = m_Character.FindAction("Directional Attack", throwIfNotFound: true);
+        m_Character_ChangeOrbColor = m_Character.FindAction("ChangeOrbColor", throwIfNotFound: true);
+        m_Character_DirectionalAttackButton = m_Character.FindAction("Directional Attack Button", throwIfNotFound: true);
+        m_Character_Interact = m_Character.FindAction("Interact", throwIfNotFound: true);
+        m_Character_Escape = m_Character.FindAction("Escape", throwIfNotFound: true);
+    }
+
+    public void Dispose()
+    {
+        UnityEngine.Object.Destroy(asset);
+    }
+
+    public InputBinding? bindingMask
+    {
+        get => asset.bindingMask;
+        set => asset.bindingMask = value;
+    }
+
+    public ReadOnlyArray<InputDevice>? devices
+    {
+        get => asset.devices;
+        set => asset.devices = value;
+    }
+
+    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+    public bool Contains(InputAction action)
+    {
+        return asset.Contains(action);
+    }
+
+    public IEnumerator<InputAction> GetEnumerator()
+    {
+        return asset.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public void Enable()
+    {
+        asset.Enable();
+    }
+
+    public void Disable()
+    {
+        asset.Disable();
+    }
+
+    // Character
+    private readonly InputActionMap m_Character;
+    private ICharacterActions m_CharacterActionsCallbackInterface;
+    private readonly InputAction m_Character_Movement;
+    private readonly InputAction m_Character_Jump;
+    private readonly InputAction m_Character_Click;
+    private readonly InputAction m_Character_DirectionalAttack;
+    private readonly InputAction m_Character_ChangeOrbColor;
+    private readonly InputAction m_Character_DirectionalAttackButton;
+    private readonly InputAction m_Character_Interact;
+    private readonly InputAction m_Character_Escape;
+    public struct CharacterActions
+    {
+        private @Player m_Wrapper;
+        public CharacterActions(@Player wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Character_Movement;
+        public InputAction @Jump => m_Wrapper.m_Character_Jump;
+        public InputAction @Click => m_Wrapper.m_Character_Click;
+        public InputAction @DirectionalAttack => m_Wrapper.m_Character_DirectionalAttack;
+        public InputAction @ChangeOrbColor => m_Wrapper.m_Character_ChangeOrbColor;
+        public InputAction @DirectionalAttackButton => m_Wrapper.m_Character_DirectionalAttackButton;
+        public InputAction @Interact => m_Wrapper.m_Character_Interact;
+        public InputAction @Escape => m_Wrapper.m_Character_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_Character; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CharacterActions set) { return set.Get(); }
+        public void SetCallbacks(ICharacterActions instance)
         {
-            private @Player m_Wrapper;
-            public CharacterActions(@Player wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Movement => m_Wrapper.m_Character_Movement;
-            public InputAction @Jump => m_Wrapper.m_Character_Jump;
-            public InputAction @Click => m_Wrapper.m_Character_Click;
-            public InputAction @DirectionalAttack => m_Wrapper.m_Character_DirectionalAttack;
-            public InputAction @ChangeOrbColor => m_Wrapper.m_Character_ChangeOrbColor;
-            public InputAction @DirectionalAttackButton => m_Wrapper.m_Character_DirectionalAttackButton;
-            public InputActionMap Get() { return m_Wrapper.m_Character; }
-            public void Enable() { Get().Enable(); }
-            public void Disable() { Get().Disable(); }
-            public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(CharacterActions set) { return set.Get(); }
-            public void SetCallbacks(ICharacterActions instance)
+            if (m_Wrapper.m_CharacterActionsCallbackInterface != null)
             {
-                if (m_Wrapper.m_CharacterActionsCallbackInterface != null)
-                {
-                    @Movement.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
-                    @Movement.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
-                    @Movement.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
-                    @Jump.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
-                    @Jump.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
-                    @Jump.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
-                    @Click.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
-                    @Click.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
-                    @Click.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
-                    @DirectionalAttack.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
-                    @DirectionalAttack.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
-                    @DirectionalAttack.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
-                    @ChangeOrbColor.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
-                    @ChangeOrbColor.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
-                    @ChangeOrbColor.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
-                    @DirectionalAttackButton.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
-                    @DirectionalAttackButton.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
-                    @DirectionalAttackButton.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
-                }
-                m_Wrapper.m_CharacterActionsCallbackInterface = instance;
-                if (instance != null)
-                {
-                    @Movement.started += instance.OnMovement;
-                    @Movement.performed += instance.OnMovement;
-                    @Movement.canceled += instance.OnMovement;
-                    @Jump.started += instance.OnJump;
-                    @Jump.performed += instance.OnJump;
-                    @Jump.canceled += instance.OnJump;
-                    @Click.started += instance.OnClick;
-                    @Click.performed += instance.OnClick;
-                    @Click.canceled += instance.OnClick;
-                    @DirectionalAttack.started += instance.OnDirectionalAttack;
-                    @DirectionalAttack.performed += instance.OnDirectionalAttack;
-                    @DirectionalAttack.canceled += instance.OnDirectionalAttack;
-                    @ChangeOrbColor.started += instance.OnChangeOrbColor;
-                    @ChangeOrbColor.performed += instance.OnChangeOrbColor;
-                    @ChangeOrbColor.canceled += instance.OnChangeOrbColor;
-                    @DirectionalAttackButton.started += instance.OnDirectionalAttackButton;
-                    @DirectionalAttackButton.performed += instance.OnDirectionalAttackButton;
-                    @DirectionalAttackButton.canceled += instance.OnDirectionalAttackButton;
-                }
+                @Movement.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnMovement;
+                @Jump.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnJump;
+                @Click.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnClick;
+                @DirectionalAttack.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
+                @DirectionalAttack.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
+                @DirectionalAttack.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttack;
+                @ChangeOrbColor.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
+                @ChangeOrbColor.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
+                @ChangeOrbColor.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnChangeOrbColor;
+                @DirectionalAttackButton.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
+                @DirectionalAttackButton.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
+                @DirectionalAttackButton.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnDirectionalAttackButton;
+                @Interact.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnInteract;
+                @Escape.started -= m_Wrapper.m_CharacterActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_CharacterActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_CharacterActionsCallbackInterface.OnEscape;
+            }
+            m_Wrapper.m_CharacterActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+                @DirectionalAttack.started += instance.OnDirectionalAttack;
+                @DirectionalAttack.performed += instance.OnDirectionalAttack;
+                @DirectionalAttack.canceled += instance.OnDirectionalAttack;
+                @ChangeOrbColor.started += instance.OnChangeOrbColor;
+                @ChangeOrbColor.performed += instance.OnChangeOrbColor;
+                @ChangeOrbColor.canceled += instance.OnChangeOrbColor;
+                @DirectionalAttackButton.started += instance.OnDirectionalAttackButton;
+                @DirectionalAttackButton.performed += instance.OnDirectionalAttackButton;
+                @DirectionalAttackButton.canceled += instance.OnDirectionalAttackButton;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
-        public CharacterActions @Character => new CharacterActions(this);
-        private int m_KeyboardMouseSchemeIndex = -1;
-        public InputControlScheme KeyboardMouseScheme
+    }
+    public CharacterActions @Character => new CharacterActions(this);
+    private int m_KeyboardMouseSchemeIndex = -1;
+    public InputControlScheme KeyboardMouseScheme
+    {
+        get
         {
-            get
-            {
-                if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard&Mouse");
-                return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
-            }
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard&Mouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
         }
-        private int m_GamepadSchemeIndex = -1;
-        public InputControlScheme GamepadScheme
+    }
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
         {
-            get
-            {
-                if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
-                return asset.controlSchemes[m_GamepadSchemeIndex];
-            }
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
         }
-        private int m_TouchSchemeIndex = -1;
-        public InputControlScheme TouchScheme
+    }
+    private int m_TouchSchemeIndex = -1;
+    public InputControlScheme TouchScheme
+    {
+        get
         {
-            get
-            {
-                if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
-                return asset.controlSchemes[m_TouchSchemeIndex];
-            }
+            if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
+            return asset.controlSchemes[m_TouchSchemeIndex];
         }
-        private int m_JoystickSchemeIndex = -1;
-        public InputControlScheme JoystickScheme
+    }
+    private int m_JoystickSchemeIndex = -1;
+    public InputControlScheme JoystickScheme
+    {
+        get
         {
-            get
-            {
-                if (m_JoystickSchemeIndex == -1) m_JoystickSchemeIndex = asset.FindControlSchemeIndex("Joystick");
-                return asset.controlSchemes[m_JoystickSchemeIndex];
-            }
+            if (m_JoystickSchemeIndex == -1) m_JoystickSchemeIndex = asset.FindControlSchemeIndex("Joystick");
+            return asset.controlSchemes[m_JoystickSchemeIndex];
         }
-        private int m_XRSchemeIndex = -1;
-        public InputControlScheme XRScheme
+    }
+    private int m_XRSchemeIndex = -1;
+    public InputControlScheme XRScheme
+    {
+        get
         {
-            get
-            {
-                if (m_XRSchemeIndex == -1) m_XRSchemeIndex = asset.FindControlSchemeIndex("XR");
-                return asset.controlSchemes[m_XRSchemeIndex];
-            }
+            if (m_XRSchemeIndex == -1) m_XRSchemeIndex = asset.FindControlSchemeIndex("XR");
+            return asset.controlSchemes[m_XRSchemeIndex];
         }
-        public interface ICharacterActions
-        {
-            void OnMovement(InputAction.CallbackContext context);
-            void OnJump(InputAction.CallbackContext context);
-            void OnClick(InputAction.CallbackContext context);
-            void OnDirectionalAttack(InputAction.CallbackContext context);
-            void OnChangeOrbColor(InputAction.CallbackContext context);
-            void OnDirectionalAttackButton(InputAction.CallbackContext context);
-        }
+    }
+    public interface ICharacterActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnDirectionalAttack(InputAction.CallbackContext context);
+        void OnChangeOrbColor(InputAction.CallbackContext context);
+        void OnDirectionalAttackButton(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

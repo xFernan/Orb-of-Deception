@@ -24,6 +24,8 @@ namespace OrbOfDeception.Gameplay.Player
 
         public void Jump()
         {
+            if (!GameManager.Player.isControlled)
+                return;
             if (!_isJumping && (!_groundDetector.IsOnTheGround() && !_groundDetector.IsOnCoyoteTime()))
                 return;
             

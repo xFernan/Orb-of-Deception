@@ -1,4 +1,5 @@
 using OrbOfDeception.CameraBehaviours;
+using OrbOfDeception.Core.Input;
 using OrbOfDeception.Gameplay.Orb;
 using UnityEngine;
 
@@ -29,10 +30,12 @@ namespace OrbOfDeception.Gameplay.Player
         public PlayerController playerController;
         public OrbController orbController;
         public CameraController cameraController;
+        public InputManager inputManager;
 
         public static PlayerController Player => Instance.playerController;
         public static OrbController Orb => Instance.orbController;
         public static CameraController Camera => Instance.cameraController;
+        public static InputManager InputManager => Instance.inputManager;
         
         private void Awake()
         {

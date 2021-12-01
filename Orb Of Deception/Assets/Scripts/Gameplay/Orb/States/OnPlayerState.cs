@@ -23,7 +23,6 @@ namespace OrbOfDeception.Gameplay.Orb
             _idleFloatingMoveDistance = idleFloatingMoveDistance;
         }
 
-
         public override void Enter()
         {
             base.Enter();
@@ -33,18 +32,20 @@ namespace OrbOfDeception.Gameplay.Orb
             _orbController.orbIdleParticles.Play();
         }
 
-        public override void FixedUpdate(float deltaTime)
+        public override void Update(float deltaTime)
         {
-            base.FixedUpdate(deltaTime);
+            base.Update(deltaTime);
+            
+            if (Time.timeScale == 0) return;
             
             var currentPosition = _transform.position;
             var orbIdlePosition = _orbIdlePositionTransform.position;
 
-            var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, _idleLerpPlayerFollowValue);
+            var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, _idleLerpPlayerFollowValue * Time.deltaTime);
                     
             newPosition.y += Mathf.Sin(Time.time * _idleFloatingMoveVelocity) *
                              _idleFloatingMoveDistance;
-                    
+            
             _transform.position = newPosition;
         }
 

@@ -78,6 +78,10 @@ namespace OrbOfDeception.Gameplay.Orb
             if (_hasReceivedAVelocityBoost)
                 return;
             
+            var otherColliderEffector = other.gameObject.GetComponent<PlatformEffector2D>();
+            if (otherColliderEffector != null)
+                return;
+            
             ApplyVelocityBoost();
 
             _hasReceivedAVelocityBoost = true;

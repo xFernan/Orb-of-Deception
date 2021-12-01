@@ -9972,7 +9972,7 @@ MonoBehaviour:
   orbIdlePositionTransform: {fileID: 3567960012150512255}
   idleFloatingMoveDistance: 0.05
   idleFloatingMoveVelocity: 10
-  idleLerpPlayerFollowValue: 0.4
+  idleVelocity: 0.5
   radiusToGoIdle: 0.5
   directionalAttackInitialForce: 35
   directionalAttackDecelerationFactor: 0.9
@@ -10095,7 +10095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00c627093f12bc4b8151bdddc0d716b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 6
+  cursorSprite: {fileID: 0}
+  groundVelocity: 6
+  airVelocity: 0
   jumpForce: 12
   jumpTime: 0.18
   maxFallVelocity: -18
@@ -10108,6 +10110,7 @@ MonoBehaviour:
   - {fileID: 3567960013034653288}
   groundDetectionRayDistance: 0.1
   inputManager: {fileID: 3567960012391783301}
+  isControlled: 1
 --- !u!95 &3567960011898053807
 Animator:
   serializedVersion: 3
@@ -10373,6 +10376,7 @@ MonoBehaviour:
   playerController: {fileID: 3567960011898053800}
   orbController: {fileID: 3567960011778877950}
   cameraController: {fileID: 3567960012626478867}
+  inputManager: {fileID: 0}
 --- !u!1 &3567960012426269496
 GameObject:
   m_ObjectHideFlags: 0
@@ -15376,7 +15380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f902a56c176944d409b0e806a5f1bf7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraMoveTimeWhenChangingDirection: 0.4
 --- !u!1 &3567960012750880226
 GameObject:
   m_ObjectHideFlags: 0
@@ -15388,6 +15391,7 @@ GameObject:
   - component: {fileID: 3567960012750880227}
   - component: {fileID: 3567960012750880224}
   - component: {fileID: 3567960012750880225}
+  - component: {fileID: 7104174054280433533}
   - component: {fileID: 3567960012750880230}
   m_Layer: 0
   m_Name: Light
@@ -15500,8 +15504,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940149f732de4df46afa7e46eb60a109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twinkleIntensityVariation: 0.5
+  twinkleType: 0
+  twinkleBaseValue: 0
+  twinkleVariation: 0
   twinkleVelocity: 3
+--- !u!114 &7104174054280433533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567960012750880226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940149f732de4df46afa7e46eb60a109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twinkleType: 0
+  twinkleBaseValue: 0
+  twinkleVariation: 0
+  twinkleVelocity: 0
 --- !u!114 &3567960012750880230
 MonoBehaviour:
   m_ObjectHideFlags: 0

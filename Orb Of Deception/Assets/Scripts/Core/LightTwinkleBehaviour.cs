@@ -1,26 +1,47 @@
+using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Core
 {
     public class LightTwinkleBehaviour : MonoBehaviour
     {
+        private enum TwinkleType
+        {
+            InnerRadius,
+            OuterRadius,
+            Intensity
+        }
 
-        [SerializeField] private float twinkleIntensityVariation;
+        [SerializeField] private TwinkleType twinkleType;
+        [SerializeField] private float twinkleBaseValue;
+        [SerializeField] private float twinkleVariation;
         [SerializeField] private float twinkleVelocity;
         
         private Light2D _light;
-        private float _baseIntensity;
 
         private void Awake()
         {
             _light = GetComponent<Light2D>();
-            _baseIntensity = _light.pointLightInnerRadius;
         }
 
         private void Update()
         {
-            _light.pointLightInnerRadius = Mathf.Sin(Time.time * twinkleVelocity) * twinkleIntensityVariation + _baseIntensity;
+            var newTwinkleValue = Mathf.Sin(Time.time * twinkleVelocity) * twinkleVariation + twinkleBaseValue;
+            switch (twinkleType)
+            {
+                case TwinkleType.InnerRadius:
+                    _light.pointLightInnerRadius = newTwinkleValue;
+                    break;
+                case TwinkleType.OuterRadius:
+                    _light.pointLightOuterRadius = newTwinkleValue;
+                    break;
+                case TwinkleType.Intensity:
+                    _light.intensity = newTwinkleValue;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }
