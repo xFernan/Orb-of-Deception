@@ -1,13 +1,25 @@
+using System;
 using DG.Tweening;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
+using OrbOfDeception.Essence_of_Punishment;
+using OrbOfDeception.Orb;
+using OrbOfDeception.Rooms;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace OrbOfDeception.Scenery_Elements
 {
     public class BreakableDecorationBehaviour : MonoBehaviour, IOrbHittable
     {
         #region Variables
+
+        [SerializeField] private bool isIrreparable = false;
+        [SerializeField] private int decorationID;
+        [SerializeField] private float dropProbability = 0.05f;
+        [SerializeField] private int minDropAmount = 1;
+        [SerializeField] private int maxDropAmount = 2;
         
         private SpriteMaterialController _materialController;
         private ParticleSystem _brokenParticles;
@@ -17,9 +29,6 @@ namespace OrbOfDeception.Scenery_Elements
         private float _dissolveValue;
         
         private const float DissolveDuration = 0.2f;
-        private const float EssenceOfPunishmentDropProbability = 0.05f;
-        private const int MinEssenceOfPunishmentDropAmount = 1;
-        private const int MaxEssenceOfPunishmentDropAmount = 2;
         
         #endregion
         
@@ -34,15 +43,20 @@ namespace OrbOfDeception.Scenery_Elements
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
         }
 
-        public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
+        private void Start()
         {
-            if (_isBroken) return;
-            
-            BreakDecoration();
-            
+            if (isIrreparable)
+            {
+                if (!SaveSystem.IsIrreparableDecorationBroken(decorationID)) return;
+            }
+            else
+            {
+                if (!SaveSystem.IsDecorationBroken(decorationID)) return;
+            }
+            _dissolveValue = 1;
             _isBroken = true;
         }
-        
+
         private void Update()
         {
             _materialController.SetDissolve(_dissolveValue);
@@ -57,14 +71,32 @@ namespace OrbOfDeception.Scenery_Elements
             _brokenParticles.Play();
             DOTween.To(()=> _dissolveValue, x=> _dissolveValue = x, 1, DissolveDuration);
 
-            if (Random.Range(0.0f, 1.0f) <= EssenceOfPunishmentDropProbability) DropEssenceOfPunishment();
+            if (Random.Range(0.0f, 1.0f) <= dropProbability) DropEssenceOfPunishment();
+            
+            if (isIrreparable)
+                SaveSystem.AddIrreparableDecorationBroken(decorationID);
+            else
+                SaveSystem.AddDecorationBroken(decorationID);
+            
+            _isBroken = true;
         }
 
         private void DropEssenceOfPunishment()
         {
             var essenceOfPunishmentAmount =
-                Random.Range(MinEssenceOfPunishmentDropAmount, MaxEssenceOfPunishmentDropAmount);
+                Random.Range(minDropAmount, maxDropAmount);
             _essenceOfPunishmentSpawner.SpawnEssences(essenceOfPunishmentAmount);
+        }
+        
+        #endregion
+        
+        #region Implemented Methods
+        
+        public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
+        {
+            if (_isBroken) return;
+            
+            BreakDecoration();
         }
         
         #endregion

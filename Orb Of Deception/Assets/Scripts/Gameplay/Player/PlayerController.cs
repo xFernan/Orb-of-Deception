@@ -1,16 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
 using OrbOfDeception.Enemy;
-using OrbOfDeception.Patterns;
+using OrbOfDeception.Orb;
+using OrbOfDeception.Rooms;
+using OrbOfDeception.Statue;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Player
+namespace OrbOfDeception.Player
 {
     public class PlayerController : StateMachineController
     {
         #region Variables
 
-        [SerializeField] private Texture2D cursorSprite;
+        public SpriteRenderer bodySpriteRenderer;
+        public SpriteRenderer maskSpriteRenderer;
         [SerializeField] private float groundVelocity = 6;
         [SerializeField] private float airVelocity;
         [SerializeField] private float jumpForce = 5;
@@ -18,58 +23,83 @@ namespace OrbOfDeception.Gameplay.Player
         [SerializeField] private float maxFallVelocity = -5;
         [SerializeField] private float coyoteTime = 0.1f;
         [SerializeField] private float timeInvulnerable = 2;
-        [SerializeField] private GameObject spriteObject;
+        public GameObject spriteObject;
         [SerializeField] private Transform[] groundDetectors;
+        [SerializeField] private Transform centralGroundDetector;
         [SerializeField] private float groundDetectionRayDistance;
         [SerializeField] private InputManager inputManager;
-        public const int InitialHealth = 4; // Provisional.
+        public MultipleParticlesController deathParticlesController;
+        public MultipleParticlesController jumpParticles;
+        public ParticleSystem maskParticles;
+        public const int InitialHealth = 5; // Provisional.
 
-        [HideInInspector] public bool isControlled = true;
+        public bool isControlled;
+        private Coroutine _standCoroutine; // Refactorizable.
         
-        private Rigidbody2D _rigidbody;
-        private Animator _animator;
-        private Animator _spriteAnimator;
+        public Rigidbody2D Rigidbody { get; private set; }
+        public Animator Animator { get; private set; }
+        public Animator SpriteAnimator { get; private set; }
+        public SoundsPlayer SoundsPlayer { get; private set; }
         
-        public JumpController JumpController { get; private set; }
+        public PlayerHorizontalMovementController HorizontalMovementController { get; private set; }
+        public PlayerJumpController JumpController { get; private set; }
+        public PlayerAnimationController AnimationController { get; private set; }
+        public PlayerHealthController HealthController { get; private set; }
+        public PlayerHurtController HurtController { get; private set; }
+        public PlayerInteraction Interaction { get; private set; }
+        public PlayerTriggerDetector TriggerDetector { get; private set; }
+        public PlayerKneelController KneelController { get; private set; }
+        public PlayerDeathController DeathController { get; private set; }
+        public PlayerMaskController MaskController { get; private set; }
+        public PlayerSpriteDirectionController SpriteDirectionController { get; private set; }
+        public PlayerStatueMenuController StatueMenuController { get; private set; }
+        
         public GroundDetector GroundDetector { get; private set; }
-        public HorizontalMovementController HorizontalMovementController { get; private set; }
-        public AnimationController AnimationController { get; private set; }
-        public PlayerHealthController PlayerHealthController { get; private set; }
-        public HurtController HurtController { get; private set; }
+        public GroundShadowController GroundShadowController { get; private set; }
         public EssenceOfPunishmentCounter EssenceOfPunishmentCounter { get; private set; }
-        public CollectibleCounter CollectibleCounter { get; private set; }
-        public PlayerInteraction PlayerInteraction { get; private set; }
-        public KneelController KneelController { get; private set; }
+        
+        private static readonly int Kneeled = Animator.StringToHash("Kneeled");
         
         public const int InControlState = 0;
         public const int KneelState = 1;
         public const int DashState = 2;
+        
         #endregion
     
         #region Methods
+        
         protected override void OnAwake()
         {
             base.OnAwake();
             
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
-            _spriteAnimator = spriteObject.GetComponent<Animator>();
+            Rigidbody = GetComponent<Rigidbody2D>();
+            Animator = GetComponent<Animator>();
+            SpriteAnimator = spriteObject.GetComponent<Animator>();
+            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
             
-            GroundDetector = new GroundDetector(groundDetectors, groundDetectionRayDistance, coyoteTime);
-            JumpController = new JumpController(_rigidbody, jumpForce, jumpTime, maxFallVelocity, GroundDetector);
-            HorizontalMovementController = new HorizontalMovementController(_rigidbody, groundVelocity, airVelocity, inputManager);
-            AnimationController = new AnimationController(_animator, _rigidbody, GroundDetector);
-            PlayerHealthController = new PlayerHealthController(this, InitialHealth);
-            HurtController = new HurtController(this, timeInvulnerable, _spriteAnimator);
+            GroundShadowController = GetComponentInChildren<GroundShadowController>();
+            StatueMenuController = GetComponentInChildren<PlayerStatueMenuController>();
+            MaskController = GetComponentInChildren<PlayerMaskController>();
+            SpriteDirectionController = GetComponentInChildren<PlayerSpriteDirectionController>();
+            
+            GroundDetector = new GroundDetector(groundDetectors, centralGroundDetector, groundDetectionRayDistance, coyoteTime);
+            JumpController = new PlayerJumpController(Rigidbody, jumpForce, jumpTime, maxFallVelocity, GroundDetector);
+            HorizontalMovementController = new PlayerHorizontalMovementController(Rigidbody, groundVelocity, airVelocity, inputManager);
+            AnimationController = new PlayerAnimationController(Animator, Rigidbody, GroundDetector);
+            HealthController = new PlayerHealthController(this, InitialHealth);
+            HurtController = new PlayerHurtController(this, timeInvulnerable, SpriteAnimator);
             EssenceOfPunishmentCounter = new EssenceOfPunishmentCounter();
-            CollectibleCounter = new CollectibleCounter();
-            PlayerInteraction = new PlayerInteraction();
-            KneelController = new KneelController();
+            Interaction = new PlayerInteraction();
+            TriggerDetector = new PlayerTriggerDetector();
+            KneelController = new PlayerKneelController();
+            DeathController = new PlayerDeathController();
             
             inputManager.Jump = JumpController.Jump;
             inputManager.StopJumping = JumpController.StopJumping;
             
-            AddState(InControlState, new InControlState());
+            SaveSystem.UnlockMask(PlayerMaskController.MaskType.ShinyMask);
+            
+            AddState(InControlState, new NormalState());
             AddState(KneelState, new KneelState());
         }
 
@@ -78,9 +108,33 @@ namespace OrbOfDeception.Gameplay.Player
             base.OnStart();
             
             SetInitialState(InControlState);
-            PlayerInteraction.Start();
+            Interaction.Start();
+            
+            // PROVISIONAL
+            SaveSystem.InitTimeCounter();
         }
 
+        public void SpawnStand()
+        {
+            if (_standCoroutine != null) StopCoroutine(_standCoroutine);
+            _standCoroutine = StartCoroutine(SpawnStandCoroutine());
+        }
+        
+        private IEnumerator SpawnStandCoroutine()
+        {
+            HorizontalMovementController.SetDirection(1); // Provisional, es muy cutre.
+            KneelController.Kneel();
+            GameManager.Orb.SetHidden();
+            yield return 0;
+            Animator.Play("Kneeling", 0, 1); // Provisional.
+            yield return new WaitForSeconds(1.5f);
+            KneelController.Stand();
+            yield return new WaitForSeconds(1);
+            isControlled = true;
+            if (SaveSystem.currentOrbType != OrbController.OrbType.None)
+                GameManager.Orb.Appear();
+        }
+        
         protected override void OnUpdate()
         {
             base.OnUpdate();
@@ -90,18 +144,12 @@ namespace OrbOfDeception.Gameplay.Player
             HorizontalMovementController.Update();
         }
         
-        public void Die() // Provisional.
-        {
-            Debug.Log("Player died.");
-        }
-        
         public void GetDamaged()
         {
-            if (HurtController.IsInvulnerable()) return;
+            if (HurtController.IsInvulnerable() || DeathController.isDying) return;
 
             GameManager.Camera.Shake(0.7f); // Provisional.
-            PlayerHealthController.ReceiveDamage();
-            HurtController.StartHurt();
+            HealthController.ReceiveDamage();
         }
         
         private void OnDrawGizmos()
@@ -114,41 +162,7 @@ namespace OrbOfDeception.Gameplay.Player
             HorizontalMovementController?.FixedUpdate();
             JumpController?.FixedUpdate();
         }
+        
         #endregion
-    }
-    
-    public class InControlState : State
-    {
-        public InControlState()
-        {
-        }
-
-        public override void Enter()
-        {
-            base.Enter();
-
-            GameManager.Player.isControlled = true;
-        }
-
-        public override void Exit()
-        {
-            base.Exit();
-            
-            GameManager.Player.isControlled = false;
-        }
-    }
-    
-    public class KneelState : State
-    {
-        public KneelState()
-        {
-        }
-
-        public override void Enter()
-        {
-            base.Enter();
-            
-            Debug.Log("Enter Kneel");
-        }
     }
 }

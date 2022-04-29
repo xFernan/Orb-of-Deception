@@ -12,10 +12,12 @@ namespace OrbOfDeception.Enemy.Enemy2
         
         private Seeker _seeker;
         
+        public PathController PathController { get; private set; }
+        
         public Rigidbody2D Rigidbody { get; private set; }
         public SpriteRenderer SpriteRenderer { get; private set; }
         
-        public Enemy2Parameters Parameters => parameters as Enemy2Parameters;
+        public Enemy2Parameters Parameters => BaseParameters as Enemy2Parameters;
         
         public const int IdleState = 0;
         public const int ChasingState = 1;
@@ -28,31 +30,30 @@ namespace OrbOfDeception.Enemy.Enemy2
         {
             base.OnAwake();
 
+            PathController = GetComponentInChildren<PathController>();
+            if (PathController != null)
+                PathController.transform.parent = null;
+            
             Rigidbody = GetComponent<Rigidbody2D>();
             SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
             _seeker = GetComponent<Seeker>();
             
-            AddState(IdleState, new IdleState(this));
+            AddState(IdleState, new WanderingState(this));
             AddState(ChasingState, new ChasingState(this, _seeker, SpriteRenderer, nextWaypointDistance));
         }
 
         protected override void OnStart()
         {
             base.OnStart();
-            SetInitialState(IdleState);
-        }
 
-        private void OnDrawGizmos()
-        {
-            if (parameters == null) return;
-            
-            var position = transform.position;
-            
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(position, Parameters.distanceToChase);
-            
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(position, Parameters.distanceToIgnorePathToFollowPlayer);
+            if (BaseParameters.hasBeenSpawned)
+            {
+                SetInitialState(ChasingState);
+            }
+            else
+            {
+                SetInitialState(IdleState);
+            }
         }
 
         public override void SetOrientation(bool isOrientationRight)

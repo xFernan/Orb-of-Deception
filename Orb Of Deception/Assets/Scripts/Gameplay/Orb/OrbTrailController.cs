@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OrbTrailController
     {

@@ -1,9 +1,10 @@
 ﻿using System.Collections;
-using OrbOfDeception.Core;
 using OrbOfDeception.Patterns;
+using OrbOfDeception.Player;
+using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class DirectionalAttackState : State
     {
@@ -41,7 +42,7 @@ namespace OrbOfDeception.Gameplay.Orb
             _ringParticlesCount = 0;
             _hasReceivedAVelocityBoost = false;
             _physicsCollider.enabled = true;
-            _orbController.directionAttackOrbParticles.Play();
+            _orbController.orbDirectionalAttackParticles.Play();
             SpawnRingParticles();
         }
 
@@ -49,7 +50,7 @@ namespace OrbOfDeception.Gameplay.Orb
         {
             base.FixedUpdate(deltaTime);
             
-            _rigidbody.velocity *= _directionalAttackDecelerationFactor;
+            _rigidbody.velocity *= _directionalAttackDecelerationFactor * (SaveSystem.currentMaskType == PlayerMaskController.MaskType.ScarletMask ? 0.9f : 1);
             
             if (_rigidbody.velocity.magnitude <= _directionalAttackMinVelocityToChangeState)
             {
@@ -90,13 +91,14 @@ namespace OrbOfDeception.Gameplay.Orb
         private void ApplyVelocityBoost()
         {
             var oldVelocity = _rigidbody.velocity;
-            var newVelocity = oldVelocity.magnitude + _directionalAttackFirstBounceVelocityBoost;
+            var newVelocity = oldVelocity.magnitude + _directionalAttackFirstBounceVelocityBoost
+                * (SaveSystem.currentMaskType == PlayerMaskController.MaskType.ScarletMask ? 1.9f : 1);;
             _rigidbody.velocity = oldVelocity.normalized * Mathf.Min(newVelocity, _directionalAttackInitialForce);
 
             if (_ringParticlesCount != 3) return;
             
-            _orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
-            _orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 9));
+            //_orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
+            //_orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 9));
         }
 
         private void SpawnBounceParticles(Vector2 particlesPosition, Color particlesColor)

@@ -1,7 +1,9 @@
 ﻿using OrbOfDeception.Patterns;
+using OrbOfDeception.Player;
+using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class ReturningState : State
     {
@@ -30,6 +32,7 @@ namespace OrbOfDeception.Gameplay.Orb
             if (Vector2.Distance(_transform.position, _orbIdlePositionTransform.position) <= _radiusToGoIdle)
             {
                 _orbController.SetState(OrbController.OnPlayerState);
+                GameManager.Orb.SoundsPlayer.Play("Returning");
             }
         }
 
@@ -40,7 +43,7 @@ namespace OrbOfDeception.Gameplay.Orb
             var velocityValue = _rigidbody.velocity.magnitude;
             var direction = (_orbIdlePositionTransform.position - _transform.position).normalized;
             _rigidbody.velocity = direction * velocityValue;
-            _rigidbody.AddForce(direction * _attractionForce);
+            _rigidbody.AddForce(direction * (_attractionForce * (SaveSystem.currentMaskType == PlayerMaskController.MaskType.ScarletMask ? 1.4f : 1)));
         }
 
         public override void Exit()
@@ -48,7 +51,7 @@ namespace OrbOfDeception.Gameplay.Orb
             base.Exit();
             
             _rigidbody.velocity = Vector2.zero;
-            _orbController.directionAttackOrbParticles.Stop();
+            _orbController.orbDirectionalAttackParticles.Stop();
         }
     }
 }

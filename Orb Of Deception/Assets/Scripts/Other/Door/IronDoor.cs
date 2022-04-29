@@ -1,8 +1,7 @@
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Door
 {
     public class IronDoor : Door
     {

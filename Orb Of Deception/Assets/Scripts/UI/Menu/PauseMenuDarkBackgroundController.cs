@@ -3,7 +3,7 @@ using OrbOfDeception.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OrbOfDeception.UI
+namespace OrbOfDeception.UI.Menu
 {
     public class PauseMenuDarkBackgroundController : HideableElement
     {
@@ -29,6 +29,8 @@ namespace OrbOfDeception.UI
 
         public override void Show()
         {
+            base.Show();
+            
             var duration = opacity / (opacity - _currentOpacity) * opacityChangeDuration;
             
             _tween.Kill();
@@ -38,6 +40,8 @@ namespace OrbOfDeception.UI
 
         public override void Hide()
         {
+            base.Hide();
+            
             var duration = opacity / (1 - (opacity - _currentOpacity)) * opacityChangeDuration;
             
             _tween.Kill();

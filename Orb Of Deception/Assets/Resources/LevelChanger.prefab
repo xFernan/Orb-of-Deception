@@ -64,7 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cbb0e2ee868834fbe3dc9fa10c0d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLevel: 0
   anim: {fileID: 95709890192975602}
 --- !u!1 &1666254025110960
 GameObject:
@@ -165,7 +164,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8119
 --- !u!1 &1748850687145912
 GameObject:
   m_ObjectHideFlags: 0

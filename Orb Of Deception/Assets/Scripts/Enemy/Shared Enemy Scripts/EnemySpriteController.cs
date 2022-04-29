@@ -2,13 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy
 {
     public class EnemySpriteController : MonoBehaviour
     {
+        #region Variables
+        
+        [SerializeField] private SpriteMaterialController[] materialControllers;
+        
         [HideInInspector] public Color tintColor;
         [HideInInspector] public float tintOpacity;
         [HideInInspector] public float dissolve;
@@ -18,30 +21,31 @@ namespace OrbOfDeception.Enemy
         private readonly Color _blackColor = Color.black;
         private readonly Color _whiteColor = Color.white;
         private readonly Color _purpleColor = new Color(0.3f, 0, 0.7f);
-
-        private SpriteMaterialController _materialController;
+        
+        #endregion
         
         #region Methods
         
         #region MonoBehaviour Methods
-        
-        private void Awake()
-        {
-            _materialController = GetComponent<SpriteMaterialController>();
-        }
 
         private void Start()
         {
-            _materialController.SetUseBorderDuringDissolve(true);
+            foreach (var materialController in materialControllers)
+            {
+                materialController.SetUseBorderDuringDissolve(true);
+            }
         }
 
         private void Update()
         {
-            _materialController.SetTintOpacity(tintOpacity);
-            _materialController.SetDissolve(dissolve);
-            _materialController.SetOpacity(opacity);
-            _materialController.SetTintColor(tintColor);
-            _materialController.SetPunishEffect(punishEffect);
+            foreach (var materialController in materialControllers)
+            {
+                materialController.SetTintOpacity(tintOpacity);
+                materialController.SetDissolve(dissolve);
+                materialController.SetOpacity(opacity);
+                materialController.SetTintColor(tintColor);
+                materialController.SetPunishEffect(punishEffect);
+            }
         }
         
         #endregion

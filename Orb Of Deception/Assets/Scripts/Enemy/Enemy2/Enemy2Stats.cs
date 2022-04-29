@@ -6,6 +6,7 @@ namespace OrbOfDeception.Enemy.Enemy2
     public class Enemy2Stats : EnemyStats
     {
         [Header("Enemy 2 Stats")]
-        public float velocity;
+        public float velocityChasing;
+        public float velocityWandering;
     }
 }

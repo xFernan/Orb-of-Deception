@@ -1,3 +1,4 @@
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,12 +12,14 @@ namespace OrbOfDeception.UI
         [SerializeField] private UIArrowSelector[] arrows;
 
         private Button _button;
+        private SoundsPlayer _soundsPlayer;
 
         protected override void Awake()
         {
             base.Awake();
 
             _button = GetComponent<Button>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
         }
 
         private void Start()
@@ -28,6 +31,7 @@ namespace OrbOfDeception.UI
         {
             if (!_button.interactable) return;
             
+            _soundsPlayer.Play("Hover");
             ShowArrows();
         }
 
@@ -38,6 +42,11 @@ namespace OrbOfDeception.UI
             HideArrows();
         }
 
+        public void OnPointerClick()
+        {
+            _soundsPlayer.Play("Select");
+        }
+        
         private void ShowArrows()
         {
             foreach (var arrow in arrows)

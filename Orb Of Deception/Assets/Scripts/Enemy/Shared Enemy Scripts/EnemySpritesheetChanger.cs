@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using OrbOfDeception.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -37,6 +38,11 @@ namespace OrbOfDeception.Enemy
         // Runs after setting the Animator frame sprite.
         private void LateUpdate()
         {
+            if (!_nameIndexDictionary.ContainsKey(_spriteRenderer.sprite.name))
+            {
+                Debug.Log(_spriteRenderer.sprite.name);
+                Debug.Log(_nameIndexDictionary.Count);
+            }
             var frameIndex = _nameIndexDictionary[_spriteRenderer.sprite.name];
             _spriteRenderer.sprite = GetCurrentSpriteSheet()[frameIndex];
         }

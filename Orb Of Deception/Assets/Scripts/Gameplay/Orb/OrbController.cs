@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
-using OrbOfDeception.Gameplay.Player;
 using OrbOfDeception.Patterns;
+using OrbOfDeception.Player;
+using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OrbController : GameEntity
     {
         #region Variables
 
+        public enum OrbType
+        {
+            None,
+            Pallid,
+            Awakened
+        }
+        
         [Header("Particles variables")]
-        public ParticleSystem directionAttackOrbParticles;
+        public ParticleSystem orbDirectionalAttackParticles;
         public ParticleSystem orbIdleParticles;
         public TrailRenderer orbTrail;
 
@@ -51,17 +60,22 @@ namespace OrbOfDeception.Gameplay.Orb
         
         [Header("Script references")]
         
-        [SerializeField] private OrbSpriteController orbSpriteController;
         [SerializeField] private OrbLightColorChanger orbLightColorChanger;
-        [SerializeField] private MultipleParticlesController colorChangeParticles;
+        public MultipleParticlesController colorChangeParticles;
         
         private EntityColor _orbColor;
         private bool _hasReceivedAVelocityBoost;
         private int _ringParticlesCount;
         private bool _canChangeColor = true;
+        private bool _isVisible = false;
         
+        public OrbSpriteController OrbSpriteController { get; private set; }
+        public GroundShadowController GroundShadowController { get; private set; }
+        
+        public Animator Animator { get; private set; }
         public Rigidbody2D Rigidbody { get; private set; }
         public Collider2D PhysicsCollider { get; private set; }
+        public SoundsPlayer SoundsPlayer { get; private set; }
 
         private OrbTrailController _orbTrailController;
 
@@ -73,10 +87,12 @@ namespace OrbOfDeception.Gameplay.Orb
 
         private FiniteStateMachine _stateMachine;
         private Dictionary<int, State> _states;
-        
+
         public const int OnPlayerState = 0;
         public const int ReturningState = 1;
         public const int DirectionalAttackState = 2;
+        
+        private static readonly int IsVisible = Animator.StringToHash("IsVisible");
         #endregion
 
         #region Methods
@@ -89,8 +105,13 @@ namespace OrbOfDeception.Gameplay.Orb
         #region Monobehaviour Methods
         private void Awake()
         {
+            Animator = GetComponent<Animator>();
             Rigidbody = GetComponent<Rigidbody2D>();
             PhysicsCollider = GetComponent<Collider2D>();
+            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
+
+            OrbSpriteController = GetComponentInChildren<OrbSpriteController>();
+            GroundShadowController = GetComponentInChildren<GroundShadowController>();
             
             _orbTrailController = new OrbTrailController(orbTrail);
 
@@ -122,6 +143,8 @@ namespace OrbOfDeception.Gameplay.Orb
         private void Update()
         {
             _stateMachine?.Update(Time.deltaTime);
+            
+            Animator.SetBool(IsVisible, _isVisible);
         }
         
         private void FixedUpdate()
@@ -160,7 +183,7 @@ namespace OrbOfDeception.Gameplay.Orb
         
         private void OnMouseClick(Vector2 mousePosition)
         {
-            if (!GameManager.Player.isControlled)
+            if (!GameManager.Player.isControlled || !_isVisible)
                 return;
             
             if (CanBeThrown && !PauseController.Instance.IsPaused)
@@ -189,12 +212,16 @@ namespace OrbOfDeception.Gameplay.Orb
         private void DirectionalAttack(Vector2 direction)
         {
             SetState(DirectionalAttackState);
-            Rigidbody.velocity = directionalAttackInitialForce * direction;
+            var force = directionalAttackInitialForce;
+            force *= SaveSystem.currentMaskType == PlayerMaskController.MaskType.ScarletMask ? 1.9f : 1;
+            force *= SaveSystem.currentMaskType == PlayerMaskController.MaskType.VigorousMask ? 1.25f : 1;
+            Rigidbody.velocity = force * direction;
+            SoundsPlayer.Play("Throwing");
         }
         
-        private void ChangeColor()
+        public void ChangeColor()
         {
-            if (!GameManager.Player.isControlled)
+            if (!GameManager.Player.isControlled || SaveSystem.currentOrbType != OrbType.Awakened)
                 return;
             
             if (!_canChangeColor) return;
@@ -208,13 +235,13 @@ namespace OrbOfDeception.Gameplay.Orb
                 _ => _orbColor
             };
 
-            var directionalAttackParticles = directionAttackOrbParticles.main;
+            var directionalAttackParticles = orbDirectionalAttackParticles.main;
             var idleParticles = orbIdleParticles.main;
 
             var particlesColor = CurrentParticlesColor;
             
             orbLightColorChanger.ChangeLightColor(_orbColor);
-            orbSpriteController.SetOrbSprite(_orbColor);
+            OrbSpriteController.SetOrbSprite(_orbColor);
             
             directionalAttackParticles.startColor = particlesColor;
             idleParticles.startColor = particlesColor;
@@ -256,7 +283,64 @@ namespace OrbOfDeception.Gameplay.Orb
         }
         
         #endregion
+
+        public void Hide()
+        {
+            HideEffects();
+            
+            _isVisible = false;
+            GroundShadowController.Hide();
+        }
+
+        public void SetHidden()
+        {
+            HideEffects();
+            
+            _isVisible = false;
+            GroundShadowController.SetHidden();
+        }
         
+        private void HideEffects()
+        {
+            var orbIdleParticlesEmission = orbIdleParticles.emission;
+            orbIdleParticlesEmission.enabled = false;
+            var orbDirectionalAttackParticlesEmission = orbDirectionalAttackParticles.emission;
+            orbDirectionalAttackParticlesEmission.enabled = false;
+            orbTrail.emitting = false;
+            orbLightColorChanger.gameObject.SetActive(false);
+        }
+        
+        public void Appear()
+        {
+            AppearEffects();
+            
+            _isVisible = true;
+            GroundShadowController.Appear();
+        }
+
+        public void SetAppeared()
+        {
+            AppearEffects();
+            
+            _isVisible = true;
+            GroundShadowController.SetAppeared();
+        }
+
+        public void Reposition(Vector3 movement)
+        {
+            transform.position += movement;
+            orbTrail.Clear();
+        }
+        
+        private void AppearEffects()
+        {
+            var orbIdleParticlesEmission = orbIdleParticles.emission;
+            orbIdleParticlesEmission.enabled = true;
+            var orbDirectionalAttackParticlesEmission = orbDirectionalAttackParticles.emission;
+            orbDirectionalAttackParticlesEmission.enabled = true;
+            orbTrail.emitting = true;
+            orbLightColorChanger.gameObject.SetActive(true);
+        }
         #endregion
     }
 }

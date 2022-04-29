@@ -1,7 +1,6 @@
-using DG.Tweening;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Player
+namespace OrbOfDeception.Player
 {
     public class CameraPlayerFollowerBehaviour : MonoBehaviour
     {
@@ -9,7 +8,7 @@ namespace OrbOfDeception.Gameplay.Player
 
         private void Awake()
         {
-            HorizontalMovementController.onDirectionChanged += ChangeDirection;
+            PlayerHorizontalMovementController.onDirectionChanged += ChangeDirection;
         }
 
         private void Start()
@@ -19,7 +18,7 @@ namespace OrbOfDeception.Gameplay.Player
 
         private void OnDestroy()
         {
-            HorizontalMovementController.onDirectionChanged -= ChangeDirection;
+            PlayerHorizontalMovementController.onDirectionChanged -= ChangeDirection;
         }
 
         private void ChangeDirection(int newDirection)

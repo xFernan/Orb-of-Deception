@@ -1,4 +1,4 @@
-using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy

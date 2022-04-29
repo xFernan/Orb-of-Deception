@@ -1,6 +1,5 @@
 using System.Collections;
 using DG.Tweening;
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.Core
@@ -18,6 +17,7 @@ namespace OrbOfDeception.Core
         [SerializeField] private ParticleSystem fallingParticles;
         
         private bool _isFalling;
+        private Bounds _platformBounds;
         
         private Animator _animator;
         private BoxCollider2D _collider;
@@ -54,7 +54,11 @@ namespace OrbOfDeception.Core
             var fallingParticlesEmission = fallingParticles.emission;
             fallingParticlesEmission.rateOverTime = particlesRateOnFalling * width;
 
-            _collider.size = new Vector2(width, _collider.size.y);
+            var size = _collider.size;
+            size = new Vector2(width, size.y);
+            _collider.size = size;
+
+            _platformBounds = new Bounds {size = size, center = transform.position + (Vector3) _collider.offset};
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -88,6 +92,8 @@ namespace OrbOfDeception.Core
             yield return new WaitForSeconds(timePreparingToFall);
             
             _collider.enabled = false;
+            if (AstarPath.active != null)
+                AstarPath.active.UpdateGraphs(_platformBounds);
             _animator.enabled = true;
             _animator.SetTrigger(FallTrigger);
             
@@ -99,6 +105,9 @@ namespace OrbOfDeception.Core
         private void OnRecoverEnds()
         {
             _collider.enabled = true;
+            if (AstarPath.active != null)
+                AstarPath.active.UpdateGraphs(_platformBounds);
+            
             _isFalling = false;
         }
         

@@ -1,6 +1,9 @@
 ﻿using System;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Essence_of_Punishment;
+using OrbOfDeception.Player;
+using OrbOfDeception.Rooms;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy
@@ -14,9 +17,9 @@ namespace OrbOfDeception.Enemy
         [SerializeField] private EnemyDamagingArea damagingArea;
         
         private float _health;
-        private bool _hasBeenSpawned;
-        
-        protected EnemyParameters parameters;
+
+        protected EnemyParameters BaseParameters { get; private set; }
+        public SoundsPlayer SoundsPlayer { get; private set; }
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
         private EnemyDeathParticles _enemyDeathParticles;
         
@@ -42,9 +45,9 @@ namespace OrbOfDeception.Enemy
             base.OnAwake();
             
             Anim = GetComponent<Animator>();
-            parameters = GetComponent<EnemyParameters>();
-            parameters.enemyController = this;
-            _health = parameters.Stats.health;
+            BaseParameters = GetComponent<EnemyParameters>();
+            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
+            _health = BaseParameters.Stats.health;
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
             _enemyDeathParticles = GetComponentInChildren<EnemyDeathParticles>();
         }
@@ -52,10 +55,16 @@ namespace OrbOfDeception.Enemy
         protected override void OnStart()
         {
             base.OnStart();
-            
-            if (!_hasBeenSpawned)
+
+            if (!BaseParameters.hasBeenSpawned)
             {
-                SetOrientation(parameters.orientationIsRight);
+                if (SaveSystem.IsEnemyDead(BaseParameters.id))
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
+                
+                SetOrientation(BaseParameters.orientationIsRight);
             }
         }
 
@@ -65,7 +74,8 @@ namespace OrbOfDeception.Enemy
         protected virtual void Die()
         {
             stateMachine.ExitState();
-            Anim.enabled = false;
+            if (Anim != false)
+                Anim.enabled = false;
             spriteAnim!.SetTrigger(Dying);
             
             var damageableAreas = GetComponentsInChildren<EnemyDamageableArea>();
@@ -79,9 +89,16 @@ namespace OrbOfDeception.Enemy
             HideShadows();
             
             _enemyDeathParticles.PlayParticles();
-            _essenceOfPunishmentSpawner.SpawnEssences(parameters.Stats.essenceOfPunishmentAmount);
+            _essenceOfPunishmentSpawner.SpawnEssences(BaseParameters.Stats.essenceOfPunishmentAmount);
+            
+            SoundsPlayer.Play("Dying");
             
             onDie?.Invoke();
+
+            if (!BaseParameters.hasBeenSpawned)
+            {
+                SaveSystem.AddEnemyDead(BaseParameters.id);
+            }
         }
 
         private void HideShadows()
@@ -89,7 +106,7 @@ namespace OrbOfDeception.Enemy
             var shadows = GetComponentsInChildren<GroundShadowController>();
             foreach (var shadow in shadows)
             {
-                shadow.Hide();
+                shadow.HideWithDelay();
             }
         }
         
@@ -104,7 +121,7 @@ namespace OrbOfDeception.Enemy
         
         public void GetDamaged(GameEntity.EntityColor damageColor, int damage)
         {
-            if (parameters.maskColor != damageColor)
+            if (BaseParameters.maskColor != damageColor)
             {
                 ReceiveDamage(damage);
             }
@@ -132,17 +149,34 @@ namespace OrbOfDeception.Enemy
         
         public GameEntity.EntityColor GetMaskColor()
         {
-            return parameters.maskColor;
+            return BaseParameters.maskColor;
         }
 
-        public void OnSpawn(GameEntity.EntityColor newColor, bool isOrientationRight)
+        public virtual void OnSpawn(GameEntity.EntityColor newColor, bool isOrientationRight)
         {
-            _hasBeenSpawned = true;
+            BaseParameters.hasBeenSpawned = true;
             SetOrientation(isOrientationRight);
-            parameters.maskColor = newColor;
+            BaseParameters.maskColor = newColor;
             onMaskColorChange?.Invoke();
             AppearShadows();
             spriteAnim.SetTrigger("Appear"); // Encapsular en un script aparte.
+        }
+        
+        public bool IsSeeingPlayer(float distance)
+        {
+            var position = transform.position;
+            var playerPosition = GameManager.Player.transform.position;
+            var raycastDirection = (playerPosition - position).normalized;
+            var distanceToPlayer = (playerPosition - position).magnitude;
+            
+            var raycastHit =
+                Physics2D.Raycast(position, raycastDirection,
+                    Mathf.Min(distanceToPlayer, distance), LayerMask.GetMask("Ground"));
+            var isRaycastingObstacle = raycastHit.collider != null;
+            
+            var distanceFromPlayer = Vector2.Distance(playerPosition, position);
+
+            return distanceFromPlayer <= distance && !isRaycastingObstacle;
         }
 
         public virtual void SetOrientation(bool isOrientationRight)

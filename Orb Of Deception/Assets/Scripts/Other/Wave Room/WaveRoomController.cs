@@ -2,7 +2,8 @@ using System.Collections;
 using System.Linq;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Door;
+using OrbOfDeception.Enemy;
 using OrbOfDeception.Rooms;
 using UnityEngine;
 
@@ -11,6 +12,10 @@ namespace OrbOfDeception.Wave_Room
     public class WaveRoomController : MonoBehaviour
     {
         #region Variables
+
+        [SerializeField] private int waveRoomID;
+        
+        [Space]
         
         [SerializeField] private ColliderEventTrigger eventTrigger;
         [SerializeField] private IronDoor[] doors;
@@ -24,6 +29,7 @@ namespace OrbOfDeception.Wave_Room
 
         private bool _hasStarted;
         private CameraLimits _waveRoomCameraLimits;
+        private CameraLimits _beforeWaveRoomCameraLimits;
         private int _numWaves;
         private int _currentWave;
         private int _currentWaveEnemiesRemaining;
@@ -52,7 +58,7 @@ namespace OrbOfDeception.Wave_Room
         
         private void StartWaveRoom()
         {
-            if (_hasStarted) return;
+            if (_hasStarted || SaveSystem.IsWaveRoomCompleted(waveRoomID)) return;
             
             _hasStarted = true;
             StartCoroutine(StartWaveRoomCoroutine());
@@ -68,6 +74,7 @@ namespace OrbOfDeception.Wave_Room
         
         private void EndWaveRoom()
         {
+            SaveSystem.AddWaveRoomCompleted(waveRoomID);
             StartCoroutine(EndWaveRoomCoroutine());
         }
 
@@ -129,12 +136,13 @@ namespace OrbOfDeception.Wave_Room
         
         private void CenterCamera()
         {
+            _beforeWaveRoomCameraLimits = GameManager.Camera.cameraLimits;
             GameManager.Camera.cameraLimits = _waveRoomCameraLimits;
         }
 
         private void DecenterCamera()
         {
-            GameManager.Camera.cameraLimits = RoomManager.Instance.cameraLimits;
+            GameManager.Camera.cameraLimits = _beforeWaveRoomCameraLimits;
         }
         
         #endregion

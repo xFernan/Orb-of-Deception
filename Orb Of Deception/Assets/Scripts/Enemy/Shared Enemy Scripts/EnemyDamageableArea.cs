@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OrbOfDeception.Core;
+using OrbOfDeception.Orb;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy

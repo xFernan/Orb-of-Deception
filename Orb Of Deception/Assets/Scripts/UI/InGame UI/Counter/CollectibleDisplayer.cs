@@ -1,14 +1,20 @@
-﻿using OrbOfDeception.Gameplay.Player;
+﻿using OrbOfDeception.Rooms;
 
-namespace OrbOfDeception.UI.Essence_of_Punishment_Counter
+namespace OrbOfDeception.UI.InGame_UI.Counter
 {
     public class CollectibleDisplayer : UIValueDisplayer
     {
-        private void Start()
+        private static CollectibleDisplayer _instance;
+
+        public static CollectibleDisplayer Instance => _instance;
+
+        protected override void Awake()
         {
-            GameManager.Player.CollectibleCounter.onCollectibleAcquire += ShowCounter;
+            base.Awake();
+            
+            _instance = this;
         }
         
-        protected override float targetValueToShow => GameManager.Player.CollectibleCounter.collectibles;
+        protected override float targetValueToShow => SaveSystem.GetCollectiblesAcquiredAmount();
     }
 }

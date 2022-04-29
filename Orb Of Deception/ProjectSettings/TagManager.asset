@@ -13,13 +13,13 @@ TagManager:
   - 
   - Water
   - UI
-  - UI Texture
   - 
+  - Environment
   - Ground
   - Player
   - Enemy
   - Orb
-  - 
+  - Statue
   - 
   - 
   - 
@@ -46,14 +46,14 @@ TagManager:
   - name: Background Near
     uniqueID: 1270818011
     locked: 0
-  - name: Decoration
-    uniqueID: 587635121
-    locked: 0
   - name: Platforms Depth
     uniqueID: 4179352917
     locked: 0
   - name: Shadows
     uniqueID: 2844865893
+    locked: 0
+  - name: Decoration
+    uniqueID: 587635121
     locked: 0
   - name: Enemies
     uniqueID: 1537486259
@@ -72,6 +72,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3121265365
+    locked: 0
+  - name: Statue
+    uniqueID: 1146851699
     locked: 0
   - name: Default
     uniqueID: 0

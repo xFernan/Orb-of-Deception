@@ -4,8 +4,18 @@ namespace OrbOfDeception.Core
 {
     public abstract class HideableElement : MonoBehaviour
     {
-        public abstract void Show();
-        public abstract void Hide();
+        [HideInInspector] public bool isShowed;
+
+        public virtual void Show()
+        {
+            isShowed = true;
+        }
+
+        public virtual void Hide()
+        {
+            isShowed = false;
+        }
+        
         public virtual void Reset() {}
     }
 }

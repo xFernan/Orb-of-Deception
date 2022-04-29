@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 55
   essenceOfPunishmentAmount: 6
-  velocity: 1300
+  velocityChasing: 1300
+  velocityWandering: 200

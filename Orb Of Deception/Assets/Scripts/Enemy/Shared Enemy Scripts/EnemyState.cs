@@ -5,15 +5,15 @@ namespace OrbOfDeception.Enemy
     public abstract class EnemyState : State
     {
         #region Variables
-        protected readonly EnemyController enemyController;
+        protected readonly EnemyController enemy;
         protected string animatorBoolParameterName;
         #endregion
         
         #region Methods
 
-        protected EnemyState(EnemyController enemyController)
+        protected EnemyState(EnemyController enemy)
         {
-            this.enemyController = enemyController;
+            this.enemy = enemy;
         }
 
         public override void Enter()
@@ -26,7 +26,7 @@ namespace OrbOfDeception.Enemy
             }
             
             // Al comienzo del estado, se poner a true el booleano que activará la animación correspondiente.
-            enemyController.Anim.SetBool(animatorBoolParameterName, true);
+            enemy.Anim.SetBool(animatorBoolParameterName, true);
             
             // Debido a que puede ocurrir que se vuelva a entrar al mismo estado del que se vino, para evitar que la
             // animación no se reinicie adecuadamente (ya que el Animator de Unity detecta que se encuentra en el mismo
@@ -44,13 +44,13 @@ namespace OrbOfDeception.Enemy
             }
             
             // Desactivamos el booleano en cuestión al finalizar el estado.
-            enemyController.Anim.SetBool(animatorBoolParameterName, false);
+            enemy.Anim.SetBool(animatorBoolParameterName, false);
         }
         
         private void ResetCurrentState()
         { 
             // Al no especificar el nombre del estado a reproducir, Unity da por hecho que es el actual.
-            enemyController.Anim.Play(0,0, 0.0f);
+            enemy.Anim.Play(0,0, 0.0f);
         }
         #endregion
     }

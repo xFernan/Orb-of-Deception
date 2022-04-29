@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-namespace OrbOfDeception.Collectible
+namespace OrbOfDeception.Items
 {
     [CreateAssetMenu(fileName = "Item", menuName = "Item")]
     public class Item : ScriptableObject
     {
         public string itemName;
         public string itemDescription;
-        public Sprite itemSprite;
+        public Sprite itemUISprite;
+        public Color nameColor;
     }
 }

@@ -213,13 +213,9 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
-        <e p="CursorController.cs" t="Include" />
-        <e p="DampToPixels.cs" t="Include" />
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
-        <e p="ItemLightBehaviour.cs" t="Include" />
-        <e p="ItemObtainedMenu.cs" t="Include" />
         <e p="NaughtyAttributes" t="Include">
           <e p="package.json" t="Include" />
           <e p="Scripts" t="Include">
@@ -361,6 +357,7 @@
             </e>
           </e>
         </e>
+        <e p="OptionsMenuManager.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -416,9 +413,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Audio" t="Include">
+            <e p="SoundsPlayer.cs" t="Include" />
+          </e>
           <e p="CameraBehaviours" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="CameraLimits.cs" t="Include" />
+            <e p="CameraLimitsChanger.cs" t="Include" />
           </e>
           <e p="Core" t="Include">
             <e p="ColliderEventTrigger.cs" t="Include" />
@@ -426,6 +427,7 @@
               <e p="ColouredElement.cs" t="Include" />
               <e p="ColouredParticles.cs" t="Include" />
             </e>
+            <e p="DampToPixels.cs" t="Include" />
             <e p="FallingPlatform.cs" t="Include" />
             <e p="GameEntity.cs" t="Include" />
             <e p="Hideable Element" t="Include">
@@ -436,8 +438,6 @@
               <e p="InputManager.cs" t="Include" />
               <e p="player.cs" t="Include" />
             </e>
-            <e p="IOrbCollisionable.cs" t="Include" />
-            <e p="IOrbHittable.cs" t="Include" />
             <e p="IOtherTriggerEnter.cs" t="Include" />
             <e p="LightTwinkleBehaviour.cs" t="Include" />
             <e p="MethodDelayer.cs" t="Include" />
@@ -446,6 +446,8 @@
             <e p="ParallaxEffectController.cs" t="Include" />
             <e p="PauseController.cs" t="Include" />
             <e p="Scenes" t="Include">
+              <e p="ConfigurationSceneController.cs" t="Include" />
+              <e p="FirstRoomConfigurator.cs" t="Include" />
               <e p="LevelChanger.cs" t="Include" />
             </e>
             <e p="ScreenFreezer.cs" t="Include" />
@@ -462,9 +464,18 @@
             <e p="Enemy2" t="Include">
               <e p="Enemy2ChasingState.cs" t="Include" />
               <e p="Enemy2Controller.cs" t="Include" />
-              <e p="Enemy2IdleState.cs" t="Include" />
               <e p="Enemy2Parameters.cs" t="Include" />
               <e p="Enemy2Stats.cs" t="Include" />
+              <e p="Enemy2WanderingState.cs" t="Include" />
+            </e>
+            <e p="Enemy3" t="Include">
+              <e p="Enemy3AttackState.cs" t="Include" />
+              <e p="Enemy3Controller.cs" t="Include" />
+              <e p="Enemy3MagicSpellController.cs" t="Include" />
+              <e p="Enemy3Parameters.cs" t="Include" />
+              <e p="Enemy3StaffController.cs" t="Include" />
+              <e p="Enemy3Stats.cs" t="Include" />
+              <e p="Enemy3WalkingState.cs" t="Include" />
             </e>
             <e p="Shared Enemy Scripts" t="Include">
               <e p="EnemyController.cs" t="Include" />
@@ -472,17 +483,22 @@
               <e p="EnemyDamagingArea.cs" t="Include" />
               <e p="EnemyDeathParticles.cs" t="Include" />
               <e p="EnemyParameters.cs" t="Include" />
+              <e p="EnemySpawner.cs" t="Include" />
               <e p="EnemySpriteController.cs" t="Include" />
               <e p="EnemySpritePartsGroupController.cs" t="Include" />
               <e p="EnemySpritesheetChanger.cs" t="Include" />
               <e p="EnemyState.cs" t="Include" />
               <e p="EnemyStats.cs" t="Include" />
+              <e p="PathController.cs" t="Include" />
               <e p="SpriteMaterialController.cs" t="Include" />
               <e p="StateMachineController.cs" t="Include" />
             </e>
           </e>
           <e p="Gameplay" t="Include">
+            <e p="GameManager.cs" t="Include" />
             <e p="Orb" t="Include">
+              <e p="IOrbCollisionable.cs" t="Include" />
+              <e p="IOrbHittable.cs" t="Include" />
               <e p="OrbController.cs" t="Include" />
               <e p="OrbHitParticlesController.cs" t="Include" />
               <e p="OrbLightColorChanger.cs" t="Include" />
@@ -496,24 +512,37 @@
               </e>
             </e>
             <e p="Player" t="Include">
-              <e p="AnimationController.cs" t="Include" />
+              <e p="Areas &amp; Collisions" t="Include">
+                <e p="IPlayerHittable.cs" t="Include" />
+                <e p="PlayerAreaDamage.cs" t="Include" />
+                <e p="PlayerTriggerCollider.cs" t="Include" />
+                <e p="PlayerTriggerDetector.cs" t="Include" />
+              </e>
               <e p="CameraPlayerFollowerBehaviour.cs" t="Include" />
-              <e p="CollectibleCounter.cs" t="Include" />
-              <e p="EssenceOfPunishmentCounter.cs" t="Include" />
-              <e p="GameManager.cs" t="Include" />
-              <e p="GroundDetector.cs" t="Include" />
-              <e p="GroundShadowController.cs" t="Include" />
-              <e p="HorizontalMovementController.cs" t="Include" />
-              <e p="HurtController.cs" t="Include" />
-              <e p="JumpController.cs" t="Include" />
-              <e p="KneelController.cs" t="Include" />
-              <e p="PlayerAreaDamage.cs" t="Include" />
+              <e p="Other" t="Include">
+                <e p="GroundShadowController.cs" t="Include" />
+                <e p="PlayerLightBehaviour.cs" t="Include" />
+                <e p="PlayerMaskController.cs" t="Include" />
+                <e p="PlayerMaterialController.cs" t="Include" />
+              </e>
               <e p="PlayerController.cs" t="Include" />
-              <e p="PlayerHealthController.cs" t="Include" />
-              <e p="PlayerInteraction.cs" t="Include" />
-              <e p="PlayerLightBehaviour.cs" t="Include" />
-              <e p="PlayerMaterialController.cs" t="Include" />
-              <e p="PlayerSpriteDirectionController.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="KneelState.cs" t="Include" />
+                <e p="NormalState.cs" t="Include" />
+              </e>
+              <e p="SubControllers" t="Include">
+                <e p="EssenceOfPunishmentCounter.cs" t="Include" />
+                <e p="GroundDetector.cs" t="Include" />
+                <e p="PlayerAnimationController.cs" t="Include" />
+                <e p="PlayerDeathController.cs" t="Include" />
+                <e p="PlayerHealthController.cs" t="Include" />
+                <e p="PlayerHorizontalMovementController.cs" t="Include" />
+                <e p="PlayerHurtController.cs" t="Include" />
+                <e p="PlayerInteraction.cs" t="Include" />
+                <e p="PlayerJumpController.cs" t="Include" />
+                <e p="PlayerKneelController.cs" t="Include" />
+                <e p="PlayerSpriteDirectionController.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Items" t="Include">
@@ -521,8 +550,22 @@
             <e p="CollectibleItemController.cs" t="Include" />
             <e p="CollectibleTriangleController.cs" t="Include" />
             <e p="Item.cs" t="Include" />
+            <e p="ItemLightBehaviour.cs" t="Include" />
+            <e p="MaskItemController.cs" t="Include" />
+            <e p="Masks" t="Include">
+              <e p="MaskItem.cs" t="Include" />
+            </e>
+            <e p="OrbItemController.cs" t="Include" />
+            <e p="Orbs" t="Include">
+              <e p="OrbItem.cs" t="Include" />
+            </e>
           </e>
           <e p="Other" t="Include">
+            <e p="Cinematic" t="Include">
+              <e p="CinematicController.cs" t="Include" />
+              <e p="CinematicPlayer.cs" t="Include" />
+              <e p="CinematicWhiteFlash.cs" t="Include" />
+            </e>
             <e p="Door" t="Include">
               <e p="Door.cs" t="Include" />
               <e p="IronDoor.cs" t="Include" />
@@ -533,13 +576,18 @@
             </e>
             <e p="Scenery Elements" t="Include">
               <e p="BreakableDecorationBehaviour.cs" t="Include" />
+              <e p="FakeWallController.cs" t="Include" />
               <e p="SecretBreakableWallBehaviour.cs" t="Include" />
             </e>
             <e p="Statue" t="Include">
+              <e p="PlayerStatueMenuController.cs" t="Include" />
               <e p="StatueController.cs" t="Include" />
+              <e p="StatueRoomMaskSelector.cs" t="Include" />
+            </e>
+            <e p="Switch" t="Include">
+              <e p="SwitchController.cs" t="Include" />
             </e>
             <e p="Wave Room" t="Include">
-              <e p="EnemySpawner.cs" t="Include" />
               <e p="WaveRoomController.cs" t="Include" />
             </e>
           </e>
@@ -550,11 +598,17 @@
             <e p="State.cs" t="Include" />
           </e>
           <e p="Rooms" t="Include">
+            <e p="BossRoomController.cs" t="Include" />
             <e p="RoomChanger.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="Cursor" t="Include">
+              <e p="CursorController.cs" t="Include" />
+            </e>
             <e p="InGame UI" t="Include">
+              <e p="ButtonTutorial.cs" t="Include" />
               <e p="Counter" t="Include">
                 <e p="CollectibleDisplayer.cs" t="Include" />
                 <e p="EssenceOfPunishmentDisplayer.cs" t="Include" />
@@ -563,22 +617,32 @@
               <e p="Health Bar" t="Include">
                 <e p="MedallionOrbController.cs" t="Include" />
                 <e p="PlayerHealthBarController.cs" t="Include" />
-                <e p="UIMaskController.cs" t="Include" />
+                <e p="UIHeartController.cs" t="Include" />
                 <e p="UIMaskMaterialController.cs" t="Include" />
               </e>
+              <e p="InGameUIController.cs" t="Include" />
+              <e p="TitleDisplayer.cs" t="Include" />
             </e>
             <e p="Menu" t="Include">
-              <e p="AnimatedSubMenuController.cs" t="Include" />
-              <e p="MenuManager.cs" t="Include" />
+              <e p="AnimatedMenuController.cs" t="Include" />
+              <e p="InGameMenuManager.cs" t="Include" />
+              <e p="MainMenuManager.cs" t="Include" />
+              <e p="MenuController.cs" t="Include" />
               <e p="MenuSelectorController.cs" t="Include" />
-              <e p="NormalSubMenuController.cs" t="Include" />
+              <e p="NormalMenuController.cs" t="Include" />
               <e p="PauseMenuDarkBackgroundController.cs" t="Include" />
-              <e p="SubMenuController.cs" t="Include" />
+            </e>
+            <e p="Screen Controllers" t="Include">
+              <e p="EndDemoMenuController.cs" t="Include" />
+              <e p="ItemObtainedMenu.cs" t="Include" />
             </e>
             <e p="Shared Elements" t="Include">
               <e p="ButtonBehaviour.cs" t="Include" />
               <e p="SliderBehaviour.cs" t="Include" />
               <e p="UIArrowSelector.cs" t="Include" />
+            </e>
+            <e p="Tutorials" t="Include">
+              <e p="SwitchTutorial.cs" t="Include" />
             </e>
           </e>
         </e>

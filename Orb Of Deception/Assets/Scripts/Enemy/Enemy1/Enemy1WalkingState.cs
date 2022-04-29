@@ -11,23 +11,26 @@ namespace OrbOfDeception.Enemy.Enemy1
         private readonly Enemy1Parameters _parameters;
         private readonly Rigidbody2D _rigidbody;
         private readonly SurroundingsDetector _surroundings;
-        private readonly float _timeToBeAbleChangeDirectionAgain;
         
         private int _direction;
         private bool _canChangeDirection = true;
         private readonly MethodDelayer _canChangeDirectionAgainDelayer;
+        
+        private const float TimeToChangeDirectionAgain = 0.5f;
 
         #endregion
         
         #region Methods
 
-        public WalkingState(Enemy1Controller enemy, int startingDirection, float timeToBeAbleChangeDirectionAgain) : base(enemy)
+        public WalkingState(Enemy1Controller enemy) : base(enemy)
         {
             _rigidbody = enemy.Rigidbody;
             _surroundings = enemy.SurroundingsDetector;
             _parameters = enemy.Parameters;
-            _direction = startingDirection;
-            _timeToBeAbleChangeDirectionAgain = timeToBeAbleChangeDirectionAgain;
+
+            _direction = _parameters.hasBeenSpawned
+                ? (_parameters.orientationIsRight ? 1 : -1)
+                : _parameters.initialDirection;
 
             // Pequeño delay para evitar que el enemigo cambie de dirección muy rápido mientras el raycast sigue
             // colisionando con la pared/sigue sin colisionar el suelo por unos pocos frames.
@@ -50,6 +53,10 @@ namespace OrbOfDeception.Enemy.Enemy1
             
             if (_canChangeDirection && IsGoingToChangeDirection())
             {
+                /*Debug.Log(_canChangeDirection);
+                Debug.Log("RightGround:" +_surroundings.IsDetectingRightGround + " RightWall:" +
+                          _surroundings.IsDetectingRightWall + " LeftGround:" + _surroundings.IsDetectingLeftGround +
+                          " LeftWall:" + _surroundings.IsDetectingLeftWall);*/
                 ChangeDirection();
             }
         }
@@ -59,7 +66,7 @@ namespace OrbOfDeception.Enemy.Enemy1
             _direction *= -1;
 
             _canChangeDirection = false;
-            _canChangeDirectionAgainDelayer.SetNewDelay(_timeToBeAbleChangeDirectionAgain);
+            _canChangeDirectionAgainDelayer.SetNewDelay(TimeToChangeDirectionAgain);
         }
 
         private void CanChangeDirectionAgain()

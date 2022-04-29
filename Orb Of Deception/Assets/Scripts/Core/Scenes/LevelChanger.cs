@@ -66,7 +66,6 @@ namespace OrbOfDeception.Core.Scenes
 
         public void OnFadeComplete()
         {      
-
             if (_sceneToLoad.Equals("Exit"))
                 Application.Quit();
             else
@@ -74,7 +73,12 @@ namespace OrbOfDeception.Core.Scenes
                 anim.ResetTrigger(FadeOut);
                 SceneManager.LoadScene(_sceneToLoad);
             }
-            
+        }
+
+        public void GoToScene(string sceneName)
+        {
+            anim.ResetTrigger(FadeOut);
+            SceneManager.LoadScene(sceneName);
         }
         #endregion
     }

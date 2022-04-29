@@ -1,9 +1,8 @@
 using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OrbOfDeception.UI.Health_Bar
+namespace OrbOfDeception.UI.InGame_UI.Health_Bar
 {
     public class MedallionOrbController : MonoBehaviour
     {

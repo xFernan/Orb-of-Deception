@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Player;
 using UnityEngine;
 
-namespace OrbOfDeception.UI.Health_Bar
+namespace OrbOfDeception.UI.InGame_UI.Health_Bar
 {
     public class PlayerHealthBarController : MonoBehaviour
     {
@@ -16,13 +16,13 @@ namespace OrbOfDeception.UI.Health_Bar
         private const int MaskWidth = 7;
         private const int NewMaskBlockDistance = 11;
         
-        private List<UIMaskController> _masks;
+        private List<UIHeartController> _masks;
 
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
 
-            _masks = new List<UIMaskController>();
+            _masks = new List<UIHeartController>();
             
             PlayerHealthController.onPlayerDamage += OnPlayerDamage;
         }
@@ -42,7 +42,7 @@ namespace OrbOfDeception.UI.Health_Bar
                 var newMask = Instantiate(maskPrefab, transform, true);
                 newMask.GetComponent<RectTransform>().anchoredPosition =
                     new Vector2(NewMaskBlockDistance * i, -1);
-                _masks.Add(newMask.GetComponent<UIMaskController>());
+                _masks.Add(newMask.GetComponent<UIHeartController>());
                 
                 var connectorToInstantiate = (i == maskAmount - 1) ?
                     endConnector :
@@ -55,8 +55,17 @@ namespace OrbOfDeception.UI.Health_Bar
 
         private void OnPlayerDamage()
         {
-            var maskID = GameManager.Player.PlayerHealthController.GetCurrentHealth();
-            _masks[maskID].Disappear();
+            var maskID = GameManager.Player.HealthController.GetCurrentHealth();
+            _masks[maskID].Break();
+        }
+
+        public void RecoverAll()
+        {
+            foreach (var mask in _masks)
+            {
+                if (mask.IsBroken())
+                    mask.Recover();
+            }
         }
         
         /*[SerializeField] private Image leftLimit;

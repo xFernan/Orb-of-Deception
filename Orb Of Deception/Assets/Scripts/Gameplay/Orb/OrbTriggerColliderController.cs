@@ -1,10 +1,9 @@
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OrbTriggerColliderController : MonoBehaviour
     {
-
         private OrbController _orbController;
 
         private void Awake()

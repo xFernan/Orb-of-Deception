@@ -1,16 +1,17 @@
-using System;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
+using OrbOfDeception.Orb;
+using OrbOfDeception.Player;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Items
 {
-    public class CollectibleController : MonoBehaviour, IOrbHittable
+    public class CollectibleController : MonoBehaviour, IOrbHittable, IPlayerHittable
     {
         [SerializeField] private float floatingMaxDistance;
         [SerializeField] private float floatingVelocity;
         [SerializeField] protected ParticleSystem idleParticles;
-        [SerializeField] private MultipleParticlesController hideParticles;
+        [SerializeField] protected MultipleParticlesController onGetParticles;
         
         public float tintOpacity;
         private bool _hasBeenCollected;
@@ -18,21 +19,21 @@ namespace OrbOfDeception
 
         private ItemLightBehaviour _itemLightBehaviour;
         private SpriteMaterialController _spriteMaterialController;
-        private Animator _animator;
+        protected Animator animator;
         private Collider2D _collider;
         
         private static readonly int HideTrigger = Animator.StringToHash("Hide");
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _itemLightBehaviour = GetComponentInChildren<ItemLightBehaviour>();
             _spriteMaterialController = GetComponentInChildren<SpriteMaterialController>();
             _spriteMaterialController.SetTintColor(Color.white);
-            _animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
             _collider = GetComponent<Collider2D>();
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             _startingPosition = transform.position;
         }
@@ -45,23 +46,34 @@ namespace OrbOfDeception
 
         public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
         {
-            if (!_hasBeenCollected)
-                Collect();
+            Collect();
+        }
+
+        public void OnPlayerHitEnter()
+        {
+            Collect();
+        }
+
+        public void OnPlayerHitExit()
+        {
+            
         }
 
         private void Collect()
         {
-            _animator.SetTrigger(HideTrigger);
+            if (_hasBeenCollected)
+                return;
+            animator.SetTrigger(HideTrigger);
             idleParticles.Stop();
-            hideParticles.Play();
+            onGetParticles.Play();
             _itemLightBehaviour.PutOff();
             _collider.enabled = false;
             _hasBeenCollected = true;
             
-            CollectEffect();
+            OnCollect();
         }
 
-        protected virtual void CollectEffect()
+        protected virtual void OnCollect()
         {
             
         }

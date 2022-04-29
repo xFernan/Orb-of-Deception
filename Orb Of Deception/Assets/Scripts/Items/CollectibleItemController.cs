@@ -1,17 +1,40 @@
-﻿using OrbOfDeception.Collectible;
+﻿using System.Collections;
+using OrbOfDeception.Rooms;
 using OrbOfDeception.UI;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Items
 {
-    public class CollectibleItemController : CollectibleController
+    public abstract class CollectibleItemController : CollectibleController
     {
-        [SerializeField] private Item item;
-        
-        protected override void CollectEffect()
+        [SerializeField] protected Item item;
+
+        protected override void OnCollect()
+        {
+            StartCoroutine(OnCollectCoroutine());
+        }
+
+        private IEnumerator OnCollectCoroutine()
         {
             ItemObtainedMenu.Instance.ShowItem(item);
-            // Añadir en la data de la partida que se ha desbloqueado el item en cuestión.
+
+            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+            foreach (var particle in onGetParticles.GetParticles())
+            {
+                var main = particle.main;
+                main.useUnscaledTime = true;
+            }
+            var idleMain = idleParticles.main;
+            idleMain.useUnscaledTime = true;
+            
+            yield return new WaitForSeconds(0.05f);
+            
+            AfterExitingItemObtainedMenu();
+        }
+
+        protected virtual void AfterExitingItemObtainedMenu()
+        {
+            
         }
     }
 }

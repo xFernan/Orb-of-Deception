@@ -1,12 +1,27 @@
-﻿using OrbOfDeception.Gameplay.Player;
+﻿using OrbOfDeception.Rooms;
+using OrbOfDeception.UI.InGame_UI.Counter;
+using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Items
 {
     public class CollectibleTriangleController : CollectibleController
     {
-        protected override void CollectEffect()
+        [Space]
+        
+        [SerializeField] private int collectibleID;
+
+        protected override void Start()
         {
-            GameManager.Player.CollectibleCounter.AcquireCollectible();
+            base.Start();
+            
+            if (SaveSystem.IsCollectibleAcquired(collectibleID))
+                gameObject.SetActive(false);
+        }
+
+        protected override void OnCollect()
+        {
+            SaveSystem.AddCollectibleAcquired(collectibleID);
+            CollectibleDisplayer.Instance.ShowCounterBriefly();
         }
     }
 }

@@ -1,7 +1,6 @@
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OrbHitParticlesController : MonoBehaviour
     {

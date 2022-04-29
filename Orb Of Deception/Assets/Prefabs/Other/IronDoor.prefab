@@ -4847,7 +4847,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1537486259
-  m_SortingLayer: -6
+  m_SortingLayer: -7
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -4921,6 +4921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6527f2a7d89f7884694810c51ecc68d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dependsOnSwitch: 0
+  doorID: 0
   closeParticles: {fileID: 8116416876042280148}
 --- !u!61 &8116416874750719862
 BoxCollider2D:
@@ -4935,7 +4937,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.15625367, y: -1.7174008}
+  m_Offset: {x: 0.15625, y: -1.71875}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4946,7 +4948,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3125041, y: 3.4348197}
+  m_Size: {x: 0.3125, y: 3.4375}
   m_EdgeRadius: 0
 --- !u!95 &8116416874750719817
 Animator:
@@ -9814,7 +9816,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1537486259
-  m_SortingLayer: -6
+  m_SortingLayer: -7
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0

@@ -6,9 +6,57 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prototype.unity
-    guid: 86e9755d1ad1f504bb486dee9e05a572
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/Menus/Main Menu.unity
+    guid: 62ba7ceebecf6ff4fb0278ce619920bc
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/Backstage.unity
+    guid: 0358953bf0947274180d8e45ad181931
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/Cinematic.unity
+    guid: f9f8eabe431feaa48b5156ea40798595
+  - enabled: 1
+    path: Assets/Scenes/ConfigurationScene.unity
+    guid: 9ebdc63d9f829ff41a6726294e303a23
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_1.unity
+    guid: 951ac3d34e409f44489990343ff48698
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_2.unity
+    guid: c373a10720d0c974f96b47210b47ac71
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_3.unity
+    guid: 4020cbb2741cd3c42ab1837c3db50f5c
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_4.unity
+    guid: 89f32f401f34eff46819ebc838bc0f08
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_5.unity
+    guid: 75e74ddb08d844b4b9dfc2fa070ec23f
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_6.unity
+    guid: 4a362bb15d63265499413c4ae9de4165
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_7.unity
+    guid: 1ab24c8b669dd694ea1a8eea2a9e5175
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_8.unity
+    guid: 406119b61e72e9e4ca564567e884fcbe
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_9.unity
+    guid: 36df685aa03568b4fa9d534a0830e5ee
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_10.unity
+    guid: ce7dadcfbc99e0d46962506badfbea84
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_11.unity
+    guid: 74f9c286c975a81428c7101b5d5a85a5
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_12.unity
+    guid: 5cffec25a0ec63b418d16da68433001c
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_13.unity
+    guid: f5ceb9b30d66edd4c97adc279a1e51f0
+  - enabled: 1
+    path: Assets/Scenes/Theater of the Origins/TOTO_14.unity
+    guid: d07817c84995fde4bbd68c8063068521
   m_configObjects: {}

@@ -1,9 +1,8 @@
 using System.Collections;
-using OrbOfDeception.Gameplay.Player;
 using TMPro;
 using UnityEngine;
 
-namespace OrbOfDeception.UI.Essence_of_Punishment_Counter
+namespace OrbOfDeception.UI.InGame_UI.Counter
 {
     public class UIValueDisplayer : MonoBehaviour
     {
@@ -21,7 +20,7 @@ namespace OrbOfDeception.UI.Essence_of_Punishment_Counter
         
         private static readonly int IsVisible = Animator.StringToHash("IsVisible");
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _animator = GetComponent<Animator>();
             _displayText = GetComponentInChildren<TextMeshProUGUI>();
@@ -35,7 +34,7 @@ namespace OrbOfDeception.UI.Essence_of_Punishment_Counter
             _displayText.text = Mathf.RoundToInt(_showedValue) + "";
         }
 
-        protected void ShowCounter()
+        public void ShowCounterBriefly()
         {
             if (_showCoroutine != null)
                 StopCoroutine(_showCoroutine);
@@ -43,6 +42,22 @@ namespace OrbOfDeception.UI.Essence_of_Punishment_Counter
             _showCoroutine = StartCoroutine(ShowCounterCoroutine());
         }
 
+        public void ShowCounter()
+        {
+            if (_showCoroutine != null)
+                StopCoroutine(_showCoroutine);
+
+            _isVisible = true;
+        }
+
+        public void HideCounter()
+        {
+            if (_showCoroutine != null)
+                StopCoroutine(_showCoroutine);
+
+            _isVisible = false;
+        }
+        
         private IEnumerator ShowCounterCoroutine()
         {
             _isVisible = true;

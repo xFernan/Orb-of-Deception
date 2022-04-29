@@ -3,7 +3,7 @@ using OrbOfDeception.Core;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OrbLightColorChanger : MonoBehaviour
     {

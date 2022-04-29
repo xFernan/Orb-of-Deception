@@ -11,9 +11,10 @@ namespace OrbOfDeception.CameraBehaviours
         [HideInInspector] public CameraLimits cameraLimits;
         [SerializeField] private float smoothSpeedX = 10;
         [SerializeField] private float smoothSpeedY = 30;
+        
         private void Start()
         {
-            cameraComponent = Camera.main;
+            cameraComponent = GetComponentInChildren<Camera>();
         }
 
         private void Update()
@@ -28,7 +29,8 @@ namespace OrbOfDeception.CameraBehaviours
                 x = Mathf.Clamp(cameraPlayerReferencePosition.x, cameraLimits.GetMinX(),
                     cameraLimits.GetMaxX()),
                 y = Mathf.Clamp(cameraPlayerReferencePosition.y, cameraLimits.GetMinY(),
-                    cameraLimits.GetMaxY())
+                    cameraLimits.GetMaxY()),
+                z = -10
             };
 
             var camPosition = cameraTransform.position;
@@ -47,16 +49,35 @@ namespace OrbOfDeception.CameraBehaviours
             cameraTransform.position = new Vector3(x, y, z);*/
         }
 
+        public void ChangeCameraLimits(CameraLimits newCameraLimits)
+        {
+            if (newCameraLimits == null) return;
+            
+            cameraLimits = newCameraLimits;
+        }
+        
+        public void RePosition()
+        {
+            var cameraPlayerReferencePosition = cameraPlayerReferenceTransform.position;
+            /*var cameraTransform = transform;
+            
+            cameraPlayerReferencePosition.z = cameraTransform.position.z;
+            
+            cameraTransform.position = cameraPlayerReferencePosition;*/
+            
+            transform.position = new Vector3
+            {
+                x = Mathf.Clamp(cameraPlayerReferencePosition.x, cameraLimits.GetMinX(),
+                    cameraLimits.GetMaxX()),
+                y = Mathf.Clamp(cameraPlayerReferencePosition.y, cameraLimits.GetMinY(),
+                    cameraLimits.GetMaxY()),
+                z = -10
+            };
+        }
+        
         public void Shake(float duration, float strength = 0.4f)
         {
             cameraComponent.DOShakePosition(duration, strength);
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.green;
-            if (cameraLimits != null)
-                cameraLimits.DrawLimits();
         }
     }
 }

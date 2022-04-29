@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Essence_of_Punishment
 {
     public class EssenceOfPunishmentSpawner : MonoBehaviour
     {

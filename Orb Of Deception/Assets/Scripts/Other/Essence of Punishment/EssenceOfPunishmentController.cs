@@ -1,9 +1,9 @@
 using System.Collections;
 using NaughtyAttributes;
-using OrbOfDeception.Gameplay.Player;
+using OrbOfDeception.Player;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Essence_of_Punishment
 {
     public class EssenceOfPunishmentController : MonoBehaviour
     {
@@ -36,6 +36,7 @@ namespace OrbOfDeception
         private Collider2D _collider;
 
         public int Value => value;
+        private bool _hasBeenAcquired = false;
 
         private const float BlendDirectionValue = 0.3f;
         
@@ -88,17 +89,6 @@ namespace OrbOfDeception
                     break;
             }
         }
-
-        private void ChangeToFollowPlayerState()
-        {
-            StartCoroutine(ChangeToFollowPlayerStateCoroutine());
-        }
-
-        private IEnumerator ChangeToFollowPlayerStateCoroutine()
-        {
-            yield return new WaitForSeconds(followPlayerDelay);
-            _state = EoP_State.FollowPlayer;
-        }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -109,7 +99,7 @@ namespace OrbOfDeception
         }
         #endregion
         
-        #region State Methods
+        #region Essence Of Pusnishment Methods
         private void OnEnterDetachState()
         {
             Vector2 detachDirection;
@@ -121,6 +111,8 @@ namespace OrbOfDeception
         
         private void OnEnterAcquireState()
         {
+            _hasBeenAcquired = true;
+            
             _animator.SetTrigger(Acquire);
             _rigidbody.velocity = Vector2.zero;
             particlesIdle.Stop();
@@ -133,6 +125,24 @@ namespace OrbOfDeception
                 GetComponentInChildren<PlayerMaterialController>().transform.GetComponent<Animator>();
             playerSpriteAnimator.SetTrigger("AcquireEoP");
 
+            GameManager.Player.EssenceOfPunishmentCounter.AcquireEssences(value);
+        }
+        
+        private void ChangeToFollowPlayerState()
+        {
+            StartCoroutine(ChangeToFollowPlayerStateCoroutine());
+        }
+        
+        private IEnumerator ChangeToFollowPlayerStateCoroutine()
+        {
+            yield return new WaitForSeconds(followPlayerDelay);
+            _state = EoP_State.FollowPlayer;
+        }
+
+        public void CollectOnRemainingIfHasNotBeenCollected()
+        {
+            if (_hasBeenAcquired) return;
+            
             GameManager.Player.EssenceOfPunishmentCounter.AcquireEssences(value);
         }
         #endregion

@@ -12,6 +12,7 @@ namespace OrbOfDeception.Core
         [SerializeField] private float groundDetectorRange;
         [SerializeField] private Transform leftGroundDetector;
         [SerializeField] private Transform rightGroundDetector;
+        [SerializeField] private bool isDetectingFlatGroundOnly = false;
         
         [Space]
         
@@ -40,10 +41,14 @@ namespace OrbOfDeception.Core
             IsDetectingLeftWall = IsRaycastingToLayer(leftWallDetectors, Vector2.left, wallDetectorRange,
                 LayerMask.GetMask("Ground"));
             
-            IsDetectingRightGround = IsRaycastingToLayer(rightGroundDetector, Vector2.down, groundDetectorRange,
+            IsDetectingRightGround = isDetectingFlatGroundOnly ? IsRaycastingToLayerFlat(rightGroundDetector, Vector2.down, groundDetectorRange,
+                LayerMask.GetMask("Ground")) :
+                IsRaycastingToLayer(rightGroundDetector, Vector2.down, groundDetectorRange,
                 LayerMask.GetMask("Ground"));
             
-            IsDetectingLeftGround = IsRaycastingToLayer(leftGroundDetector, Vector2.down, groundDetectorRange,
+            IsDetectingLeftGround = isDetectingFlatGroundOnly ? IsRaycastingToLayerFlat(leftGroundDetector, Vector2.down, groundDetectorRange,
+                LayerMask.GetMask("Ground")) :
+                IsRaycastingToLayer(leftGroundDetector, Vector2.down, groundDetectorRange,
                 LayerMask.GetMask("Ground"));
         }
         
@@ -79,6 +84,13 @@ namespace OrbOfDeception.Core
         private static bool IsRaycastingToLayer(IEnumerable<Transform> origins, Vector2 rayDirection, float maxDistance, LayerMask layerMask)
         {
             return origins.Any(origin => Physics2D.Raycast(origin.position, rayDirection, maxDistance, layerMask));
+        }
+        
+        private static bool IsRaycastingToLayerFlat(Transform origin, Vector2 rayDirection, float maxDistance, LayerMask layerMask)
+        {
+            var raycastHit = Physics2D.Raycast(origin.position, rayDirection, maxDistance, layerMask);
+            //Debug.Log((raycastHit.normal + " == " + Vector2.up) + " || " + (raycastHit.normal == Vector2.up));
+            return raycastHit.collider != null && Vector3.Distance(raycastHit.normal, Vector2.up) < 0.1f;
         }
         
         private static bool IsRaycastingToLayer(Transform origin, Vector2 rayDirection, float maxDistance, LayerMask layerMask)

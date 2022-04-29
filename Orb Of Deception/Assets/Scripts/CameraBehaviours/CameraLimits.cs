@@ -1,35 +1,40 @@
-using OrbOfDeception.Gameplay.Player;
 using UnityEngine;
 
 namespace OrbOfDeception.CameraBehaviours
 {
     public class CameraLimits : MonoBehaviour
     {
+        [SerializeField] private bool isDrawingOnGizmos = false;
+        [SerializeField] private Color gizmosColor = Color.magenta;
         [SerializeField] private Transform limitSouthWest;
         [SerializeField] private Transform limitNorthEast;
 
         private void OnDrawGizmos()
         {
-            DrawLimits();
-        }
-
-        public void DrawLimits()
-        {
-            if (limitNorthEast == null || limitSouthWest == null)
+            if (!isDrawingOnGizmos || limitNorthEast == null || limitSouthWest == null)
             {
                 return;
             }
-
+            
             var camera = Camera.main;
-            var height = camera.orthographicSize * 2.0f;
-            var width = height * camera.aspect;
+            float height, width;
+            if (camera == null)
+            {
+                height = 11.25f;//camera.orthographicSize * 2.0f;
+                width = 20;//height * camera.aspect;
+            }
+            else
+            {
+                height = camera.orthographicSize * 2.0f;
+                width = height * camera.aspect;
+            }
             
             var limitSouthWestPosition = (Vector2) limitSouthWest.position + new Vector2(-width, -height) / 2;
             var limitNorthEastPosition = (Vector2) limitNorthEast.position + new Vector2(width, height) / 2;
             var limitSouthEastPosition = new Vector2(limitNorthEastPosition.x, limitSouthWestPosition.y);
             var limitNorthWestPosition = new Vector2(limitSouthWestPosition.x, limitNorthEastPosition.y);
             
-            Gizmos.color = Color.magenta;
+            Gizmos.color = gizmosColor;
             
             Gizmos.DrawLine(limitSouthWestPosition, limitSouthEastPosition);
             Gizmos.DrawLine(limitNorthEastPosition, limitNorthWestPosition);

@@ -1,7 +1,7 @@
 ﻿using OrbOfDeception.Patterns;
 using UnityEngine;
 
-namespace OrbOfDeception.Gameplay.Orb
+namespace OrbOfDeception.Orb
 {
     public class OnPlayerState : State
     {

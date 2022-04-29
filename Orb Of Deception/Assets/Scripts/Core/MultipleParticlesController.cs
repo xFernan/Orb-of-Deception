@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace OrbOfDeception.Core
@@ -6,6 +9,7 @@ namespace OrbOfDeception.Core
     {
         [SerializeField] private ParticleSystem[] particles;
 
+        [Button]
         public void Play()
         {
             foreach (var particle in particles)
@@ -31,6 +35,20 @@ namespace OrbOfDeception.Core
                 var main = particle.main;
                 main.startColor = newColor;
             }
+        }
+
+        public void SetToUnscaledTime(bool value)
+        {
+            foreach (var particle in particles)
+            {
+                var main = particle.main;
+                main.useUnscaledTime = value;
+            }
+        }
+        
+        public List<ParticleSystem> GetParticles()
+        {
+            return particles.ToList();
         }
     }
 }

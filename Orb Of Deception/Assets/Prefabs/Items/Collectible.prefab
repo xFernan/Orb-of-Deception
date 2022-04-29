@@ -52,7 +52,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.25
 --- !u!95 &6071502504417480550
 Animator:
   serializedVersion: 3
@@ -87,8 +87,9 @@ MonoBehaviour:
   floatingMaxDistance: 0.125
   floatingVelocity: 5
   idleParticles: {fileID: 6071502505468315019}
-  hideParticles: {fileID: 6071502505413196831}
+  onGetParticles: {fileID: 6071502505413196831}
   tintOpacity: 0
+  collectibleID: 0
 --- !u!1 &6071502504488245552
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,8 +4935,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2088178975
-  m_SortingLayer: -5
+  m_SortingLayerID: 1227339109
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
@@ -9810,8 +9811,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2088178975
-  m_SortingLayer: -5
+  m_SortingLayerID: 1227339109
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
@@ -9909,8 +9910,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2088178975
-  m_SortingLayer: -5
+  m_SortingLayerID: 1227339109
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4263193156816882617, guid: ba2dbdf6e296e08479eaa9d5f2cee5f0,
     type: 3}
@@ -14800,8 +14801,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2088178975
-  m_SortingLayer: -5
+  m_SortingLayerID: 1227339109
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0

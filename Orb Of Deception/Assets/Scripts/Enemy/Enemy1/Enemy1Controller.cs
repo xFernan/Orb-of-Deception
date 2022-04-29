@@ -1,3 +1,4 @@
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using UnityEngine;
 
@@ -6,14 +7,10 @@ namespace OrbOfDeception.Enemy.Enemy1
     public class Enemy1Controller : EnemyController
     {
         #region Variables
-
-        [Header("Enemy 1 variables")]
-        [SerializeField] private int initialDirection = 1;
-        [SerializeField] private float timeToChangeDirectionAgain = 0.5f;
         
         public Rigidbody2D Rigidbody { get; private set; }
         public SurroundingsDetector SurroundingsDetector { get; private set; }
-        public Enemy1Parameters Parameters => parameters as Enemy1Parameters;
+        public Enemy1Parameters Parameters => BaseParameters as Enemy1Parameters;
         
         public const int WalkingState = 0;
 
@@ -29,7 +26,7 @@ namespace OrbOfDeception.Enemy.Enemy1
             SurroundingsDetector = GetComponentInChildren<SurroundingsDetector>();
             
             AddState(WalkingState,
-                new WalkingState(this, initialDirection, timeToChangeDirectionAgain));
+                new WalkingState(this));
         }
 
         protected override void OnStart()
@@ -37,6 +34,11 @@ namespace OrbOfDeception.Enemy.Enemy1
             base.OnStart();
             
             SetInitialState(WalkingState);
+        }
+
+        private void PlayStepSound()
+        {
+            SoundsPlayer.Play("Step");
         }
         
         #endregion

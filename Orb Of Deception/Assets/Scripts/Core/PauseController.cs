@@ -21,12 +21,14 @@ namespace OrbOfDeception.Core
 
         public void Pause()
         {
+            GameManager.Player.isControlled = false;
             IsPaused = true;
             Time.timeScale = 0;
         }
         
         public void Resume()
         {
+            GameManager.Player.isControlled = true;
             IsPaused = false;
             Time.timeScale = 1;
         }

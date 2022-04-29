@@ -1,20 +1,21 @@
+using OrbOfDeception.Core;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy
 {
     public class EnemyDeathParticles : MonoBehaviour
     {
-        private ParticleSystem _spawnParticles;
+        private MultipleParticlesController _particles;
         
         private void Awake()
         {
-            _spawnParticles = GetComponentInChildren<ParticleSystem>();
+            _particles = GetComponent<MultipleParticlesController>();
         }
 
         public void PlayParticles()
         {
             transform.parent = null;
-            _spawnParticles.Play();
+            _particles.Play();
         }
     }
 }

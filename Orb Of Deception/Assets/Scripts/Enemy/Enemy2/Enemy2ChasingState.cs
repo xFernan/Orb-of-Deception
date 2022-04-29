@@ -1,5 +1,4 @@
 ﻿using OrbOfDeception.Core;
-using OrbOfDeception.Gameplay.Player;
 using Pathfinding;
 using UnityEngine;
 
@@ -27,6 +26,8 @@ namespace OrbOfDeception.Enemy.Enemy2
         public ChasingState(Enemy2Controller enemy,
             Seeker seeker, SpriteRenderer spriteRenderer, float nextWaypointDistance) : base(enemy)
         {
+            animatorBoolParameterName = "IsChasing";
+            
             _parameters = enemy.Parameters;
             _rigidbody = enemy.Rigidbody;
             _transform = enemy.transform;
@@ -61,31 +62,32 @@ namespace OrbOfDeception.Enemy.Enemy2
             }
         }
 
-        public override void Exit()
-        {
-            base.Exit();
-
-            _rigidbody.velocity = Vector2.zero;
-            _updatePathDelayer.StopDelay();
-        }
-        
-        /*public override void Update(float deltaTime)
-        {
-            base.Update(deltaTime);
-            
-            var distanceFromPlayer = Vector2.Distance(PlayerGroupController.Instance.playerController.transform.position, enemyController.transform.position);
-
-            if (distanceFromPlayer > _stats.distanceToChase)
-            {
-                enemyController.SetState(Enemy2Controller.IdleState);
-            }
-        }*/
-
         public override void FixedUpdate(float deltaTime)
         {
             base.FixedUpdate(deltaTime);
             
             Move();
+        }
+
+        public override void Update(float deltaTime)
+        {
+            base.Update(deltaTime);
+
+            if (!GameManager.Player.isControlled)
+            {
+                enemy.SetState(Enemy2Controller.IdleState);
+            }
+            
+            // Flip del sprite.
+            var directionFromPlayer = Mathf.Sign(GameManager.Player.transform.position.x - _transform.position.x);
+            _spriteRenderer.flipX = directionFromPlayer > 0;
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            
+            _rigidbody.velocity = Vector2.zero;
         }
 
         private void Move()
@@ -118,12 +120,8 @@ namespace OrbOfDeception.Enemy.Enemy2
                 }
             }
             
-            var force = forceDirection * (_parameters.Stats.velocity * Time.deltaTime);
+            var force = forceDirection * (_parameters.Stats.velocityChasing * Time.deltaTime);
             _rigidbody.AddForce(force);
-
-            // Flip del sprite.
-            var directionFromPlayer = Mathf.Sign(GameManager.Player.transform.position.x - _transform.position.x);
-            _spriteRenderer.flipX = directionFromPlayer > 0;
         }
 
         #endregion
