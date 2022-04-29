@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace OrbOfDeception.Core
 {
@@ -18,11 +18,11 @@ namespace OrbOfDeception.Core
         [SerializeField] private float twinkleVariation;
         [SerializeField] private float twinkleVelocity;
         
-        private Light2D _light;
+        private UnityEngine.Rendering.Universal.Light2D _light;
 
         private void Awake()
         {
-            _light = GetComponent<Light2D>();
+            _light = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         }
 
         private void Update()

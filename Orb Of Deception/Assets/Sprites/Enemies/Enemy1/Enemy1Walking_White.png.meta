@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Enemy1Walking_2: -1189881859035994397
+      Enemy1Walking_6: 4897346223265326057
+      Enemy1Walking_7: 4270767089665266646
+      Enemy1Walking_1: 7470702933618453956
+      Enemy1Walking_3: -857566060254539205
+      Enemy1Walking_4: 2186746740955083766
+      Enemy1Walking_5: 5484669612134510605
+      Enemy1Walking_0: 6680012989552990743
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

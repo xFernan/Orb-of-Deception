@@ -1,7 +1,7 @@
 using DG.Tweening;
 using OrbOfDeception.Core;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace OrbOfDeception.Orb
 {
@@ -11,13 +11,13 @@ namespace OrbOfDeception.Orb
         [SerializeField] private Color blackOrbLightColor = new Color(-0.65f, -0.65f, -0.65f);
         
         private Tween _currentTween;
-        private Light2D _light;
+        private UnityEngine.Rendering.Universal.Light2D _light;
         private Color _currentColor;
 
         private void Awake()
         {
             _currentColor = whiteOrbLightColor;
-            _light = GetComponent<Light2D>();
+            _light = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         }
 
         private void Update()

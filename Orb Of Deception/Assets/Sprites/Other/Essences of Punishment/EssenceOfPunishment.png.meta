@@ -51,6 +51,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,8 +61,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -328,6 +329,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      EssenceOfPunishment_2: 7627182004771960868
+      EssenceOfPunishment_8: 6417859475093802156
+      EssenceOfPunishment_7: 1972526632202869964
+      EssenceOfPunishment_5: 1830729371459473917
+      EssenceOfPunishment_0: 8700435009824946067
+      EssenceOfPunishment_1: -4321231793792831694
+      EssenceOfPunishment_3: 8021588180301409308
+      EssenceOfPunishment_6: 4470853019255207394
+      EssenceOfPunishment_4: -8621553480139485479
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

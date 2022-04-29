@@ -63,6 +63,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -72,8 +73,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -436,6 +437,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Backstage_Floor3x3_11: 1060883677242872498
+      Backstage_Floor3x3_7: -6360263583511077850
+      Backstage_Floor3x3_2: -2231549929120104993
+      Backstage_Floor3x3_6: 6995798648280386795
+      Backstage_Floor3x3_3: -1135136999191552965
+      Backstage_Floor3x3_12: 5487557464846542391
+      Backstage_Floor3x3_9: 1984672486383319922
+      Backstage_Floor3x3_10: 8503761270760749023
+      Backstage_Floor3x3_5: -4114315804077220098
+      Backstage_Floor3x3_8: 5695637385355180096
+      Backstage_Floor3x3_0: 4284128404201143164
+      Backstage_Floor3x3_1: 2717638354220424005
+      Backstage_Floor3x3_4: -3982030174854590888
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

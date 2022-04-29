@@ -123,6 +123,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -132,8 +133,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -904,6 +905,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Backstage_RedCurtain_2: -3678754319518151502
+      Backstage_RedCurtain_9: 4377888715586335697
+      Backstage_RedCurtain_19: 5241978437395508616
+      Backstage_RedCurtain_23: -3733645914892520597
+      Backstage_RedCurtain_0: 8774154512393540437
+      Backstage_RedCurtain_22: -3344137362462419235
+      Backstage_RedCurtain_30: -2329159752609501813
+      Backstage_RedCurtain_4: 5293136534588437424
+      Backstage_RedCurtain_3: 3612309274673528621
+      Backstage_RedCurtain_8: 5156448245068825522
+      Backstage_RedCurtain_5: -4591255337613663857
+      Backstage_RedCurtain_31: -703802877071821763
+      Backstage_RedCurtain_21: 7887669000104499883
+      Backstage_RedCurtain_28: -2072616935513585722
+      Backstage_RedCurtain_6: -7458744746595781397
+      Backstage_RedCurtain_7: 1983307887562992738
+      Backstage_RedCurtain_14: 4100957095608025051
+      Backstage_RedCurtain_13: -8027941509496311349
+      Backstage_RedCurtain_10: -9173530007313461805
+      Backstage_RedCurtain_27: 7712477703553668606
+      Backstage_RedCurtain_25: 7040166059746094750
+      Backstage_RedCurtain_26: 6101830119186122402
+      Backstage_RedCurtain_11: -6864475153749184375
+      Backstage_RedCurtain_29: -3185302215298331512
+      Backstage_RedCurtain_1: -8164325450829199429
+      Backstage_RedCurtain_16: 3279342268776865034
+      Backstage_RedCurtain_15: 1907278791309237979
+      Backstage_RedCurtain_32: -9167232355212484970
+      Backstage_RedCurtain_12: 4498489279531090508
+      Backstage_RedCurtain_20: 8409889275848535127
+      Backstage_RedCurtain_24: -4488118717210285125
+      Backstage_RedCurtain_17: 1572154230774759175
+      Backstage_RedCurtain_18: 6389345186778347875
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

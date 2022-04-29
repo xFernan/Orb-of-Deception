@@ -81,6 +81,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -90,8 +91,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -568,6 +569,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TeatroArgenteo_Background_0: 4392944520167175933
+      TeatroArgenteo_Background_9: 2440699984801682533
+      TeatroArgenteo_Background_17: -9028467138651103752
+      TeatroArgenteo_Background_14: -3169444323382033867
+      TeatroArgenteo_Background_11: -1452733851533892019
+      TeatroArgenteo_Background_8: 4683556396877945818
+      TeatroArgenteo_Background_3: 6751775762652595575
+      TeatroArgenteo_Background_16: 4780925157882338422
+      TeatroArgenteo_Background_12: -2311890100347111670
+      TeatroArgenteo_Background_6: 7534118854320529929
+      TeatroArgenteo_Background_5: -5473274830868866049
+      TeatroArgenteo_Background_2: -2761971213881055975
+      TeatroArgenteo_Background_10: 7814659391982121045
+      TeatroArgenteo_Background_4: -2632031428107557004
+      TeatroArgenteo_Background_13: 7249957606094703136
+      TeatroArgenteo_Background_15: -3190639803349343746
+      TeatroArgenteo_Background_18: 8593517745898353708
+      TeatroArgenteo_Background_7: 1839081619173034289
+      TeatroArgenteo_Background_1: 5419538627619344442
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

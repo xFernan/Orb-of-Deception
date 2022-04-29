@@ -1,14 +1,14 @@
 using DG.Tweening;
 using OrbOfDeception.Core;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace OrbOfDeception.Items
 {
     public class ItemLightBehaviour : MonoBehaviour
     {
         [SerializeField] private float timeToGoOff = 1;
-        private Light2D _light;
+        private UnityEngine.Rendering.Universal.Light2D _light;
         private LightTwinkleBehaviour[] _twinkleBehaviours;
 
         private bool _isHiding;
@@ -16,7 +16,7 @@ namespace OrbOfDeception.Items
 
         private void Awake()
         {
-            _light = GetComponent<Light2D>();
+            _light = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             _twinkleBehaviours = GetComponents<LightTwinkleBehaviour>();
         }
 

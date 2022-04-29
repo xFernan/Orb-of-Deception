@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace OrbOfDeception.Player
 {
@@ -10,13 +10,13 @@ namespace OrbOfDeception.Player
         [SerializeField] private float lightIntensityVariation = 1;
         [SerializeField] private float lightIntensityVariationVelocity = 1;
 
-        private Light2D _playerPointLight;
+        private UnityEngine.Rendering.Universal.Light2D _playerPointLight;
         #endregion
         
         #region Methods
         private void Awake()
         {
-            _playerPointLight = GetComponent<Light2D>();
+            _playerPointLight = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         }
 
         private void Update()
