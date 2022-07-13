@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using OrbOfDeception.Patterns;
 using UnityEngine;
 
@@ -55,7 +56,37 @@ namespace OrbOfDeception.Enemy
         {
             
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            stateMachine?.OnCollisionEnter2D(other);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            stateMachine?.OnTriggerEnter2D(other);
+        }
         
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            stateMachine?.OnCollisionStay2D(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            stateMachine?.OnTriggerStay2D(other);
+        }
+        
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            stateMachine?.OnCollisionExit2D(other);
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            stateMachine?.OnTriggerExit2D(other);
+        }
+
         #endregion
         
         #region State Machine Methods

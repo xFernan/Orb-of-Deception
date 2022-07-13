@@ -137,6 +137,8 @@ SpriteAtlas:
   - {fileID: 6276750026423000967, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -6671873285905256170, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -3221671832466385204, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
+  - {fileID: -1476721545, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
+  - {fileID: -848542250, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -807657777788321480, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: 2110442385910238299, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -8700711554707917884, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
@@ -220,14 +222,17 @@ SpriteAtlas:
   - {fileID: 9060655513222982968, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -4954434675255176183, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: 1825688313704539836, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
+  - {fileID: -1941043839, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: 3260686703511578703, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -1009137827066460837, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -1412570943185320965, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
+  - {fileID: 1793093094, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: 4395754994703251120, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -4649760604045709566, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -5854178167486718652, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -5429096759480278973, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -4747396071199780259, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
+  - {fileID: -1284265648, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -1069646575021329156, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: -304930378418186674, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
   - {fileID: 438784255719441357, guid: a1819dc4b67f8c143bf3ca4a191c44c4, type: 3}
@@ -238,6 +243,7 @@ SpriteAtlas:
   - {fileID: -6732548534903413750, guid: 5e52d7263c7c3404285adcd4fcf970cd, type: 3}
   - {fileID: -8521181979893159164, guid: 5e52d7263c7c3404285adcd4fcf970cd, type: 3}
   - {fileID: -6020049822452630422, guid: 5e52d7263c7c3404285adcd4fcf970cd, type: 3}
+  - {fileID: 1802738727, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -3100152433233934934, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -6365489704286221823, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -5938420338744300808, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
@@ -247,6 +253,7 @@ SpriteAtlas:
   - {fileID: -1128393015096499723, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: 7996714242665870582, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -3670242810400757605, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
+  - {fileID: 214395248, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: 762419684612261506, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -2708509552029305199, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
   - {fileID: -1369859340992397948, guid: aaa7ba39ab1eb604b8a8d0a0ad89422c, type: 3}
@@ -356,6 +363,8 @@ SpriteAtlas:
   - TheaterOfOrigins_Floor_3
   - TheaterOfOrigins_Floor_8
   - TheaterOfOrigins_Floor_9
+  - TheaterOfOrigins_Floor_178
+  - TheaterOfOrigins_Floor_179
   - TheaterOfOrigins_Floor_169
   - TheaterOfOrigins_Floor_168
   - TheaterOfOrigins_Floor_170
@@ -439,14 +448,17 @@ SpriteAtlas:
   - TheaterOfOrigins_Floor_146
   - TheaterOfOrigins_Floor_130
   - TheaterOfOrigins_Floor_126
+  - TheaterOfOrigins_Floor_181
   - TheaterOfOrigins_Floor_149
   - TheaterOfOrigins_Floor_131
   - TheaterOfOrigins_Floor_125
+  - TheaterOfOrigins_Floor_180
   - TheaterOfOrigins_Floor_148
   - TheaterOfOrigins_Floor_132
   - TheaterOfOrigins_Floor_124
   - TheaterOfOrigins_Floor_133
   - TheaterOfOrigins_Floor_123
+  - TheaterOfOrigins_Floor_182
   - TheaterOfOrigins_Floor_122
   - TheaterOfOrigins_Floor_118
   - TheaterOfOrigins_Floor_121
@@ -457,6 +469,7 @@ SpriteAtlas:
   - Decoration_Brown_0
   - Decoration_Brown_3
   - Decoration_Brown_2
+  - TheaterOfTheOrigins_Background_34
   - TheaterOfTheOrigins_Background_29
   - TheaterOfTheOrigins_Background_28
   - TheaterOfTheOrigins_Background_27
@@ -466,6 +479,7 @@ SpriteAtlas:
   - TheaterOfTheOrigins_Background_25
   - TheaterOfTheOrigins_Background_32
   - TheaterOfTheOrigins_Background_24
+  - TheaterOfTheOrigins_Background_33
   - TheaterOfTheOrigins_Background_23
   - TheaterOfTheOrigins_Background_22
   - TheaterOfTheOrigins_Background_21

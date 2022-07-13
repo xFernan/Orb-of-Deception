@@ -37,6 +37,8 @@ namespace OrbOfDeception.Essence_of_Punishment
 
         public int Value => value;
         private bool _hasBeenAcquired = false;
+        private bool _hasBeenAdded = false;
+        private Coroutine _changeStateCoroutine;
 
         private const float BlendDirectionValue = 0.3f;
         
@@ -111,6 +113,8 @@ namespace OrbOfDeception.Essence_of_Punishment
         
         private void OnEnterAcquireState()
         {
+            if (_hasBeenAcquired) return;
+            
             _hasBeenAcquired = true;
             
             _animator.SetTrigger(Acquire);
@@ -125,12 +129,13 @@ namespace OrbOfDeception.Essence_of_Punishment
                 GetComponentInChildren<PlayerMaterialController>().transform.GetComponent<Animator>();
             playerSpriteAnimator.SetTrigger("AcquireEoP");
 
-            GameManager.Player.EssenceOfPunishmentCounter.AcquireEssences(value);
+            if (!_hasBeenAdded)
+                GameManager.Player.EssenceOfPunishmentCounter.AcquireEssences(value);
         }
         
         private void ChangeToFollowPlayerState()
         {
-            StartCoroutine(ChangeToFollowPlayerStateCoroutine());
+            _changeStateCoroutine = StartCoroutine(ChangeToFollowPlayerStateCoroutine());
         }
         
         private IEnumerator ChangeToFollowPlayerStateCoroutine()
@@ -143,7 +148,11 @@ namespace OrbOfDeception.Essence_of_Punishment
         {
             if (_hasBeenAcquired) return;
             
+            if (_changeStateCoroutine != null)
+                StopCoroutine(_changeStateCoroutine);
+            
             GameManager.Player.EssenceOfPunishmentCounter.AcquireEssences(value);
+            _hasBeenAdded = true;
         }
         #endregion
         

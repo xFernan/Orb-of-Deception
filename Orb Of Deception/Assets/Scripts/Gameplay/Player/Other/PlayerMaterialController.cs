@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,7 +50,20 @@ namespace OrbOfDeception.Player
                 material.SetFloat(Dissolve, dissolve);
             }
         }
-        
+
+        private void LateUpdate()
+        {
+            var position = GameManager.Player.transform.position;
+            
+            var x = position.x;
+            x = ((float)Mathf.RoundToInt(x * 16)) / 16;
+            var y = position.y;
+            y = ((float)Mathf.RoundToInt(y * 16)) / 16;
+            var z = position.z;
+            
+            //transform.position = new Vector3(x, y, z);
+        }
+
         private void SetTintColor(Color tintColor)
         {
             foreach (var material in _materials)

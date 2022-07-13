@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Essence_of_Punishment;
@@ -13,27 +14,28 @@ namespace OrbOfDeception.Enemy
         #region Variables
 
         [Header("Shared Enemy variables")]
-        [SerializeField] protected Animator spriteAnim;
+        public SoundsPlayer soundsPlayer;
+        public Animator spriteAnim;
         [SerializeField] private EnemyDamagingArea damagingArea;
         
         private float _health;
+        private bool _hasDied = false;
 
-        protected EnemyParameters BaseParameters { get; private set; }
-        public SoundsPlayer SoundsPlayer { get; private set; }
+        public EnemyParameters BaseParameters { get; private set; }
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
         private EnemyDeathParticles _enemyDeathParticles;
+        private SpriteRenderer[] _spriteRenderers;
         
         private static readonly int BeingHurt = Animator.StringToHash("Hurt");
         private static readonly int Dying = Animator.StringToHash("Die");
 
         public Action onDie;
-        public Action onMaskColorChange;
         
         #endregion
         
         #region Properties
         
-        public Animator Anim  { private set; get; }
+        public Animator Animator  { private set; get; }
         
         #endregion
 
@@ -44,12 +46,12 @@ namespace OrbOfDeception.Enemy
         {
             base.OnAwake();
             
-            Anim = GetComponent<Animator>();
+            Animator = GetComponent<Animator>();
             BaseParameters = GetComponent<EnemyParameters>();
-            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
             _health = BaseParameters.Stats.health;
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
             _enemyDeathParticles = GetComponentInChildren<EnemyDeathParticles>();
+            _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         }
 
         protected override void OnStart()
@@ -73,9 +75,14 @@ namespace OrbOfDeception.Enemy
         #region Shared Enemy Methods
         protected virtual void Die()
         {
-            stateMachine.ExitState();
-            if (Anim != false)
-                Anim.enabled = false;
+            if (_hasDied)
+                return;
+
+            _hasDied = true;
+            
+            stateMachine?.ExitState();
+            if (Animator != false)
+                Animator.enabled = false;
             spriteAnim!.SetTrigger(Dying);
             
             var damageableAreas = GetComponentsInChildren<EnemyDamageableArea>();
@@ -89,9 +96,11 @@ namespace OrbOfDeception.Enemy
             HideShadows();
             
             _enemyDeathParticles.PlayParticles();
-            _essenceOfPunishmentSpawner.SpawnEssences(BaseParameters.Stats.essenceOfPunishmentAmount);
             
-            SoundsPlayer.Play("Dying");
+            if (BaseParameters.doesDropEssences)
+                _essenceOfPunishmentSpawner.SpawnEssences(BaseParameters.Stats.essenceOfPunishmentAmount);
+            
+            soundsPlayer.Play("Dying");
             
             onDie?.Invoke();
 
@@ -99,6 +108,11 @@ namespace OrbOfDeception.Enemy
             {
                 SaveSystem.AddEnemyDead(BaseParameters.id);
             }
+        }
+
+        public void Kill()
+        {
+            Die();
         }
 
         private void HideShadows()
@@ -121,9 +135,14 @@ namespace OrbOfDeception.Enemy
         
         public void GetDamaged(GameEntity.EntityColor damageColor, int damage)
         {
-            if (BaseParameters.maskColor != damageColor)
+            if (BaseParameters.MaskColor != damageColor)
             {
                 ReceiveDamage(damage);
+                GameManager.Orb.SoundsPlayer.Play("Damaging");
+            }
+            else
+            {
+                GameManager.Orb.SoundsPlayer.Play("NotDamaging");
             }
         }
 
@@ -149,15 +168,14 @@ namespace OrbOfDeception.Enemy
         
         public GameEntity.EntityColor GetMaskColor()
         {
-            return BaseParameters.maskColor;
+            return BaseParameters.MaskColor;
         }
 
         public virtual void OnSpawn(GameEntity.EntityColor newColor, bool isOrientationRight)
         {
             BaseParameters.hasBeenSpawned = true;
             SetOrientation(isOrientationRight);
-            BaseParameters.maskColor = newColor;
-            onMaskColorChange?.Invoke();
+            BaseParameters.MaskColor = newColor;
             AppearShadows();
             spriteAnim.SetTrigger("Appear"); // Encapsular en un script aparte.
         }

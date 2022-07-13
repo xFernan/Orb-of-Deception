@@ -38,7 +38,7 @@ namespace OrbOfDeception.Enemy.Enemy1
 
         private void PlayStepSound()
         {
-            SoundsPlayer.Play("Step");
+            soundsPlayer.Play("Step");
         }
         
         #endregion

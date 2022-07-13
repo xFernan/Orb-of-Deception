@@ -5,7 +5,7 @@ using OrbOfDeception.Core;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace OrbOfDeception.UI.Menu
+namespace OrbOfDeception.UI
 {
     public class AnimatedMenuController : MenuController
     {

@@ -1,3 +1,5 @@
+using System;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using UnityEngine;
 
@@ -8,15 +10,24 @@ namespace OrbOfDeception.Enemy
         [SerializeField] private GameObject enemyPrefab;
         [SerializeField] private GameEntity.EntityColor maskColor;
         [SerializeField] private bool orientationIsRight = true;
+        [SerializeField] private bool doesEnemyDropEssences = true;
 
-        [HideInInspector] public EnemyController enemyController;
+        public EnemyController EnemyController { get; private set; }
+        private SoundsPlayer _soundsPlayer;
+
+        private void Awake()
+        {
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+        }
 
         public void Spawn()
         {
             var enemyObject = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            enemyController = enemyObject.GetComponent<EnemyController>();
-            enemyController.OnSpawn(maskColor, orientationIsRight);
+            EnemyController = enemyObject.GetComponent<EnemyController>();
+            EnemyController.OnSpawn(maskColor, orientationIsRight);
+            EnemyController.BaseParameters.doesDropEssences = doesEnemyDropEssences;
             enemyObject.transform.parent = transform;
+            _soundsPlayer.Play("Spawn");
         }
     }
 }

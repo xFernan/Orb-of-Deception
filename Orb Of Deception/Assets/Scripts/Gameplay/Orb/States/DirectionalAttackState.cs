@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Patterns;
 using OrbOfDeception.Player;
 using OrbOfDeception.Rooms;
@@ -75,6 +76,7 @@ namespace OrbOfDeception.Orb
             if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
             
             SpawnBounceParticles(other.contacts[0].point, _orbController.CurrentParticlesColor);
+            _orbController.SoundsPlayer.Play("Bouncing");
 
             if (_hasReceivedAVelocityBoost)
                 return;
@@ -100,7 +102,7 @@ namespace OrbOfDeception.Orb
             //_orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.02f, 6));
             //_orbController.StartCoroutine(SpawnRingParticlesCoroutine(0.08f, 9));
         }
-
+        
         private void SpawnBounceParticles(Vector2 particlesPosition, Color particlesColor)
         {
             var bounceParticlesObject = Object.Instantiate(_orbController.bounceParticles, particlesPosition, Quaternion.identity); // Cambiar por Object Pool.

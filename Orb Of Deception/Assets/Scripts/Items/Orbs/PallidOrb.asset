@@ -16,5 +16,5 @@ MonoBehaviour:
   itemDescription: Press left click to throw the orb.
   itemUISprite: {fileID: 2601459633636212514, guid: 207a2b06a1ec83e4896152e6dc56550c,
     type: 3}
-  nameColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
   orbType: 1

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core.Scenes;
 using OrbOfDeception.Rooms;
 using UnityEngine;
@@ -20,6 +21,9 @@ namespace OrbOfDeception.Player
             SaveSystem.ResetDecorations();
 
             var player = GameManager.Player;
+            
+            player.soundsPlayer.Play("Dying");
+            
             player.isControlled = false;
             
             player.maskParticles.Stop();
@@ -34,7 +38,7 @@ namespace OrbOfDeception.Player
             
             GameManager.Orb.Hide();
 
-            GameManager.Player.StartCoroutine(RespawnCoroutine());
+            player.StartCoroutine(RespawnCoroutine());
 
             RoomManager.targetRoomChangerID = -1;
 
@@ -57,12 +61,16 @@ namespace OrbOfDeception.Player
             player.SpawnStand();
             
             player.HealthController.RecoverAll();
+            
+            /*if (RoomManager.Instance.name != "Backstage")
+                MusicManager.Instance.PlayMusic("StatueRoom");*/
         }
         
         private IEnumerator RespawnCoroutine()
         {
             yield return new WaitForSeconds(1);
             LevelChanger.Instance.FadeToScene(SaveSystem.GetSpawnSceneName());
+            MusicManager.Instance.StopMusic();
         }
     }
 }

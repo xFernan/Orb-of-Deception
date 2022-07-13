@@ -1,6 +1,6 @@
 using OrbOfDeception.Core;
 
-namespace OrbOfDeception.UI.Menu
+namespace OrbOfDeception.UI
 {
     public class NormalMenuController : MenuController
     {

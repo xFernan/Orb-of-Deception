@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Enemy;
 using OrbOfDeception.Player;
@@ -14,6 +15,7 @@ namespace OrbOfDeception.Scenery_Elements
 
         private CameraLimits _previousCameraLimits;
         private SpriteMaterialController _wallMaterial;
+        private SoundsPlayer _soundsPlayer;
 
         private float _dissolveValue;
         private bool _isHidden;
@@ -23,6 +25,7 @@ namespace OrbOfDeception.Scenery_Elements
         private void Awake()
         {
             _wallMaterial = GetComponentInChildren<SpriteMaterialController>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
         }
 
         private void Update()
@@ -35,9 +38,11 @@ namespace OrbOfDeception.Scenery_Elements
             _isHidden = true;
             
             _previousCameraLimits = GameManager.Camera.cameraLimits;
-            GameManager.Camera.cameraLimits = secretRoomCameraLimits;
+            GameManager.Camera.LerpToNewCameraLimits(secretRoomCameraLimits);
 
             fakeWallCollider.enabled = false;
+            
+            _soundsPlayer.Play("SecretDiscovered");
             
             DOTween.To(()=> _dissolveValue, x=> _dissolveValue = x, 1, FadeDuration);
         }
@@ -46,7 +51,7 @@ namespace OrbOfDeception.Scenery_Elements
         {
             _isHidden = false;
             
-            GameManager.Camera.cameraLimits = _previousCameraLimits;
+            GameManager.Camera.LerpToNewCameraLimits(_previousCameraLimits);
 
             fakeWallCollider.enabled = true;
             

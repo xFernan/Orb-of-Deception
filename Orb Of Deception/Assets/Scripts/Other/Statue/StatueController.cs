@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
 using OrbOfDeception.Rooms;
 using OrbOfDeception.UI;
 using OrbOfDeception.UI.InGame_UI;
 using OrbOfDeception.UI.InGame_UI.Counter;
-using OrbOfDeception.UI.Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,6 +44,7 @@ namespace OrbOfDeception.Statue
             }
         }
 
+        [SerializeField] private SoundsPlayer soundsPlayer;
         [SerializeField] private SpriteRenderer statueShadowSpriteRenderer;
         [SerializeField] private SpriteRenderer statueIntactSpriteRenderer;
         [SerializeField] private SpriteRenderer statueBrokenSpriteRenderer;
@@ -61,8 +62,6 @@ namespace OrbOfDeception.Statue
         private List<StatueRoomRenderer> _statueRoomSpriteRenderers;
 
         private CameraLimits _statueCameraLimits;
-        
-        private bool _isActive;
         
         private static readonly int IsVisible = Animator.StringToHash("IsVisible");
 
@@ -95,7 +94,6 @@ namespace OrbOfDeception.Statue
             if (!other.CompareTag("Player"))
                 return;
 
-            _isActive = true;
             interactIndicator.Show();
             GameManager.Player.Interaction.onInteraction += Pray;
         }
@@ -107,7 +105,6 @@ namespace OrbOfDeception.Statue
             
             interactIndicator.Hide();
             GameManager.Player.Interaction.onInteraction -= Pray;
-            _isActive = false;
         }
 
         private void EnterStatueMenu()
@@ -117,10 +114,12 @@ namespace OrbOfDeception.Statue
 
         private IEnumerator EnterStatueMenuCoroutine()
         {
+            soundsPlayer.Play("Enter");
+            
             SaveSystem.SetNewSpawn(SceneManager.GetActiveScene().name, playerRespawnTransform.position);
             
-            GameManager.Camera.ChangeCameraLimits(_statueCameraLimits);
-            GameManager.Player.StatueMenuController.ApplyOffset();
+            GameManager.Camera.LerpToNewCameraLimits(_statueCameraLimits);
+            //GameManager.Player.StatueMenuController.ApplyOffset();
             
             var player = GameManager.Player;
             player.StatueMenuController.InitializeMasksUnlocked();
@@ -154,7 +153,9 @@ namespace OrbOfDeception.Statue
 
         private IEnumerator ExitStatueMenuCoroutine()
         {
-            RoomManager.Instance.SetDefaultCameraLimits();
+            soundsPlayer.Play("Exit");
+            
+            RoomManager.CurrentRoom.SetDefaultCameraLimits();
             
             whiteBackgroundAnimator.SetBool(IsVisible, false);
             backgroundParticles.Stop();

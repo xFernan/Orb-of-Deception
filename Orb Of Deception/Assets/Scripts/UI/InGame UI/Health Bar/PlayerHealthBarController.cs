@@ -39,7 +39,7 @@ namespace OrbOfDeception.UI.InGame_UI.Health_Bar
             
             for (var i = 0; i < maskAmount; i++)
             {
-                var newMask = Instantiate(maskPrefab, transform, true);
+                var newMask = Instantiate(maskPrefab, transform, false);
                 newMask.GetComponent<RectTransform>().anchoredPosition =
                     new Vector2(NewMaskBlockDistance * i, -1);
                 _masks.Add(newMask.GetComponent<UIHeartController>());
@@ -47,7 +47,7 @@ namespace OrbOfDeception.UI.InGame_UI.Health_Bar
                 var connectorToInstantiate = (i == maskAmount - 1) ?
                     endConnector :
                     ((i) % 2 == 0) ? oddConnector : evenConnector;
-                var connectorObject = Instantiate(connectorToInstantiate, transform, true);
+                var connectorObject = Instantiate(connectorToInstantiate, transform, false);
                 connectorObject.GetComponent<RectTransform>().anchoredPosition =
                     new Vector2(MaskWidth + NewMaskBlockDistance * i, 0);
             }

@@ -1,7 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Essence_of_Punishment;
 using OrbOfDeception.UI;
-using OrbOfDeception.UI.Menu;
+using OrbOfDeception.UI.InGame_UI;
 using UnityEngine;
 
 namespace OrbOfDeception.Rooms
@@ -14,21 +18,23 @@ namespace OrbOfDeception.Rooms
         [SerializeField] private CameraLimits defaultCameraLimits;
 
         public static int targetRoomChangerID = -1;
-        public static RoomManager Instance { get; private set; }
+        public static RoomManager CurrentRoom { get; private set; }
+        private List<LoopSoundPlayer> _loopSounds;
 
         private void Awake()
         {
-            Instance = this;
-
-            SetDefaultCameraLimits();
+            CurrentRoom = this;
+            _loopSounds = FindObjectsOfType<LoopSoundPlayer>().ToList();
+            
+            GameManager.Camera.SetNewCameraLimits(defaultCameraLimits);
         }
 
         private void Start()
         {
-            PlacePlayer();
+            StartCoroutine(PlacePlayerCoroutine());
         }
 
-        private void PlacePlayer()
+        private IEnumerator PlacePlayerCoroutine()
         {
             Vector3 positionToPlacePlayer;
 
@@ -57,13 +63,16 @@ namespace OrbOfDeception.Rooms
                     }
                     else
                     {
-                        return;
+                        yield break;
                     }
                 }
             }
-
-            GameManager.Player.isControlled = true;
+            
             GameManager.Instance.SetPositionInNewRoom(positionToPlacePlayer);
+
+            yield return 0;
+            
+            GameManager.Player.isControlled = true;
         }
 
         public int GetRoomID()
@@ -73,16 +82,24 @@ namespace OrbOfDeception.Rooms
 
         public void SetDefaultCameraLimits()
         {
-            GameManager.Camera.ChangeCameraLimits(defaultCameraLimits);
+            GameManager.Camera.LerpToNewCameraLimits(defaultCameraLimits);
         }
 
-        public void CollectRemainingEssences()
+        public void OnExitRoom()
         {
+            // Collect remaining essences
             var essences = FindObjectsOfType<EssenceOfPunishmentController>();
 
             foreach (var essence in essences)
             {
                 essence.CollectOnRemainingIfHasNotBeenCollected();
+            }
+            
+            // Stop all loop sounds
+            foreach (var loopSound in _loopSounds)
+            {
+                if (loopSound.stopOnSceneExit)
+                    loopSound.Stop();
             }
         }
         

@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &-2181875827948394978
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OldWizard Material
   m_Shader: {fileID: 4800000, guid: 128e987d567d4e2c824d754223b3f3b0, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -55,9 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: OldWizard
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -555459692
   material: {fileID: -2181875827948394978}
-  materialHashCode: 0
+  materialHashCode: 1569247668
   m_Version: 1.1.0
   m_SourceFontFileGUID: 5699bbac3b5546c46a2522d36db5e2fe
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 5699bbac3b5546c46a2522d36db5e2fe,
@@ -1751,9 +1752,9 @@ MonoBehaviour:
     packingMode: 0
     atlasWidth: 512
     atlasHeight: 512
-    characterSetSelectionMode: 7
-    characterSequence: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\xD1\xF1"
-    referencedFontAssetGUID: 
+    characterSetSelectionMode: 6
+    characterSequence: 30-39,41-5A,5F,61-7A,D1,F1
+    referencedFontAssetGUID: a0a8678dc8949a14a8f09010581b0794
     referencedTextAssetGUID: 
     fontStyle: 0
     fontStyleModifier: 0

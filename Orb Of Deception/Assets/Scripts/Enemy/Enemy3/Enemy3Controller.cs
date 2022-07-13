@@ -66,6 +66,11 @@ namespace OrbOfDeception.Enemy.Enemy3
             StaffController.UpdateXOffset(isOrientationRight);
         }
         
+        private void PlayStepSound()
+        {
+            soundsPlayer.Play("Step");
+        }
+        
         #endregion
     }
 }

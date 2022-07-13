@@ -7,7 +7,7 @@ namespace OrbOfDeception.Player
     {
         private readonly Animator _animator;
         private readonly Rigidbody2D _rigidbody;
-        private readonly GroundDetector _groundDetector;
+        private readonly PlayerGroundDetector _groundDetector;
         
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int IsOnTheGround = Animator.StringToHash("IsOnTheGround");
@@ -15,7 +15,7 @@ namespace OrbOfDeception.Player
         private static readonly int IsKneeling = Animator.StringToHash("IsKneeling");
         private static readonly int IsDying = Animator.StringToHash("IsDying");
 
-        public PlayerAnimationController(Animator animator, Rigidbody2D rigidbody, GroundDetector groundDetector)
+        public PlayerAnimationController(Animator animator, Rigidbody2D rigidbody, PlayerGroundDetector groundDetector)
         {
             _animator = animator;
             _rigidbody = rigidbody;

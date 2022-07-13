@@ -1,5 +1,5 @@
 using OrbOfDeception.Rooms;
-using OrbOfDeception.UI.Menu;
+using OrbOfDeception.UI.InGame_UI;
 using UnityEngine;
 
 namespace OrbOfDeception.Core.Scenes

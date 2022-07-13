@@ -37,6 +37,10 @@ namespace OrbOfDeception
         public static OrbController Orb => Instance.orbController;
         public static CameraController Camera => Instance.cameraController;
         public static InputManager InputManager => Instance.inputManager;
+
+        public const int Ppu = 16;
+        public const int WidthInPixels = 320;
+        public const int HeightInPixels = 180;
         
         private void Awake()
         {

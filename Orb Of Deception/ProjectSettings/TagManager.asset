@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Virtual Screen
   - Water
   - UI
-  - 
+  - In-Game UI
   - Environment
   - Ground
   - Player
@@ -78,4 +78,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 156074455
+    locked: 0
+  - name: Cursor
+    uniqueID: 920966223
     locked: 0

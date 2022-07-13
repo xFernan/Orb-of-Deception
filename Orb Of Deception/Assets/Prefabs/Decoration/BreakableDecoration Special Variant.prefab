@@ -22,12 +22,47 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.2924528
       objectReference: {fileID: 0}
+    - target: {fileID: 1017767527974236419, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017767527974236476, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017767527974236476, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017767527974236476, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0335
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017767527974236477, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1017767527974236477, guid: cff873542a5689c40960e16af83c48c4,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6472130025586151254, guid: 190f2bf8d9bd10c44b4f23f833846ac1,
         type: 3}
+    - target: {fileID: 1017767527974236477, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017767528846313786, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1017767528846313787, guid: cff873542a5689c40960e16af83c48c4,
         type: 3}
       propertyPath: m_Sprite
@@ -118,6 +153,21 @@ PrefabInstance:
         type: 3}
       propertyPath: dropProbability
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731236261116949137, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: audioTracks.Array.data[0].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3d4c6b72e9354d458d62703f78b8be7, type: 3}
+    - target: {fileID: 1731236261116949137, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: audioTracks.Array.data[1].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b72ad5c174aa38449a6fb0f3e3609b7, type: 3}
+    - target: {fileID: 6488948158827941644, guid: cff873542a5689c40960e16af83c48c4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cff873542a5689c40960e16af83c48c4, type: 3}

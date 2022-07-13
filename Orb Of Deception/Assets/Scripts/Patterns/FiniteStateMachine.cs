@@ -20,14 +20,14 @@ namespace OrbOfDeception.Patterns
 
         public void SetState(State incomingState)
         {
-            _currentState.Exit();
+            _currentState?.Exit();
             _currentState = incomingState;
             _currentState.Enter();
         }
         
         public void ExitState()
         {
-            _currentState.Exit();
+            _currentState?.Exit();
             _currentState = null;
         }
         
@@ -45,6 +45,32 @@ namespace OrbOfDeception.Patterns
         {
             _currentState?.OnCollisionEnter2D(other);
         }
+        
+        public void OnTriggerEnter2D(Collider2D other)
+        {
+            _currentState?.OnTriggerEnter2D(other);
+        }
+        
+        public void OnCollisionStay2D(Collision2D other)
+        {
+            _currentState?.OnCollisionStay2D(other);
+        }
+        
+        public void OnTriggerStay2D(Collider2D other)
+        {
+            _currentState?.OnTriggerStay2D(other);
+        }
+        
+        public void OnCollisionExit2D(Collision2D other)
+        {
+            _currentState?.OnCollisionExit2D(other);
+        }
+        
+        public void OnTriggerExit2D(Collider2D other)
+        {
+            _currentState?.OnTriggerExit2D(other);
+        }
+        
         #endregion
     }
 }

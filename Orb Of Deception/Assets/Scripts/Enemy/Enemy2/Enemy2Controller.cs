@@ -1,3 +1,4 @@
+using OrbOfDeception.Core;
 using Pathfinding;
 using UnityEngine;
 
@@ -55,10 +56,15 @@ namespace OrbOfDeception.Enemy.Enemy2
                 SetInitialState(IdleState);
             }
         }
-
+        
         public override void SetOrientation(bool isOrientationRight)
         {
             SpriteRenderer.flipX = isOrientationRight; // Provisional, hacer con animaciones para cambiar sombras.
+        }
+
+        private void PlayFlyingSound()
+        {
+            //soundsPlayer.Play("Flying");
         }
         #endregion
     }

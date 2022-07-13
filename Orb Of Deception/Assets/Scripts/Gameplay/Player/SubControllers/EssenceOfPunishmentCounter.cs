@@ -12,6 +12,7 @@ namespace OrbOfDeception.Player
         {
             essences = Mathf.Clamp(essences + essenceAmount, 0, 9999);
             onEssenceAcquire?.Invoke();
+            GameManager.Player.soundsPlayer.Play("EssencesAcquired");
         }
 
         public int GetAcquiredEssences()

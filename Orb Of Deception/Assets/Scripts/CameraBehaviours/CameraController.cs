@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -11,10 +12,23 @@ namespace OrbOfDeception.CameraBehaviours
         [HideInInspector] public CameraLimits cameraLimits;
         [SerializeField] private float smoothSpeedX = 10;
         [SerializeField] private float smoothSpeedY = 30;
+
+        private CameraRealLimits _cameraRealLimits;
         
+        private Tween _shakeTween;
+        private Tween _returningTween;
+        
+        private Vector3 _realPosition;
+
+        private void Awake()
+        {
+            _cameraRealLimits = new GameObject().AddComponent<CameraRealLimits>();
+        }
+
         private void Start()
         {
             cameraComponent = GetComponentInChildren<Camera>();
+            _realPosition = transform.position;
         }
 
         private void Update()
@@ -22,21 +36,26 @@ namespace OrbOfDeception.CameraBehaviours
             if (cameraLimits == null) return;
             
             var cameraPlayerReferencePosition = cameraPlayerReferenceTransform.position;
-            var cameraTransform = transform;
+            //var cameraTransform = transform;
             
-            var desiredPosition = new Vector3
+            var targetPosition = new Vector3
             {
-                x = Mathf.Clamp(cameraPlayerReferencePosition.x, cameraLimits.GetMinX(),
-                    cameraLimits.GetMaxX()),
-                y = Mathf.Clamp(cameraPlayerReferencePosition.y, cameraLimits.GetMinY(),
-                    cameraLimits.GetMaxY()),
+                x = Mathf.Clamp(cameraPlayerReferencePosition.x, _cameraRealLimits.GetMinX(),
+                    _cameraRealLimits.GetMaxX()),
+                y = Mathf.Clamp(cameraPlayerReferencePosition.y, _cameraRealLimits.GetMinY(),
+                    _cameraRealLimits.GetMaxY()),
                 z = -10
             };
 
-            var camPosition = cameraTransform.position;
-            cameraTransform.position = new Vector3(Mathf.Lerp(camPosition.x, desiredPosition.x, smoothSpeedX * Time.deltaTime),
-                Mathf.Lerp(camPosition.y, desiredPosition.y, smoothSpeedY * Time.deltaTime), camPosition.z);
-            
+            _realPosition = new Vector3(Mathf.Lerp(_realPosition.x, targetPosition.x, smoothSpeedX * Time.deltaTime),
+                Mathf.Lerp(_realPosition.y, targetPosition.y, smoothSpeedY * Time.deltaTime), _realPosition.z);
+
+            var snappedPosition = new Vector3(SnapToGrid.SnapValueToGrid(targetPosition.x),
+                SnapToGrid.SnapValueToGrid(targetPosition.y),
+                -10);
+
+            transform.position = targetPosition;
+
             /*var cameraPosition = cameraTransform.position;
             
             var x = cameraPosition.x;
@@ -48,12 +67,21 @@ namespace OrbOfDeception.CameraBehaviours
             Debug.Log(cameraPosition.x + "--> " + x);
             cameraTransform.position = new Vector3(x, y, z);*/
         }
-
-        public void ChangeCameraLimits(CameraLimits newCameraLimits)
+        
+        public void SetNewCameraLimits(CameraLimits newCameraLimits)
         {
             if (newCameraLimits == null) return;
             
             cameraLimits = newCameraLimits;
+            _cameraRealLimits.SetNewLimits(newCameraLimits);
+        }
+        
+        public void LerpToNewCameraLimits(CameraLimits newCameraLimits)
+        {
+            if (newCameraLimits == null) return;
+            
+            cameraLimits = newCameraLimits;
+            _cameraRealLimits.LerpToNewLimits(newCameraLimits);
         }
         
         public void RePosition()
@@ -77,7 +105,18 @@ namespace OrbOfDeception.CameraBehaviours
         
         public void Shake(float duration, float strength = 0.4f)
         {
-            cameraComponent.DOShakePosition(duration, strength);
+            _returningTween?.Kill();
+            
+            cameraComponent.transform.localPosition = Vector3.zero;
+            
+            _shakeTween?.Kill();
+            _shakeTween = cameraComponent.DOShakePosition(duration, strength).OnComplete(OnShakeEnded);
+        }
+
+        private void OnShakeEnded()
+        {
+            _returningTween?.Kill();
+            _returningTween = cameraComponent.transform.DOLocalMove(Vector3.zero, 0.75f);
         }
     }
 }

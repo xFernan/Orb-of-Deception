@@ -9,18 +9,19 @@ namespace OrbOfDeception.Orb
         private readonly Transform _transform;
         private readonly Transform _orbIdlePositionTransform;
 
-        private readonly float _idleLerpPlayerFollowValue;
+        private readonly float _idlePlayerFollowSmoothTime;
         private readonly float _idleFloatingMoveVelocity;
-        private readonly float _idleFloatingMoveDistance;
-        public OnPlayerState(OrbController orbController, float idleLerpPlayerFollowValue, float idleFloatingMoveVelocity, float idleFloatingMoveDistance)
+
+        private Vector2 _speed = Vector2.zero;
+        
+        public OnPlayerState(OrbController orbController, float idlePlayerFollowSmoothTime, float idleFloatingMoveVelocity)
         {
             _orbController = orbController;
             _transform = orbController.transform;
             _orbIdlePositionTransform = orbController.orbIdlePositionTransform;
 
-            _idleLerpPlayerFollowValue = idleLerpPlayerFollowValue;
+            _idlePlayerFollowSmoothTime = idlePlayerFollowSmoothTime;
             _idleFloatingMoveVelocity = idleFloatingMoveVelocity;
-            _idleFloatingMoveDistance = idleFloatingMoveDistance;
         }
 
         public override void Enter()
@@ -41,10 +42,11 @@ namespace OrbOfDeception.Orb
             var currentPosition = _transform.position;
             var orbIdlePosition = _orbIdlePositionTransform.position;
 
-            var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, _idleLerpPlayerFollowValue * Time.deltaTime);
+            var newPosition = Vector2.SmoothDamp(currentPosition, orbIdlePosition, ref _speed, _idlePlayerFollowSmoothTime);
+            
+            //var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, _idleLerpPlayerFollowValue * Time.deltaTime);
                     
-            newPosition.y += Mathf.Sin(Time.time * _idleFloatingMoveVelocity) *
-                             _idleFloatingMoveDistance;
+            newPosition.y += Mathf.Sin(Time.time * 8) * _idleFloatingMoveVelocity * Time.deltaTime;
             
             _transform.position = newPosition;
         }

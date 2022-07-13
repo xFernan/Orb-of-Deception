@@ -883,7 +883,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -891,6 +891,48 @@ TextureImporter:
       bones: []
       spriteID: 6f4f76c3c390afe60800000000000000
       internalID: 7996714242665870582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfTheOrigins_Background_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52e3a25fc5c6d348babe24a6749b386
+      internalID: 214395248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheaterOfTheOrigins_Background_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fcba63473b0784ab5363528339a577
+      internalID: 1802738727
       vertices: []
       indices: 
       edges: []
@@ -915,6 +957,7 @@ TextureImporter:
       TheaterOfTheOrigins_Background_19: -4322554185832447923
       TheaterOfTheOrigins_Background_16: 713820588240571183
       TheaterOfTheOrigins_Background_6: 309053550558525874
+      TheaterOfTheOrigins_Background_34: 1802738727
       TheaterOfTheOrigins_Background_14: 2123913538645864216
       TheaterOfTheOrigins_Background_7: 8751577465254985783
       TheaterOfTheOrigins_Background_17: -3945142180878994974
@@ -926,6 +969,7 @@ TextureImporter:
       TheaterOfTheOrigins_Background_20: -2950806510646948765
       TheaterOfTheOrigins_Background_8: -2104897187167253641
       TheaterOfTheOrigins_Background_21: -1369859340992397948
+      TheaterOfTheOrigins_Background_35: 1393802826
       TheaterOfTheOrigins_Background_22: -2708509552029305199
       TheaterOfTheOrigins_Background_1: -5557714291232445361
       TheaterOfTheOrigins_Background_5: -4263840445677873631
@@ -936,6 +980,7 @@ TextureImporter:
       TheaterOfTheOrigins_Background_3: 9133224560427690763
       TheaterOfTheOrigins_Background_9: -6445005774995498255
       TheaterOfTheOrigins_Background_11: -4397550740595446176
+      TheaterOfTheOrigins_Background_33: 214395248
       TheaterOfTheOrigins_Background_24: -3670242810400757605
       TheaterOfTheOrigins_Background_30: 5698979848776584829
       TheaterOfTheOrigins_Background_13: -210072388757030268

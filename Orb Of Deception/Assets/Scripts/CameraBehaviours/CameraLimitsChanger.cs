@@ -14,8 +14,8 @@ namespace OrbOfDeception.CameraBehaviours
 
             var playerPosition = GameManager.Player.transform.position;
             
-            GameManager.Camera.cameraLimits =
-                playerPosition.x < transform.position.x ? leftSideCameraLimits : rightSideCameraLimits;
+            GameManager.Camera.LerpToNewCameraLimits(
+                playerPosition.x < transform.position.x ? leftSideCameraLimits : rightSideCameraLimits);
         }
     }
 }

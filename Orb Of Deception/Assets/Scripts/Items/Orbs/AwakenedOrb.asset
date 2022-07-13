@@ -16,5 +16,5 @@ MonoBehaviour:
   itemDescription: Press right click to change orb color.
   itemUISprite: {fileID: -6528091369214107821, guid: 207a2b06a1ec83e4896152e6dc56550c,
     type: 3}
-  nameColor: {r: 0.2771574, g: 0, b: 0.7058824, a: 1}
+  nameColor: {r: 0.28532928, g: 0, b: 0.7169812, a: 1}
   orbType: 2

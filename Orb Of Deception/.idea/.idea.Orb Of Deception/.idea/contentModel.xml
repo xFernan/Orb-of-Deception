@@ -213,6 +213,11 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="Boss1EnemySpawner.cs" t="Include" />
+        <e p="CanvasRenderOnVirtualCamera.cs" t="Include" />
+        <e p="CenteredUIText.cs" t="Include" />
+        <e p="CursorController.cs" t="Include" />
+        <e p="DontDestroyOnLoad.cs" t="Include" />
         <e p="Dynamic Lightning" t="Include">
           <e p="ShadowCaster2DExtensions.cs" t="Include" />
         </e>
@@ -357,7 +362,7 @@
             </e>
           </e>
         </e>
-        <e p="OptionsMenuManager.cs" t="Include" />
+        <e p="OrbColorTutorialDisplayer.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -412,14 +417,19 @@
             <e p="Readme.txt" t="Include" />
           </e>
         </e>
+        <e p="prueba.cs" t="Include" />
+        <e p="RoomChangerDebug.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Audio" t="Include">
+            <e p="LoopSoundPlayer.cs" t="Include" />
+            <e p="MusicManager.cs" t="Include" />
             <e p="SoundsPlayer.cs" t="Include" />
           </e>
           <e p="CameraBehaviours" t="Include">
             <e p="CameraController.cs" t="Include" />
             <e p="CameraLimits.cs" t="Include" />
             <e p="CameraLimitsChanger.cs" t="Include" />
+            <e p="CameraRealLimits.cs" t="Include" />
           </e>
           <e p="Core" t="Include">
             <e p="ColliderEventTrigger.cs" t="Include" />
@@ -439,6 +449,7 @@
               <e p="player.cs" t="Include" />
             </e>
             <e p="IOtherTriggerEnter.cs" t="Include" />
+            <e p="LightController.cs" t="Include" />
             <e p="LightTwinkleBehaviour.cs" t="Include" />
             <e p="MethodDelayer.cs" t="Include" />
             <e p="MultipleParticlesController.cs" t="Include" />
@@ -455,6 +466,18 @@
             <e p="SurroundingsDetector.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
+            <e p="Boss1" t="Include">
+              <e p="AppearingState.cs" t="Include" />
+              <e p="Boss1Controller.cs" t="Include" />
+              <e p="Boss1MaskController.cs" t="Include" />
+              <e p="Boss1Parameters.cs" t="Include" />
+              <e p="Boss1SpellCaster.cs" t="Include" />
+              <e p="Boss1SpellController.cs" t="Include" />
+              <e p="Boss1Stats.cs" t="Include" />
+              <e p="ChargeState.cs" t="Include" />
+              <e p="SpellState.cs" t="Include" />
+              <e p="TeleportingState.cs" t="Include" />
+            </e>
             <e p="Enemy1" t="Include">
               <e p="Enemy1Controller.cs" t="Include" />
               <e p="Enemy1Parameters.cs" t="Include" />
@@ -476,21 +499,24 @@
               <e p="Enemy3StaffController.cs" t="Include" />
               <e p="Enemy3Stats.cs" t="Include" />
               <e p="Enemy3WalkingState.cs" t="Include" />
+              <e p="PathFinder.cs" t="Include" />
             </e>
             <e p="Shared Enemy Scripts" t="Include">
               <e p="EnemyController.cs" t="Include" />
               <e p="EnemyDamageableArea.cs" t="Include" />
               <e p="EnemyDamagingArea.cs" t="Include" />
               <e p="EnemyDeathParticles.cs" t="Include" />
+              <e p="EnemyMaskController.cs" t="Include" />
               <e p="EnemyParameters.cs" t="Include" />
               <e p="EnemySpawner.cs" t="Include" />
-              <e p="EnemySpriteController.cs" t="Include" />
               <e p="EnemySpritePartsGroupController.cs" t="Include" />
               <e p="EnemySpritesheetChanger.cs" t="Include" />
               <e p="EnemyState.cs" t="Include" />
               <e p="EnemyStats.cs" t="Include" />
+              <e p="ImageMaterialController.cs" t="Include" />
               <e p="PathController.cs" t="Include" />
               <e p="SpriteMaterialController.cs" t="Include" />
+              <e p="SpriteMaterialManager.cs" t="Include" />
               <e p="StateMachineController.cs" t="Include" />
             </e>
           </e>
@@ -532,9 +558,9 @@
               </e>
               <e p="SubControllers" t="Include">
                 <e p="EssenceOfPunishmentCounter.cs" t="Include" />
-                <e p="GroundDetector.cs" t="Include" />
                 <e p="PlayerAnimationController.cs" t="Include" />
                 <e p="PlayerDeathController.cs" t="Include" />
+                <e p="PlayerGroundDetector.cs" t="Include" />
                 <e p="PlayerHealthController.cs" t="Include" />
                 <e p="PlayerHorizontalMovementController.cs" t="Include" />
                 <e p="PlayerHurtController.cs" t="Include" />
@@ -550,7 +576,6 @@
             <e p="CollectibleItemController.cs" t="Include" />
             <e p="CollectibleTriangleController.cs" t="Include" />
             <e p="Item.cs" t="Include" />
-            <e p="ItemLightBehaviour.cs" t="Include" />
             <e p="MaskItemController.cs" t="Include" />
             <e p="Masks" t="Include">
               <e p="MaskItem.cs" t="Include" />
@@ -598,15 +623,12 @@
             <e p="State.cs" t="Include" />
           </e>
           <e p="Rooms" t="Include">
-            <e p="BossRoomController.cs" t="Include" />
+            <e p="Boss1RoomController.cs" t="Include" />
             <e p="RoomChanger.cs" t="Include" />
             <e p="RoomManager.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="Cursor" t="Include">
-              <e p="CursorController.cs" t="Include" />
-            </e>
             <e p="InGame UI" t="Include">
               <e p="ButtonTutorial.cs" t="Include" />
               <e p="Counter" t="Include">
@@ -614,23 +636,32 @@
                 <e p="EssenceOfPunishmentDisplayer.cs" t="Include" />
                 <e p="UIValueDisplayer.cs" t="Include" />
               </e>
+              <e p="Gems" t="Include">
+                <e p="UIGemController.cs" t="Include" />
+                <e p="UIGemsController.cs" t="Include" />
+              </e>
               <e p="Health Bar" t="Include">
                 <e p="MedallionOrbController.cs" t="Include" />
                 <e p="PlayerHealthBarController.cs" t="Include" />
                 <e p="UIHeartController.cs" t="Include" />
                 <e p="UIMaskMaterialController.cs" t="Include" />
               </e>
+              <e p="InGameMenuManager.cs" t="Include" />
               <e p="InGameUIController.cs" t="Include" />
               <e p="TitleDisplayer.cs" t="Include" />
             </e>
+            <e p="Main Menu" t="Include">
+              <e p="MainMenuManager.cs" t="Include" />
+              <e p="MainMenuTitleSoundPlayer.cs" t="Include" />
+            </e>
             <e p="Menu" t="Include">
               <e p="AnimatedMenuController.cs" t="Include" />
-              <e p="InGameMenuManager.cs" t="Include" />
-              <e p="MainMenuManager.cs" t="Include" />
               <e p="MenuController.cs" t="Include" />
-              <e p="MenuSelectorController.cs" t="Include" />
               <e p="NormalMenuController.cs" t="Include" />
               <e p="PauseMenuDarkBackgroundController.cs" t="Include" />
+            </e>
+            <e p="Options Menu" t="Include">
+              <e p="OptionsMenuManager.cs" t="Include" />
             </e>
             <e p="Screen Controllers" t="Include">
               <e p="EndDemoMenuController.cs" t="Include" />
@@ -649,9 +680,6 @@
         <e p="Shaders" t="Include">
           <e p="Core" t="Include">
             <e p="ShadowShader.shader" t="Include" />
-          </e>
-          <e p="Enemies" t="Include">
-            <e p="NewSurfaceShader.shader" t="Include" />
           </e>
         </e>
         <e p="Shapes2D" t="Include">
@@ -695,6 +723,8 @@
             <e p="Triangle.cginc" t="Include" />
           </e>
         </e>
+        <e p="SnapToGrid.cs" t="Include" />
+        <e p="SnapToGridUI.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
             <e p="LineBreaking Following Characters.txt" t="Include" />
@@ -721,6 +751,7 @@
             <e p="EmojiOne.json" t="Include" />
           </e>
         </e>
+        <e p="VirtualCamera.cs" t="Include" />
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />

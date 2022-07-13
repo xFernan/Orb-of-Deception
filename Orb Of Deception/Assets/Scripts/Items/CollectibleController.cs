@@ -1,3 +1,4 @@
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
 using OrbOfDeception.Orb;
@@ -17,20 +18,24 @@ namespace OrbOfDeception.Items
         private bool _hasBeenCollected;
         private Vector3 _startingPosition;
 
-        private ItemLightBehaviour _itemLightBehaviour;
-        private SpriteMaterialController _spriteMaterialController;
         protected Animator animator;
         private Collider2D _collider;
+        private SoundsPlayer _soundsPlayer;
+        
+        private LightController _lightController;
+        private SpriteMaterialController _spriteMaterialController;
         
         private static readonly int HideTrigger = Animator.StringToHash("Hide");
 
         protected virtual void Awake()
         {
-            _itemLightBehaviour = GetComponentInChildren<ItemLightBehaviour>();
-            _spriteMaterialController = GetComponentInChildren<SpriteMaterialController>();
-            _spriteMaterialController.SetTintColor(Color.white);
             animator = GetComponent<Animator>();
             _collider = GetComponent<Collider2D>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+            
+            _lightController = GetComponentInChildren<LightController>();
+            _spriteMaterialController = GetComponentInChildren<SpriteMaterialController>();
+            _spriteMaterialController.SetTintColor(Color.white);
         }
 
         protected virtual void Start()
@@ -66,9 +71,11 @@ namespace OrbOfDeception.Items
             animator.SetTrigger(HideTrigger);
             idleParticles.Stop();
             onGetParticles.Play();
-            _itemLightBehaviour.PutOff();
+            _lightController.Hide();
             _collider.enabled = false;
             _hasBeenCollected = true;
+            
+            _soundsPlayer.Play("Collected");
             
             OnCollect();
         }

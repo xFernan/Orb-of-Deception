@@ -1,3 +1,4 @@
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Orb;
 using OrbOfDeception.Rooms;
@@ -29,11 +30,13 @@ namespace OrbOfDeception.Switch
 
         private bool _isActivated;
         private SpriteRenderer _spriteRenderer;
+        private SoundsPlayer _soundsPlayer;
 
         private void Awake()
         {
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+            
             var isBlack = color == GameEntity.EntityColor.Black;
             _spriteRenderer.sprite =
                 isBlack ? blackNotActivatedSprite : whiteNotActivatedSprite;
@@ -60,7 +63,10 @@ namespace OrbOfDeception.Switch
         private void Activate()
         {
             if (_isActivated)
+            {
+                _soundsPlayer.Play("Touch");
                 return;
+            }
             
             _isActivated = true;
             _spriteRenderer.sprite =
@@ -68,6 +74,7 @@ namespace OrbOfDeception.Switch
             idleParticles.Stop();
             activateParticles.Play();
             onActivate?.Invoke();
+            _soundsPlayer.Play("Activated");
             
             SaveSystem.AddSwitchActivated(switchID);
         }
@@ -76,6 +83,8 @@ namespace OrbOfDeception.Switch
         {
             if (damageColor != color)
                 Activate();
+            else
+                _soundsPlayer.Play("Touch");
         }
 
         public bool IsActivated()

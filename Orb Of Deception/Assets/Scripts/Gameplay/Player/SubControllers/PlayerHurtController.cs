@@ -32,7 +32,7 @@ namespace OrbOfDeception.Player
             _isInvulnerable = true;
             _spriteAnimator!.SetTrigger(Hurt);
             _invulnerableEndDelay.SetNewDelay(_timeInvulnerable);
-            GameManager.Player.SoundsPlayer.Play("Damaged");
+            GameManager.Player.soundsPlayer.Play("Damaged");
         }
 
         private void EndHurt()

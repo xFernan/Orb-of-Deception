@@ -1,6 +1,9 @@
+using System;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Items;
 using OrbOfDeception.Rooms;
-using OrbOfDeception.UI.Menu;
+using OrbOfDeception.UI;
+using OrbOfDeception.UI.InGame_UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +24,7 @@ namespace OrbOfDeception.Statue
 
         private Animator _animator;
         private RectTransform _rectTransform;
+        private SoundsPlayer _soundsPlayer;
         
         private static readonly int ChangeMask = Animator.StringToHash("ChangeMask");
 
@@ -30,6 +34,29 @@ namespace OrbOfDeception.Statue
             
             _animator = GetComponent<Animator>();
             _rectTransform = GetComponent<RectTransform>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+        }
+
+        private void LateUpdate()
+        {
+            /*var pointerOffset = new Vector2
+            {
+                x = (Mathf.Round(Input.mousePosition.x / Screen.width * GameManager.WidthInPixels) -
+                     (float) GameManager.WidthInPixels / 2) / GameManager.Ppu,
+                y = (Mathf.Round(Input.mousePosition.y / Screen.height * GameManager.HeightInPixels) -
+                     (float) GameManager.HeightInPixels / 2) / GameManager.Ppu
+            };
+            
+            var cursorWorldPosition = (Vector2) GameManager.Camera.transform.position + pointerOffset;*/
+
+            var playerPosition = (Vector2) GameManager.Player.transform.position;
+            var cameraPosition = (Vector2) GameManager.Camera.transform.position;
+            
+            var maskMenuPosition = (playerPosition - cameraPosition) * GameManager.Ppu;
+            maskMenuPosition.x = Mathf.Round(maskMenuPosition.x) + offsetX * GameManager.Player.HorizontalMovementController.Orientation;
+            maskMenuPosition.y = Mathf.Round(maskMenuPosition.y);
+
+            _rectTransform.anchoredPosition = maskMenuPosition;
         }
 
         public void InitializeMasksUnlocked()
@@ -80,14 +107,17 @@ namespace OrbOfDeception.Statue
         {
             if (_masksUnlocked.Length <= 1)
             {
-                // Play "Wrong" Sound Effect.
+                _soundsPlayer.Play("Negation");
                 return;
             }
+            
+            _soundsPlayer.Play("EquipMask");
             
             _currentMaskID = (newMaskID) % _masksUnlocked.Length;
             SaveSystem.currentMaskType = _masksUnlocked[_currentMaskID].maskType;
             _animator.SetTrigger(ChangeMask);
             GameManager.Player.MaskController.PlayMaskChangeAnimation();
+            InGameUIController.Instance.UIGemsController.UpdateGems();
         }
 
         public void ApplyOffset()

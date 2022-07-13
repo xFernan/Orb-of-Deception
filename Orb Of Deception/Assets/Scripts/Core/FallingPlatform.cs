@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using OrbOfDeception.Audio;
 using UnityEngine;
 
 namespace OrbOfDeception.Core
@@ -20,8 +21,10 @@ namespace OrbOfDeception.Core
         private Bounds _platformBounds;
         
         private Animator _animator;
-        private BoxCollider2D _collider;
         private SpriteRenderer _spriteRenderer;
+        private SoundsPlayer _soundsPlayer;
+        
+        public BoxCollider2D PlatformCollider { get; private set; }
         
         private static readonly int FallTrigger = Animator.StringToHash("Fall");
         private static readonly int RecoverTrigger = Animator.StringToHash("Recover");
@@ -35,8 +38,9 @@ namespace OrbOfDeception.Core
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _collider = GetComponent<BoxCollider2D>();
+            PlatformCollider = GetComponent<BoxCollider2D>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
 
             AdjustPlatformSize();
         }
@@ -54,11 +58,11 @@ namespace OrbOfDeception.Core
             var fallingParticlesEmission = fallingParticles.emission;
             fallingParticlesEmission.rateOverTime = particlesRateOnFalling * width;
 
-            var size = _collider.size;
+            var size = PlatformCollider.size;
             size = new Vector2(width, size.y);
-            _collider.size = size;
+            PlatformCollider.size = size;
 
-            _platformBounds = new Bounds {size = size, center = transform.position + (Vector3) _collider.offset};
+            _platformBounds = new Bounds {size = size, center = transform.position + (Vector3) PlatformCollider.offset};
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -85,13 +89,15 @@ namespace OrbOfDeception.Core
         {
             _isFalling = true;
             
+            _soundsPlayer.Play("Falling");
+            
             fallingParticles.Play();
             _animator.enabled = false;
             _spriteRenderer.transform.DOShakePosition(0.2f, 0.15f, 20);
             
             yield return new WaitForSeconds(timePreparingToFall);
             
-            _collider.enabled = false;
+            PlatformCollider.enabled = false;
             if (AstarPath.active != null)
                 AstarPath.active.UpdateGraphs(_platformBounds);
             _animator.enabled = true;
@@ -100,11 +106,12 @@ namespace OrbOfDeception.Core
             yield return new WaitForSeconds(timeUntilRecovering);
 
             _animator.SetTrigger(RecoverTrigger);
+            _soundsPlayer.Play("Recovering");
         }
 
         private void OnRecoverEnds()
         {
-            _collider.enabled = true;
+            PlatformCollider.enabled = true;
             if (AstarPath.active != null)
                 AstarPath.active.UpdateGraphs(_platformBounds);
             

@@ -1,5 +1,6 @@
 using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ namespace OrbOfDeception.UI
         //[SerializeField] private UnityEvent onClick = new UnityEvent();
 
         [SerializeField] private UIArrowSelector[] arrows;
+        [SerializeField] private TextMeshProUGUI text;
 
         private Button _button;
         private SoundsPlayer _soundsPlayer;
@@ -25,6 +27,7 @@ namespace OrbOfDeception.UI
         private void Start()
         {
             _button.interactable = false;
+            text.raycastTarget = false;
         }
 
         public void OnPointerEnter()
@@ -68,6 +71,7 @@ namespace OrbOfDeception.UI
             base.Show();
 
             _button.interactable = true;
+            text.raycastTarget = true;
         }
 
         public override void Hide()
@@ -75,6 +79,7 @@ namespace OrbOfDeception.UI
             base.Hide();
 
             _button.interactable = false;
+            text.raycastTarget = false;
             HideArrows();
         }
     }

@@ -3,7 +3,7 @@ using OrbOfDeception.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OrbOfDeception.UI.Menu
+namespace OrbOfDeception.UI
 {
     public class PauseMenuDarkBackgroundController : HideableElement
     {

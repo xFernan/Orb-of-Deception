@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using OrbOfDeception.UI.InGame_UI;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace OrbOfDeception.UI.Menu
+namespace OrbOfDeception.UI
 {
     public abstract class MenuController : MonoBehaviour
     {
@@ -15,18 +16,12 @@ namespace OrbOfDeception.UI.Menu
             _images = GetComponentsInChildren<Graphic>();
         }
 
-        private void Start()
-        {
-            AllowRaycasts(false);
-        }
-
         public virtual void Open()
         {
             isOpened = true;
 
             if (InGameMenuManager.Instance != null)
                 InGameMenuManager.Instance.currentMenu = this;
-            AllowRaycasts(true);
         }
         
         public virtual void Close()
@@ -35,15 +30,6 @@ namespace OrbOfDeception.UI.Menu
 
             if (InGameMenuManager.Instance != null)
                 InGameMenuManager.Instance.currentMenu = null;
-            AllowRaycasts(false);
-        }
-
-        private void AllowRaycasts(bool isAllowed)
-        {
-            foreach (var image in _images)
-            {
-                image.raycastTarget = isAllowed;
-            }
         }
     }
 }

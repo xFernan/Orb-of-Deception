@@ -14,5 +14,19 @@ namespace OrbOfDeception.Door
             GameManager.Camera.Shake(0.3f); // Provisional.
             closeParticles.Play();
         }
+
+        protected override void OnOpening()
+        {
+            base.OnOpening();
+            
+            soundsPlayer.Play("Opening");
+        }
+
+        protected override void OnClosing()
+        {
+            base.OnClosing();
+            
+            soundsPlayer.Play("Closing");
+        }
     }
 }

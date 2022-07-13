@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Core;
+﻿using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using Pathfinding;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace OrbOfDeception.Enemy.Enemy2
         private readonly Rigidbody2D _rigidbody;
         private readonly Seeker _seeker;
         private readonly SpriteRenderer _spriteRenderer;
+        private readonly SoundsPlayer _soundsPlayer;
         
         private readonly Transform _transform;
         private readonly float _nextWaypointDistance;
@@ -33,6 +35,7 @@ namespace OrbOfDeception.Enemy.Enemy2
             _transform = enemy.transform;
             _seeker = seeker;
             _spriteRenderer = spriteRenderer;
+            _soundsPlayer = enemy.soundsPlayer;
             _nextWaypointDistance = nextWaypointDistance;
 
             _updatePathDelayer = new MethodDelayer(enemy, UpdatePath);
@@ -43,6 +46,7 @@ namespace OrbOfDeception.Enemy.Enemy2
             base.Enter();
 
             UpdatePath();
+            _soundsPlayer.Play("Chasing");
         }
 
         private void UpdatePath()

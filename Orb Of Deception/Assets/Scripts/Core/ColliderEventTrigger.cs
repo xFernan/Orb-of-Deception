@@ -7,7 +7,8 @@ namespace OrbOfDeception.Core
     {
         [SerializeField] private bool disableWhenTrigger = true;
         [SerializeField] private LayerMask layersToTrigger;
-        public Action onTrigger;
+        public Action onTriggerEnter;
+        public Action onTriggerExit;
 
         private Collider2D[] _colliders;
 
@@ -22,12 +23,20 @@ namespace OrbOfDeception.Core
             {
                 if (disableWhenTrigger)
                 {
-                    foreach (var collider in _colliders)
+                    foreach (var colliderDetector in _colliders)
                     {
-                        collider.enabled = false;
+                        colliderDetector.enabled = false;
                     }
                 }
-                onTrigger?.Invoke();
+                onTriggerEnter?.Invoke();
+            }
+        }
+        
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (layersToTrigger == (layersToTrigger | 1 << other.gameObject.layer))
+            {
+                onTriggerExit?.Invoke();
             }
         }
     }

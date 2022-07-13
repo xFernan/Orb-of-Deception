@@ -1,9 +1,10 @@
 using System;
+using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core.Scenes;
 using OrbOfDeception.Player;
 using OrbOfDeception.UI;
-using OrbOfDeception.UI.Menu;
+using OrbOfDeception.UI.InGame_UI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,14 +22,28 @@ namespace OrbOfDeception.Rooms
         
         [SerializeField] private bool showAreaTitle = false;
         [SerializeField] private CameraLimits onEnterCameraLimits;
+        
+        [Space]
+        
+        [SerializeField] private bool playMusicOnEnter = false;
+        [ShowIf(nameof(playMusicOnEnter), true)] [SerializeField] private string musicNameOnEnter;
 
         public void OnPlacingPlayerOnRoomChanger()
         {
-            GameManager.Camera.ChangeCameraLimits(onEnterCameraLimits);
-            onEnterEvent.Invoke();
+            GameManager.Camera.SetNewCameraLimits(onEnterCameraLimits);
+            //onEnterEvent.Invoke();
             
-            if (!showAreaTitle) return;
-            InGameMenuManager.Instance.titleDisplayer.DisplayTitle(RoomManager.Instance.areaName);
+            if (showAreaTitle)
+                InGameMenuManager.Instance.titleDisplayer.DisplayTitle(RoomManager.CurrentRoom.areaName);
+
+            if (playMusicOnEnter)
+            {
+                if (musicNameOnEnter == default)
+                    MusicManager.Instance.StopMusic();
+                else
+                    MusicManager.Instance.PlayMusic(musicNameOnEnter, 0.15f);
+                    
+            }
         }
 
         public Vector3 GetPlayerPlacePosition()
@@ -39,6 +54,7 @@ namespace OrbOfDeception.Rooms
         public void OnPlayerHitEnter()
         {
             ChangeScreen();
+            onEnterEvent.Invoke();
         }
 
         public void OnPlayerHitExit()
@@ -48,10 +64,13 @@ namespace OrbOfDeception.Rooms
 
         private void ChangeScreen()
         {
-            RoomManager.Instance.CollectRemainingEssences();
+            RoomManager.CurrentRoom.OnExitRoom();
             LevelChanger.Instance.FadeToScene(sceneName);
             RoomManager.targetRoomChangerID = nextRoomPlayerPositionID;
             GameManager.Player.isControlled = false;
+            
+            if (playMusicOnEnter)
+                MusicManager.Instance.StopMusic();
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using OrbOfDeception.Audio;
 using UnityEngine;
 
 namespace OrbOfDeception.Enemy.Enemy3
@@ -15,6 +16,7 @@ namespace OrbOfDeception.Enemy.Enemy3
         
         private Enemy3Parameters _enemyParameters;
         private Animator _animator;
+        private SoundsPlayer _soundsPlayer;
         
         private static readonly int IdleTrigger = Animator.StringToHash("Idle");
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -23,6 +25,7 @@ namespace OrbOfDeception.Enemy.Enemy3
         {
             _enemyParameters = GetComponentInParent<Enemy3Parameters>();
             _animator = GetComponent<Animator>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
         }
 
         public void EnterAttack()
@@ -62,6 +65,7 @@ namespace OrbOfDeception.Enemy.Enemy3
             idleParticles.Stop();
             attackParticles.Play();
             Instantiate(spellPrefab, spellSpawnTransform.position, Quaternion.identity);
+            _soundsPlayer.Play("Spell");
         }
 
         public void UpdateXOffset(bool isOrientationRight)

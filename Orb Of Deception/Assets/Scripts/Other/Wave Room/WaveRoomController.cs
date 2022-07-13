@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
 using OrbOfDeception.Core;
 using OrbOfDeception.Door;
@@ -47,7 +48,7 @@ namespace OrbOfDeception.Wave_Room
 
         private void Start()
         {
-            eventTrigger.onTrigger += StartWaveRoom;
+            eventTrigger.onTriggerEnter += StartWaveRoom;
             _numWaves = waves.Length;
             _currentWave = 0;
         }
@@ -62,6 +63,8 @@ namespace OrbOfDeception.Wave_Room
             
             _hasStarted = true;
             StartCoroutine(StartWaveRoomCoroutine());
+            
+            MusicManager.Instance.PlayMusic("WaveRoom", 1);
         }
 
         private IEnumerator StartWaveRoomCoroutine()
@@ -76,6 +79,8 @@ namespace OrbOfDeception.Wave_Room
         {
             SaveSystem.AddWaveRoomCompleted(waveRoomID);
             StartCoroutine(EndWaveRoomCoroutine());
+            
+            MusicManager.Instance.StopMusic(1);
         }
 
         private IEnumerator EndWaveRoomCoroutine()
@@ -98,7 +103,7 @@ namespace OrbOfDeception.Wave_Room
             foreach (var enemySpawner in enemySpawners)
             { 
                 enemySpawner.Spawn();
-                enemySpawner.enemyController.onDie += OnWaveEnemiesDie;
+                enemySpawner.EnemyController.onDie += OnWaveEnemiesDie;
             }
         }
         
@@ -137,12 +142,12 @@ namespace OrbOfDeception.Wave_Room
         private void CenterCamera()
         {
             _beforeWaveRoomCameraLimits = GameManager.Camera.cameraLimits;
-            GameManager.Camera.cameraLimits = _waveRoomCameraLimits;
+            GameManager.Camera.LerpToNewCameraLimits(_waveRoomCameraLimits);
         }
 
         private void DecenterCamera()
         {
-            GameManager.Camera.cameraLimits = _beforeWaveRoomCameraLimits;
+            GameManager.Camera.LerpToNewCameraLimits(_beforeWaveRoomCameraLimits);
         }
         
         #endregion

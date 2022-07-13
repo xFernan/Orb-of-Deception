@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OrbOfDeception.CameraBehaviours
@@ -6,8 +7,8 @@ namespace OrbOfDeception.CameraBehaviours
     {
         [SerializeField] private bool isDrawingOnGizmos = false;
         [SerializeField] private Color gizmosColor = Color.magenta;
-        [SerializeField] private Transform limitSouthWest;
-        [SerializeField] private Transform limitNorthEast;
+        [SerializeField] protected Transform limitSouthWest;
+        [SerializeField] protected Transform limitNorthEast;
 
         private void OnDrawGizmos()
         {
@@ -61,6 +62,15 @@ namespace OrbOfDeception.CameraBehaviours
         {
             return limitNorthEast.position.y;
         }
-        
+
+        public Vector3 GetSouthWestLimit()
+        {
+            return limitSouthWest.position;
+        }
+
+        public Vector3 GetNorthEastLimit()
+        {
+            return limitNorthEast.position;
+        }
     }
 }

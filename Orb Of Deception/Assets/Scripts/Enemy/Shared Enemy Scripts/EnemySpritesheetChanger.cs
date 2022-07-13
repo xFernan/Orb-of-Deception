@@ -23,12 +23,12 @@ namespace OrbOfDeception.Enemy
             
             _enemyController = GetComponentInParent<EnemyController>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
-            _enemyController.onMaskColorChange += UpdateMask;
         }
 
         private void Start()
         {
+            _enemyController.BaseParameters.onMaskColorChange += UpdateMask;
+            
             for (var i = 0; i < whiteMaskSpritesheet.Length; i++)
             {
                 _nameIndexDictionary.Add(whiteMaskSpritesheet[i].name, i);
@@ -61,20 +61,19 @@ namespace OrbOfDeception.Enemy
         [Button]
         private void UpdateMask()
         {
-            var maskColor = GetComponentInParent<EnemyParameters>().maskColor;
-            var spriteRenderer = GetComponent<SpriteRenderer>();
+            var maskColor = GetComponentInParent<EnemyParameters>().MaskColor;
 
-            spriteRenderer.sprite = maskColor switch
+            _spriteRenderer.sprite = maskColor switch
             {
                 GameEntity.EntityColor.Black => blackMaskSpritesheet[0],
                 GameEntity.EntityColor.White => whiteMaskSpritesheet[0],
-                _ => spriteRenderer.sprite
+                _ => _spriteRenderer.sprite
             };
         }
 
         private void OnDisable()
         {
-            _enemyController.onMaskColorChange -= UpdateMask;
+            _enemyController.BaseParameters.onMaskColorChange -= UpdateMask;
         }
     }
 }

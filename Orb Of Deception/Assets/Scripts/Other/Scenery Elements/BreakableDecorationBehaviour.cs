@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
 using OrbOfDeception.Essence_of_Punishment;
@@ -24,6 +25,7 @@ namespace OrbOfDeception.Scenery_Elements
         private SpriteMaterialController _materialController;
         private ParticleSystem _brokenParticles;
         private EssenceOfPunishmentSpawner _essenceOfPunishmentSpawner;
+        private SoundsPlayer _soundsPlayer;
             
         private bool _isBroken;
         private float _dissolveValue;
@@ -41,6 +43,7 @@ namespace OrbOfDeception.Scenery_Elements
             _brokenParticles = GetComponentInChildren<ParticleSystem>();
             _materialController = GetComponentInChildren<SpriteMaterialController>();
             _essenceOfPunishmentSpawner = GetComponentInChildren<EssenceOfPunishmentSpawner>();
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
         }
 
         private void Start()
@@ -73,6 +76,8 @@ namespace OrbOfDeception.Scenery_Elements
 
             if (Random.Range(0.0f, 1.0f) <= dropProbability) DropEssenceOfPunishment();
             
+            _soundsPlayer.Play("Destroying");
+            
             if (isIrreparable)
                 SaveSystem.AddIrreparableDecorationBroken(decorationID);
             else
@@ -94,7 +99,11 @@ namespace OrbOfDeception.Scenery_Elements
         
         public void OnOrbHitEnter(GameEntity.EntityColor damageColor = GameEntity.EntityColor.Other, int damage = 0)
         {
-            if (_isBroken) return;
+            if (_isBroken)
+            {
+                _soundsPlayer.Play("Destroyed");
+                return;
+            }
             
             BreakDecoration();
         }

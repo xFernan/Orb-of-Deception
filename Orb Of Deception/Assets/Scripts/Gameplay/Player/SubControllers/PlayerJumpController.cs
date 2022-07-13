@@ -5,7 +5,7 @@ namespace OrbOfDeception.Player
     public class PlayerJumpController
     {
         private readonly Rigidbody2D _rigidbody;
-        private readonly GroundDetector _groundDetector;
+        private readonly PlayerGroundDetector _groundDetector;
         private readonly float _jumpForce;
         private readonly float _jumpTime;
         private readonly float _maxFallVelocity;
@@ -13,7 +13,7 @@ namespace OrbOfDeception.Player
         private float _jumpTimeCounter;
         private bool _isJumping;
 
-        public PlayerJumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, float maxFallVelocity, GroundDetector groundDetector)
+        public PlayerJumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, float maxFallVelocity, PlayerGroundDetector groundDetector)
         {
             _rigidbody = rigidbody;
             _groundDetector = groundDetector;
@@ -34,7 +34,7 @@ namespace OrbOfDeception.Player
             _jumpTimeCounter = 0;
             
             GameManager.Player.jumpParticles.Play();
-            GameManager.Player.SoundsPlayer.Play("Jumping");
+            GameManager.Player.soundsPlayer.Play("Jumping");
         }
 
         public void StopJumping()

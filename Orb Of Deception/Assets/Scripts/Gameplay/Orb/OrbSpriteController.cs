@@ -1,3 +1,4 @@
+using System;
 using OrbOfDeception.Core;
 using UnityEngine;
 
@@ -24,6 +25,12 @@ namespace OrbOfDeception.Orb
                 _ => SpriteRenderer.sprite
             };
         }
-        
+
+        /*private void LateUpdate() // Snap to player sprite coordinate system.
+        {
+            var playerSpritePosition = GameManager.Player.spriteObject.transform.position;
+            transform.position = SnapToGrid.SnapVector3ToGrid(transform.parent.position - playerSpritePosition) +
+                              playerSpritePosition + new Vector3(1/32.0f, 1/32.0f, 0);
+        }*/
     }
 }

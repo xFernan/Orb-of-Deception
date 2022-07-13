@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
 using OrbOfDeception.Orb;
@@ -18,6 +19,8 @@ namespace OrbOfDeception.Scenery_Elements
         [ShowIf("hasFakeWall", true)] [SerializeField] private GameObject fakeWall;
         [ShowIf("hasFakeWall", true)] [SerializeField] private List<int> roomChangerIdsToShowFakeWall;
 
+        private SoundsPlayer _soundsPlayer;
+        
         private SpriteMaterialController _secretWallFrontMaterial;
         private SpriteMaterialController _wallMaterial;
         private TilemapCollider2D _wallCollider;
@@ -29,6 +32,8 @@ namespace OrbOfDeception.Scenery_Elements
         
         private void Awake()
         {
+            _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+            
             _secretWallFrontMaterial = secretWallFront.GetComponent<SpriteMaterialController>();
             _wallCollider = GetComponent<TilemapCollider2D>();
             _wallMaterial = GetComponent<SpriteMaterialController>();
@@ -71,6 +76,8 @@ namespace OrbOfDeception.Scenery_Elements
             _wallCollider.enabled = false;
 
             AstarPath.active.Scan();
+            
+            _soundsPlayer.Play("SecretDiscovered");
             
             _isOpen = true;
         }

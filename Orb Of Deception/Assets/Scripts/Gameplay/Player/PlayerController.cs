@@ -14,8 +14,13 @@ namespace OrbOfDeception.Player
     {
         #region Variables
 
+        public GameObject spriteObject;
         public SpriteRenderer bodySpriteRenderer;
         public SpriteRenderer maskSpriteRenderer;
+        public SoundsPlayer soundsPlayer;
+        
+        [Space]
+        
         [SerializeField] private float groundVelocity = 6;
         [SerializeField] private float airVelocity;
         [SerializeField] private float jumpForce = 5;
@@ -23,23 +28,32 @@ namespace OrbOfDeception.Player
         [SerializeField] private float maxFallVelocity = -5;
         [SerializeField] private float coyoteTime = 0.1f;
         [SerializeField] private float timeInvulnerable = 2;
-        public GameObject spriteObject;
+        
+        [Space]
+        
         [SerializeField] private Transform[] groundDetectors;
         [SerializeField] private Transform centralGroundDetector;
         [SerializeField] private float groundDetectionRayDistance;
-        [SerializeField] private InputManager inputManager;
+        
+        [Space]
+        
         public MultipleParticlesController deathParticlesController;
         public MultipleParticlesController jumpParticles;
         public ParticleSystem maskParticles;
-        public const int InitialHealth = 5; // Provisional.
+        
+        [Space]
+        
+        [SerializeField] private InputManager inputManager;
+        
+        public const int InitialHealth = 6; // Provisional.
 
-        public bool isControlled;
+        [HideInInspector] public bool isControlled;
         private Coroutine _standCoroutine; // Refactorizable.
         
         public Rigidbody2D Rigidbody { get; private set; }
+        public Collider2D Collider { get; private set; }
         public Animator Animator { get; private set; }
         public Animator SpriteAnimator { get; private set; }
-        public SoundsPlayer SoundsPlayer { get; private set; }
         
         public PlayerHorizontalMovementController HorizontalMovementController { get; private set; }
         public PlayerJumpController JumpController { get; private set; }
@@ -54,7 +68,7 @@ namespace OrbOfDeception.Player
         public PlayerSpriteDirectionController SpriteDirectionController { get; private set; }
         public PlayerStatueMenuController StatueMenuController { get; private set; }
         
-        public GroundDetector GroundDetector { get; private set; }
+        public PlayerGroundDetector GroundDetector { get; private set; }
         public GroundShadowController GroundShadowController { get; private set; }
         public EssenceOfPunishmentCounter EssenceOfPunishmentCounter { get; private set; }
         
@@ -62,7 +76,7 @@ namespace OrbOfDeception.Player
         
         public const int InControlState = 0;
         public const int KneelState = 1;
-        public const int DashState = 2;
+        //public const int DashState = 2;
         
         #endregion
     
@@ -73,16 +87,16 @@ namespace OrbOfDeception.Player
             base.OnAwake();
             
             Rigidbody = GetComponent<Rigidbody2D>();
+            Collider = GetComponent<Collider2D>();
             Animator = GetComponent<Animator>();
             SpriteAnimator = spriteObject.GetComponent<Animator>();
-            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
             
             GroundShadowController = GetComponentInChildren<GroundShadowController>();
             StatueMenuController = GetComponentInChildren<PlayerStatueMenuController>();
             MaskController = GetComponentInChildren<PlayerMaskController>();
             SpriteDirectionController = GetComponentInChildren<PlayerSpriteDirectionController>();
             
-            GroundDetector = new GroundDetector(groundDetectors, centralGroundDetector, groundDetectionRayDistance, coyoteTime);
+            GroundDetector = new PlayerGroundDetector(groundDetectors, centralGroundDetector, groundDetectionRayDistance, coyoteTime);
             JumpController = new PlayerJumpController(Rigidbody, jumpForce, jumpTime, maxFallVelocity, GroundDetector);
             HorizontalMovementController = new PlayerHorizontalMovementController(Rigidbody, groundVelocity, airVelocity, inputManager);
             AnimationController = new PlayerAnimationController(Animator, Rigidbody, GroundDetector);
@@ -97,7 +111,7 @@ namespace OrbOfDeception.Player
             inputManager.Jump = JumpController.Jump;
             inputManager.StopJumping = JumpController.StopJumping;
             
-            SaveSystem.UnlockMask(PlayerMaskController.MaskType.ShinyMask);
+            SaveSystem.UnlockMask(PlayerMaskController.MaskType.ShinyMask); // Provisional, hacer en script de inicio de partida.
             
             AddState(InControlState, new NormalState());
             AddState(KneelState, new KneelState());

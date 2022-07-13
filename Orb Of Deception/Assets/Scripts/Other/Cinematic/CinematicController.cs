@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
+using System.Linq;
 using DG.Tweening;
+using OrbOfDeception.Audio;
 using OrbOfDeception.Core;
 using OrbOfDeception.Core.Scenes;
+using OrbOfDeception.UI;
 using UnityEngine;
 
 namespace OrbOfDeception.Cinematic
@@ -25,12 +29,21 @@ namespace OrbOfDeception.Cinematic
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private CinematicWhiteFlash cinematicWhiteFlash;
         [SerializeField] private Animator cinematicBackgroundLightAnimator;
+        [SerializeField] private LoopSoundPlayer altarLoopSoundPlayer;
+
+        public SoundsPlayer SoundsPlayer { get; private set; }
         
         private static readonly int Appear = Animator.StringToHash("Appear");
+
+        private void Awake()
+        {
+            SoundsPlayer = GetComponentInChildren<SoundsPlayer>();
+        }
 
         private void Start()
         {
             StartCoroutine(CinematicCoroutine());
+            CursorController.Instance.HideCursor();
         }
 
         private IEnumerator CinematicCoroutine()
@@ -44,6 +57,8 @@ namespace OrbOfDeception.Cinematic
                 {
                     text.Show();
                 }
+                
+                SoundsPlayer.Play("TextAppearing");
             }
 
             yield return new WaitForSeconds(2);
@@ -57,6 +72,7 @@ namespace OrbOfDeception.Cinematic
             }
 
             cinematicBackgroundLightAnimator.SetTrigger(Appear);
+            SoundsPlayer.Play("LightAppearing");
             
             yield return new WaitForSeconds(1);
             
@@ -64,6 +80,7 @@ namespace OrbOfDeception.Cinematic
             
             yield return new WaitForSeconds(2);
             
+            altarLoopSoundPlayer.Stop();
             LevelChanger.Instance.FadeToScene("ConfigurationScene");
         }
     }

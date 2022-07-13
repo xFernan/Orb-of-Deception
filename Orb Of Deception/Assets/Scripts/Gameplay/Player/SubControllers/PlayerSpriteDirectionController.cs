@@ -13,7 +13,7 @@ namespace OrbOfDeception.Player
             if (PauseController.Instance.IsPaused)
                 return;
             
-            var flipFloat = GameManager.Instance.playerController.HorizontalMovementController.Direction;
+            var flipFloat = GameManager.Instance.playerController.HorizontalMovementController.Orientation;
             
             if (flipFloat == 0)
                 return;

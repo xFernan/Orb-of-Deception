@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Core;
+﻿using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using OrbOfDeception.Rooms;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace OrbOfDeception.Door
         [ShowIf("dependsOnSwitch")] [SerializeField] private int doorID;
         
         private Animator _animator;
+        protected SoundsPlayer soundsPlayer;
         
         private static readonly int OpenTrigger = Animator.StringToHash("Open");
         private static readonly int OpenedTrigger = Animator.StringToHash("Opened");
@@ -22,7 +24,9 @@ namespace OrbOfDeception.Door
         private void Awake()
         {
             _isOpened = true;
+            
             _animator = GetComponent<Animator>();
+            soundsPlayer = GetComponentInChildren<SoundsPlayer>();
         }
 
         private void Start()
@@ -35,7 +39,7 @@ namespace OrbOfDeception.Door
             }
         }
 
-        public virtual void Open()
+        public void Open()
         {
             if (_isOpened)
                 return;
@@ -45,17 +49,31 @@ namespace OrbOfDeception.Door
             
             _isOpened = true;
             _animator.SetTrigger(OpenTrigger);
+
+            OnOpening();
         }
 
-        public virtual void Close()
+        protected virtual void OnOpening()
+        {
+            
+        }
+        
+        public void Close()
         {
             if (!_isOpened)
                 return;
             
             _isOpened = false;
             _animator.SetTrigger(CloseTrigger);
+
+            OnClosing();
         }
 
+        protected virtual void OnClosing()
+        {
+            
+        }
+        
         public void Response()
         {
             if (_isOpened)

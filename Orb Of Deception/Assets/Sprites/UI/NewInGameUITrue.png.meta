@@ -159,7 +159,7 @@ TextureImporter:
         y: 22
         width: 5
         height: 4
-      alignment: 4
+      alignment: 9
       pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -307,7 +307,7 @@ TextureImporter:
         width: 6
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,6 +315,132 @@ TextureImporter:
       bones: []
       spriteID: 18b9734ea66569a40800000000000000
       internalID: 5374578222408637313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_9
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 27
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cf1d1a754a9b94785e2ac9667aadd9
+      internalID: -941955049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 23
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b52155dcdcfea74ca157b96e264ac07
+      internalID: -1215875562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 19
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e356ebaf73e694478a66813a1405a87
+      internalID: -234496563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 15
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1116ca314288d7f4aa880370cca94a22
+      internalID: -715288689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 11
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d762d3929d04843a63172ef1bcce27
+      internalID: -1190109304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewInGameUITrue_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 7
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3fc0fa10047934eb657770fecb9df3
+      internalID: 1120780678
       vertices: []
       indices: 
       edges: []
@@ -334,9 +460,15 @@ TextureImporter:
       NewInGameUITrue_7: 2853979474926395480
       NewInGameUITrue_8: 5374578222408637313
       NewInGameUITrue_3: 620266446226380466
+      NewInGameUITrue_14: 1120780678
       NewInGameUITrue_5: 7702822633153525246
+      NewInGameUITrue_10: -1215875562
+      NewInGameUITrue_13: -1190109304
       NewInGameUITrue_6: 9212755555204733002
+      NewInGameUITrue_12: -715288689
       NewInGameUITrue_4: 7737831578506318460
+      NewInGameUITrue_11: -234496563
+      NewInGameUITrue_9: -941955049
       NewInGameUITrue_0: -5795212428641043401
       NewInGameUITrue_2: -7156429347829173450
   spritePackingTag: 

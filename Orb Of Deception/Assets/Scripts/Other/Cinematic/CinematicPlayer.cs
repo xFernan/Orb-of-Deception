@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OrbOfDeception.Cinematic
@@ -8,6 +9,13 @@ namespace OrbOfDeception.Cinematic
         [SerializeField] private SpriteRenderer maskSpriteRenderer;
         [SerializeField] private SpriteRenderer shadowSpriteRenderer;
         [SerializeField] private ParticleSystem maskParticles;
+
+        private CinematicController _cinematicController;
+
+        private void Awake()
+        {
+            _cinematicController = FindObjectOfType<CinematicController>();
+        }
 
         private void Start()
         {
@@ -22,6 +30,7 @@ namespace OrbOfDeception.Cinematic
             maskSpriteRenderer.enabled = true;
             shadowSpriteRenderer.enabled = true;
             maskParticles.Play();
+            _cinematicController.SoundsPlayer.Play("PlayerAppearing");
         }
     }
 }

@@ -41,9 +41,8 @@ namespace OrbOfDeception.Orb
         
         [Header("Orb parameters")]
         public Transform orbIdlePositionTransform;
-        [SerializeField] private float idleFloatingMoveDistance = 1;
         [SerializeField] private float idleFloatingMoveVelocity = 1;
-        [SerializeField] private float idleVelocity = 0.5f;
+        [SerializeField] private float idlePlayerFollowSmoothTime = 0.05f;
         [SerializeField] private float radiusToGoIdle;
         
         [Space]
@@ -119,8 +118,7 @@ namespace OrbOfDeception.Orb
             _states = new Dictionary<int, State>
             {
                 {
-                    OnPlayerState, new OnPlayerState(this, idleVelocity, idleFloatingMoveVelocity,
-                        idleFloatingMoveDistance)
+                    OnPlayerState, new OnPlayerState(this, idlePlayerFollowSmoothTime, idleFloatingMoveVelocity)
                 },
                 {
                     DirectionalAttackState, new DirectionalAttackState(this,
@@ -199,14 +197,26 @@ namespace OrbOfDeception.Orb
             particles.Play(hitEntity);
         }
         
-        private Vector3 GetDirectionFromOrbToMouse()
+        private Vector2 GetDirectionFromOrbToMouse()
         {
-            var worldPosition2D = GameManager.Camera.cameraComponent.ScreenToWorldPoint(Input.mousePosition);
+            /*var worldPosition2D = GameManager.Camera.cameraComponent.ScreenToWorldPoint(Input.mousePosition);
+             
             var position = transform.position;
             worldPosition2D.z = position.z;
             var direction = (worldPosition2D - position).normalized;
             
-            return direction;
+            return direction;*/
+
+            var pointerOffset = new Vector2
+            {
+                x = (Mathf.Round(Input.mousePosition.x / Screen.width * GameManager.WidthInPixels) -
+                     (float) GameManager.WidthInPixels / 2) / GameManager.Ppu,
+                y = (Mathf.Round(Input.mousePosition.y / Screen.height * GameManager.HeightInPixels) -
+                     (float) GameManager.HeightInPixels / 2) / GameManager.Ppu
+            };
+            
+            var cursorWorldPosition = (Vector2) GameManager.Camera.transform.position + pointerOffset;
+            return (cursorWorldPosition - (Vector2)transform.position).normalized;
         }
         
         private void DirectionalAttack(Vector2 direction)
@@ -249,6 +259,8 @@ namespace OrbOfDeception.Orb
             _orbTrailController.SetTrailColor(particlesColor);
             
             colorChangeParticles.Play();
+            
+            SoundsPlayer.Play("ColorChanging");
         }
 
         private void InitColorChangeDelay()

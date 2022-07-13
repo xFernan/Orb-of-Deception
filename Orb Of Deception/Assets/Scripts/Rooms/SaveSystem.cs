@@ -14,7 +14,7 @@ namespace OrbOfDeception.Rooms
         
         public static void AddEnemyDead(int enemyId)
         {
-            var roomId = RoomManager.Instance.GetRoomID();
+            var roomId = RoomManager.CurrentRoom.GetRoomID();
             
             if (!EnemiesKilled.ContainsKey(roomId))
                 EnemiesKilled.Add(roomId, new List<int>());
@@ -23,7 +23,7 @@ namespace OrbOfDeception.Rooms
 
         public static bool IsEnemyDead(int enemyID)
         {
-            var roomID = RoomManager.Instance.GetRoomID();
+            var roomID = RoomManager.CurrentRoom.GetRoomID();
             if (!EnemiesKilled.ContainsKey(roomID))
                 return false;
 
@@ -43,7 +43,7 @@ namespace OrbOfDeception.Rooms
         
         public static void AddDecorationBroken(int decorationID)
         {
-            var roomId = RoomManager.Instance.GetRoomID();
+            var roomId = RoomManager.CurrentRoom.GetRoomID();
             
             if (!DecorationsBroken.ContainsKey(roomId))
                 DecorationsBroken.Add(roomId, new List<int>());
@@ -52,7 +52,7 @@ namespace OrbOfDeception.Rooms
 
         public static bool IsDecorationBroken(int decorationID)
         {
-            var roomID = RoomManager.Instance.GetRoomID();
+            var roomID = RoomManager.CurrentRoom.GetRoomID();
             if (!DecorationsBroken.ContainsKey(roomID))
                 return false;
 
@@ -72,7 +72,7 @@ namespace OrbOfDeception.Rooms
         
         public static void AddIrreparableDecorationBroken(int decorationID)
         {
-            var roomId = RoomManager.Instance.GetRoomID();
+            var roomId = RoomManager.CurrentRoom.GetRoomID();
             
             if (!IrreparableDecorationsBroken.ContainsKey(roomId))
                 IrreparableDecorationsBroken.Add(roomId, new List<int>());
@@ -81,7 +81,7 @@ namespace OrbOfDeception.Rooms
 
         public static bool IsIrreparableDecorationBroken(int decorationID)
         {
-            var roomID = RoomManager.Instance.GetRoomID();
+            var roomID = RoomManager.CurrentRoom.GetRoomID();
             if (!IrreparableDecorationsBroken.ContainsKey(roomID))
                 return false;
 
@@ -272,6 +272,22 @@ namespace OrbOfDeception.Rooms
         public static Vector3 GetSpawnPosition()
         {
             return _spawnPosition;
+        }
+        
+        #endregion
+
+        #region Orb Tutorials
+        
+        private static readonly HashSet<int> OrbTutorialsDisplayed = new HashSet<int>();
+        
+        public static void AddTutorialDisplayed(int tutorialID)
+        {
+            OrbTutorialsDisplayed.Add(tutorialID);
+        }
+
+        public static bool HasTutorialBeenDisplayed(int tutorialID)
+        {
+            return OrbTutorialsDisplayed.Contains(tutorialID);
         }
         
         #endregion

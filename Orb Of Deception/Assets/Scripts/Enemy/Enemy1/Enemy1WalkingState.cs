@@ -6,6 +6,7 @@ namespace OrbOfDeception.Enemy.Enemy1
 
     public class WalkingState : EnemyState
     {
+        
         #region Variables
         
         private readonly Enemy1Parameters _parameters;

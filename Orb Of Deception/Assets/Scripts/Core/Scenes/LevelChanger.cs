@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace OrbOfDeception.Core.Scenes
@@ -21,7 +22,7 @@ namespace OrbOfDeception.Core.Scenes
                 return _instance;
             }
         }
-
+        
         public Animator anim;
         private string _sceneToLoad;
     
@@ -45,7 +46,7 @@ namespace OrbOfDeception.Core.Scenes
                 Destroy(gameObject);
             }
         }
-        
+
         public void FadeToScene(string sceneName)
         {
             _sceneToLoad = sceneName;
@@ -60,8 +61,7 @@ namespace OrbOfDeception.Core.Scenes
 
         public void FadeToExitGame()
         {
-            _sceneToLoad = "Exit";
-            anim.SetTrigger(FadeOut);
+            FadeToScene("Exit");
         }
 
         public void OnFadeComplete()

@@ -16,8 +16,8 @@ MonoBehaviour:
   itemDescription: The orb goes further.
   itemUISprite: {fileID: -6528091369214107821, guid: 4cb82b7aa8869d040a685e13235261c9,
     type: 3}
+  nameColor: {r: 0, g: 0.3899083, b: 1, a: 1}
   maskType: 1
   maskSprite: {fileID: -1789622665789230294, guid: a2cdf659558d2944d8491f7d6448a363,
     type: 3}
-  nameColor: {r: 0.1462264, g: 0.47909725, b: 1, a: 1}
   particlesColor: {r: 0, g: 0.27820212, b: 0.745283, a: 1}

@@ -16,7 +16,7 @@ namespace OrbOfDeception.Core
 
         protected virtual void Awake()
         {
-            var maskColor = GetComponentInParent<EnemyParameters>().maskColor;
+            var maskColor = GetComponentInParent<EnemyParameters>().MaskColor;
 
             switch (maskColor)
             {
