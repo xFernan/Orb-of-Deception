@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.UI
 {
     public class SnapToGridUI : MonoBehaviour
     {

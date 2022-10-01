@@ -1,9 +1,9 @@
+using OrbOfDeception.Core;
 using OrbOfDeception.Orb;
 using OrbOfDeception.Player;
-using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Rooms
 {
     public class RoomChangerDebug : MonoBehaviour
     {

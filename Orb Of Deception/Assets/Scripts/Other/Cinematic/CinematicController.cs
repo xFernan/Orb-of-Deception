@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Linq;
 using DG.Tweening;
@@ -57,8 +56,8 @@ namespace OrbOfDeception.Cinematic
                 {
                     text.Show();
                 }
-                
-                SoundsPlayer.Play("TextAppearing");
+
+                SoundsPlayer.Play(textToShow == texts.Last() ? "TextAppearingLast" : "TextAppearing");
             }
 
             yield return new WaitForSeconds(2);

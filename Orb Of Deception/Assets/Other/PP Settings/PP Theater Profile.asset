@@ -13,24 +13,15 @@ MonoBehaviour:
   m_Name: SplitToning
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   shadows:
     m_OverrideState: 1
     m_Value: {r: 0.4811321, g: 0.39262193, b: 0.39655572, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   highlights:
     m_OverrideState: 1
     m_Value: {r: 0.5188679, g: 0.46872687, b: 0.38915092, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   balance:
     m_OverrideState: 1
     m_Value: -0
-    min: -100
-    max: 100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

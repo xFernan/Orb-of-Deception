@@ -8,6 +8,9 @@ namespace OrbOfDeception.Door
 {
     public abstract class Door : MonoBehaviour, IOtherTriggerEnter
     {
+        
+        #region Variables
+        
         [SerializeField] private bool dependsOnSwitch = false;
         [ShowIf("dependsOnSwitch")] [SerializeField] private int doorID;
         
@@ -21,6 +24,10 @@ namespace OrbOfDeception.Door
 
         private bool _isOpened;
 
+        #endregion
+
+        #region Métodos
+        
         private void Awake()
         {
             _isOpened = true;
@@ -90,5 +97,7 @@ namespace OrbOfDeception.Door
         {
             Open();
         }
+        
+        #endregion
     }
 }

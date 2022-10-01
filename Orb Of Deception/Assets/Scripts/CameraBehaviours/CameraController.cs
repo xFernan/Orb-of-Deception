@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using OrbOfDeception.Core;
 using UnityEngine;
 
 namespace OrbOfDeception.CameraBehaviours

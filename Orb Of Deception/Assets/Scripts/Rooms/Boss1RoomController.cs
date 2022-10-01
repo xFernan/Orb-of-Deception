@@ -62,9 +62,9 @@ namespace OrbOfDeception.Rooms
             
             bossController.Appear();
             bossController.onDie += EndBossRoom;
-            InGameMenuManager.Instance.titleDisplayer.DisplayTitle("Sin");
+            InGameMenuManager.Instance.titleBossDisplayer.DisplayTitle("-Sin-");
             
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
             
             GameManager.Player.isControlled = true;
             bossController.InitBattle();
@@ -72,10 +72,6 @@ namespace OrbOfDeception.Rooms
             {
                 bossRoomSpawner.StartSpawning();
             }
-            
-            // Provisional lo siguiente;
-            //yield return new WaitForSeconds(6);
-            //ShowEndDemoScreen();
         }
 
         private void EndBossRoom()

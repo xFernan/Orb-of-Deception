@@ -5132,9 +5132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isIrreparable: 0
   decorationID: 0
-  dropProbability: 0.05
+  dropProbability: 0.15
   minDropAmount: 1
-  maxDropAmount: 2
+  maxDropAmount: 3
 --- !u!1 &7264296000714079434
 GameObject:
   m_ObjectHideFlags: 0

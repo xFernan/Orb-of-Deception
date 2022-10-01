@@ -5,7 +5,6 @@ using OrbOfDeception.Core;
 using OrbOfDeception.Core.Input;
 using OrbOfDeception.Patterns;
 using OrbOfDeception.Player;
-using OrbOfDeception.Rooms;
 using UnityEngine;
 
 namespace OrbOfDeception.Orb
@@ -20,7 +19,7 @@ namespace OrbOfDeception.Orb
             Pallid,
             Awakened
         }
-        
+
         [Header("Particles variables")]
         public ParticleSystem orbDirectionalAttackParticles;
         public ParticleSystem orbIdleParticles;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using OrbOfDeception.Core.Scenes;
 using OrbOfDeception.Rooms;
 using UnityEngine;

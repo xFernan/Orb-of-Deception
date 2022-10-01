@@ -14,6 +14,7 @@ namespace OrbOfDeception.Player
         private static readonly int IsFalling = Animator.StringToHash("IsFalling");
         private static readonly int IsKneeling = Animator.StringToHash("IsKneeling");
         private static readonly int IsDying = Animator.StringToHash("IsDying");
+        private static readonly int IsCoyoteJumping = Animator.StringToHash("IsCoyoteJumping");
 
         public PlayerAnimationController(Animator animator, Rigidbody2D rigidbody, PlayerGroundDetector groundDetector)
         {
@@ -31,6 +32,7 @@ namespace OrbOfDeception.Player
             _animator.SetBool(IsOnTheGround, _groundDetector.IsOnTheGround());
             _animator.SetBool(IsFalling, _rigidbody.velocity.y < 0);
             _animator.SetBool(IsKneeling, GameManager.Player.KneelController.isKneeling);
+            _animator.SetBool(IsCoyoteJumping, GameManager.Player.JumpController.isCoyoteTimeJump);
         }
 
         public void SetAnimatorUpdateToUnscaledTime()

@@ -2,9 +2,10 @@
 using OrbOfDeception.Items;
 using OrbOfDeception.Orb;
 using OrbOfDeception.Player;
+using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception.Rooms
+namespace OrbOfDeception.Core
 {
     public static class SaveSystem
     {

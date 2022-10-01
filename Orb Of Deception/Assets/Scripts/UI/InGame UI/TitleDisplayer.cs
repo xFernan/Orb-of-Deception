@@ -10,8 +10,8 @@ namespace OrbOfDeception.UI.InGame_UI
     {
         [SerializeField] private float delayToShow = 1;
         [SerializeField] private float timeShown = 3;
-
-        private TextMeshProUGUI _textMeshPro;
+        
+        private TextMeshProUGUI[] _texts;
         private SoundsPlayer _soundsPlayer;
         
         private HideableElementAnimated[] _elements;
@@ -19,7 +19,7 @@ namespace OrbOfDeception.UI.InGame_UI
         
         private void Awake()
         {
-            _textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
+            _texts = GetComponentsInChildren<TextMeshProUGUI>();
             _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
             _elements = GetComponentsInChildren<HideableElementAnimated>();
             foreach (var element in _elements)
@@ -29,9 +29,12 @@ namespace OrbOfDeception.UI.InGame_UI
             }
         }
 
-        public void DisplayTitle(string areaTitle, bool playDisplaySound = true)
+        public void DisplayTitle(string title, bool playDisplaySound = true)
         {
-            _textMeshPro.text = areaTitle;
+            foreach (var text in _texts)
+            {
+                text.text = title;
+            }
             
             if (_areaTitleDisplayCoroutine != null)
             {

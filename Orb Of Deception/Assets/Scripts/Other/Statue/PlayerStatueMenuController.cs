@@ -1,5 +1,6 @@
 using System;
 using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using OrbOfDeception.Items;
 using OrbOfDeception.Rooms;
 using OrbOfDeception.UI;
@@ -12,18 +13,19 @@ namespace OrbOfDeception.Statue
 {
     public class PlayerStatueMenuController : AnimatedMenuController
     {
+        [SerializeField] private RectTransform worldSpaceTransform;
         [SerializeField] private float offsetX;
         [SerializeField] private TextMeshProUGUI textName;
         [SerializeField] private TextMeshProUGUI textDescription;
         [SerializeField] private Image maskImage;
         [SerializeField] private RectTransform maskSlot;
 
+        private Button[] _buttons;
+        
         private MaskItem[] _masksUnlocked;
-
         private int _currentMaskID;
 
         private Animator _animator;
-        private RectTransform _rectTransform;
         private SoundsPlayer _soundsPlayer;
         
         private static readonly int ChangeMask = Animator.StringToHash("ChangeMask");
@@ -31,10 +33,19 @@ namespace OrbOfDeception.Statue
         protected override void Awake()
         {
             base.Awake();
+
+            _buttons = GetComponentsInChildren<Button>();
             
             _animator = GetComponent<Animator>();
-            _rectTransform = GetComponent<RectTransform>();
             _soundsPlayer = GetComponentInChildren<SoundsPlayer>();
+        }
+
+        private void Start()
+        {
+            foreach (var button in _buttons)
+            {
+                button.interactable = false;
+            }
         }
 
         private void LateUpdate()
@@ -56,7 +67,7 @@ namespace OrbOfDeception.Statue
             maskMenuPosition.x = Mathf.Round(maskMenuPosition.x) + offsetX * GameManager.Player.HorizontalMovementController.Orientation;
             maskMenuPosition.y = Mathf.Round(maskMenuPosition.y);
 
-            _rectTransform.anchoredPosition = maskMenuPosition;
+            worldSpaceTransform.anchoredPosition = maskMenuPosition;
         }
 
         public void InitializeMasksUnlocked()
@@ -124,13 +135,38 @@ namespace OrbOfDeception.Statue
         {
             var flip = GameManager.Player.SpriteDirectionController.flip;
             
-            var anchoredPosition = _rectTransform.anchoredPosition;
+            var anchoredPosition = worldSpaceTransform.anchoredPosition;
             anchoredPosition.x = flip * offsetX;
-            _rectTransform.anchoredPosition = anchoredPosition;
+            worldSpaceTransform.anchoredPosition = anchoredPosition;
 
             var localScale = maskSlot.localScale;
             localScale.x = flip;
             maskSlot.localScale = localScale;
+        }
+
+        public void CloseStatueMenu()
+        {
+            InGameMenuManager.Instance.Close();
+        }
+
+        public override void Open()
+        {
+            base.Open();
+            
+            foreach (var button in _buttons)
+            {
+                button.interactable = true;
+            }
+        }
+
+        public override void Close()
+        {
+            base.Close();
+            
+            foreach (var button in _buttons)
+            {
+                button.interactable = false;
+            }
         }
     }
 }

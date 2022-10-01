@@ -12,6 +12,7 @@ namespace OrbOfDeception.Player
         
         private float _jumpTimeCounter;
         private bool _isJumping;
+        public bool isCoyoteTimeJump = false;
 
         public PlayerJumpController(Rigidbody2D rigidbody, float jumpForce, float jumpTime, float maxFallVelocity, PlayerGroundDetector groundDetector)
         {
@@ -26,9 +27,10 @@ namespace OrbOfDeception.Player
         {
             if (!GameManager.Player.isControlled)
                 return;
-            if (!_isJumping && (!_groundDetector.IsOnTheGround() && !_groundDetector.IsOnCoyoteTime()))
+            if (!_isJumping && !_groundDetector.IsOnTheGround() && !_groundDetector.IsOnCoyoteTime())
                 return;
             
+            isCoyoteTimeJump = !_groundDetector.IsOnTheGround() && _groundDetector.IsOnCoyoteTime(); // Provisional.
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpForce);
             _isJumping = true;
             _jumpTimeCounter = 0;
@@ -40,6 +42,7 @@ namespace OrbOfDeception.Player
         public void StopJumping()
         {
             _isJumping = false;
+            isCoyoteTimeJump = false;
         }
         
         public void FixedUpdate()

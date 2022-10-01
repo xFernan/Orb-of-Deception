@@ -1,6 +1,7 @@
+using OrbOfDeception.CameraBehaviours;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.UI
 {
     public class CanvasRenderOnVirtualCamera : MonoBehaviour
     {

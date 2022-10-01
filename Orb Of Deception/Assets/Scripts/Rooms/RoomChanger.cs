@@ -34,7 +34,7 @@ namespace OrbOfDeception.Rooms
             //onEnterEvent.Invoke();
             
             if (showAreaTitle)
-                InGameMenuManager.Instance.titleDisplayer.DisplayTitle(RoomManager.CurrentRoom.areaName);
+                InGameMenuManager.Instance.titleAreaDisplayer.DisplayTitle(RoomManager.CurrentRoom.areaName);
 
             if (playMusicOnEnter)
             {

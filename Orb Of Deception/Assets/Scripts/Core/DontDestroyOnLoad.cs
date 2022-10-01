@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Core
 {
     public class DontDestroyOnLoad : MonoBehaviour
     {

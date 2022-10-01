@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using OrbOfDeception.Audio;
+using OrbOfDeception.Core;
 using OrbOfDeception.Patterns;
 using OrbOfDeception.Player;
 using OrbOfDeception.Rooms;

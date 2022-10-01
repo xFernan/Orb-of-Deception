@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.UI
 {
     public class CursorController : MonoBehaviour
     {

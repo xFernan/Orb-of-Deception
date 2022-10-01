@@ -80,7 +80,7 @@ namespace OrbOfDeception.Enemy
 
             _hasDied = true;
             
-            stateMachine?.ExitState();
+            ExitState();
             if (Animator != false)
                 Animator.enabled = false;
             spriteAnim!.SetTrigger(Dying);

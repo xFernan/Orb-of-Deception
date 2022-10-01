@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using OrbOfDeception.Audio;
 using OrbOfDeception.CameraBehaviours;
+using OrbOfDeception.Core;
 using OrbOfDeception.Essence_of_Punishment;
 using OrbOfDeception.UI;
 using OrbOfDeception.UI.InGame_UI;
@@ -47,7 +48,7 @@ namespace OrbOfDeception.Rooms
             else
             {
                 GameManager.Player.DeathController.ConfigRespawn();
-                InGameMenuManager.Instance.titleDisplayer.DisplayTitle(roomId == 1 ? "Backstage" : "Theater of the Origins"); // Provisional
+                InGameMenuManager.Instance.titleAreaDisplayer.DisplayTitle(roomId == 1 ? "Backstage" : "Theater of the Origins"); // Provisional
                 var spawnPositionSaved = SaveSystem.GetSpawnPosition();
 
                 if (spawnPositionSaved != default)

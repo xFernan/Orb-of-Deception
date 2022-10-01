@@ -27,7 +27,7 @@ namespace OrbOfDeception.Orb
         public override void Enter()
         {
             base.Enter();
-
+            
             _orbController.CanBeThrown = true;
             _orbController.CanHit = false;
             _orbController.orbIdleParticles.Play();
@@ -46,11 +46,17 @@ namespace OrbOfDeception.Orb
             
             //var newPosition = Vector2.Lerp(currentPosition, orbIdlePosition, _idleLerpPlayerFollowValue * Time.deltaTime);
                     
-            newPosition.y += Mathf.Sin(Time.time * 8) * _idleFloatingMoveVelocity * Time.deltaTime;
-            
+            newPosition.y += Mathf.Sin(Time.time * 8) * _idleFloatingMoveVelocity * Time.deltaTime; // Need fix.
+            //newPosition.y += PeriodicLinearFunction(Time.time * 6) * _idleFloatingMoveVelocity * Time.deltaTime;
             _transform.position = newPosition;
         }
 
+        /*private float PeriodicLinearFunction(float value)
+        {
+            var rest = value % 4;
+            return Mathf.Abs(rest - 2) - 1;
+        }*/
+        
         public override void Exit()
         {
             base.Exit();

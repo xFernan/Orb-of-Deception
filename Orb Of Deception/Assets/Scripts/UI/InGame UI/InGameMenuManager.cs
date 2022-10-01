@@ -8,14 +8,17 @@ namespace OrbOfDeception.UI.InGame_UI
 {
     public class InGameMenuManager : MonoBehaviour
     {
+        #region Variables
+        
         private static InGameMenuManager _instance;
 
         public static InGameMenuManager Instance => _instance;
 
         [SerializeField] private SoundsPlayer soundsPlayer;
         [SerializeField] private HideableElement backGroundController;
+        public TitleDisplayer titleAreaDisplayer;
+        public TitleDisplayer titleBossDisplayer;
         [HideInInspector] public ItemObtainedMenu itemObtainedMenu;
-        [HideInInspector] public TitleDisplayer titleDisplayer;
         [HideInInspector] public EndDemoMenuController endDemoMenuController;
         
         [SerializeField] private MenuController menuToOpenOnEscapePressed;
@@ -26,6 +29,8 @@ namespace OrbOfDeception.UI.InGame_UI
         
         public Action onCloseMenu;
 
+        #endregion
+        
         private void Awake()
         {
             if (_instance != null) Destroy(gameObject);
@@ -44,7 +49,6 @@ namespace OrbOfDeception.UI.InGame_UI
             
             backGroundController = GetComponentInChildren<PauseMenuDarkBackgroundController>();
             itemObtainedMenu = GetComponentInChildren<ItemObtainedMenu>();
-            titleDisplayer = GetComponentInChildren<TitleDisplayer>();
             endDemoMenuController = GetComponentInChildren<EndDemoMenuController>();
         }
 
@@ -112,7 +116,7 @@ namespace OrbOfDeception.UI.InGame_UI
 
         public void QuitGame()
         {
-            LevelChanger.Instance.FadeToExitGame();
+            Application.Quit();
         }
     }
 }

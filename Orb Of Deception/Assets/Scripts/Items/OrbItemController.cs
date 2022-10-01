@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Orb;
+﻿using OrbOfDeception.Core;
+using OrbOfDeception.Orb;
 using OrbOfDeception.Rooms;
 
 namespace OrbOfDeception.Items
@@ -10,9 +11,9 @@ namespace OrbOfDeception.Items
         protected override void Start()
         {
             base.Start();
-
+            
             if (SaveSystem.IsOrbObtained(OrbItem))
-                gameObject.SetActive(false);
+                Destroy(gameObject);
         }
 
         protected override void AfterExitingItemObtainedMenu()

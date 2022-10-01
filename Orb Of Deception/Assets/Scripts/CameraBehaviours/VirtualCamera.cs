@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.CameraBehaviours
 {
     public class VirtualCamera : MonoBehaviour
     {

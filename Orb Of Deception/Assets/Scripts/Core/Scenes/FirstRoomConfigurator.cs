@@ -20,7 +20,7 @@ namespace OrbOfDeception.Core.Scenes
         {
             if (!_isFirstTime) return;
             
-            InGameMenuManager.Instance.titleDisplayer.DisplayTitle("Backstage");
+            InGameMenuManager.Instance.titleAreaDisplayer.DisplayTitle("Backstage");
             GameManager.Camera.RePosition();
 
             _isFirstTime = false;

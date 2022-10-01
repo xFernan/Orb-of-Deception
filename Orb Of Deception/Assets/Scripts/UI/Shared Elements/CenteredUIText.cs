@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.UI
 {
     public class CenteredUIText : MonoBehaviour
     {

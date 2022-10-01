@@ -30,6 +30,7 @@ namespace OrbOfDeception.Player
             
             if (!IsMoving && moveDirection != 0 && GameManager.Player.GroundDetector.IsOnTheGround())
                 GameManager.Player.soundsPlayer.Play("StartMove");
+            
             IsMoving = moveDirection != 0;
             
             if (IsMoving)

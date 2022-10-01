@@ -1,4 +1,5 @@
-﻿using OrbOfDeception.Patterns;
+﻿using OrbOfDeception.Core;
+using OrbOfDeception.Patterns;
 using OrbOfDeception.Player;
 using OrbOfDeception.Rooms;
 using UnityEngine;

@@ -18,9 +18,9 @@ namespace OrbOfDeception.Scenery_Elements
 
         [SerializeField] private bool isIrreparable = false;
         [SerializeField] private int decorationID;
-        [SerializeField] private float dropProbability = 0.05f;
+        [SerializeField] private float dropProbability = 0.15f;
         [SerializeField] private int minDropAmount = 1;
-        [SerializeField] private int maxDropAmount = 2;
+        [SerializeField] private int maxDropAmount = 3;
         
         private SpriteMaterialController _materialController;
         private ParticleSystem _brokenParticles;

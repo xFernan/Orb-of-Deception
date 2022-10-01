@@ -1,9 +1,8 @@
 using OrbOfDeception.Core;
 using OrbOfDeception.Enemy;
-using OrbOfDeception.Rooms;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Tutorial
 {
     public class OrbColorTutorialDisplayer : MonoBehaviour
     {

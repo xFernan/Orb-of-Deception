@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using OrbOfDeception.Enemy;
 using UnityEngine;
 
-namespace OrbOfDeception
+namespace OrbOfDeception.Enemy.Boss1
 {
     public class Boss1EnemySpawner : MonoBehaviour
     {
